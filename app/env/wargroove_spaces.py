@@ -224,8 +224,6 @@ class WargrooveObservation(Observation):
 
 class WargrooveActions(Actions):
 
-    esp = [EntryStep.end_position_selection, EntryStep.target_selection]
-
     def __init__(self, game):
         self.game = game
         self.getSelectables = lambda: self._getSelectables()
@@ -259,15 +257,29 @@ class WargrooveActions(Actions):
     'options': RECRUITABLE_UNIT_CLASSES,
     'getter': self.getSelectables
 }, {
-    'condition': lambda: self.game.entryStep == EntryStep.unit_selection,
+    'condition': lambda: self.isPositionSelection(),
     'options': POS_LIST,
-    'getter': lambda: self.getUnitsPos(),
-    'convert': lambda pos: self.getUnitIdFromPos(pos)
-}, {
-    'condition': lambda: (self.game.entryStep in self.esp) or self.game.preExecuteSelection == PreExecuteSel.target_selection,
-    'options': POS_LIST,
-    'getter': self.getSelectables
+    'getter': lambda: self.getPositions(),
+    'convert': lambda pos: self.convertPosition(pos)
 }]
+   
+    def isPositionSelection(self):
+        return (
+            self.game.entryStep in [EntryStep.unit_selection, EntryStep.end_position_selection, EntryStep.target_selection] or
+            self.game.preExecuteSelection == PreExecuteSel.target_selection
+        )
+    
+    def getPositions(self):
+        if self.game.entryStep == EntryStep.unit_selection:
+            return self.getUnitsPos()
+        
+        return self.getSelectables()
+    
+    def convertPosition(self, pos):
+        if self.game.entryStep == EntryStep.unit_selection:
+            return self.getUnitIdFromPos(pos)
+        
+        return pos
     
     def getUnitsPos(self):
         unitIds = self.getSelectables()

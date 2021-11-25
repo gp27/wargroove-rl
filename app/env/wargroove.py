@@ -121,8 +121,8 @@ class WargrooveEnv(gym.Env):
         tot = sum(scores)
         m = self.n_players - 1
 
-        # removes average of opponents values to make zero sum game
-        rewards = list(map(lambda s: ( s * n - tot) / m, scores))
+        # subtracts average of opponents values to make it a zero sum game
+        rewards = [(s * n - tot) / m for s in scores]
 
         return rewards
     

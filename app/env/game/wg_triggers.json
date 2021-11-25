@@ -1,0 +1,49 @@
+[{
+    "actions": [{
+        "parameters": ["current"],
+        "id": "eliminate"
+    }],
+    "players": [0, 0, 0, 0, 0, 0, 0, 0],
+    "id": "$trigger_default_defeat_no_units",
+    "recurring": "oncePerPlayer",
+    "conditions": [{
+        "parameters": ["current", "0", "0", "*unit_structure", "-1"],
+        "id": "unit_presence"
+    }]
+}, {
+    "actions": [{
+        "parameters": ["current"],
+        "id": "eliminate"
+    }],
+    "players": [0, 0, 0, 0, 0, 0, 0, 0],
+    "id": "$trigger_default_defeat_commander",
+    "recurring": "oncePerPlayer",
+    "conditions": [{
+        "parameters": ["*commander", "current", "-1"],
+        "id": "unit_lost"
+    }]
+}, {
+    "actions": [{
+        "parameters": ["current"],
+        "id": "eliminate"
+    }],
+    "players": [0, 0, 0, 0, 0, 0, 0, 0],
+    "id": "$trigger_default_defeat_hq",
+    "recurring": "oncePerPlayer",
+    "conditions": [{
+        "parameters": ["hq", "current", "-1"],
+        "id": "unit_lost"
+    }]
+}, {
+    "actions": [{
+        "parameters": ["current"],
+        "id": "victory"
+    }],
+    "players": [0, 0, 0, 0, 0, 0, 0, 0],
+    "id": "$trigger_default_victory",
+    "recurring": "oncePerPlayer",
+    "conditions": [{
+        "parameters": ["current", "0", "0"],
+        "id": "number_of_opponents"
+    }]
+}]

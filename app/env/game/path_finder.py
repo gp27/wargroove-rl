@@ -36,7 +36,7 @@ class WargroovePathFinder():
         playerId = u['playerId']
         up = self.game.players[playerId]
 
-        unpassable = [-2] + list(filter(lambda p: up.team != p.team, self.game.players.values()))
+        unpassable = [-2] + [p.id for p in self.game.players.values() if up.team != p.team]
         for u in self.game.units.values():
             x = u['pos']['x']
             y = u['pos']['y']

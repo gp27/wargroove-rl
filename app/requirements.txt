@@ -7,3 +7,4 @@ xxhash==2.0.2
 tcod==13.0.0
 tabulate>=0.8.9
 wandb>=0.12.7
+wcwidth>=0.2.5

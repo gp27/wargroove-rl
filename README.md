@@ -1,4 +1,6 @@
-# Wargroove RL
+
+# <img align="center" src="imgs/oblo.png"> Wargroove RL
+
 
 ## Getting Started
 

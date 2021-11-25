@@ -2,10 +2,14 @@ import os, json
 from enum import Enum
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-DEF_FILENAME = dir_path + '/wg_2.0.json'
+DEFS_FILENAME = dir_path + '/wg_2.0.json'
 
-with open(DEF_FILENAME) as def_file:
+with open(DEFS_FILENAME) as def_file:
     DEFS = json.loads(def_file.read())
+
+TRIGGERS_FILENAME = dir_path + '/wg_triggers.json'
+with open(TRIGGERS_FILENAME) as triggers_files:
+    TRIGGERS = json.loads(triggers_files.read())
 
 MAP_PLAYGROUND = (
     5, 5,
@@ -125,21 +129,22 @@ for classDef in DEFS['unitClasses'].values():
     VERBS_BY_CLASS[classDef['id']] = verbs
 
 
-PLAYABLE_COMMANDERS = filter(lambda c: c.get('playable', True), DEFS['commanders'].values())
-PLAYABLE_COMMANDERS = list(map(lambda c: c['id'], PLAYABLE_COMMANDERS))
+PLAYABLE_COMMANDERS = [c['id'] for c in DEFS['commanders'].values() if c.get('playable', True)]
 PLAYABLE_COMMANDERS.sort()
 
 BANNED_COMMANDERS = []
 
-AVAILABLE_UNIT_CLASSES = list(map(lambda c: c['id'], DEFS['unitClasses'].values()))
+AVAILABLE_UNIT_CLASSES = [c['id'] for c in DEFS['unitClasses'].values()]
 AVAILABLE_UNIT_CLASSES.sort()
 
-RECRUITABLE_UNIT_CLASSES = filter(lambda c: not c.get('isStructure', False) and not c.get('isCommander', False) and c.get('isRecruitable', True), DEFS['unitClasses'].values())
-RECRUITABLE_UNIT_CLASSES = list(map(lambda c: c['id'], RECRUITABLE_UNIT_CLASSES))
+RECRUITABLE_UNIT_CLASSES = [
+    c['id'] for c in DEFS['unitClasses'].values()
+    if not c.get('isStructure', False) and not c.get('isCommander', False) and c.get('isRecruitable', True)
+]
 RECRUITABLE_UNIT_CLASSES.sort()
 
 
-AVAILABLE_VERBS = list(map(lambda c: c['id'], DEFS['verbs'].values()))
+AVAILABLE_VERBS = [c['id'] for c in DEFS['verbs'].values()]
 AVAILABLE_VERBS.sort()
 
 MAX_PLAYERS = 4

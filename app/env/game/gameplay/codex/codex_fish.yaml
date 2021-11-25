@@ -1,0 +1,239 @@
+---
+codex:
+
+
+- id: piano_tuna
+  category: fish
+  name: fish_name_piano_tuna
+  unlock: codex_entry_fish_piano_tuna
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_2.png
+    title: fish_name_piano_tuna_title
+    text: fish_description_piano_tuna
+
+- id: ginger_guppy
+  category: fish
+  name: fish_name_ginger_guppy
+  unlock: codex_entry_fish_ginger_guppy
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_3.png
+    title: fish_name_ginger_guppy_title
+    text: fish_description_ginger_guppy
+
+- id: jerkfish
+  category: fish
+  name: fish_name_jerkfish
+  unlock: codex_entry_fish_jerkfish
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_4.png
+    title: fish_name_jerkfish_title
+    text: fish_description_jerkfish
+
+- id: salty_bass
+  category: fish
+  name: fish_name_salty_bass
+  unlock: codex_entry_fish_salty_bass
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_5.png
+    title: fish_name_salty_bass_title
+    text: fish_description_salty_bass
+
+- id: pinchmaster
+  category: fish
+  name: fish_name_pinchmaster
+  unlock: codex_entry_fish_pinchmaster
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_6.png
+    title: fish_name_pinchmaster_title
+    text: fish_description_pinchmaster
+
+- id: fruitfrog
+  category: fish
+  name: fish_name_fruitfrog
+  unlock: codex_entry_fish_fruitfrog
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_7.png
+    title: fish_name_fruitfrog_title
+    text: fish_description_fruitfrog
+
+- id: lemon_loach
+  category: fish
+  name: fish_name_lemon_loach
+  unlock: codex_entry_fish_lemon_loach
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_8.png
+    title: fish_name_lemon_loach_title
+    text: fish_description_lemon_loach
+
+- id: storm_jelly
+  category: fish
+  name: fish_name_storm_jelly
+  unlock: codex_entry_fish_storm_jelly
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_9.png
+    title: fish_name_storm_jelly_title
+    text: fish_description_storm_jelly
+
+- id: lime_sole
+  category: fish
+  name: fish_name_lime_sole
+  unlock: codex_entry_fish_lime_sole
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_14.png
+    title: fish_name_lime_sole_title
+    text: fish_description_lime_sole
+
+- id: eclectic_eel
+  category: fish
+  name: fish_name_eclectic_eel
+  unlock: codex_entry_fish_eclectic_eel
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_10.png
+    title: fish_name_eclectic_eel_title
+    text: fish_description_eclectic_eel
+
+- id: dreadfish
+  category: fish
+  name: fish_name_dreadfish
+  unlock: codex_entry_fish_dreadfish
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_11.png
+    title: fish_name_dreadfish_title
+    text: fish_description_dreadfish
+
+- id: snuffish
+  category: fish
+  name: fish_name_snuffish
+  unlock: codex_entry_fish_snuffish
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_15.png
+    title: fish_name_snuffish_title
+    text: fish_description_snuffish
+
+- id: toy_koi
+  category: fish
+  name: fish_name_toy_koi
+  unlock: codex_entry_fish_toy_koi
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_12.png
+    title: fish_name_toy_koi_title
+    text: fish_description_toy_koi
+
+- id: clockwork_fish
+  category: fish
+  name: fish_name_clockwork_fish
+  unlock: codex_entry_fish_clockwork_fish
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_13.png
+    title: fish_name_clockwork_fish_title
+    text: fish_description_clockwork_fish
+
+- id: red_flapper
+  category: fish
+  name: fish_name_red_flapper
+  unlock: codex_entry_fish_red_flapper
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_16.png
+    title: fish_name_red_flapper_title
+    text: fish_description_red_flapper
+
+- id: fish_boot
+  category: fish
+  name: fish_name_boot
+  unlock: codex_entry_fish_boot
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_1.png
+    title: fish_name_boot_title
+    text: fish_description_boot
+
+- id: chucklefish
+  category: fish
+  name: fish_name_chucklefish
+  unlock: codex_entry_fish_chucklefish
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_17.png
+    title: fish_name_chucklefish_title
+    text: fish_description_chucklefish
+
+- id: starfish
+  category: fish
+  name: fish_name_starfish
+  unlock: codex_entry_fish_starfish
+  icon:
+    image: ui/codex/icons/icon_fish.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/fish/fish_18.png
+    title: fish_name_starfish_title
+    text: fish_description_starfish
+
+...

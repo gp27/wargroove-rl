@@ -1,0 +1,138 @@
+---
+
+triggerConditions:
+  - id: start_of_turn
+
+  - id: end_of_turn
+
+  - id: end_of_unit_turn
+
+  - id: check_map_flag
+    parameters:
+      - type: map_flag
+      - type: boolean
+
+  - id: check_campaign_flag
+    scope: campaign
+    parameters:
+      - type: campaign_flag
+      - type: boolean
+
+  - id: check_party_member
+    scope: campaign
+    parameters:
+      - type: character
+      - type: boolean
+
+  - id: check_map_counter
+    parameters:
+      - type: counter
+      - type: operator
+      - type: integer
+
+  - id: current_turn_number
+    parameters:
+      - type: operator
+      - type: integer
+
+  - id: check_funds
+    parameters:
+      - type: player_star
+      - type: operator
+      - type: integer
+
+  - id: unit_presence
+    parameters:
+      - type: player_neutral_star
+      - type: operator
+      - type: integer
+      - type: unit_class_star
+      - type: location_star
+
+  - id: player_turn
+    parameters:
+      - type: player
+
+  - id: number_of_opponents
+    parameters:
+      - type: player
+      - type: operator
+      - type: integer
+
+  - id: unit_lost
+    parameters:
+      - type: unit_class_star
+      - type: player
+      - type: location_star
+
+  - id: unit_killed
+    parameters:
+      - type: unit_class_star
+      - type: player_star
+      - type: unit_class_star
+      - type: player_star
+      - type: location_star
+
+  - id: unit_health
+    parameters:
+      - type: player_neutral_star
+      - type: operator
+      - type: integer
+      - type: unit_class_star
+      - type: location_star
+      - type: operator
+      - type: integer
+
+  - id: unit_groove
+    parameters:
+      - type: player_neutral_star
+      - type: operator
+      - type: integer
+      - type: unit_class_star
+      - type: location_star
+      - type: operator
+      - type: integer
+      
+  - id: unit_visible
+    parameters:
+      - type: unit_class_star
+      - type: player_neutral_star
+      - type: location_star
+      - type: player_star
+
+  - id: player_victorious
+    parameters:
+      - type: player
+
+  - id: number_of_stars_map
+    scope: map
+    hidden: true
+    parameters:
+      - type: integer
+
+  - id: number_of_stars_campaign
+    scope: campaign
+    hidden: true
+    parameters:
+      - type: integer
+
+  - id: number_of_stars_after_victory
+    hidden: true
+    parameters:
+      - type: operator
+      - type: integer
+
+  - id: check_gizmo_state
+    parameters:
+      - type: operator
+      - type: integer
+      - type: location_star
+      - type: boolean
+
+  - id: counter_compare
+    parameters:
+      - type: counter
+      - type: operator
+      - type: counter
+
+...

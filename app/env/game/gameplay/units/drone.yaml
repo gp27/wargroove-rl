@@ -1,0 +1,44 @@
+---
+
+unitClasses:
+  - id: drone
+    name: unit_class_name_drone
+    movement: hovering
+    moveRange: 5
+    damageMultiplier: 0.5
+    verbs:
+      - explode
+    tags:
+      - type.air
+      - summon
+    battleUnitCount: 1
+    passiveMultiplier: 1.25
+    sightRange: 5
+    classIcon: unit_icons_summon
+    deathVerbId: death_explode
+    isHidden: true
+    isRecruitable: false
+    canAttack: false
+    uiEffectivenessMultiplier: 2
+
+
+units:
+  - class: drone
+    faction: heavensong
+    name: unit_class_name_drone
+    mapAnimation: units/commanders/koji/drone
+    battleAnimation: units/commanders/koji/battle_drone
+    smallPortrait: units/commanders/koji/portrait_drone_small.png
+    mediumPortrait: units/commanders/koji/portrait_drone_medium.png
+    mapSpeed: 4.0
+    deathMoveMin: 0
+    deathMoveMax: 0
+    grabPos: [13, 14]
+    stayAfterDeath: true
+    sounds:
+      death: koji/kojiDroneDie
+      run: koji/kojiDroneEntry
+      runMap: koji/kojiDroneEntry
+      hit: hitMetal
+      hitMap: hitMetal
+...

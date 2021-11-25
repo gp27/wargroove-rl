@@ -1,0 +1,9 @@
+tensorflow==1.15.0
+stable-baselines[mpi]==2.10.1
+gym==0.20.0
+numpy>=1.13.0
+lupa==1.10
+xxhash==2.0.2
+tcod==13.0.0
+tabulate>=0.8.9
+wandb>=0.12.7

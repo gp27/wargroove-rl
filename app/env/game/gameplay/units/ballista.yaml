@@ -1,0 +1,241 @@
+---
+
+weapons:
+  - id: ballistaBolt
+    rangeMin: 2
+    rangeMax: 6
+    canMoveAndAttack: false
+    baseDamage:
+      air: 1
+      land: 1
+      water: 1      
+    tagDamage:
+      witch: 0.95
+      dragon: 0.85
+      harpy: 1.3
+      balloon: 1.1
+
+      archer: 0.3
+      soldier: 0.4
+      villager: 0.4
+      dog: 0.5
+      spearman: 0.3
+      wagon: 0.3                  
+      mage: 0.4
+      knight: 0.25
+      ballista: 0.2
+      trebuchet: 0.1
+      giant: 0.1
+      structure: 0.3
+      commander: 0.10
+      rifleman: 0.5
+      thief: 0.4
+
+      warship: 0.2
+      harpoonship: 0.2
+      turtle: 0.2
+      travelboat: 0.2
+      merman: 0.4
+
+
+unitClasses:
+  - id: ballista
+    name: unit_class_name_ballista
+    cost: 800
+    movement: wheels
+    moveRange: 6
+    damageMultiplier: 1
+    aiPriority: 1.6
+    weapons:
+      - id: ballistaBolt
+    tags:
+      - ballista
+      - type.ground.heavy
+    verbs:
+      - load
+    battleUnitCount: 1
+    passiveMultiplier: 1.5
+
+
+units:
+  - class: ballista
+    faction: cherrystone
+    name: unit_name_ballista_cherrystone
+    mapAnimation: units/ballista/cherrystone/map_ballista_cherrystone
+    battleAnimation: units/ballista/cherrystone/battle_ballista_cherrystone
+    smallPortrait: units/ballista/cherrystone/portrait_ballista_cherrystone_small.png
+    mediumPortrait: units/ballista/cherrystone/portrait_ballista_cherrystone_medium.png
+    mapSpeed: 4.0
+    grabPos: [16, 17]
+    attackOffset: [30, 0]
+    battlePosOffset: [-2, 0]
+    deathMoveMin: 0
+    deathMoveMax: 0
+    stayAfterDeath: true
+    sounds:
+      attackMap: unitAttack
+      attack: ballistaAttack
+      attackEffect: ballistaAttackEffect
+      death: gateDie
+      deathMap: unitDie
+      run: ballistaEntry
+      runMap: ballistaEntry
+      hit: hitWood
+      hitMap: hitWood
+    attacks:
+      - id: primary
+        ranged: true
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.6
+        effect: fx/bs_ballista_cherrystone_attack
+        postAttackAnimationSequence: post_attack_idle
+        postAttackHitSequence: post_attack_hit
+        postAttackDeathSequence: post_attack_death
+        attacksFlying: true
+        effectDelay: 1.3
+      - id: secondary
+        ranged: true
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.6
+        effect: fx/bs_ballista_2_cherrystone_attack
+        postAttackAnimationSequence: post_attack_idle
+        postAttackHitSequence: post_attack_hit
+        postAttackDeathSequence: post_attack_death
+        effectDelay: 1.3
+
+  - class: ballista
+    faction: felheim
+    name: unit_name_ballista_felheim
+    mapAnimation: units/ballista/felheim/map_ballista_felheim
+    battleAnimation: units/ballista/felheim/battle_ballista_felheim
+    smallPortrait: units/ballista/felheim/portrait_ballista_felheim_small.png
+    mediumPortrait: units/ballista/felheim/portrait_ballista_felheim_medium.png
+    mapSpeed: 4.0
+    grabPos: [16, 17]
+    attackOffset: [30, 0]
+    battlePosOffset: [-2, 0]
+    deathMoveMin: 0
+    deathMoveMax: 0
+    stayAfterDeath: true
+    sounds:
+      attackMap: unitAttack
+      attack: ballistaAttack
+      attackEffect: ballistaAttackEffect
+      death: gateDie
+      deathMap: unitDie
+      run: ballistaEntry
+      runMap: ballistaEntry
+      hit: hitWood
+      hitMap: hitWood
+    attacks:
+      - id: primary
+        ranged: true
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.6
+        effect: fx/bs_ballista_felheim_attack
+        postAttackAnimationSequence: post_attack_idle
+        postAttackHitSequence: post_attack_hit
+        postAttackDeathSequence: post_attack_death
+        attacksFlying: true
+        effectDelay: 1.3
+      - id: secondary
+        ranged: true
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.6
+        effect: fx/bs_ballista_2_felheim_attack
+        postAttackAnimationSequence: post_attack_idle
+        postAttackHitSequence: post_attack_hit
+        postAttackDeathSequence: post_attack_death
+        effectDelay: 1.3
+
+  - class: ballista
+    faction: heavensong
+    name: unit_name_ballista_heavensong
+    mapAnimation: units/ballista/heavensong/map_ballista_heavensong
+    battleAnimation: units/ballista/heavensong/battle_ballista_heavensong
+    smallPortrait: units/ballista/heavensong/portrait_ballista_heavensong_small.png
+    mediumPortrait: units/ballista/heavensong/portrait_ballista_heavensong_medium.png
+    mapSpeed: 4.0
+    grabPos: [16, 17]
+    attackOffset: [30, 0]
+    battlePosOffset: [-2, 0]
+    deathMoveMin: 0
+    deathMoveMax: 0
+    stayAfterDeath: true
+    sounds:
+      attackMap: unitAttack
+      attack: ballistaAttack
+      attackEffect: ballistaAttackEffect
+      death: gateDie
+      deathMap: unitDie
+      run: ballistaEntry
+      runMap: ballistaEntry
+      hit: hitWood
+      hitMap: hitWood
+    attacks:
+      - id: primary
+        ranged: true
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.6
+        effect: fx/bs_ballista_heavensong_attack
+        postAttackAnimationSequence: post_attack_idle
+        postAttackHitSequence: post_attack_hit
+        postAttackDeathSequence: post_attack_death
+        attacksFlying: true
+        effectDelay: 1.3
+      - id: secondary
+        ranged: true
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.6
+        effect: fx/bs_ballista_2_heavensong_attack
+        postAttackAnimationSequence: post_attack_idle
+        postAttackHitSequence: post_attack_hit
+        postAttackDeathSequence: post_attack_death
+        effectDelay: 1.3
+
+  - class: ballista
+    faction: floran
+    name: unit_name_ballista_floran
+    mapAnimation: units/ballista/floran/map_ballista_floran
+    battleAnimation: units/ballista/floran/battle_ballista_floran
+    smallPortrait: units/ballista/floran/portrait_ballista_floran_small.png
+    mediumPortrait: units/ballista/floran/portrait_ballista_floran_medium.png
+    mapSpeed: 4.0
+    grabPos: [16, 17]
+    attackOffset: [30, 0]
+    battlePosOffset: [-2, 0]
+    deathMoveMin: 0
+    deathMoveMax: 0
+    stayAfterDeath: true
+    sounds:
+      attackMap: unitAttack
+      attack: ballistaAttack
+      attackEffect: ballistaAttackEffect
+      death: gateDie
+      deathMap: unitDie
+      run: ballistaEntry
+      runMap: ballistaEntry
+      hit: hitWood
+      hitMap: hitWood
+    attacks:
+      - id: primary
+        ranged: true
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.6
+        effect: fx/bs_ballista_floran_attack
+        postAttackAnimationSequence: post_attack_idle
+        postAttackHitSequence: post_attack_hit
+        postAttackDeathSequence: post_attack_death
+        attacksFlying: true
+        effectDelay: 1.3
+      - id: primary
+        ranged: true
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.6
+        effect: fx/bs_ballista_2_floran_attack
+        postAttackAnimationSequence: post_attack_idle
+        postAttackHitSequence: post_attack_hit
+        postAttackDeathSequence: post_attack_death
+        effectDelay: 1.3
+
+...

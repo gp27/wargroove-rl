@@ -1,0 +1,268 @@
+---
+
+weapons:
+  - id: musket
+    rangeMin: 1
+    rangeMax: 9
+    canMoveAndAttack: false
+    horizontalAndVerticalOnly: true
+    horizontalAndVerticalExtraWidth: 1
+    terrainExclusion:
+      - forest
+    baseDamage:
+      land: 1
+    tagDamage:
+      archer: 0.85
+      soldier: 1.2
+      villager: 1.2
+      dog: 0.2
+      spearman: 1.0
+      mage: 1.0
+      rifleman: 0.85
+      thief: 1.0                        
+
+      knight: 0.10      
+      ballista: 0.05
+      trebuchet: 0.05
+      giant: 0.05
+      wagon: 0.10
+
+      harpy: 0.6
+      witch: 0.6
+      dragon: 0.05
+      balloon: 0.15
+
+      merman: 0.75  
+      warship: 0.1 
+      harpoonship: 0.15
+      turtle: 0.1
+      travelboat: 0.2
+
+      structure: 0.05
+      
+      commander: 0.05
+
+unitClasses:
+  - id: rifleman
+    name: unit_class_name_rifleman
+    cost: 750
+    movement: walking
+    moveRange: 4
+    damageMultiplier: 1
+    aiPriority: 1.0
+    defaultAttack: attack_rifleman
+    weapons:
+      - id: musket
+    tags:
+      - rifleman
+      - type.ground.hideout
+    verbs:
+      - reload
+      - load
+      - capture
+    battleUnitCount: 4
+    passiveMultiplier: 1.5
+    sightRange: 9
+    startingStates:
+      - id: ammo
+        value: 3
+
+units:
+  - class: rifleman
+    faction: cherrystone
+    name: unit_name_rifleman_cherrystone
+    mapAnimation: units/rifleman/cherrystone/map_rifleman_cherrystone
+    battleAnimation: units/rifleman/cherrystone/battle_rifleman_cherrystone
+    battleAnimationRiver: fx/river_overlay/battle_rifleman_river
+    smallPortrait: units/rifleman/cherrystone/portrait_rifleman_cherrystone_small.png
+    mediumPortrait: units/rifleman/cherrystone/portrait_rifleman_cherrystone_medium.png
+    mapSpeed: 4.0
+    grabPos: [15, 24]
+    sounds:
+      attackMap: unitAttack
+      attack: riflemanAttack
+      counter: riflemanCounterAttack
+      captureShout: soldierPreAttackRed
+      death: soldierDieRed
+      deathMap: unitDie
+      run: infantryMediumEntry2
+      runMap: infantryMediumMapEntry2
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        attackAnimationSequence: counter
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.6
+        samePanel: true
+        attackSound: counter
+      - id: ranged
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.4
+        ranged: true
+    emotes:
+      idle: idle
+    shouts:
+      soldier_shout1: soldierShoutRed1
+      soldier_shout2: soldierShoutRed2
+      soldier_shout3: soldierShoutRed3
+      soldier_shout4: soldierShoutRed4
+      soldier_shout5: soldierShoutRed5
+      soldier_shout6: soldierShoutRed6
+      soldier_shout7: soldierShoutRed7
+      soldier_shout8: soldierShoutRed8
+      soldier_shout9: soldierShoutRed9
+      soldier_hit1: soldierHitRed1
+      soldier_hit2: soldierHitRed2
+      soldier_hit3: soldierHitRed3
+      soldier_hit4: soldierHitRed4
+      soldier_hit5: soldierHitRed5
+    hidden:
+      shouts:
+        - soldier_shout3
+        - soldier_shout5
+        - soldier_shout6
+        - soldier_shout9
+
+  - class: rifleman
+    faction: felheim
+    name: unit_name_rifleman_felheim
+    mapAnimation: units/rifleman/felheim/map_rifleman_felheim
+    battleAnimation: units/rifleman/felheim/battle_rifleman_felheim
+    battleAnimationRiver: fx/river_overlay/battle_rifleman_river
+    smallPortrait: units/rifleman/felheim/portrait_rifleman_felheim_small.png
+    mediumPortrait: units/rifleman/felheim/portrait_rifleman_felheim_medium.png
+    mapSpeed: 4.0
+    grabPos: [15, 24]
+    sounds:
+      attackMap: unitAttack
+      attack: riflemanAttackBlue
+      counter: riflemanCounterAttack
+      attackEffect1: archerAttackEffect1
+      attackEffect2: archerAttackEffect2
+      attackEffect3: archerAttackEffect3
+      attackEffect4: archerAttackEffect4
+      captureShout: mageAttackVoiceBlue
+      death: undeadDieCrumble
+      deathMap: unitDie
+      run: infantryLightEntry
+      runMap: infantryLightMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        attackAnimationSequence: counter
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.6
+        samePanel: true
+        attackSound: counter
+      - id: ranged
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.4
+        ranged: true
+    emotes:
+      idle: idle
+    shouts:
+      soldier_blue_shout1: soldierShoutBlue1
+      soldier_blue_shout2: soldierShoutBlue2
+      undead_shout1: undeadShout1
+      undead_shout2: undeadShout2
+
+  - class: rifleman
+    faction: heavensong
+    name: unit_name_rifleman_heavensong
+    mapAnimation: units/rifleman/heavensong/map_rifleman_heavensong
+    battleAnimation: units/rifleman/heavensong/battle_rifleman_heavensong
+    battleAnimationRiver: fx/river_overlay/battle_rifleman_river
+    smallPortrait: units/rifleman/heavensong/portrait_rifleman_heavensong_small.png
+    mediumPortrait: units/rifleman/heavensong/portrait_rifleman_heavensong_medium.png
+    mapSpeed: 4.0
+    grabPos: [15, 24]
+    sounds:
+      attackMap: unitAttack
+      attack: riflemanAttack
+      counter: riflemanCounterAttack
+      captureShout: soldierPreAttackYellow
+      death: soldierDieYellow
+      deathMap: unitDie
+      run: infantryLightEntry
+      runMap: infantryLightMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        attackAnimationSequence: counter
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.6
+        samePanel: true
+        attackSound: counter
+      - id: ranged
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.4
+        ranged: true
+    emotes:
+      idle: idle
+    shouts:
+      soldier_yellow_shout1: soldierShoutYellow1
+      soldier_yellow_shout2: soldierShoutYellow2
+      soldier_yellow_shout3: soldierShoutYellow3
+      soldier_yellow_shout4: soldierShoutYellow4
+      soldier_yellow_shout5: soldierShoutYellow5
+      soldier_yellow_hit1: soldierHitYellow1
+      soldier_yellow_hit2: soldierHitYellow2
+      soldier_yellow_hit3: soldierHitYellow3
+      soldier_yellow_hit4: soldierHitYellow4
+    hidden:
+      shouts:
+        - soldier_yellow_shout2
+        - soldier_yellow_shout5
+  - class: rifleman
+    faction: floran
+    name: unit_name_rifleman_floran
+    mapAnimation: units/rifleman/floran/map_rifleman_floran
+    battleAnimation: units/rifleman/floran/battle_rifleman_floran
+    battleAnimationRiver: fx/river_overlay/battle_rifleman_river
+    smallPortrait: units/rifleman/floran/portrait_rifleman_floran_small.png
+    mediumPortrait: units/rifleman/floran/portrait_rifleman_floran_medium.png
+    mapSpeed: 4.0
+    grabPos: [15, 24]
+    sounds:
+      attackMap: unitAttack
+      attack: riflemanAttackGreen
+      counter: riflemanCounterAttack
+      captureShout: soldierPreAttackGreen
+      death: soldierDieGreen
+      deathMap: unitDie
+      run: infantryLightEntry
+      runMap: infantryLightMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        attackAnimationSequence: counter
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.6
+        samePanel: true
+        attackSound: counter
+      - id: ranged
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.4
+        ranged: true
+    emotes:
+      idle: idle
+    shouts:
+      soldier_green_shout1: soldierShoutGreen1
+      soldier_green_shout2: soldierShoutGreen2
+      soldier_green_shout3: soldierShoutGreen3
+      soldier_green_shout4: soldierShoutGreen4
+      soldier_green_shout5: soldierShoutGreen5
+      soldier_green_shout6: soldierShoutGreen6
+      soldier_green_hit1: soldierHitGreen1
+      soldier_green_hit2: soldierHitGreen2
+      soldier_green_hit3: soldierHitGreen3
+    hidden:
+      shouts:
+        - soldier_green_shout2
+        - soldier_green_shout4
+        - soldier_green_shout5
+...

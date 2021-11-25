@@ -1,0 +1,46 @@
+---
+
+unitClasses:
+  - id: port
+    name: structure_name_port
+    aiPriority: 4.0
+    verbs:
+      - recruit
+    battleUnitCount: 1
+    isStructure: true
+    canReinforce: true
+    canBeReinforced: false
+    canBeCaptured: true
+    isNeutraliseable: true
+    damageMultiplier: 1
+    movement: sea_building
+    income: 0
+    cost: 500
+    recruitTags: [type.sea, type.amphibious]
+    regeneration: 10
+    tags:
+      - structure
+    sightRange: 6
+      
+units:
+  - class: port
+    faction: neutral
+    name: structure_name_port
+    mapAnimation: structures/port
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/port.png
+    grabPos: [14, 5]
+    sounds:
+      hit: hitWood
+      hitMap: hitWood
+      death: gateDie
+    structureImage:
+      spriteSheet: backgrounds/port/port_background_full
+      farBackground: port_background_full_background_2
+      nearBackground: port_background_full_background_1
+      foreground: port_background_full_foreground
+      keeperPosition: [66, 98]
+      leftBannerOffset: [-6, 2]
+      rightBannerOffset: [-7, 0]
+
+...

@@ -1,0 +1,46 @@
+---
+
+cutscene_vfx:
+  - id: cutscene_stab_attack
+    path: fx/cutscene/cutscene_stab_attack
+  - id: cutscene_critical_attack
+    path: fx/cutscene/cutscene_critical_attack
+  - id: cutscene_magic_charge
+    path: fx/cutscene/cutscene_magic_charge
+  - id: magic_flare
+    path: fx/cutscene/magic_flare
+  - id: fire
+    path: fx/cutscene/fire
+  - id: cutscene_water_splash
+    path: fx/cutscene/cutscene_water_splash
+  - id: electric_shock
+    path: fx/cutscene/electric_shock
+  - id: chain_spell
+    path: fx/cutscene/chain_spell
+  - id: cutscene_magic_explosion
+    path: fx/cutscene/cutscene_magic_explosion
+  - id: cutscene_sigrid_attack
+    path: fx/cutscene/cutscene_sigrid_attack
+  - id: explosion
+    path: fx/cutscene/explosion
+
+    # HIDDEN
+  - id: cutscene_teleport_fx
+    path: fx/cutscene/cutscene_teleport_fx
+    hidden: true
+  - id: cutscene_bluebird
+    path: fx/cutscene/cutscene_bluebird
+    hidden: true
+  - id: cutscene_door_open
+    path: fx/cutscene/cutscene_door_open
+    hidden: true
+  - id: cutscene_ragna_sink
+    path: fx/cutscene/cutscene_ragna_sink
+    hidden: true
+  - id: cutscene_crown_falls
+    path: fx/cutscene/cutscene_crown_falls
+    hidden: true
+  - id: cutscene_four_orbs
+    path: fx/cutscene/cutscene_four_orbs
+    hidden: true
+...

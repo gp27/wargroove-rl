@@ -1,0 +1,141 @@
+---
+mapIcons:
+  - id: village
+    spritesheet: world_map
+    spriteMain: village_main
+    spriteSide: village_side
+    palettePivot: [-2, -2] 
+    sidePalettePivot: [-4, -4]
+  - id: snowforest
+    spritesheet: world_map
+    spriteMain: snowforest_main
+    spriteSide: snowforest_side
+    palettePivot: [-2, 0] 
+    sidePalettePivot: [-4, -4]
+  - id: farm
+    spritesheet: world_map
+    spriteMain: farm_main
+    spriteSide: farm_side
+    palettePivot: [-2, 0] 
+    sidePalettePivot: [-4, -4]
+  - id: castle
+    spritesheet: world_map
+    spriteMain: castle_main
+    spriteSide: castle_side
+    palettePivot: [-2, 1] 
+    sidePalettePivot: [-4, -2]
+  - id: forest
+    spritesheet: world_map
+    spriteMain: forest_main
+    spriteSide: forest_side
+    palettePivot: [-2, -2] 
+    sidePalettePivot: [-4, -4]
+  - id: sea
+    spritesheet: world_map
+    spriteMain: sea_main
+    spriteSide: sea_side
+    palettePivot: [-2, 0]
+    sidePalettePivot: [-4, -4]
+  - id: mountain
+    spritesheet: world_map
+    spriteMain: mountain_main
+    spriteSide: mountain_side
+    palettePivot: [-2, -1] 
+    sidePalettePivot: [-4, -5]
+  - id: desertforest
+    spritesheet: world_map
+    spriteMain: desertforest_main
+    spriteSide: desertforest_side
+    palettePivot: [-2, -2] 
+    sidePalettePivot: [-4, -4]
+  - id: bones
+    spritesheet: world_map
+    spriteMain: bones_main
+    spriteSide: bones_side
+    palettePivot: [-2, 0]
+    sidePalettePivot: [-4, -2]
+  - id: camp
+    spritesheet: world_map
+    spriteMain: camp_main
+    spriteSide: camp_side
+    palettePivot: [-2, -2] 
+    sidePalettePivot: [-4, -4]
+  - id: henge
+    spritesheet: world_map
+    spriteMain: henge_main
+    spriteSide: henge_side
+    palettePivot: [-2, -1] 
+    sidePalettePivot: [-4, -3]
+  - id: heaven_castle
+    spritesheet: world_map
+    spriteMain: heaven_castle
+    spriteSide: heaven_castle_side
+    palettePivot: [-2, 0] 
+    sidePalettePivot: [-4, -3]
+  - id: cherry_castle
+    spritesheet: world_map
+    spriteMain: cherry_castle
+    spriteSide: cherry_castle_side
+    palettePivot: [-2, 0] 
+    sidePalettePivot: [-4, -3]
+  - id: floran_castle
+    spritesheet: world_map
+    spriteMain: floran_castle
+    spriteSide: floran_castle_side
+    palettePivot: [-1, 0] 
+    sidePalettePivot: [-4, -2]
+  - id: felheim_castle
+    spritesheet: world_map
+    spriteMain: felheim_castle
+    spriteSide: felheim_castle_side
+    palettePivot: [-2, 2] 
+    sidePalettePivot: [-4, -1]
+  - id: cherrystone
+    spritesheet: world_map
+    spriteMain: cherrystone_main
+    spriteSide: cherrystone_side
+    palettePivot: [-1, 2] 
+    sidePalettePivot: [-5, -1]
+  - id: felheim
+    spritesheet: world_map
+    spriteMain: felheim_main
+    spriteSide: felheim_side
+    palettePivot: [-2, 0] 
+    sidePalettePivot: [-4, -2]
+  - id: floran
+    spritesheet: world_map
+    spriteMain: floran_main
+    spriteSide: floran_side
+    palettePivot: [0, 1] 
+    sidePalettePivot: [-4, -1]
+  - id: heavensong
+    spritesheet: world_map
+    spriteMain: heavensong_main
+    spriteSide: heavensong_side
+    palettePivot: [-2, 0] 
+    sidePalettePivot: [-4, -2]
+  - id: bandit
+    spritesheet: world_map
+    spriteMain: bandit_main
+    spriteSide: bandit_side
+    palettePivot: [-2, -2] 
+    sidePalettePivot: [-4, -1]
+  - id: goldmountain
+    spritesheet: world_map
+    spriteMain: goldmountain_main
+    spriteSide: goldmountain_side
+    palettePivot: [-2, -2] 
+    sidePalettePivot: [-4, -1]
+  - id: woodforest
+    spritesheet: world_map
+    spriteMain: woodforest_main
+    spriteSide: woodforest_side
+    palettePivot: [-2, -1] 
+    sidePalettePivot: [-4, -1]
+  - id: silverdesert
+    spritesheet: world_map
+    spriteMain: silverdesert_main
+    spriteSide: silverdesert_side
+    palettePivot: [-2, -2] 
+    sidePalettePivot: [-4, -1]
+...

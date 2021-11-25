@@ -1,0 +1,91 @@
+---
+
+worldMaps:
+- id: wyrale
+  name: world_map_wyrale_name
+  icon: ui/campaign/map_icon5.png
+  size: [874, 524]
+  images:
+  - image: world/maps/wyrale/world_map_wyrale.png
+    layer: background
+    pos: [0, 0]
+  - image: world/maps/wyrale/world_map_wyrale_pillars.png
+    layer: ground_decorations
+    pos: [0, 0]
+  - image: world/maps/wyrale/world_map_wyrale_water.png
+    effect: water
+    layer: background_tiles_water
+    mask: world/maps/wyrale/world_map_wyrale_water_ramp.png
+    pos: [0, 0]
+  waterMask: masks/wyrale_water_mask.png
+  fishAnimations:
+  - world/world_map_fish_size01
+  - world/world_map_fish_size02
+  - world/world_map_fish_size03
+  fishes:
+  - pos: [54, 20]
+    radius: 60
+  - pos: [194, 182]
+    radius: 60
+  - pos: [260, 4]
+    radius: 60
+  sound:
+  - event: environmental/oceanAmbienceWorld
+  - event: environmental/mountainAmbienceWorld
+    sources:
+    - pos: [50, 230]
+      refDistance: 50
+      maxDistance: 500
+    - pos: [530, 440]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [660, 170]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [680, 260]
+      refDistance: 15
+      maxDistance: 150
+  - event: environmental/tundraAmbienceWorld
+    sources:
+    - pos: [100, 300]
+      refDistance: 40
+      maxDistance: 400
+    - pos: [130, 440]
+      refDistance: 45
+      maxDistance: 450
+  - event: environmental/forestAmbienceWorld
+    sources:
+    - pos: [425, 165]
+      refDistance: 30
+      maxDistance: 300
+    - pos: [440, 310]
+      refDistance: 30
+      maxDistance: 300
+  - event: environmental/fieldAmbienceWorld
+    sources:
+    - pos: [670, 170]
+      refDistance: 30
+      maxDistance: 300
+    - pos: [765, 305]
+      refDistance: 30
+      maxDistance: 300
+    - pos: [450, 520]
+      refDistance: 30
+      maxDistance: 300
+  - event: environmental/desertAmbienceWorld
+    sources:
+    - pos: [760, 105]
+      refDistance: 45
+      maxDistance: 450
+  - event: environmental/riverAmbienceWorld
+    sources:
+    - pos: [355, 420]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [455, 455]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [560, 465]
+      refDistance: 15
+      maxDistance: 150
+...

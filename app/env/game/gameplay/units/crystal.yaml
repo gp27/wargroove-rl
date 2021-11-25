@@ -1,0 +1,42 @@
+---
+
+unitClasses:
+  - id: crystal
+    name: unit_class_name_crystal
+    movement: walking
+    moveRange: 0
+    damageMultiplier: 1.0
+    battleUnitCount: 1
+    passiveMultiplier: 1.25
+    sightRange: 5
+    classIcon: unit_icons_summon
+    buffId: crystal
+    isHidden: true
+    hasTurn: false
+    isRecruitable: false
+    regeneration: -20
+    tags:
+      - summon
+
+
+units:
+  - class: crystal
+    faction: cherrystone
+    name: unit_class_name_crystal
+    mapAnimation: units/commanders/emeric/crystal
+    battleAnimation: units/commanders/emeric/battle_crystal
+    smallPortrait: units/commanders/emeric/portrait_crystal_small.png
+    mediumPortrait: units/commanders/emeric/portrait_crystal_medium.png
+    mapSpeed: 4.0
+    grabPos: [13, 14]
+    runsIn: false
+    deathMoveMin: 0
+    deathMoveMax: 0
+    sounds:
+      death: emeric/emericCrystalDie
+      deathMap: unitDie
+      deathMapNoBattle: emeric/emericCrystalDie
+      hit: hitStone
+      hitMap: hitStone
+
+...

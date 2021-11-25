@@ -1,0 +1,46 @@
+---
+
+unitClasses:
+  - id: tower
+    name: structure_name_tower
+    aiPriority: 4.0
+    verbs:
+      - recruit
+    battleUnitCount: 1
+    isStructure: true
+    canReinforce: true
+    canBeReinforced: false
+    canBeCaptured: true
+    isNeutraliseable: true
+    damageMultiplier: 1
+    movement: land_building
+    income: 0
+    cost: 500
+    recruitTags: [type.air]
+    regeneration: 10
+    tags:
+      - structure
+    sightRange: 7
+      
+units:
+  - class: tower
+    faction: neutral
+    name: structure_name_tower
+    mapAnimation: structures/tower
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/tower.png
+    grabPos: [14, 4]
+    sounds:
+      hit: hitWood
+      hitMap: hitStone
+      death: gateDie
+    structureImage:
+      spriteSheet: backgrounds/tower/tower_background_full
+      farBackground: tower_background_full_background_2
+      nearBackground: tower_background_full_background_1
+      foreground: tower_background_full_foreground
+      keeperPosition: [72, 75]
+      leftBannerOffset: [0, 0]
+      rightBannerOffset: [0, 0]
+
+...

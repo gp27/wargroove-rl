@@ -1,0 +1,890 @@
+---
+unlocks:
+
+- id: codex_lore_heavensong
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_heavensong
+  conditions:
+  - type: campaign_map_complete
+    param: 12 # Act 4 main 1 first heaven map
+
+- id: codex_lore_floran
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_floran
+  conditions:
+  - type: campaign_map_complete
+    param: 5 # 2.1 first floran map
+
+- id: codex_lore_felheim
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_felheim
+  conditions:
+  - type: campaign_map_complete
+    param: 2 # A plague of skeletons
+
+- id: codex_lore_lostleagues
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_lostleagues
+  conditions:
+  - type: campaign_map_complete
+    param: 14 # puppy in the middle
+
+- id: codex_lore_cacophony
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_cacophony
+  conditions:
+  - type: campaign_map_complete
+    param: 11 # 3.2 speaking to mercival 
+
+- id: codex_lore_magictech
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex
+  conditions:
+  - type: campaign_map_complete
+    param: 25 # the Reckoning
+
+- id: codex_lore_cherryblade
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_cherryblade
+  conditions:
+  - type: campaign_map_complete
+    param: 22 # 6.1 ragna falls into the sea
+
+- id: codex_lore_fellgauntlet
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_fellgauntlet
+  conditions:
+  - type: campaign_map_complete
+    param: 24 # the fortress
+
+- id: codex_lore_requiem
+  description: unlock_complete_elodie_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_requiem
+  conditions:
+  - type: arcade_complete
+    param: elodie
+
+- id: codex_lore_vampires
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_vampires
+  conditions:
+  - type: campaign_map_complete
+    param: 10 # ragna introduces flying units
+
+- id: codex_lore_outlaws
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_outlaws
+  conditions:
+  - type: campaign_map_complete
+    param: 27 # dogged perserverance
+
+- id: codex_lore_aurenia
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_aurenia
+  conditions:
+  - type: campaign_map_complete
+    param: 0 # 1.4 fight valder
+
+- id: codex_lore_enid
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_enid
+  conditions:
+  - type: dlc1_campaign_map_complete
+    param: 9 # final mission
+
+- id: game_mode_arcade
+  description: unlock_play_campaign_for_game_mode
+  unlockType: arcade
+  message: ui_unlock_unlocked_arcade
+  conditions:
+  - type: campaign_map_complete
+    param: 0 # Act 1 Main 4
+
+- id: game_mode_puzzle
+  description: unlock_play_campaign_for_game_mode
+  unlockType: puzzle
+  message: ui_unlock_unlocked_puzzle
+  conditions:
+  - type: campaign_map_complete
+    param: 16 # Act 3 Main 3
+
+- id: codex_entry_elodie
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_elodie
+  secret: true
+  conditions:
+  - type: campaign_map_complete
+    param: 26
+
+- id: codex_entry_mercival
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_mercival
+  secret: true
+  conditions:
+  - type: campaign_map_flag
+    param: 6 # secret unlock flag
+
+- id: codex_entry_darkmercia
+  description: unlock_play_campaign_for_entries
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_darkmercia
+  secret: true
+  conditions:
+  - type: campaign_map_complete
+    param: 32 # epilogue
+
+- id: codex_mercia_extra_lore
+  description: unlock_complete_mercia_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_mercia_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: mercia
+
+- id: codex_mercia_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_mercia_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 3 # The breach
+
+- id: codex_mercival_extra_lore
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_mercival_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: mercival
+
+- id: codex_emeric_extra_lore
+  description: unlock_complete_emeric_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_emeric_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: emeric
+
+- id: codex_emeric_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_emeric_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 1 # prologue
+
+- id: codex_caesar_extra_lore
+  description: unlock_complete_caesar_arcade
+  unlockType: codex
+  conditions:
+  - type: arcade_complete
+    param: caesar
+
+- id: codex_caesar_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_caesar_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 6 # 2 side 1 caesar's first outlaw mission
+
+- id: codex_valder_extra_lore
+  description: unlock_complete_valder_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_valder_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: valder
+
+- id: codex_valder_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_valder_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 23 # 6.2 d day, defeat valders forces
+
+- id: codex_ragna_extra_lore
+  description: unlock_complete_ragna_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_ragna_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: ragna
+
+- id: codex_ragna_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_ragna_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 4 # worst enemies forever
+
+- id: codex_sigrid_extra_lore
+  description: unlock_complete_sigrid_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_sigrid_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: sigrid
+
+- id: codex_sigrid_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_sigrid_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 16 # 3.3 sigrid chases mercia
+
+- id: codex_greenfinger_extra_lore
+  description: unlock_complete_greenfinger_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_greenfinger_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: greenfinger
+
+- id: codex_greenfinger_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_greenfinger_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 7 # 2.2 fight greenfinger
+
+- id: codex_nuru_extra_lore
+  description: unlock_complete_nuru_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_nuru_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: nuru
+
+- id: codex_nuru_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_nuru_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 8 # 2 side 2, mercia and nuru spar
+
+- id: codex_sedge_extra_lore
+  description: unlock_complete_sedge_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_sedge_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: sedge
+
+- id: codex_sedge_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_sedge_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 9 # 2 side 3, greenfinger banishes sedge
+
+- id: codex_tenri_extra_lore
+  description: unlock_complete_tenri_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_tenri_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: tenri
+
+- id: codex_tenri_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_tenri_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 17 # 4 side 2, tenri and emeric spar
+
+- id: codex_koji_extra_lore
+  description: unlock_complete_koji_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_koji_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: koji
+
+- id: codex_koji_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_koji_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 20 # 4.3 beating koji
+
+- id: codex_ryota_extra_lore
+  description: unlock_complete_ryota_arcade
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_ryota_extra_lore
+  conditions:
+  - type: arcade_complete
+    param: ryota
+
+- id: codex_ryota_extra_lore2
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_ryota_extra_lore
+  conditions:
+  - type: campaign_map_complete
+    param: 15 # 4.2 beating ryota
+
+
+
+
+- id: codex_entry_fish_boot
+  description: unlock_fish
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_entry_fish_boot
+  secret: true
+  conditions:
+  - type: fish_caught
+    param: boot
+
+- id: codex_entry_fish_piano_tuna
+  description: unlock_fish
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_entry_fish_piano_tuna
+  secret: true
+  conditions:
+  - type: fish_caught
+    param: piano_tuna
+
+- id: codex_entry_fish_ginger_guppy
+  description: unlock_fish
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_entry_fish_ginger_guppy
+  secret: true
+  conditions:
+  - type: fish_caught
+    param: ginger_guppy
+
+- id: codex_entry_fish_jerkfish
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_jerkfish
+  conditions:
+  - type: fish_caught
+    param: jerkfish
+
+- id: codex_entry_fish_salty_bass
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_salty_bass
+  conditions:
+  - type: fish_caught
+    param: salty_bass
+
+- id: codex_entry_fish_pinchmaster
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_pinchmaster
+  conditions:
+  - type: fish_caught
+    param: pinchmaster
+
+- id: codex_entry_fish_fruitfrog
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_fruitfrog
+  conditions:
+  - type: fish_caught
+    param: fruitfrog
+
+- id: codex_entry_fish_lemon_loach
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_lemon_loach
+  conditions:
+  - type: fish_caught
+    param: lemon_loach
+
+- id: codex_entry_fish_storm_jelly
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_storm_jelly
+  conditions:
+  - type: fish_caught
+    param: storm_jelly
+
+- id: codex_entry_fish_eclectic_eel
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_eclectic_eel
+  conditions:
+  - type: fish_caught
+    param: eclectic_eel
+
+- id: codex_entry_fish_dreadfish
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_dreadfish
+  conditions:
+  - type: fish_caught
+    param: dreadfish
+
+- id: codex_entry_fish_toy_koi
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_toy_koi
+  conditions:
+  - type: fish_caught
+    param: toy_koi
+
+- id: codex_entry_fish_clockwork_fish
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_clockwork_fish
+  conditions:
+  - type: fish_caught
+    param: clockwork_fish
+
+- id: codex_entry_fish_lime_sole
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_lime_sole
+  conditions:
+  - type: fish_caught
+    param: lime_sole
+
+- id: codex_entry_fish_snuffish
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_snuffish
+  conditions:
+  - type: fish_caught
+    param: snuffish
+
+- id: codex_entry_fish_red_flapper
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_red_flapper
+  conditions:
+  - type: fish_caught
+    param: red_flapper
+
+- id: codex_entry_fish_chucklefish
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_chucklefish
+  conditions:
+  - type: fish_caught
+    param: chucklefish
+
+- id: codex_entry_fish_starfish
+  description: unlock_fish
+  unlockType: codex
+  secret: true
+  message: ui_unlock_unlocked_codex_entry_fish_starfish
+  conditions:
+  - type: fish_caught
+    param: starfish
+
+- id: arcade_mercia
+  description: unlock_play_campaign_for_characters
+  unlockType: hidden
+  message: ui_unlock_unlocked_arcade_mercia
+  conditions:
+  - type: campaign_map_complete
+    param: 0 # Act 1 Main 4
+
+- id: arcade_emeric
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_emeric
+  conditions:
+  - type: campaign_map_complete
+    param: 11 # emeric beats sedge
+
+- id: arcade_caesar
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_caesar
+  conditions:
+  - type: campaign_map_complete
+    param: 6 # caesars first mission
+
+- id: arcade_valder
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_valder
+  conditions:
+  - type: campaign_map_complete
+    param: 24 # valder chases mercia out of cherrystone
+
+- id: arcade_ragna
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_ragna
+  conditions:
+  - type: campaign_map_complete
+    param: 13 #ragna beats caesar
+
+- id: arcade_sigrid
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_sigrid
+  conditions:
+  - type: campaign_map_complete
+    param: 30 # fight sigrid
+
+- id: arcade_greenfinger
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_greenfinger
+  conditions:
+  - type: campaign_map_complete
+    param: 9 # fight greenf
+
+- id: arcade_nuru
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_nuru
+  conditions:
+  - type: campaign_map_complete
+    param: 8 # mercia nuru spar
+
+- id: arcade_sedge
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_sedge
+  conditions:
+  - type: campaign_map_complete
+    param: 18 # fight sedge
+
+- id: arcade_tenri
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_tenri
+  conditions:
+  - type: campaign_map_complete
+    param: 17 #fight tenri
+
+- id: arcade_ryota
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_ryota
+  conditions:
+  - type: campaign_map_complete
+    param: 28 #fight ryota
+
+- id: arcade_koji
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_koji
+  conditions:
+  - type: campaign_map_complete
+    param: 19 # fight koji
+
+- id: character_elodie
+  description: unlock_play_campaign_for_characters
+  unlockType: character
+  message: ui_unlock_unlocked_character_elodie
+  secret: true
+  conditions:
+  - type: campaign_map_complete
+    param: 26
+
+- id: character_darkmercia
+  description: unlock_play_campaign_for_characters
+  unlockType: character
+  message: ui_unlock_unlocked_character_darkmercia
+  secret: true
+  conditions:
+  - type: campaign_map_complete
+    param: 32
+
+- id: character_mercival
+  description: unlock_play_campaign_for_characters
+  unlockType: character
+  message: ui_unlock_unlocked_character_mercival
+  secret: true
+  conditions:
+  - type: campaign_map_flag
+    param: 6 # secret unlock flag
+
+- id: arcade_elodie
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_elodie
+  secret: true
+  conditions:
+  - type: campaign_map_complete
+    param: 26 # fight elodie
+
+- id: arcade_darkmercia
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_darkmercia
+  secret: true
+  conditions:
+  - type: campaign_map_complete
+    param: 32 #fight dark mercia
+
+- id: arcade_mercival
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_mercival
+  secret: true
+  conditions:
+  - type: campaign_map_flag
+    param: 6 # secret unlock flag
+
+- id: arcade_wulfar
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_wulfar
+  conditions:
+  - type: dlc1_campaign_map_complete
+    param: 0 # tutorial dlc1
+
+- id: arcade_twins
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_twins
+  conditions:
+  - type: dlc1_campaign_map_flag
+    param: 0 
+  - type: dlc1_campaign_map_flag
+    param: 1 
+  - type: dlc1_campaign_map_flag
+    param: 2 
+  - type: dlc1_campaign_map_flag
+    param: 3 
+
+- id: arcade_vesper
+  description: unlock_play_campaign_for_characters
+  unlockType: arcade_character
+  message: ui_unlock_unlocked_arcade_vesper
+  conditions:
+  - type: dlc1_campaign_map_complete
+    param: 9 # final mission
+
+- id: codex_wulfar_extra_lore
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_wulfar_extra_lore
+  conditions:
+  - type: dlc1_campaign_map_complete
+    param: 0 # tutorial dlc1
+
+- id: codex_twins_extra_lore
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_twins_extra_lore
+  conditions:
+  - type: dlc1_campaign_map_flag
+    param: 0 
+  - type: dlc1_campaign_map_flag
+    param: 1 
+  - type: dlc1_campaign_map_flag
+    param: 2 
+  - type: dlc1_campaign_map_flag
+    param: 3 
+    
+- id: codex_vesper_extra_lore
+  description: unlock_play_campaign_for_pages
+  unlockType: codex
+  message: ui_unlock_unlocked_codex_vesper_extra_lore
+  conditions:
+  - type: dlc1_campaign_map_complete
+    param: 9 # final mission
+
+
+
+
+
+
+- id: gallery_elodie
+  description: unlock_play_campaign_for_artwork
+  unlockType: gallery
+  message: ui_unlock_unlocked_gallery
+  conditions:
+  - type: campaign_map_complete
+    param: 26
+
+- id: gallery_darkmercia
+  description: unlock_play_campaign_for_artwork
+  unlockType: gallery
+  message: ui_unlock_unlocked_gallery
+  conditions:
+  - type: campaign_map_complete
+    param: 32
+
+- id: jukebox_mercia
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_mercia
+  conditions:
+  - type: arcade_complete
+    param: mercia
+
+- id: jukebox_emeric
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_emeric
+  conditions:
+  - type: arcade_complete
+    param: emeric
+
+- id: jukebox_caesar
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_caesar
+  conditions:
+  - type: arcade_complete
+    param: caesar
+
+- id: jukebox_valder
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_valder
+  conditions:
+  - type: arcade_complete
+    param: valder
+
+- id: jukebox_ragna
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_ragna
+  conditions:
+  - type: arcade_complete
+    param: ragna
+
+- id: jukebox_sigrid
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_sigrid
+  conditions:
+  - type: arcade_complete
+    param: sigrid
+
+- id: jukebox_greenfinger
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_greenfinger
+  conditions:
+  - type: arcade_complete
+    param: greenfinger
+
+- id: jukebox_nuru
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_nuru
+  conditions:
+  - type: arcade_complete
+    param: nuru
+
+- id: jukebox_sedge
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_sedge
+  conditions:
+  - type: arcade_complete
+    param: sedge
+
+- id: jukebox_tenri
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_tenri
+  conditions:
+  - type: arcade_complete
+    param: tenri
+
+- id: jukebox_ryota
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_ryota
+  conditions:
+  - type: arcade_complete
+    param: ryota
+
+- id: jukebox_koji
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_koji
+  conditions:
+  - type: arcade_complete
+    param: koji
+
+- id: jukebox_elodie
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_elodie
+  conditions:
+  - type: arcade_complete
+    param: elodie
+
+- id: jukebox_darkmercia
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_darkmercia
+  conditions:
+  - type: arcade_complete
+    param: darkmercia
+
+- id: jukebox_mercival
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_mercival
+  conditions:
+  - type: arcade_complete
+    param: mercival
+
+- id: jukebox_wulfar
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_wulfar
+  conditions:
+  - type: arcade_complete
+    param: wulfar
+
+- id: jukebox_twins
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_twins
+  conditions:
+  - type: arcade_complete
+    param: twins
+
+- id: jukebox_vesper
+  description: unlock_play_arcade_for_track
+  unlockType: jukebox
+  message: ui_unlock_unlocked_jukebox_vesper
+  conditions:
+  - type: arcade_complete
+    param: vesper
+
+...

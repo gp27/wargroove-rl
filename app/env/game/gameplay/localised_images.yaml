@@ -1,0 +1,56 @@
+---
+
+localisedImages:
+  - id: wargroove_logo
+    default: "ui/main_menu/logo.png"
+    languages:
+      zh-Hans: "ui/main_menu/logo_zh-Hans.png"
+      zh-Hant: "ui/main_menu/logo_zh-Hant.png"
+
+  - id: wargroove_logo_dlc1
+    default: "ui/main_menu/logo_dlc1.png"
+    languages:
+      zh-Hans: "ui/main_menu/logo_zh-Hans.png"
+      zh-Hant: "ui/main_menu/logo_zh-Hant.png"
+
+  - id: victory
+    default: "ui/end_of_match/victory_defeat/victory.png"
+    languages:
+      de-DE: "ui/end_of_match/victory_defeat/victory_de-DE.png"
+      es-ES: "ui/end_of_match/victory_defeat/victory_es-ES.png"
+      fr-FR: "ui/end_of_match/victory_defeat/victory_fr-FR.png"
+      it-IT: "ui/end_of_match/victory_defeat/victory_it-IT.png"
+      #ja-JP: "ui/end_of_match/victory_defeat/victory_ja-JP.png"
+      pt-BR: "ui/end_of_match/victory_defeat/victory_pt-BR.png"
+      ru-RU: "ui/end_of_match/victory_defeat/victory_ru-RU.png"
+      zh-Hans: "ui/end_of_match/victory_defeat/victory_zh-Hans.png"
+      zh-Hant: "ui/end_of_match/victory_defeat/victory_zh-Hant.png"
+
+  - id: defeat
+    default: "ui/end_of_match/victory_defeat/defeat.png"
+    languages:
+      de-DE: "ui/end_of_match/victory_defeat/defeat_de-DE.png"
+      es-ES: "ui/end_of_match/victory_defeat/defeat_es-ES.png"
+      fr-FR: "ui/end_of_match/victory_defeat/defeat_fr-FR.png"
+      it-IT: "ui/end_of_match/victory_defeat/defeat_it-IT.png"
+      #ja-JP: "ui/end_of_match/victory_defeat/defeat_ja-JP.png"
+      pt-BR: "ui/end_of_match/victory_defeat/defeat_pt-BR.png"
+      ru-RU: "ui/end_of_match/victory_defeat/defeat_ru-RU.png"
+      zh-Hans: "ui/end_of_match/victory_defeat/defeat_zh-Hans.png"
+      zh-Hant: "ui/end_of_match/victory_defeat/defeat_zh-Hant.png"
+
+  - id: paper_aurania_world_map_labels
+    default: "world/maps/paper_aurania/world_map_labels"
+    animated: true
+    languages:
+      de-DE: "world/maps/paper_aurania/world_map_labels_de-DE"
+      es-ES: "world/maps/paper_aurania/world_map_labels_es-ES"
+      fr-FR: "world/maps/paper_aurania/world_map_labels_fr-FR"
+      it-IT: "world/maps/paper_aurania/world_map_labels_it-IT"
+      ja-JP: "world/maps/paper_aurania/world_map_labels_ja-JP"
+      ko-KR: "world/maps/paper_aurania/world_map_labels_ko-KR"
+      pt-BR: "world/maps/paper_aurania/world_map_labels_pt-BR"
+      ru-RU: "world/maps/paper_aurania/world_map_labels_ru-RU"
+      zh-Hans: "world/maps/paper_aurania/world_map_labels_zh-Hans"
+      zh-Hant: "world/maps/paper_aurania/world_map_labels_zh-Hant"
+...

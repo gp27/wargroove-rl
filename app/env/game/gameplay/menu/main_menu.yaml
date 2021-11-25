@@ -1,0 +1,11 @@
+---
+
+menuBackgrounds:
+  - id: main_menu
+    background: ui/background/menu_background_ground
+    clouds: ui/background/menu_background_clouds
+    sky: ui/background/menu_background_sky
+    unitSpawn: true
+    cloudsInBack: true
+
+...

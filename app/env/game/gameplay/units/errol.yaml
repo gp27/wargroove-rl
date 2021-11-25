@@ -1,0 +1,179 @@
+---
+
+unitClasses:
+  - id: commander_errol
+    name: character_errol_name
+    cost: 0
+    movement: walking
+    moveRange: 4
+    damageMultiplier: 1
+    aiPriority: 0
+    isHidden: false
+    battleUnitCount: 1
+    isRecruitable: false
+    hasTurn: false
+    isSpawnable: false
+    isCommander: true
+    classIcon: unit_icons_commander
+    tags:
+      - structure
+      - summon
+
+
+units:
+  - class: commander_errol
+    faction: outlaw
+    name: character_errol_name
+    mapAnimation: units/commanders/errol/map_errol
+    battleAnimation: units/commanders/errol/battle_errol
+    smallPortrait: units/commanders/errol/portrait_errol_small.png
+    mediumPortrait: units/commanders/errol/portrait_errol_medium.png
+    hasUnitInfo: false
+    hasBattleScreen: false
+    mapSpeed: 4.0
+    grabPos: [26, 16]
+    skinColour: typeVI
+    sounds:
+      run: infantryLightEntry
+      runMap: infantryLightMapEntry
+      hit: hitOrganic
+      groove: twins/errolGrooveIntro
+    emotes:
+      idle: idle
+      surprise: emote_surprise
+      positive: emote_happy
+      negative: emote_worried
+      laugh: emote_laugh
+      crying: emote_sad
+      rope: emote_rope
+      cactus: emote_cactus
+      dark_errol: emote_dark_errol
+      bush: emote_bush
+      bush2: emote_bush2
+      petting: emote_petting
+      cat: emote_cat
+      catsit: emote_catsit
+      catappears: emote_catappears
+      catsstop: emote_catstop
+      pet: emote_pet
+      catlay: emote_catlay
+      dance: emote_dance
+    shouts:
+      errol_anybodyhome: twins/errolShoutAnybodyHome
+      errol_aye: twins/errolShoutAye
+      errol_butyejustsaid: twins/errolShoutButYeJustSaid
+      errol_canwereallytakethis: twins/errolShoutCanWeReallyTakeThis
+      errol_doesthismeantheyllrun: twins/errolShoutWillTheyRunAway
+      errol_havewelostthem: twins/errolShoutHaveWeLostThem
+      errol_hello: twins/errolShoutHello
+      errol_herewego: twins/errolShoutHereWeGo
+      errol_hesamazin: twins/errolShoutHesAmazin
+      errol_hm1: twins/errolShoutHm1
+      errol_hm2: twins/errolShoutHm2
+      errol_hmm: twins/errolShoutHmm
+      errol_huh: twins/errolShoutHuh
+      errol_idinnaelikeit: twins/errolShoutIDidntLikeIt
+      errol_ifyoudonnaebackoff: twins/errolShoutIfYouDontBackOff
+      errol_imamagesortof: twins/errolShoutImAMage
+      errol_imerrol: twins/errolShoutIntroduction
+      errol_imscared: twins/errolShoutImScared
+      errol_ireadinabook: twins/errolShoutReadInABook
+      errol_keepyourheaddown: twins/errolShoutKeepYourHeadDown
+      errol_laugh1: twins/errolShoutLaugh1
+      errol_laugh2: twins/errolShoutLaugh2
+      errol_laugh3: twins/errolShoutLaugh3
+      errol_laughnervous: twins/errolShoutLaughNervous
+      errol_letshopethisworks: twins/errolShoutLetsHopeThisWorks
+      errol_letssticktogether: twins/errolShoutLetsStickTogether
+      errol_no: twins/errolShoutNo1
+      errol_nodistressed: twins/errolShoutNo2
+      errol_ochaye: twins/errolShoutOchAye
+      errol_ochno: twins/errolShoutOchNo
+      errol_oh: twins/errolShoutOh
+      errol_okayherewego: twins/errolShoutOkayHereWeGo
+      errol_oops: twins/errolShoutOops
+      errol_orlarun: twins/errolShoutOrlaRun
+      errol_shhh: twins/errolShoutShh
+      errol_sigh: twins/errolShoutSigh
+      errol_sorryda: twins/errolShoutSorryDa
+      errol_stronglywordedletter: twins/errolShoutStronglyWordedLetter
+      errol_thanksda: twins/errolShoutThanksDad
+      errol_thankye: twins/errolShoutThankYou
+      errol_thisisneright: twins/errolShoutThisIsntRight
+      errol_thisllbeloud: twins/errolShoutThisWillBeLoud
+      errol_thisllkeepussafe: twins/errolShoutThisWillKeepUsSafe
+      errol_uh: twins/errolShoutUh
+      errol_um: twins/errolShoutUm
+      errol_wedidit: twins/errolShoutWeDidIt
+      errol_wehavetobecareful: twins/errolShoutWeHaveToBeCareful
+      errol_wemadeit: twins/errolShoutWeMadeIt
+      errol_what: twins/errolShoutWhat
+      errol_whoa: twins/errolShoutWhoa
+      errol_wondertwinspower: twins/errolShoutWonderTwinPowers
+      errol_wontthatgetuskilled: twins/errolShoutWontThatGetUsKilled
+      errol_wow: twins/errolShoutWow
+      errol_wowitworked: twins/errolShoutWowItWorked
+      errol_attack1: twins/errolShoutAttack1
+      errol_attack2: twins/errolShoutAttack2
+      errol_attack3: twins/errolShoutAttack3
+      errol_hit1: twins/errolShoutHit1
+      errol_hit2: twins/errolShoutHit2
+      errol_hit3: twins/errolShoutHit3
+      errol_hit4: twins/errolShoutHit4
+      errol_hit5: twins/errolShoutHit5
+      errol_guard1: twins/errolShoutGuard1
+      errol_guard2: twins/errolShoutGuard2
+      errol_caesar: twins/errolShoutCaesar
+      errol_commanderryota: twins/errolShoutRyota
+      errol_da: twins/errolShoutDa1
+      errol_dashout: twins/errolShoutDa2
+      errol_dog: twins/errolShoutDog
+      errol_enid: twins/errolShoutEnid
+      errol_greenfinger: twins/errolShoutGreenfinger
+      errol_koji: twins/errolShoutKoji
+      errol_lordemeric: twins/errolShoutEmeric
+      errol_nuru: twins/errolShoutNuru
+      errol_orla: twins/errolShoutOrla1
+      errol_orlashout: twins/errolShoutOrla2
+      errol_queenmercia: twins/errolShoutMercia
+      errol_ragna: twins/errolShoutRagna
+      errol_sedge: twins/errolShoutSedge
+      errol_sigrid: twins/errolShoutSigrid
+      errol_sirvalder: twins/errolShoutValder
+      errol_tenri: twins/errolShoutTenri
+      errol_vesper: twins/errolShoutVesper1
+      errol_vespersurprised: twins/errolShoutVesper2
+      twins_da: twins/twinsShoutDa
+      twins_hit: twins/twinsShoutHit
+      twins_laugh: twins/twinsShoutLaugh
+      twins_wondertwinpowers: twins/twinsShoutWonderTwinPowers
+
+    alternativeRuns:
+      - id: run_requiem
+      - id: cat_running
+
+    hidden:
+      emotes:
+        - rope
+        - cactus
+        - bush
+        - bush2
+        - cat
+        - catsit
+        - catappears
+        - catstop
+        - pet
+        - emote_catlay
+        - petting
+        - catsstop
+        - catlay
+      alternativeRuns:
+        - run_requiem
+        - cat_running
+      shouts:
+        - errol_wow
+
+
+
+
+...

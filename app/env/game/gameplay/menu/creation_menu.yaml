@@ -1,0 +1,17 @@
+---
+
+menuBackgrounds:
+- id: creation_menu
+  background: backgrounds/titlescreen/creation/background.png
+  foreground: backgrounds/titlescreen/creation/foreground.png
+  animations:
+    - animation: backgrounds/titlescreen/creation/forgeflames
+      position: [-210, -94]
+      layer: foreground
+    - animation: backgrounds/titlescreen/creation/kojiforge
+      position: [-216, -33]
+      layer: foreground
+    - animation: backgrounds/titlescreen/creation/sparrowbombs
+      position: [140, -5]
+      layer: foreground
+...

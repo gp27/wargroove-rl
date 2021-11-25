@@ -1,0 +1,4005 @@
+{
+  "terrains": {
+    "reef": {
+      "id": "reef",
+      "name": "terrain_name_reef",
+      "biomeNames": {
+        "volcano": "terrain_name_reef_lava"
+      },
+      "biomeDescriptions": {
+        "volcano": "terrain_description_lava"
+      },
+      "defenceBonus": 2,
+      "movementCost": {
+        "sailing": 4,
+        "flying": 1,
+        "hovering": 1,
+        "amphibious": 2,
+        "sea_building": 1
+      },
+      "biomeMovementCosts": {
+        "volcano": {
+          "flying": 1,
+          "hovering": 1
+        }
+      },
+      "movementGroupType": "water",
+      "placeable": true,
+      "fowCover": true,
+      "tilesets": {
+        "0": "plains",
+        "1": "sea",
+        "2": "reef"
+      }
+    },
+    "ocean": {
+      "id": "ocean",
+      "name": "terrain_name_ocean",
+      "biomeNames": {
+        "volcano": "terrain_name_ocean_lava"
+      },
+      "biomeDescriptions": {
+        "volcano": "terrain_description_lava"
+      },
+      "defenceBonus": 0,
+      "movementCost": {
+        "sailing": 1,
+        "flying": 1,
+        "hovering": 1,
+        "amphibious": 1,
+        "sea_building": 1
+      },
+      "biomeMovementCosts": {
+        "volcano": {
+          "flying": 1,
+          "hovering": 1
+        }
+      },
+      "movementGroupType": "water",
+      "placeable": true,
+      "tilesets": {
+        "1": "ocean"
+      }
+    },
+    "river": {
+      "id": "river",
+      "name": "terrain_name_river",
+      "biomeNames": {
+        "volcano": "terrain_name_river_lava"
+      },
+      "biomeDescriptions": {
+        "volcano": "terrain_description_lava"
+      },
+      "defenceBonus": -2,
+      "movementCost": {
+        "walking": 2,
+        "riding": 4,
+        "flying": 1,
+        "hovering": 1,
+        "amphibious": 1
+      },
+      "biomeMovementCosts": {
+        "volcano": {
+          "flying": 1,
+          "hovering": 1
+        }
+      },
+      "movementGroupType": "land",
+      "placeable": true,
+      "tilesets": {
+        "0": "plains",
+        "1": "river"
+      }
+    },
+    "sea": {
+      "id": "sea",
+      "name": "terrain_name_sea",
+      "biomeNames": {
+        "volcano": "terrain_name_sea_lava"
+      },
+      "biomeDescriptions": {
+        "volcano": "terrain_description_lava"
+      },
+      "defenceBonus": 1,
+      "movementCost": {
+        "sailing": 2,
+        "flying": 1,
+        "hovering": 1,
+        "amphibious": 1,
+        "sea_building": 1
+      },
+      "biomeMovementCosts": {
+        "volcano": {
+          "flying": 1,
+          "hovering": 1
+        }
+      },
+      "movementGroupType": "water",
+      "placeable": true,
+      "tilesets": {
+        "0": "plains",
+        "1": "sea"
+      }
+    },
+    "beach": {
+      "id": "beach",
+      "name": "terrain_name_beach",
+      "defenceBonus": -1,
+      "movementCost": {
+        "sailing": 2,
+        "walking": 1,
+        "riding": 1,
+        "flying": 1,
+        "hovering": 1,
+        "amphibious": 2
+      },
+      "biomeMovementCosts": {
+        "volcano": {
+          "walking": 1,
+          "riding": 1,
+          "flying": 1,
+          "hovering": 1,
+          "amphibious": 2
+        }
+      },
+      "movementGroupType": "land",
+      "placeable": true,
+      "tilesets": {
+        "0": "plains",
+        "1": "beach"
+      }
+    },
+    "bridge": {
+      "id": "bridge",
+      "name": "terrain_name_bridge",
+      "defenceBonus": 0,
+      "movementCost": {
+        "walking": 1,
+        "riding": 1,
+        "flying": 1,
+        "hovering": 1,
+        "wheels": 1,
+        "amphibious": 2,
+        "sailing": 2
+      },
+      "cantStop": ["sailing"],
+      "movementGroupType": "land",
+      "placeable": true,
+      "tilesets": {
+        "0": "plains",
+        "1": ["sea", "river"],
+        "2": "bridge"
+      }
+    },
+    "forest": {
+      "id": "forest",
+      "name": "terrain_name_forest",
+      "defenceBonus": 3,
+      "movementCost": {
+        "walking": 2,
+        "riding": 3,
+        "flying": 1,
+        "hovering": 1,
+        "amphibious": 4
+      },
+      "movementGroupType": "land",
+      "placeable": true,
+      "visionBlocking": true,
+      "fowCover": true,
+      "tilesets": {
+        "0": "plains",
+        "1": "forest"
+      }
+    },
+    "volcano": {
+      "id": "volcano",
+      "name": "terrain_name_volcano",
+      "defenceBonus": 0,
+      "movementCost": {},
+      "movementGroupType": "land",
+      "placeable": true,
+      "hidden": true,
+      "tilesets": {
+        "0": "volcano"
+      }
+    },
+    "carpet": {
+      "id": "carpet",
+      "name": "terrain_name_carpet",
+      "defenceBonus": 2,
+      "movementCost": {
+        "walking": 1,
+        "riding": 1,
+        "amphibious": 2,
+        "hovering": 1,
+        "indoor_building": 1
+      },
+      "movementGroupType": "land",
+      "placeable": true,
+      "indoor": true,
+      "tilesets": {
+        "0": "plains",
+        "1": "cobblestone",
+        "2": "carpet"
+      }
+    },
+    "cobblestone": {
+      "id": "cobblestone",
+      "name": "terrain_name_cobblestone",
+      "defenceBonus": 2,
+      "movementCost": {
+        "walking": 1,
+        "riding": 1,
+        "amphibious": 2,
+        "hovering": 1,
+        "indoor_building": 1
+      },
+      "movementGroupType": "land",
+      "placeable": true,
+      "indoor": true,
+      "tilesets": {
+        "0": "plains",
+        "1": "cobblestone"
+      }
+    },
+    "sky": {
+      "id": "sky",
+      "name": "terrain_name_sky",
+      "defenceBonus": 0,
+      "movementCost": {
+        "flying": 1,
+        "hovering": 1
+      },
+      "movementGroupType": "air",
+      "placeable": false
+    },
+    "city": {
+      "id": "city",
+      "name": "structure_name_city",
+      "defenceBonus": 4,
+      "movementCost": {
+        "walking": 1,
+        "riding": 1,
+        "flying": 1,
+        "hovering": 1,
+        "wheels": 1,
+        "amphibious": 2
+      },
+      "movementGroupType": "land",
+      "placeable": false
+    },
+    "mountain": {
+      "id": "mountain",
+      "name": "terrain_name_mountain",
+      "defenceBonus": 4,
+      "movementCost": {
+        "walking": 3,
+        "flying": 1,
+        "hovering": 1
+      },
+      "movementGroupType": "land",
+      "placeable": true,
+      "visionBlocking": true,
+      "sightBonus": 2,
+      "tilesets": {
+        "0": "plains",
+        "1": "mountain"
+      }
+    },
+    "road": {
+      "id": "road",
+      "name": "terrain_name_road",
+      "defenceBonus": 0,
+      "movementCost": {
+        "walking": 1,
+        "riding": 1,
+        "flying": 1,
+        "hovering": 1,
+        "wheels": 1,
+        "amphibious": 2,
+        "land_building": 1,
+        "indoor_building": 1
+      },
+      "movementGroupType": "land",
+      "placeable": true,
+      "tilesets": {
+        "0": "plains",
+        "2": "road"
+      }
+    },
+    "plains": {
+      "id": "plains",
+      "name": "terrain_name_plains",
+      "defenceBonus": 1,
+      "movementCost": {
+        "walking": 1,
+        "riding": 1,
+        "flying": 1,
+        "hovering": 1,
+        "wheels": 2,
+        "amphibious": 2,
+        "land_building": 1,
+        "indoor_building": 1
+      },
+      "movementGroupType": "land",
+      "placeable": true,
+      "tilesets": {
+        "0": "plains"
+      }
+    },
+    "wall": {
+      "id": "wall",
+      "name": "terrain_name_wall",
+      "defenceBonus": 0,
+      "movementCost": {},
+      "movementGroupType": "land",
+      "visionBlocking": true,
+      "placeable": true,
+      "tilesets": {
+        "0": "plains",
+        "1": "cobblestone",
+        "2": "wall"
+      }
+    }
+  },
+  "grooves": {
+    "raise_dead": {
+      "id": "raise_dead",
+      "name": "groove_name_raise_dead",
+      "description": "groove_description_raise_dead",
+      "maxCharge": 50,
+      "chargePerUse": 50,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_raise_dead"
+    },
+    "cherrystone_defence": {
+      "id": "cherrystone_defence",
+      "name": "groove_name_cherrystone_defence",
+      "description": "groove_description_cherrystone_defence",
+      "maxCharge": 100,
+      "chargePerUse": 100,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_cherrystone_defence"
+    },
+    "dash": {
+      "id": "dash",
+      "name": "groove_name_dash",
+      "description": "groove_description_dash",
+      "maxCharge": 100,
+      "chargePerUse": 100,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_dash"
+    },
+    "diplomacy": {
+      "id": "diplomacy",
+      "name": "groove_name_diplomacy",
+      "description": "groove_description_diplomacy",
+      "maxCharge": 100,
+      "chargePerUse": 100,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_diplomacy"
+    },
+    "golf": {
+      "id": "golf",
+      "name": "groove_name_golf",
+      "description": "groove_description_golf",
+      "maxCharge": 100,
+      "chargePerUse": 100,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_golf"
+    },
+    "heal_aura": {
+      "id": "heal_aura",
+      "name": "groove_name_heal_aura",
+      "description": "groove_description_heal_aura",
+      "maxCharge": 100,
+      "chargePerUse": 100,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_heal_aura"
+    },
+    "teleport_beam": {
+      "id": "teleport_beam",
+      "name": "groove_name_teleport_beam",
+      "description": "groove_description_teleport_beam",
+      "maxCharge": 100,
+      "chargePerUse": 100,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_teleport_beam"
+    },
+    "dual_bombs": {
+      "id": "dual_bombs",
+      "name": "groove_name_dual_bombs",
+      "description": "groove_description_dual_bombs",
+      "maxCharge": 150,
+      "chargePerUse": 150,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": ["groove_area_heal", "groove_area_damage"]
+    },
+    "fish": {
+      "id": "fish",
+      "name": "groove_name_fish",
+      "description": "groove_description_fish",
+      "maxCharge": 150,
+      "chargePerUse": 150,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_fish"
+    },
+    "second_wind": {
+      "id": "second_wind",
+      "name": "groove_name_second_wind",
+      "description": "groove_description_second_wind",
+      "maxCharge": 150,
+      "chargePerUse": 150,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_second_wind"
+    },
+    "vampiric_touch": {
+      "id": "vampiric_touch",
+      "name": "groove_name_vampiric_touch",
+      "description": "groove_description_vampiric_touch",
+      "maxCharge": 150,
+      "chargePerUse": 150,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_vampiric_touch"
+    },
+    "vine_wall": {
+      "id": "vine_wall",
+      "name": "groove_name_vine_wall",
+      "description": "groove_description_vine_wall",
+      "maxCharge": 150,
+      "chargePerUse": 150,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_vine_wall"
+    },
+    "convert": {
+      "id": "convert",
+      "name": "groove_name_convert",
+      "description": "groove_description_convert",
+      "maxCharge": 200,
+      "chargePerUse": 200,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_convert"
+    },
+    "drain_aura": {
+      "id": "drain_aura",
+      "name": "groove_name_drain_aura",
+      "description": "groove_description_drain_aura",
+      "maxCharge": 200,
+      "chargePerUse": 200,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_drain_aura"
+    },
+    "drone_bombs": {
+      "id": "drone_bombs",
+      "name": "groove_name_drone_bombs",
+      "description": "groove_description_drone_bombs",
+      "maxCharge": 200,
+      "chargePerUse": 200,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_drone_bombs"
+    },
+    "sadistic_rush": {
+      "id": "sadistic_rush",
+      "name": "groove_name_sadistic_rush",
+      "description": "groove_description_sadistic_rush",
+      "maxCharge": 200,
+      "chargePerUse": 200,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_sadistic_rush"
+    },
+    "shadow_sisters": {
+      "id": "shadow_sisters",
+      "name": "groove_name_shadow_sisters",
+      "description": "groove_description_smoke_screen",
+      "maxCharge": 200,
+      "chargePerUse": 200,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_smoke_screen"
+    },
+    "smoke_screen": {
+      "id": "smoke_screen",
+      "name": "groove_name_smoke_screen",
+      "description": "groove_description_smoke_screen",
+      "maxCharge": 200,
+      "chargePerUse": 200,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_smoke_screen"
+    },
+    "splash_jump": {
+      "id": "splash_jump",
+      "name": "groove_name_splash_jump",
+      "description": "groove_description_splash_jump",
+      "maxCharge": 200,
+      "chargePerUse": 200,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_splash_jump"
+    },
+    "tornado": {
+      "id": "tornado",
+      "name": "groove_name_tornado",
+      "description": "groove_description_tornado",
+      "maxCharge": 200,
+      "chargePerUse": 200,
+      "chargeBy": {
+        "endOfTurn": 10,
+        "attack": 20,
+        "counter": 10,
+        "kill": 30
+      },
+      "verb": "groove_tornado"
+    }
+  },
+  "commanders": {
+    "elodie": {
+      "id": "elodie",
+      "name": "character_elodie_name",
+      "title": "character_elodie_title",
+      "faction": "guardian",
+      "factionIndex": 0,
+      "portrait": {
+        "neutral": "portraits/commanders/small/elodie_portrait_small.png",
+        "happy": "portraits/commanders/small/elodie_portrait_happy.png",
+        "sad": "portraits/commanders/small/elodie_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/elodie_portrait",
+      "portraitOffset": [-10, -40],
+      "namePlate": "ui/character_select/charlabel/charlabel_elodie.png",
+      "themeSong": "music/elodie",
+      "skinColour": "typeIV",
+      "unitClassId": "commander_elodie",
+      "selectionSound": "elodie/elodieShoutShallIPlayYouASong",
+      "dialogueBoxVoice": "ui/dialogue/textScrollElodie",
+      "unlock": "character_elodie",
+      "deathFade": false,
+      "deathTime": 5
+    },
+    "darkmercia": {
+      "id": "darkmercia",
+      "name": "character_darkmercia_name",
+      "title": "character_darkmercia_title",
+      "faction": "guardian",
+      "factionIndex": 1,
+      "portrait": {
+        "neutral": "portraits/commanders/small/darkmercia_portrait_small.png",
+        "happy": "portraits/commanders/small/darkmercia_portrait_happy.png",
+        "sad": "portraits/commanders/small/darkmercia_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/darkmercia_portrait",
+      "portraitOffset": [0, -45],
+      "namePlate": "ui/character_select/charlabel/charlabel_darkmercia.png",
+      "themeSong": "music/darkmercia",
+      "skinColour": "typeII",
+      "unitClassId": "commander_darkmercia",
+      "selectionSound": "darkmercia/darkmerciaShoutDarknessFalls",
+      "dialogueBoxVoice": "ui/dialogue/textScrollDarkMercia",
+      "unlock": "character_darkmercia",
+      "deathFade": false
+    },
+    "shadow_vesper": {
+      "id": "shadow_vesper",
+      "name": "unit_class_name_shadow_sister",
+      "faction": "outlaw",
+      "factionIndex": 2,
+      "playable": false,
+      "hidden": true,
+      "portrait": {
+        "neutral": "portraits/commanders/small/vesper_portrait_small.png",
+        "happy": "portraits/commanders/small/vesper_portrait_happy.png",
+        "sad": "portraits/commanders/small/vesper_portrait_sad.png",
+        "extra": "portraits/commanders/small/vesper_portrait_angry.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/vesper_portrait",
+      "portraitOffset": [-10, -40],
+      "namePlate": "ui/character_select/charlabel/charlabel_outlaw.png",
+      "themeSong": "music/vesper",
+      "skinColour": "typeVI",
+      "unitClassId": "shadow_vesper",
+      "selectionSound": "vesper/vesperShoutNoSmokeWithoutFire",
+      "dialogueBoxVoice": "ui/dialogue/textScrollVesper"
+    },
+    "vesper_boss": {
+      "id": "vesper_boss",
+      "name": "character_vesper_boss_name",
+      "faction": "outlaw",
+      "factionIndex": 2,
+      "playable": false,
+      "hidden": true,
+      "portrait": {
+        "neutral": "portraits/commanders/small/vesper_portrait_small.png",
+        "happy": "portraits/commanders/small/vesper_portrait_happy.png",
+        "sad": "portraits/commanders/small/vesper_portrait_sad.png",
+        "extra": "portraits/commanders/small/vesper_portrait_angry.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/vesper_portrait",
+      "portraitOffset": [-10, -40],
+      "namePlate": "ui/character_select/charlabel/charlabel_outlaw.png",
+      "themeSong": "music/vesper",
+      "skinColour": "typeVI",
+      "unitClassId": "commander_vesper_boss",
+      "selectionSound": "vesper/vesperShoutNoSmokeWithoutFire",
+      "dialogueBoxVoice": "ui/dialogue/textScrollVesper"
+    },
+    "vesper": {
+      "id": "vesper",
+      "name": "character_vesper_name",
+      "title": "character_vesper_title",
+      "faction": "outlaw",
+      "factionIndex": 2,
+      "portrait": {
+        "neutral": "portraits/commanders/small/vesper_portrait_small.png",
+        "happy": "portraits/commanders/small/vesper_portrait_happy.png",
+        "sad": "portraits/commanders/small/vesper_portrait_sad.png",
+        "extra": "portraits/commanders/small/vesper_portrait_angry.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/vesper_portrait",
+      "portraitOffset": [10, 5],
+      "namePlate": "ui/character_select/charlabel/charlabel_outlaw.png",
+      "themeSong": "music/vesper",
+      "skinColour": "typeVI",
+      "unitClassId": "commander_vesper",
+      "selectionSound": "vesper/vesperShoutNoSmokeWithoutFire",
+      "dialogueBoxVoice": "ui/dialogue/textScrollVesper",
+      "lockedInDemo": true
+    },
+    "caesar": {
+      "id": "caesar",
+      "name": "character_caesar_name",
+      "title": "character_caesar_title",
+      "faction": "cherrystone",
+      "factionIndex": 2,
+      "portrait": {
+        "neutral": "portraits/commanders/small/caesar_portrait_small.png",
+        "happy": "portraits/commanders/small/caesar_portrait_happy.png",
+        "sad": "portraits/commanders/small/caesar_portrait_sad.png",
+        "extra": "portraits/commanders/small/caesar_portrait_extra.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/caesar_portrait",
+      "portraitOffset": [-5, 5],
+      "namePlate": "ui/character_select/charlabel/charlabel_caesar.png",
+      "themeSong": "music/caesar",
+      "skinColour": "typeII",
+      "unitClassId": "commander_caesar",
+      "selectionSound": "caesar/caesarSelect",
+      "dialogueBoxVoice": "ui/dialogue/textScrollCaesar"
+    },
+    "emeric": {
+      "id": "emeric",
+      "name": "character_emeric_name",
+      "title": "character_emeric_title",
+      "faction": "cherrystone",
+      "factionIndex": 1,
+      "portrait": {
+        "neutral": "portraits/commanders/small/emeric_portrait_small.png",
+        "happy": "portraits/commanders/small/emeric_portrait_happy.png",
+        "sad": "portraits/commanders/small/emeric_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/emeric_portrait",
+      "portraitOffset": [0, -25],
+      "namePlate": "ui/character_select/charlabel/charlabel_emeric.png",
+      "themeSong": "music/emeric",
+      "skinColour": "typeVI",
+      "unitClassId": "commander_emeric",
+      "selectionSound": "emeric/emericShoutEducatedChoice",
+      "dialogueBoxVoice": "ui/dialogue/textScrollEmeric"
+    },
+    "greenfinger": {
+      "id": "greenfinger",
+      "name": "character_greenfinger_name",
+      "title": "character_greenfinger_title",
+      "faction": "floran",
+      "factionIndex": 0,
+      "portrait": {
+        "neutral": "portraits/commanders/small/greenfinger_portrait_small.png",
+        "happy": "portraits/commanders/small/greenfinger_portrait_happy.png",
+        "sad": "portraits/commanders/small/greenfinger_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/greenfinger_portrait",
+      "portraitOffset": [0, -25],
+      "namePlate": "ui/character_select/charlabel/charlabel_greenfinger.png",
+      "themeSong": "music/greenfinger",
+      "skinColour": "green",
+      "unitClassId": "commander_greenfinger",
+      "selectionSound": "greenfinger/greenfingerShoutOfCourse",
+      "dialogueBoxVoice": "ui/dialogue/textScrollGreenfinger"
+    },
+    "koji": {
+      "id": "koji",
+      "name": "character_koji_name",
+      "title": "character_koji_title",
+      "faction": "heavensong",
+      "factionIndex": 2,
+      "portrait": {
+        "neutral": "portraits/commanders/small/koji_portrait_small.png",
+        "happy": "portraits/commanders/small/koji_portrait_happy.png",
+        "sad": "portraits/commanders/small/koji_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/koji_portrait",
+      "portraitOffset": [30, 5],
+      "namePlate": "ui/character_select/charlabel/charlabel_koji.png",
+      "themeSong": "music/koji",
+      "skinColour": "typeIII",
+      "unitClassId": "commander_koji",
+      "selectionSound": "koji/kojiShoutThisWillBeAwesome",
+      "dialogueBoxVoice": "ui/dialogue/textScrollKoji"
+    },
+    "mercia": {
+      "id": "mercia",
+      "name": "character_mercia_name",
+      "title": "character_mercia_title",
+      "faction": "cherrystone",
+      "factionIndex": 0,
+      "portrait": {
+        "neutral": "portraits/commanders/small/mercia_portrait_small.png",
+        "happy": "portraits/commanders/small/mercia_portrait_happy.png",
+        "sad": "portraits/commanders/small/mercia_portrait_sad.png",
+        "extra": "portraits/commanders/small/mercia_portrait_determined.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/mercia_portrait",
+      "portraitOffset": [0, 7],
+      "namePlate": "ui/character_select/charlabel/charlabel_mercia.png",
+      "themeSong": "music/mercia",
+      "skinColour": "typeII",
+      "unitClassId": "commander_mercia",
+      "selectionSound": "mercia/merciaShoutWontLetYouDown",
+      "dialogueBoxVoice": "ui/dialogue/textScrollMercia"
+    },
+    "nuru": {
+      "id": "nuru",
+      "name": "character_nuru_name",
+      "title": "character_nuru_title",
+      "faction": "floran",
+      "factionIndex": 1,
+      "portrait": {
+        "neutral": "portraits/commanders/small/nuru_portrait_small.png",
+        "happy": "portraits/commanders/small/nuru_portrait_happy.png",
+        "sad": "portraits/commanders/small/nuru_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/nuru_portrait",
+      "portraitOffset": [-25, -40],
+      "namePlate": "ui/character_select/charlabel/charlabel_nuru.png",
+      "themeSong": "music/nuru",
+      "skinColour": "green",
+      "unitClassId": "commander_nuru",
+      "selectionSound": "nuru/nuruShoutBigFight",
+      "dialogueBoxVoice": "ui/dialogue/textScrollNuru"
+    },
+    "ragna": {
+      "id": "ragna",
+      "name": "character_ragna_name",
+      "title": "character_ragna_title",
+      "faction": "felheim",
+      "factionIndex": 1,
+      "portrait": {
+        "neutral": "portraits/commanders/small/ragna_portrait_small.png",
+        "happy": "portraits/commanders/small/ragna_portrait_happy.png",
+        "sad": "portraits/commanders/small/ragna_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/ragna_portrait",
+      "portraitOffset": [0, 2],
+      "namePlate": "ui/character_select/charlabel/charlabel_ragna.png",
+      "themeSong": "music/ragna",
+      "skinColour": "typeI",
+      "unitClassId": "commander_ragna",
+      "selectionSound": "ragna/ragnaShoutThisSucks",
+      "dialogueBoxVoice": "ui/dialogue/textScrollRagna"
+    },
+    "ryota": {
+      "id": "ryota",
+      "name": "character_ryota_name",
+      "title": "character_ryota_title",
+      "faction": "heavensong",
+      "factionIndex": 1,
+      "portrait": {
+        "neutral": "portraits/commanders/small/ryota_portrait_small.png",
+        "happy": "portraits/commanders/small/ryota_portrait_happy.png",
+        "sad": "portraits/commanders/small/ryota_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/ryota_portrait",
+      "portraitOffset": [0, -5],
+      "namePlate": "ui/character_select/charlabel/charlabel_ryota.png",
+      "themeSong": "music/ryota",
+      "skinColour": "typeIII",
+      "unitClassId": "commander_ryota",
+      "selectionSound": "ryota/ryotaShoutIWillNotBeDefeated",
+      "dialogueBoxVoice": "ui/dialogue/textScrollRyota"
+    },
+    "sedge": {
+      "id": "sedge",
+      "name": "character_sedge_name",
+      "title": "character_sedge_title",
+      "faction": "floran",
+      "factionIndex": 2,
+      "portrait": {
+        "neutral": "portraits/commanders/small/sedge_portrait_small.png",
+        "happy": "portraits/commanders/small/sedge_portrait_happy.png",
+        "sad": "portraits/commanders/small/sedge_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/sedge_portrait",
+      "portraitOffset": [15, 0],
+      "namePlate": "ui/character_select/charlabel/charlabel_sedge.png",
+      "themeSong": "music/sedge",
+      "skinColour": "green",
+      "unitClassId": "commander_sedge",
+      "selectionSound": "sedge/sedgeShoutTheHuntBegins",
+      "dialogueBoxVoice": "ui/dialogue/textScrollSedge"
+    },
+    "sigrid": {
+      "id": "sigrid",
+      "name": "character_sigrid_name",
+      "title": "character_sigrid_title",
+      "faction": "felheim",
+      "factionIndex": 2,
+      "portrait": {
+        "neutral": "portraits/commanders/small/sigrid_portrait_small.png",
+        "happy": "portraits/commanders/small/sigrid_portrait_happy.png",
+        "sad": "portraits/commanders/small/sigrid_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/sigrid_portrait",
+      "portraitOffset": [0, 11],
+      "namePlate": "ui/character_select/charlabel/charlabel_sigrid.png",
+      "themeSong": "music/sigrid",
+      "skinColour": "typeI",
+      "unitClassId": "commander_sigrid",
+      "selectionSound": "sigrid/sigridShoutCalmMortalsDieEasily",
+      "dialogueBoxVoice": "ui/dialogue/textScrollSigrid"
+    },
+    "tenri": {
+      "id": "tenri",
+      "name": "character_tenri_name",
+      "title": "character_tenri_title",
+      "faction": "heavensong",
+      "factionIndex": 0,
+      "portrait": {
+        "neutral": "portraits/commanders/small/tenri_portrait_small.png",
+        "happy": "portraits/commanders/small/tenri_portrait_happy.png",
+        "sad": "portraits/commanders/small/tenri_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/tenri_portrait",
+      "portraitOffset": [0, -15],
+      "namePlate": "ui/character_select/charlabel/charlabel_tenri.png",
+      "themeSong": "music/tenri",
+      "skinColour": "typeIII",
+      "unitClassId": "commander_tenri",
+      "selectionSound": "tenri/tenriShoutImNotHereToPlay",
+      "dialogueBoxVoice": "ui/dialogue/textScrollTenri"
+    },
+    "twins": {
+      "id": "twins",
+      "name": "character_twins_name",
+      "title": "character_twins_title",
+      "faction": "outlaw",
+      "factionIndex": 1,
+      "portrait": {
+        "neutral": "portraits/commanders/small/twins_portrait_small.png",
+        "happy": "portraits/commanders/small/twins_portrait_happy.png",
+        "sad": "portraits/commanders/small/twins_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/twins_portrait",
+      "portraitOffset": [15, 0],
+      "namePlate": "ui/character_select/charlabel/charlabel_outlaw.png",
+      "themeSong": "music/twins",
+      "skinColour": "typeVI",
+      "unitClassId": "commander_twins",
+      "selectionSound": "twins/twinsSelect",
+      "dialogueBoxVoice": "ui/dialogue/textScrollTwins"
+    },
+    "valder": {
+      "id": "valder",
+      "name": "character_valder_name",
+      "title": "character_valder_title",
+      "faction": "felheim",
+      "factionIndex": 0,
+      "portrait": {
+        "neutral": "portraits/commanders/small/valder_portrait_small.png",
+        "happy": "portraits/commanders/small/valder_portrait_happy.png",
+        "sad": "portraits/commanders/small/valder_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/valder_portrait",
+      "portraitOffset": [0, -26],
+      "namePlate": "ui/character_select/charlabel/charlabel_valder.png",
+      "themeSong": "music/valder",
+      "skinColour": "typeIV",
+      "unitClassId": "commander_valder",
+      "selectionSound": "valder/valderFelheimRises",
+      "dialogueBoxVoice": "ui/dialogue/textScrollValder"
+    },
+    "wulfar": {
+      "id": "wulfar",
+      "name": "character_wulfar_name",
+      "title": "character_wulfar_title",
+      "faction": "outlaw",
+      "factionIndex": 0,
+      "portrait": {
+        "neutral": "portraits/commanders/small/wulfar_portrait_small.png",
+        "happy": "portraits/commanders/small/wulfar_portrait_happy.png",
+        "sad": "portraits/commanders/small/wulfar_portrait_sad.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/wulfar_portrait",
+      "portraitOffset": [0, -45],
+      "namePlate": "ui/character_select/charlabel/charlabel_outlaw.png",
+      "themeSong": "music/wulfar",
+      "skinColour": "typeII",
+      "unitClassId": "commander_wulfar",
+      "selectionSound": "wulfar/wulfarShoutUpForTheTask",
+      "dialogueBoxVoice": "ui/dialogue/textScrollWulfar"
+    },
+    "mercival": {
+      "id": "mercival",
+      "name": "character_mercival_name",
+      "title": "character_mercival_title",
+      "faction": "cherrystone",
+      "factionIndex": 3,
+      "portrait": {
+        "neutral": "portraits/commanders/small/mercival_portrait_small.png",
+        "happy": "portraits/commanders/small/mercival_portrait_happy.png",
+        "sad": "portraits/commanders/small/mercival_portrait_sad.png",
+        "extra": "portraits/commanders/small/mercival_portrait_ghost.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/mercival_portrait",
+      "namePlate": "ui/character_select/charlabel/charlabel_mercival.png",
+      "themeSong": "music/mercival",
+      "skinColour": "typeII",
+      "unitClassId": "commander_mercival",
+      "selectionSound": "mercival/mercivalShoutIAmWithYou",
+      "dialogueBoxVoice": "ui/dialogue/textScrollMercival",
+      "unlock": "character_mercival"
+    },
+    "generic_soldier": {
+      "id": "generic_soldier",
+      "name": "character_generic_soldier_name",
+      "faction": "cherrystone",
+      "playable": false,
+      "hidden": true,
+      "portrait": {
+        "neutral": "portraits/commanders/small/soldier_portrait_small.png",
+        "happy": "portraits/commanders/small/soldier_portrait_happy.png",
+        "sad": "portraits/commanders/small/soldier_portrait_sad.png",
+        "extra": "portraits/commanders/small/soldier_portrait_extra.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/cherrystone_portrait",
+      "themeSong": "music/hostile",
+      "skinColour": "typeVI",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    },
+    "generic_soldier3": {
+      "id": "generic_soldier3",
+      "name": "character_generic_soldier3_name",
+      "faction": "cherrystone",
+      "playable": false,
+      "hidden": true,
+      "portrait": {
+        "neutral": "portraits/commanders/small/mage_portrait.png",
+        "happy": "portraits/commanders/small/merfolk_portrait.png",
+        "sad": "portraits/commanders/small/thief_portrait.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/cherrystone_portrait",
+      "themeSong": "music/hostile",
+      "skinColour": "typeII",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    },
+    "generic_villager": {
+      "id": "generic_villager",
+      "name": "unit_class_name_villager",
+      "faction": "cherrystone",
+      "playable": false,
+      "hidden": true,
+      "portrait": {
+        "neutral": "portraits/commanders/small/villager_portrait_small.png",
+        "happy": "portraits/commanders/small/villager_portrait_happy.png",
+        "sad": "portraits/commanders/small/villager_portrait_sad.png",
+        "extra": "portraits/commanders/small/villager_felheim_portrait.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/cherrystone_portrait",
+      "themeSong": "music/hostile",
+      "skinColour": "typeII",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    },
+    "generic_soldier2": {
+      "id": "generic_soldier2",
+      "name": "character_generic_soldier2_name",
+      "faction": "heavensong",
+      "playable": false,
+      "hidden": true,
+      "portrait": {
+        "neutral": "portraits/commanders/small/soldier2_portrait_small.png",
+        "happy": "portraits/commanders/small/soldier2_portrait_happy.png",
+        "sad": "portraits/commanders/small/felheim_soldier_portrait.png",
+        "extra": "portraits/commanders/small/floran_soldier_portrait.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/cherrystone_portrait",
+      "themeSong": "music/hostile",
+      "skinColour": "typeII",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    },
+    "errol": {
+      "id": "errol",
+      "name": "character_errol_name",
+      "title": "character_errol_title",
+      "faction": "outlaw",
+      "playable": false,
+      "hideInMapEditor": true,
+      "portrait": {
+        "neutral": "portraits/commanders/small/errol_portrait_small.png",
+        "happy": "portraits/commanders/small/errol_portrait_happy.png",
+        "sad": "portraits/commanders/small/errol_portrait_sad.png",
+        "extra": "portraits/commanders/small/errol_portrait_scared.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/errol_portrait",
+      "portraitOffset": [15, 0],
+      "namePlate": "ui/character_select/charlabel/charlabel_outlaw.png",
+      "themeSong": "music/twins",
+      "skinColour": "typeVI",
+      "unitClassId": "commander_errol",
+      "selectionSound": "mercia/merciaShoutWontLetYouDown",
+      "dialogueBoxVoice": "ui/dialogue/textScrollTwins"
+    },
+    "orla": {
+      "id": "orla",
+      "name": "character_orla_name",
+      "title": "character_orla_title",
+      "faction": "outlaw",
+      "playable": false,
+      "hideInMapEditor": true,
+      "portrait": {
+        "neutral": "portraits/commanders/small/orla_portrait_small.png",
+        "happy": "portraits/commanders/small/orla_portrait_happy.png",
+        "sad": "portraits/commanders/small/orla_portrait_sad.png",
+        "extra": "portraits/commanders/small/orla_portrait_extra.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/orla_portrait",
+      "portraitOffset": [15, 0],
+      "namePlate": "ui/character_select/charlabel/charlabel_outlaw.png",
+      "themeSong": "music/twins",
+      "skinColour": "typeVI",
+      "unitClassId": "commander_orla",
+      "selectionSound": "mercia/merciaShoutWontLetYouDown",
+      "dialogueBoxVoice": "ui/dialogue/textScrollOrla"
+    },
+    "generic_outlaw": {
+      "id": "generic_outlaw",
+      "name": "character_generic_outlaw_name",
+      "faction": "outlaw",
+      "playable": false,
+      "portrait": {
+        "neutral": "portraits/commanders/small/outlaw_portrait_small.png",
+        "happy": "portraits/commanders/small/outlaw_portrait_small.png",
+        "sad": "portraits/commanders/small/outlaw_portrait_small.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/outlaw_portrait",
+      "portraitOffset": [0, 20],
+      "themeSong": "music/hostile",
+      "skinColour": "typeII",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    },
+    "generic_cherrystone": {
+      "id": "generic_cherrystone",
+      "name": "character_generic_cherrystone_name",
+      "faction": "cherrystone",
+      "playable": false,
+      "portrait": {
+        "neutral": "portraits/commanders/small/cherrystone_portrait_small.png",
+        "happy": "portraits/commanders/small/cherrystone_portrait_small.png",
+        "sad": "portraits/commanders/small/cherrystone_portrait_small.png",
+        "extra": "portraits/commanders/small/cherrystone_portrait_small.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/cherrystone_portrait",
+      "themeSong": "music/hostile",
+      "skinColour": "typeIV",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    },
+    "generic_felheim": {
+      "id": "generic_felheim",
+      "name": "character_generic_felheim_name",
+      "faction": "felheim",
+      "playable": false,
+      "portrait": {
+        "neutral": "portraits/commanders/small/felheim_portrait_small.png",
+        "happy": "portraits/commanders/small/felheim_portrait_small.png",
+        "sad": "portraits/commanders/small/felheim_portrait_small.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/felheim_portrait",
+      "themeSong": "music/hostile",
+      "skinColour": "typeI",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    },
+    "generic_floran": {
+      "id": "generic_floran",
+      "name": "character_generic_floran_name",
+      "faction": "floran",
+      "playable": false,
+      "portrait": {
+        "neutral": "portraits/commanders/small/floran_portrait_small.png",
+        "happy": "portraits/commanders/small/floran_portrait_small.png",
+        "sad": "portraits/commanders/small/floran_portrait_small.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/floran_portrait",
+      "themeSong": "music/hostile",
+      "skinColour": "green",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    },
+    "generic_heavensong": {
+      "id": "generic_heavensong",
+      "name": "character_generic_heavensong_name",
+      "faction": "heavensong",
+      "playable": false,
+      "portrait": {
+        "neutral": "portraits/commanders/small/heavensong_portrait_small.png",
+        "happy": "portraits/commanders/small/heavensong_portrait_small.png",
+        "sad": "portraits/commanders/small/heavensong_portrait_small.png"
+      },
+      "cutscenePortrait": "portraits/commanders/big/heavensong_portrait",
+      "themeSong": "music/hostile",
+      "skinColour": "typeIII",
+      "unitClassId": "knight",
+      "dialogueBoxVoice": "ui/dialogue/textScroll"
+    }
+  },
+  "verbs": {
+    "attack": {
+      "id": "attack",
+      "icon": "ui/icons/unit_action_icon_attack.png",
+      "name": "ui_unit_verbs_attack",
+      "isBasicAttack": true,
+      "targetColour": "attack_target",
+      "targetOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/attack"
+    },
+    "attack_rifleman": {
+      "id": "attack_rifleman",
+      "icon": "ui/icons/unit_action_icon_shoot.png",
+      "name": "ui_unit_verbs_attack",
+      "isBasicAttack": true,
+      "targetColour": "attack_target",
+      "targetOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/attack_rifleman"
+    },
+    "groove_tornado": {
+      "id": "groove_tornado",
+      "icon": "ui/icons/grooves/unit_action_icon_diplomacy.png",
+      "name": "groove_name_tornado",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetDisplayColour": "target",
+      "targetDisplayOutlineColour": "target_outline",
+      "preExecute": true,
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/groove_tornado"
+    },
+    "groove_golf": {
+      "id": "groove_golf",
+      "icon": "ui/icons/grooves/unit_action_icon_hammer.png",
+      "name": "groove_name_golf",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetDisplayColour": "target",
+      "targetDisplayOutlineColour": "target_outline",
+      "preExecute": true,
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/groove_golf"
+    },
+    "groove_fish": {
+      "id": "groove_fish",
+      "icon": "ui/icons/grooves/unit_action_icon_fish.png",
+      "name": "groove_name_fish",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "preExecute": true,
+      "scriptName": "verbs/groove_fish"
+    },
+    "groove_convert": {
+      "id": "groove_convert",
+      "icon": "ui/icons/grooves/unit_action_icon_convert.png",
+      "name": "groove_name_convert",
+      "targetColour": "attack_target",
+      "targetOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/groove_convert"
+    },
+    "groove_diplomacy": {
+      "id": "groove_diplomacy",
+      "icon": "ui/icons/grooves/unit_action_icon_diplomacy.png",
+      "name": "groove_name_diplomacy",
+      "targetColour": "attack_target",
+      "targetOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/groove_diplomacy"
+    },
+    "groove_sadistic_rush": {
+      "id": "groove_sadistic_rush",
+      "icon": "ui/icons/grooves/unit_action_icon_sadistic.png",
+      "name": "groove_name_sadistic_rush",
+      "targetColour": "attack_target",
+      "targetOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/groove_sadistic_rush"
+    },
+    "groove_vampiric_touch": {
+      "id": "groove_vampiric_touch",
+      "icon": "ui/icons/grooves/unit_action_icon_vampiric.png",
+      "name": "groove_name_vampiric_touch",
+      "targetColour": "attack_target",
+      "targetOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/groove_vampiric_touch"
+    },
+    "capture": {
+      "id": "capture",
+      "icon": "ui/icons/unit_action_icon_capture.png",
+      "name": "ui_unit_verbs_capture",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/capture"
+    },
+    "deposit": {
+      "id": "deposit",
+      "icon": "ui/icons/unit_action_icon_deposit.png",
+      "name": "ui_unit_verbs_deposit",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/deposit"
+    },
+    "load": {
+      "id": "load",
+      "icon": "ui/icons/unit_action_icon_load.png",
+      "name": "ui_unit_verbs_load",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/load"
+    },
+    "bypass_gate": {
+      "id": "bypass_gate",
+      "icon": "ui/icons/unit_action_icon_steal.png",
+      "name": "ui_unit_verbs_bypass_gate",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/bypass_gate"
+    },
+    "heist": {
+      "id": "heist",
+      "icon": "ui/icons/unit_action_icon_steal.png",
+      "name": "ui_unit_verbs_heist",
+      "targetColour": "attack_target",
+      "targetOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/steal_heist"
+    },
+    "steal": {
+      "id": "steal",
+      "icon": "ui/icons/unit_action_icon_steal.png",
+      "name": "ui_unit_verbs_steal",
+      "targetColour": "attack_target",
+      "targetOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "directTarget": true,
+      "scriptName": "verbs/steal_normal"
+    },
+    "cancel": {
+      "id": "cancel",
+      "icon": "ui/icons/unit_action_icon_cancel.png",
+      "name": "ui_unit_verbs_cancel",
+      "scriptName": "verbs/cancel",
+      "executable": false,
+      "universal": true
+    },
+    "reinforce": {
+      "id": "reinforce",
+      "icon": "ui/icons/unit_action_icon_capture.png",
+      "name": "ui_unit_verbs_reinforce",
+      "scriptName": "verbs/reinforce",
+      "hasResourceCost": true
+    },
+    "spell_heal": {
+      "id": "spell_heal",
+      "icon": "ui/icons/grooves/unit_action_icon_heal2.png",
+      "name": "ui_unit_verbs_spell_heal",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "heal_outline",
+      "scriptName": "verbs/spell_heal",
+      "targetted": true,
+      "splashRadius": 1,
+      "hasResourceCost": true
+    },
+    "spell_hex": {
+      "id": "spell_hex",
+      "icon": "ui/icons/grooves/unit_action_icon_hex.png",
+      "name": "ui_unit_verbs_spell_hex",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "attack_target_outline",
+      "scriptName": "verbs/spell_hex",
+      "targetted": true,
+      "splashRadius": 4,
+      "hasResourceCost": true
+    },
+    "groove_drone_bombs": {
+      "id": "groove_drone_bombs",
+      "icon": "ui/icons/grooves/unit_action_icon_bomb.png",
+      "name": "groove_name_drone_bombs",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetDisplayColour": "attack_target",
+      "targetDisplayOutlineColour": "attack_target_outline",
+      "preExecute": true,
+      "scriptName": "verbs/groove_drone_bombs"
+    },
+    "groove_dash": {
+      "id": "groove_dash",
+      "icon": "ui/icons/grooves/unit_action_icon_dash.png",
+      "name": "groove_name_dash",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetDisplayColour": "attack_target",
+      "targetDisplayOutlineColour": "attack_target_outline",
+      "preExecute": true,
+      "scriptName": "verbs/groove_dash"
+    },
+    "groove_vine_wall": {
+      "id": "groove_vine_wall",
+      "icon": "ui/icons/grooves/unit_action_icon_vine.png",
+      "name": "groove_name_vine_wall",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetDisplayColour": "attack_target",
+      "targetDisplayOutlineColour": "attack_target_outline",
+      "preExecute": true,
+      "scriptName": "verbs/groove_vine_wall"
+    },
+    "unload": {
+      "id": "unload",
+      "icon": "ui/icons/unit_action_icon_drop.png",
+      "name": "ui_unit_verbs_unload",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetDisplayColour": "attack_target",
+      "targetDisplayOutlineColour": "attack_target_outline",
+      "preExecute": true,
+      "scriptName": "verbs/unload"
+    },
+    "groove_teleport_beam": {
+      "id": "groove_teleport_beam",
+      "icon": "ui/icons/grooves/unit_action_icon_teleport.png",
+      "name": "groove_name_teleport_beam",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "preExecute": true,
+      "scriptName": "verbs/groove_teleport_beam"
+    },
+    "death_give_gold": {
+      "id": "death_give_gold",
+      "icon": "ui/icons/grooves/ui_unit_verbs_deposit.png",
+      "name": "ui_unit_verbs_death_give_gold",
+      "scriptName": "verbs/death_give_gold"
+    },
+    "reload": {
+      "id": "reload",
+      "icon": "ui/icons/unit_action_icon_reload.png",
+      "name": "ui_unit_verbs_reload",
+      "scriptName": "verbs/reload"
+    },
+    "merge": {
+      "id": "merge",
+      "icon": "ui/icons/unit_action_icon_supply.png",
+      "name": "ui_unit_verbs_supply",
+      "scriptName": "verbs/merge"
+    },
+    "wait": {
+      "id": "wait",
+      "icon": "ui/icons/unit_action_icon_wait.png",
+      "name": "ui_unit_verbs_wait",
+      "scriptName": "verbs/wait"
+    },
+    "death_area_heal": {
+      "id": "death_area_heal",
+      "icon": "ui/icons/grooves/unit_action_icon_bomb.png",
+      "name": "ui_unit_verbs_area_heal",
+      "splashOutlineColour": "attack_target_outline",
+      "scriptName": "verbs/death_area_heal"
+    },
+    "death_explode": {
+      "id": "death_explode",
+      "icon": "ui/icons/grooves/unit_action_icon_bomb.png",
+      "name": "ui_unit_verbs_explode",
+      "splashOutlineColour": "attack_target_outline",
+      "scriptName": "verbs/death_explode"
+    },
+    "death_smoke_producer": {
+      "id": "death_smoke_producer",
+      "icon": "ui/icons/grooves/unit_action_icon_bomb.png",
+      "name": "ui_unit_verbs_death_smoke_producer",
+      "splashOutlineColour": "attack_target_outline",
+      "scriptName": "verbs/death_smoke_producer"
+    },
+    "explode": {
+      "id": "explode",
+      "icon": "ui/icons/grooves/unit_action_icon_bomb.png",
+      "name": "ui_unit_verbs_explode",
+      "splashOutlineColour": "attack_target_outline",
+      "scriptName": "verbs/explode"
+    },
+    "death_area_damage": {
+      "id": "death_area_damage",
+      "icon": "ui/icons/grooves/unit_action_icon_yin.png",
+      "name": "ui_unit_verbs_area_heal",
+      "splashOutlineColour": "attack_target_outline",
+      "scriptName": "verbs/death_area_damage"
+    },
+    "groove_cherrystone_defence": {
+      "id": "groove_cherrystone_defence",
+      "icon": "ui/icons/grooves/unit_action_icon_crystals.png",
+      "name": "groove_name_cherrystone_defence",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "target_outline",
+      "splashRadius": 3,
+      "targetted": true,
+      "scriptName": "verbs/groove_cherrystone_defence"
+    },
+    "groove_heal_aura": {
+      "id": "groove_heal_aura",
+      "icon": "ui/icons/grooves/unit_action_icon_heal.png",
+      "name": "groove_name_heal_aura",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "heal_outline",
+      "targetted": true,
+      "splashRadius": 3,
+      "scriptName": "verbs/groove_heal_aura"
+    },
+    "groove_second_wind": {
+      "id": "groove_second_wind",
+      "icon": "ui/icons/grooves/unit_action_icon_inspire.png",
+      "name": "groove_name_second_wind",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "target_outline",
+      "targetted": true,
+      "splashRadius": 1,
+      "scriptName": "verbs/groove_second_wind"
+    },
+    "groove_drain_aura": {
+      "id": "groove_drain_aura",
+      "icon": "ui/icons/grooves/unit_action_icon_ruin.png",
+      "name": "groove_name_drain_aura",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "target_outline",
+      "targetted": true,
+      "splashRadius": 3,
+      "scriptName": "verbs/groove_drain_aura"
+    },
+    "groove_splash_jump": {
+      "id": "groove_splash_jump",
+      "icon": "ui/icons/grooves/unit_action_icon_shield.png",
+      "name": "groove_name_splash_jump",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "attack_target_outline",
+      "targetted": true,
+      "splashRadius": 3,
+      "scriptName": "verbs/groove_splash_jump"
+    },
+    "groove_smoke_screen": {
+      "id": "groove_smoke_screen",
+      "icon": "ui/icons/grooves/unit_action_icon_smoke.png",
+      "name": "groove_name_smoke_screen",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "heal_outline",
+      "splashRadius": 2,
+      "targetted": true,
+      "scriptName": "verbs/groove_smoke_screen"
+    },
+    "groove_area_heal": {
+      "id": "groove_area_heal",
+      "icon": "ui/icons/grooves/unit_action_icon_yang.png",
+      "name": "groove_name_area_heal",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "heal_outline",
+      "splashRadius": 3,
+      "targetted": true,
+      "scriptName": "verbs/groove_area_heal"
+    },
+    "groove_area_damage": {
+      "id": "groove_area_damage",
+      "icon": "ui/icons/grooves/unit_action_icon_yin.png",
+      "name": "groove_name_area_damage",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "splashOutlineColour": "attack_target_outline",
+      "splashRadius": 3,
+      "targetted": true,
+      "scriptName": "verbs/groove_area_damage"
+    },
+    "groove_raise_dead": {
+      "id": "groove_raise_dead",
+      "icon": "ui/icons/grooves/unit_action_icon_dead.png",
+      "name": "groove_name_raise_dead",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetted": true,
+      "scriptName": "verbs/groove_raise_dead"
+    },
+    "recruit": {
+      "id": "recruit",
+      "icon": "ui/icons/unit_action_icon_cancel.png",
+      "name": "ui_unit_verbs_recruit",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetted": true,
+      "scriptName": "verbs/recruit"
+    },
+    "reposition_vine": {
+      "id": "reposition_vine",
+      "icon": "ui/icons/unit_action_icon_reposition.png",
+      "name": "ui_unit_verbs_reposition_vine",
+      "targetColour": "target",
+      "targetOutlineColour": "target_outline",
+      "targetted": true,
+      "scriptName": "verbs/reposition_vine"
+    },
+    "ambushed": {
+      "id": "ambushed",
+      "icon": "ui/icons/unit_action_icon_cancel.png",
+      "name": "ui_unit_verbs_ambushed",
+      "scriptName": "verbs/ambushed",
+      "universal": true
+    }
+  },
+  "weapons": {
+    "musket": {
+      "id": "musket",
+      "rangeMin": 1,
+      "rangeMax": 9,
+      "canMoveAndAttack": false,
+      "horizontalAndVerticalOnly": true,
+      "horizontalAndVerticalExtraWidth": 1,
+      "terrainExclusion": ["forest"],
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 0.85,
+        "soldier": 1.2,
+        "villager": 1.2,
+        "dog": 0.2,
+        "spearman": 1,
+        "mage": 1,
+        "rifleman": 0.85,
+        "thief": 1,
+        "knight": 0.1,
+        "ballista": 0.05,
+        "trebuchet": 0.05,
+        "giant": 0.05,
+        "wagon": 0.1,
+        "harpy": 0.6,
+        "witch": 0.6,
+        "dragon": 0.05,
+        "balloon": 0.15,
+        "merman": 0.75,
+        "warship": 0.1,
+        "harpoonship": 0.15,
+        "turtle": 0.1,
+        "travelboat": 0.2,
+        "structure": 0.05,
+        "commander": 0.05
+      }
+    },
+    "witchSpell": {
+      "id": "witchSpell",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "air": 1
+      },
+      "tagDamage": {
+        "witch": 0.35,
+        "dragon": 0.35,
+        "harpy": 0.6,
+        "balloon": 0.5
+      }
+    },
+    "lightning": {
+      "id": "lightning",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1,
+        "air": 1
+      },
+      "tagDamage": {
+        "archer": 0.85,
+        "soldier": 0.85,
+        "villager": 1,
+        "spearman": 0.75,
+        "dog": 0.8,
+        "wagon": 0.55,
+        "knight": 0.3,
+        "trebuchet": 0.45,
+        "ballista": 0.3,
+        "witch": 1.3,
+        "warship": 0.15,
+        "travelboat": 0.2,
+        "dragon": 0.8,
+        "merman": 0.55,
+        "mage": 0.35,
+        "turtle": 0.2,
+        "harpy": 1.4,
+        "structure": 0.35,
+        "balloon": 1,
+        "giant": 0.2,
+        "commander": 0.2,
+        "rifleman": 0.95,
+        "thief": 0.85
+      }
+    },
+    "ballistaBolt": {
+      "id": "ballistaBolt",
+      "rangeMin": 2,
+      "rangeMax": 6,
+      "canMoveAndAttack": false,
+      "baseDamage": {
+        "air": 1,
+        "land": 1,
+        "water": 1
+      },
+      "tagDamage": {
+        "witch": 0.95,
+        "dragon": 0.85,
+        "harpy": 1.3,
+        "balloon": 1.1,
+        "archer": 0.3,
+        "soldier": 0.4,
+        "villager": 0.4,
+        "dog": 0.5,
+        "spearman": 0.3,
+        "wagon": 0.3,
+        "mage": 0.4,
+        "knight": 0.25,
+        "ballista": 0.2,
+        "trebuchet": 0.1,
+        "giant": 0.1,
+        "structure": 0.3,
+        "commander": 0.1,
+        "rifleman": 0.5,
+        "thief": 0.4,
+        "warship": 0.2,
+        "harpoonship": 0.2,
+        "turtle": 0.2,
+        "travelboat": 0.2,
+        "merman": 0.4
+      }
+    },
+    "bow": {
+      "id": "bow",
+      "rangeMin": 1,
+      "rangeMax": 3,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1,
+        "water": 1,
+        "air": 1
+      },
+      "tagDamage": {
+        "archer": 0.65,
+        "soldier": 0.7,
+        "villager": 0.7,
+        "dog": 0.75,
+        "spearman": 0.6,
+        "balloon": 0.2,
+        "wagon": 0.35,
+        "mage": 0.75,
+        "harpy": 0.3,
+        "knight": 0.4,
+        "witch": 0.2,
+        "ballista": 0.3,
+        "trebuchet": 0.25,
+        "giant": 0.1,
+        "dragon": 0.1,
+        "structure": 0.2,
+        "commander": 0.05,
+        "warship": 0.2,
+        "harpoonship": 0.2,
+        "turtle": 0.2,
+        "travelboat": 0.2,
+        "merman": 0.7,
+        "rifleman": 0.8,
+        "thief": 0.7
+      }
+    },
+    "citybow": {
+      "id": "citybow",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "air": 1,
+        "water": 1,
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 0.3,
+        "soldier": 0.3,
+        "villager": 0.3,
+        "dog": 0.35,
+        "spearman": 0.3,
+        "balloon": 0.2,
+        "wagon": 0.35,
+        "mage": 0.35,
+        "harpy": 0.3,
+        "knight": 0.1,
+        "witch": 0.2,
+        "ballista": 0.25,
+        "trebuchet": 0.2,
+        "giant": 0.05,
+        "dragon": 0.05,
+        "structure": 0.2,
+        "commander": 0.05,
+        "rifleman": 0.4,
+        "thief": 0.3,
+        "warship": 0.2,
+        "harpoonship": 0.2,
+        "turtle": 0.2,
+        "travelboat": 0.2,
+        "merman": 0.3
+      }
+    },
+    "harpyClaws": {
+      "id": "harpyClaws",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1,
+        "air": 1,
+        "water": 1
+      },
+      "tagDamage": {
+        "archer": 0.75,
+        "soldier": 0.65,
+        "villager": 0.65,
+        "spearman": 0.45,
+        "dog": 0.55,
+        "wagon": 0.35,
+        "knight": 0.75,
+        "balloon": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.35,
+        "witch": 0.3,
+        "dragon": 0.35,
+        "mage": 0.25,
+        "harpy": 0.55,
+        "structure": 0.5,
+        "giant": 0.1,
+        "commander": 0.15,
+        "rifleman": 0.75,
+        "thief": 0.65,
+        "warship": 0.45,
+        "harpoonship": 0.25,
+        "turtle": 0.25,
+        "travelboat": 0.35,
+        "merman": 0.65
+      }
+    },
+    "harpoonshipCannon": {
+      "id": "harpoonshipCannon",
+      "rangeMin": 3,
+      "rangeMax": 6,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "air": 1,
+        "water": 1
+      },
+      "tagDamage": {
+        "witch": 0.8,
+        "dragon": 0.7,
+        "harpy": 1.3,
+        "balloon": 0.8,
+        "structure": 0.3,
+        "warship": 0.15,
+        "harpoonship": 0.3,
+        "turtle": 0.75,
+        "merman": 0.3,
+        "travelboat": 0.45
+      }
+    },
+    "bite": {
+      "id": "bite",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 0.75,
+        "soldier": 0.75,
+        "villager": 0.75,
+        "spearman": 0.45,
+        "dog": 0.65,
+        "wagon": 0.3,
+        "knight": 0.1,
+        "trebuchet": 0.35,
+        "ballista": 0.4,
+        "giant": 0.05,
+        "dragon": 100,
+        "merman": 0.75,
+        "mage": 0.55,
+        "structure": 0.2,
+        "commander": 0.15,
+        "rifleman": 1.1,
+        "thief": 0.85
+      }
+    },
+    "caesarBite": {
+      "id": "caesarBite",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "darkmerciaSword": {
+      "id": "darkmerciaSword",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "elodieCello": {
+      "id": "elodieCello",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "emericSpell": {
+      "id": "emericSpell",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "giantSlam": {
+      "id": "giantSlam",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.5,
+        "soldier": 1.3,
+        "villager": 1.3,
+        "spearman": 1,
+        "dog": 1.5,
+        "wagon": 0.75,
+        "knight": 0.85,
+        "trebuchet": 1.05,
+        "ballista": 1,
+        "merman": 1.3,
+        "mage": 1.1,
+        "structure": 0.85,
+        "giant": 0.45,
+        "commander": 0.35,
+        "rifleman": 1.4,
+        "thief": 1.3
+      }
+    },
+    "greenfingerAttack": {
+      "id": "greenfingerAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "kojiAttack": {
+      "id": "kojiAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "lance": {
+      "id": "lance",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1,
+        "soldier": 0.9,
+        "villager": 0.9,
+        "spearman": 0.45,
+        "dog": 1.2,
+        "wagon": 0.55,
+        "knight": 0.55,
+        "trebuchet": 0.8,
+        "ballista": 0.85,
+        "merman": 0.85,
+        "mage": 1.1,
+        "structure": 0.65,
+        "giant": 0.25,
+        "commander": 0.25,
+        "rifleman": 1,
+        "thief": 0.9
+      }
+    },
+    "merciaSword": {
+      "id": "merciaSword",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "mercivalSword": {
+      "id": "mercivalSword",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "nuruAttack": {
+      "id": "nuruAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "ragnaAttack": {
+      "id": "ragnaAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "ryotaAttack": {
+      "id": "ryotaAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "sedgeAttack": {
+      "id": "sedgeAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "sigridAttack": {
+      "id": "sigridAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "spear": {
+      "id": "spear",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 0.7,
+        "soldier": 0.75,
+        "villager": 0.75,
+        "spearman": 0.55,
+        "dog": 0.8,
+        "wagon": 0.45,
+        "knight": 0.7,
+        "trebuchet": 0.5,
+        "ballista": 0.55,
+        "giant": 0.1,
+        "merman": 0.75,
+        "mage": 0.65,
+        "structure": 0.5,
+        "commander": 0.15,
+        "rifleman": 0.85,
+        "thief": 0.75
+      }
+    },
+    "sword": {
+      "id": "sword",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 0.65,
+        "soldier": 0.55,
+        "villager": 0.55,
+        "spearman": 0.35,
+        "dog": 0.45,
+        "wagon": 0.35,
+        "knight": 0.15,
+        "trebuchet": 0.3,
+        "merman": 0.55,
+        "mage": 0.55,
+        "structure": 0.35,
+        "commander": 0.1,
+        "ballista": 0.35,
+        "giant": 0.05,
+        "rifleman": 0.65,
+        "thief": 0.95
+      }
+    },
+    "tenriAttack": {
+      "id": "tenriAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "twinsAttack": {
+      "id": "twinsAttack",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "valderSpell": {
+      "id": "valderSpell",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "vesperWhip": {
+      "id": "vesperWhip",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "wulfarHammer": {
+      "id": "wulfarHammer",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1
+      },
+      "tagDamage": {
+        "archer": 1.3,
+        "soldier": 1.15,
+        "villager": 0.95,
+        "spearman": 0.75,
+        "dog": 1.15,
+        "wagon": 0.7,
+        "knight": 0.55,
+        "trebuchet": 0.55,
+        "ballista": 0.6,
+        "dragon": 0.35,
+        "mage": 0.8,
+        "giant": 0.4,
+        "structure": 0.7,
+        "balloon": 0.55,
+        "harpy": 0.9,
+        "witch": 0.7,
+        "commander": 0.4,
+        "rifleman": 1.05,
+        "thief": 0.95,
+        "warship": 0.55,
+        "harpoonship": 0.45,
+        "turtle": 0.55,
+        "travelboat": 0.6,
+        "merman": 0.95
+      }
+    },
+    "trebuchetSling": {
+      "id": "trebuchetSling",
+      "rangeMin": 2,
+      "rangeMax": 5,
+      "canMoveAndAttack": false,
+      "baseDamage": {
+        "land": 1,
+        "water": 1
+      },
+      "tagDamage": {
+        "archer": 1.2,
+        "soldier": 1,
+        "villager": 1,
+        "spearman": 0.8,
+        "dog": 1.1,
+        "wagon": 0.7,
+        "knight": 0.8,
+        "trebuchet": 0.8,
+        "ballista": 0.85,
+        "mage": 0.9,
+        "structure": 0.85,
+        "giant": 0.55,
+        "commander": 0.25,
+        "warship": 0.75,
+        "harpoonship": 0.65,
+        "turtle": 0.45,
+        "travelboat": 0.8,
+        "merman": 1,
+        "rifleman": 1.1,
+        "thief": 1
+      }
+    },
+    "bident": {
+      "id": "bident",
+      "rangeMin": 1,
+      "rangeMax": 2,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1,
+        "water": 1
+      },
+      "tagDamage": {
+        "archer": 0.35,
+        "soldier": 0.35,
+        "villager": 0.35,
+        "spearman": 0.25,
+        "dog": 0.45,
+        "wagon": 0.35,
+        "knight": 0.15,
+        "trebuchet": 0.2,
+        "mage": 0.45,
+        "structure": 0.15,
+        "commander": 0.1,
+        "ballista": 0.25,
+        "giant": 0.05,
+        "rifleman": 0.45,
+        "thief": 0.35,
+        "warship": 0.05,
+        "harpoonship": 0.3,
+        "travelboat": 0.1,
+        "turtle": 0.1,
+        "merman": 0.25
+      }
+    },
+    "fireBreath": {
+      "id": "fireBreath",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1,
+        "water": 1
+      },
+      "tagDamage": {
+        "archer": 1.4,
+        "soldier": 1.2,
+        "villager": 1.2,
+        "spearman": 1.2,
+        "dog": 1.5,
+        "wagon": 0.8,
+        "knight": 1,
+        "trebuchet": 1.05,
+        "ballista": 1.1,
+        "mage": 0.65,
+        "structure": 0.65,
+        "commander": 0.35,
+        "giant": 0.65,
+        "rifleman": 1.3,
+        "thief": 1.2,
+        "warship": 0.9,
+        "harpoonship": 0.7,
+        "turtle": 0.75,
+        "travelboat": 1.1,
+        "merman": 1.2
+      }
+    },
+    "warshipCannon": {
+      "id": "warshipCannon",
+      "rangeMin": 2,
+      "rangeMax": 4,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "land": 1,
+        "water": 1
+      },
+      "tagDamage": {
+        "archer": 1.2,
+        "soldier": 1,
+        "villager": 1,
+        "spearman": 0.75,
+        "dog": 1.1,
+        "wagon": 0.6,
+        "knight": 0.7,
+        "trebuchet": 0.8,
+        "ballista": 0.85,
+        "mage": 0.8,
+        "structure": 0.75,
+        "giant": 0.55,
+        "commander": 0.25,
+        "rifleman": 1.1,
+        "thief": 1,
+        "warship": 0.55,
+        "turtle": 0.3,
+        "harpoonship": 0.8,
+        "merman": 0.75,
+        "travelboat": 0.65
+      }
+    },
+    "turtleBite": {
+      "id": "turtleBite",
+      "rangeMin": 1,
+      "rangeMax": 1,
+      "canMoveAndAttack": true,
+      "baseDamage": {
+        "water": 1
+      },
+      "tagDamage": {
+        "structure": 0.45,
+        "warship": 0.8,
+        "harpoonship": 0.35,
+        "turtle": 0.5,
+        "travelboat": 0.55,
+        "merman": 1.1
+      }
+    }
+  },
+  "unitClasses": {
+    "shadow_vesper": {
+      "id": "shadow_vesper",
+      "name": "unit_class_name_shadow_sister",
+      "cost": 10,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "weapons": [
+        {
+          "id": "vesperWhip"
+        }
+      ],
+      "verbs": ["load"],
+      "tags": ["type.ground.light", "summon"],
+      "battleUnitCount": 1,
+      "grooveId": "smoke_screen",
+      "isHidden": true,
+      "isRecruitable": false,
+      "appearsInLists": false,
+      "classIcon": "unit_icons_summon"
+    },
+    "thief_with_gold": {
+      "id": "thief_with_gold",
+      "name": "unit_class_name_thief_with_gold",
+      "cost": 400,
+      "movement": "walking",
+      "moveRange": 3,
+      "damageMultiplier": 1,
+      "aiPriority": 2.5,
+      "weapons": [],
+      "verbs": ["load", "deposit", "bypass_gate"],
+      "tags": ["thief", "type.ground.hideout"],
+      "battleUnitCount": 1,
+      "isRecruitable": false,
+      "appearsInLists": false,
+      "inPalette": false,
+      "sightRange": 5,
+      "deathVerbId": "death_give_gold",
+      "codexClass": "thief"
+    },
+    "commander_vesper_boss": {
+      "id": "commander_vesper_boss",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "isRecruitable": false,
+      "appearsInLists": false,
+      "isHidden": true,
+      "isSpawnable": false,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "vesperWhip"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "shadow_sisters"
+    },
+    "city": {
+      "id": "city",
+      "name": "structure_name_city",
+      "aiPriority": 3,
+      "cargoSpace": 1,
+      "battleUnitCount": 1,
+      "damageMultiplier": 1,
+      "movement": "land_building",
+      "isStructure": true,
+      "canReinforce": true,
+      "canBeReinforced": false,
+      "canBeCaptured": true,
+      "isNeutraliseable": true,
+      "income": 100,
+      "cost": 500,
+      "regeneration": 10,
+      "tags": ["structure"],
+      "sightRange": 6
+    },
+    "barracks": {
+      "id": "barracks",
+      "name": "structure_name_barracks",
+      "aiPriority": 4,
+      "verbs": ["recruit"],
+      "battleUnitCount": 1,
+      "isStructure": true,
+      "canReinforce": true,
+      "canBeReinforced": false,
+      "canBeCaptured": true,
+      "isNeutraliseable": true,
+      "damageMultiplier": 1,
+      "movement": "land_building",
+      "income": 0,
+      "cost": 500,
+      "recruitTags": ["type.ground.light", "type.ground.heavy"],
+      "regeneration": 10,
+      "tags": ["structure"],
+      "sightRange": 6
+    },
+    "hideout": {
+      "id": "hideout",
+      "name": "structure_name_hideout",
+      "aiPriority": 4,
+      "verbs": ["recruit"],
+      "battleUnitCount": 1,
+      "isStructure": true,
+      "canReinforce": true,
+      "canBeReinforced": false,
+      "canBeCaptured": true,
+      "isNeutraliseable": true,
+      "damageMultiplier": 1,
+      "movement": "land_building",
+      "income": 0,
+      "cost": 500,
+      "recruitTags": ["type.ground.hideout"],
+      "regeneration": 10,
+      "tags": ["structure"],
+      "sightRange": 6
+    },
+    "port": {
+      "id": "port",
+      "name": "structure_name_port",
+      "aiPriority": 4,
+      "verbs": ["recruit"],
+      "battleUnitCount": 1,
+      "isStructure": true,
+      "canReinforce": true,
+      "canBeReinforced": false,
+      "canBeCaptured": true,
+      "isNeutraliseable": true,
+      "damageMultiplier": 1,
+      "movement": "sea_building",
+      "income": 0,
+      "cost": 500,
+      "recruitTags": ["type.sea", "type.amphibious"],
+      "regeneration": 10,
+      "tags": ["structure"],
+      "sightRange": 6
+    },
+    "tower": {
+      "id": "tower",
+      "name": "structure_name_tower",
+      "aiPriority": 4,
+      "verbs": ["recruit"],
+      "battleUnitCount": 1,
+      "isStructure": true,
+      "canReinforce": true,
+      "canBeReinforced": false,
+      "canBeCaptured": true,
+      "isNeutraliseable": true,
+      "damageMultiplier": 1,
+      "movement": "land_building",
+      "income": 0,
+      "cost": 500,
+      "recruitTags": ["type.air"],
+      "regeneration": 10,
+      "tags": ["structure"],
+      "sightRange": 7
+    },
+    "water_city": {
+      "id": "water_city",
+      "name": "structure_name_water_city",
+      "aiPriority": 3,
+      "battleUnitCount": 1,
+      "isStructure": true,
+      "canReinforce": true,
+      "canBeReinforced": false,
+      "canBeCaptured": true,
+      "isNeutraliseable": true,
+      "damageMultiplier": 1,
+      "movement": "sea_building",
+      "income": 100,
+      "cost": 500,
+      "regeneration": 10,
+      "tags": ["structure"],
+      "sightRange": 6
+    },
+    "gate": {
+      "id": "gate",
+      "name": "structure_name_gate",
+      "aiPriority": 3,
+      "cargoSpace": 1,
+      "battleUnitCount": 1,
+      "isStructure": true,
+      "canReinforce": false,
+      "canBeReinforced": false,
+      "hostileNeutral": true,
+      "damageMultiplier": 0.5,
+      "movement": "indoor_building",
+      "garrisonUnit": "",
+      "cost": 500,
+      "isLineOfSightBlocker": true,
+      "tags": ["structure"]
+    },
+    "hq": {
+      "id": "hq",
+      "name": "structure_name_hq",
+      "aiPriority": 5,
+      "isStructure": true,
+      "canReinforce": false,
+      "canBeReinforced": false,
+      "battleUnitCount": 1,
+      "damageMultiplier": 0.5,
+      "movement": "land_building",
+      "income": 100,
+      "cost": 3000,
+      "isHQ": true,
+      "regeneration": 10,
+      "tags": ["structure"],
+      "sightRange": 7
+    },
+    "vine": {
+      "id": "vine",
+      "name": "unit_class_name_vine",
+      "cost": 25,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "moveRange": 0,
+      "tags": ["structure", "summon"],
+      "verbs": ["reposition_vine"],
+      "battleUnitCount": 4,
+      "regeneration": -20,
+      "isHidden": true,
+      "isRecruitable": false,
+      "canBeReinforced": false,
+      "classIcon": "unit_icons_summon"
+    },
+    "villager": {
+      "id": "villager",
+      "name": "unit_class_name_villager",
+      "cost": 50,
+      "movement": "walking",
+      "moveRange": 3,
+      "damageMultiplier": 1,
+      "canBeReinforced": false,
+      "aiPriority": 0.5,
+      "weapons": [],
+      "verbs": ["load"],
+      "tags": ["villager", "type.ground.light"],
+      "battleUnitCount": 4,
+      "isRecruitable": false,
+      "palettePriority": 1
+    },
+    "balloon": {
+      "id": "balloon",
+      "name": "unit_class_name_balloon",
+      "cost": 450,
+      "movement": "flying",
+      "moveRange": 6,
+      "damageMultiplier": 1,
+      "aiPriority": 1.5,
+      "weapons": [],
+      "tags": ["balloon", "type.air"],
+      "verbs": ["unload"],
+      "battleUnitCount": 1,
+      "loadCapacity": 2,
+      "canSeeOverTerrain": true,
+      "transportTags": ["type.ground.light", "type.amphibious", "type.ground.hideout"]
+    },
+    "witch": {
+      "id": "witch",
+      "name": "unit_class_name_witch",
+      "cost": 800,
+      "movement": "flying",
+      "moveRange": 7,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "witchSpell"
+        }
+      ],
+      "tags": ["witch", "type.air", "spellcaster"],
+      "verbs": ["spell_hex"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 2,
+      "sightRange": 6,
+      "canSeeOverTerrain": true
+    },
+    "dragon": {
+      "id": "dragon",
+      "name": "unit_class_name_dragon",
+      "cost": 1250,
+      "movement": "flying",
+      "moveRange": 8,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "fireBreath"
+        }
+      ],
+      "tags": ["dragon", "type.air"],
+      "battleUnitCount": 1,
+      "passiveMultiplier": 2,
+      "sightRange": 6,
+      "canSeeOverTerrain": true
+    },
+    "harpy": {
+      "id": "harpy",
+      "name": "unit_class_name_harpy",
+      "cost": 600,
+      "movement": "flying",
+      "moveRange": 5,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "harpyClaws"
+        }
+      ],
+      "tags": ["harpy", "type.air"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.25,
+      "sightRange": 5,
+      "canSeeOverTerrain": true
+    },
+    "harpoonship": {
+      "id": "harpoonship",
+      "name": "unit_class_name_harpoonship",
+      "cost": 550,
+      "movement": "sailing",
+      "moveRange": 4,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "harpoonshipCannon"
+        }
+      ],
+      "cargoSpace": 2,
+      "tags": ["harpoonship", "type.sea"],
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.5,
+      "sightRange": 6,
+      "isHiddenInCutsceneEditor": true
+    },
+    "warship": {
+      "id": "warship",
+      "name": "unit_class_name_warship",
+      "cost": 900,
+      "movement": "sailing",
+      "moveRange": 8,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "warshipCannon"
+        }
+      ],
+      "cargoSpace": 2,
+      "tags": ["warship", "type.sea"],
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.5,
+      "sightRange": 5,
+      "isHiddenInCutsceneEditor": true
+    },
+    "commander_errol": {
+      "id": "commander_errol",
+      "name": "character_errol_name",
+      "cost": 0,
+      "movement": "walking",
+      "moveRange": 4,
+      "damageMultiplier": 1,
+      "aiPriority": 0,
+      "isHidden": false,
+      "battleUnitCount": 1,
+      "isRecruitable": false,
+      "hasTurn": false,
+      "isSpawnable": false,
+      "isCommander": true,
+      "classIcon": "unit_icons_commander",
+      "tags": ["structure", "summon"]
+    },
+    "commander_orla": {
+      "id": "commander_orla",
+      "name": "character_orla_name",
+      "cost": 0,
+      "movement": "walking",
+      "moveRange": 4,
+      "damageMultiplier": 1,
+      "aiPriority": 0,
+      "isHidden": false,
+      "battleUnitCount": 1,
+      "isRecruitable": false,
+      "hasTurn": false,
+      "isSpawnable": false,
+      "isCommander": true,
+      "classIcon": "unit_icons_commander",
+      "tags": ["structure", "summon"]
+    },
+    "ghost_mercival": {
+      "id": "ghost_mercival",
+      "name": "character_ghost_mercival_name",
+      "cost": 0,
+      "movement": "walking",
+      "moveRange": 4,
+      "damageMultiplier": 1,
+      "aiPriority": 0,
+      "isHidden": true,
+      "battleUnitCount": 1,
+      "isRecruitable": false,
+      "hasTurn": false,
+      "isSpawnable": false,
+      "classIcon": "unit_icons_commander",
+      "tags": ["structure", "summon"]
+    },
+    "thief": {
+      "id": "thief",
+      "name": "unit_class_name_thief",
+      "cost": 400,
+      "movement": "walking",
+      "moveRange": 6,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [],
+      "verbs": ["load", "steal", "heist", "bypass_gate"],
+      "tags": ["thief", "type.ground.hideout"],
+      "battleUnitCount": 1,
+      "sightRange": 5,
+      "deathVerbId": "death_give_gold",
+      "startingStates": [
+        {
+          "id": "gold",
+          "value": 0
+        }
+      ]
+    },
+    "rifleman": {
+      "id": "rifleman",
+      "name": "unit_class_name_rifleman",
+      "cost": 750,
+      "movement": "walking",
+      "moveRange": 4,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "defaultAttack": "attack_rifleman",
+      "weapons": [
+        {
+          "id": "musket"
+        }
+      ],
+      "tags": ["rifleman", "type.ground.hideout"],
+      "verbs": ["reload", "load", "capture"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.5,
+      "sightRange": 9,
+      "startingStates": [
+        {
+          "id": "ammo",
+          "value": 3
+        }
+      ]
+    },
+    "garrison": {
+      "id": "garrison",
+      "name": "unit_class_name_garrison",
+      "cost": 100,
+      "movement": "walking",
+      "moveRange": 3,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "isRecruitable": false,
+      "isHidden": true,
+      "isSpawnable": false,
+      "weapons": [
+        {
+          "id": "citybow",
+          "ammo": 100
+        }
+      ],
+      "verbs": ["capture", "load"],
+      "tags": ["soldier", "type.ground.light"],
+      "battleUnitCount": 1
+    },
+    "travelboat": {
+      "id": "travelboat",
+      "name": "unit_class_name_travelboat",
+      "cost": 200,
+      "movement": "sailing",
+      "moveRange": 10,
+      "damageMultiplier": 1,
+      "aiPriority": 1.5,
+      "weapons": [],
+      "tags": ["travelboat", "transport", "type.sea"],
+      "verbs": ["unload"],
+      "battleUnitCount": 1,
+      "loadCapacity": 2,
+      "transportTags": ["type.ground.light", "type.ground.heavy", "type.amphibious", "type.ground.hideout"],
+      "isHiddenInCutsceneEditor": true
+    },
+    "turtle": {
+      "id": "turtle",
+      "name": "unit_class_name_turtle",
+      "cost": 400,
+      "movement": "sailing",
+      "moveRange": 12,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "turtleBite"
+        }
+      ],
+      "tags": ["turtle", "type.sea"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.5,
+      "sightRange": 6,
+      "scout": true,
+      "isHiddenInCutsceneEditor": true
+    },
+    "wagon": {
+      "id": "wagon",
+      "name": "unit_class_name_wagon",
+      "cost": 300,
+      "movement": "wheels",
+      "moveRange": 12,
+      "damageMultiplier": 1,
+      "aiPriority": 1.5,
+      "weapons": [],
+      "tags": ["wagon", "type.ground.heavy", "transport"],
+      "verbs": ["load", "unload"],
+      "battleUnitCount": 1,
+      "loadCapacity": 1,
+      "transportTags": ["type.ground.light", "type.amphibious", "type.ground.hideout"]
+    },
+    "dog": {
+      "id": "dog",
+      "name": "unit_class_name_dog",
+      "cost": 150,
+      "movement": "walking",
+      "moveRange": 5,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "bite"
+        }
+      ],
+      "verbs": ["load"],
+      "tags": ["dog", "type.ground.light", "animal"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.5,
+      "sightRange": 4,
+      "scout": true,
+      "runsAway": true
+    },
+    "giant": {
+      "id": "giant",
+      "name": "unit_class_name_giant",
+      "cost": 1200,
+      "movement": "walking",
+      "moveRange": 5,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "giantSlam"
+        }
+      ],
+      "tags": ["giant", "type.ground.heavy", "tall"],
+      "verbs": ["load"],
+      "battleUnitCount": 1,
+      "passiveMultiplier": 2.5,
+      "sightRange": 3
+    },
+    "archer": {
+      "id": "archer",
+      "name": "unit_class_name_archer",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 3,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "bow"
+        }
+      ],
+      "tags": ["archer", "type.ground.light"],
+      "verbs": ["load", "capture"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.35,
+      "sightRange": 5
+    },
+    "merman": {
+      "id": "merman",
+      "name": "unit_class_name_merman",
+      "cost": 350,
+      "movement": "amphibious",
+      "moveRange": 5,
+      "damageMultiplier": 1,
+      "uiEffectivenessMultiplier": 2,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "bident"
+        }
+      ],
+      "verbs": ["capture", "load"],
+      "tags": ["merman", "type.amphibious"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 2
+    },
+    "soldier": {
+      "id": "soldier",
+      "name": "unit_class_name_soldier",
+      "cost": 100,
+      "movement": "walking",
+      "moveRange": 4,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "sword"
+        }
+      ],
+      "verbs": ["capture", "load"],
+      "tags": ["soldier", "type.ground.light"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.5
+    },
+    "spearman": {
+      "id": "spearman",
+      "name": "unit_class_name_spearman",
+      "cost": 250,
+      "movement": "walking",
+      "moveRange": 3,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "spear"
+        }
+      ],
+      "verbs": ["capture", "load"],
+      "tags": ["spearman", "type.ground.light"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.5
+    },
+    "mage": {
+      "id": "mage",
+      "name": "unit_class_name_mage",
+      "cost": 400,
+      "movement": "walking",
+      "moveRange": 5,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "lightning",
+          "ammo": 5
+        }
+      ],
+      "tags": ["mage", "type.ground.light", "spellcaster"],
+      "verbs": ["load", "capture", "spell_heal"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.5
+    },
+    "knight": {
+      "id": "knight",
+      "name": "unit_class_name_knight",
+      "cost": 600,
+      "movement": "riding",
+      "moveRange": 6,
+      "damageMultiplier": 1,
+      "aiPriority": 1,
+      "weapons": [
+        {
+          "id": "lance"
+        }
+      ],
+      "tags": ["knight", "type.ground.heavy"],
+      "verbs": ["load"],
+      "battleUnitCount": 4,
+      "passiveMultiplier": 1.5
+    },
+    "ballista": {
+      "id": "ballista",
+      "name": "unit_class_name_ballista",
+      "cost": 800,
+      "movement": "wheels",
+      "moveRange": 6,
+      "damageMultiplier": 1,
+      "aiPriority": 1.6,
+      "weapons": [
+        {
+          "id": "ballistaBolt"
+        }
+      ],
+      "tags": ["ballista", "type.ground.heavy"],
+      "verbs": ["load"],
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.5
+    },
+    "trebuchet": {
+      "id": "trebuchet",
+      "name": "unit_class_name_trebuchet",
+      "cost": 1000,
+      "movement": "wheels",
+      "moveRange": 6,
+      "damageMultiplier": 1,
+      "aiPriority": 1.6,
+      "weapons": [
+        {
+          "id": "trebuchetSling"
+        }
+      ],
+      "tags": ["trebuchet", "type.ground.heavy"],
+      "verbs": ["load"],
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.5
+    },
+    "commander_twins": {
+      "id": "commander_twins",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "twinsAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "dual_bombs",
+      "hiddenFromCutsceneEditior": true
+    },
+    "commander_mercival": {
+      "id": "commander_mercival",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "isRecruitable": false,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "mercivalSword"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "fish"
+    },
+    "commander_emeric": {
+      "id": "commander_emeric",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "emericSpell"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "cherrystone_defence"
+    },
+    "commander_elodie": {
+      "id": "commander_elodie",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "elodieCello"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "convert"
+    },
+    "commander_ryota": {
+      "id": "commander_ryota",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "ryotaAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "dash"
+    },
+    "commander_darkmercia": {
+      "id": "commander_darkmercia",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "darkmerciaSword"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "drain_aura"
+    },
+    "commander_koji": {
+      "id": "commander_koji",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "kojiAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light", "tall"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "drone_bombs"
+    },
+    "commander_wulfar": {
+      "id": "commander_wulfar",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "wulfarHammer"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light", "tall"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "golf"
+    },
+    "commander_mercia": {
+      "id": "commander_mercia",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "merciaSword"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "heal_aura"
+    },
+    "commander_valder": {
+      "id": "commander_valder",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "valderSpell"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "raise_dead"
+    },
+    "commander_sedge": {
+      "id": "commander_sedge",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "sedgeAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "sadistic_rush"
+    },
+    "commander_caesar": {
+      "id": "commander_caesar",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "caesarBite"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "second_wind"
+    },
+    "commander_vesper": {
+      "id": "commander_vesper",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "vesperWhip"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "smoke_screen"
+    },
+    "commander_ragna": {
+      "id": "commander_ragna",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "ragnaAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "splash_jump"
+    },
+    "commander_nuru": {
+      "id": "commander_nuru",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "nuruAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "teleport_beam"
+    },
+    "commander_tenri": {
+      "id": "commander_tenri",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "tenriAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "tornado"
+    },
+    "commander_sigrid": {
+      "id": "commander_sigrid",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "sigridAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "vampiric_touch"
+    },
+    "commander_greenfinger": {
+      "id": "commander_greenfinger",
+      "name": "unit_class_name_commander",
+      "cost": 500,
+      "movement": "walking",
+      "moveRange": 4,
+      "aiPriority": 8,
+      "regeneration": 5,
+      "weapons": [
+        {
+          "id": "greenfingerAttack"
+        }
+      ],
+      "verbs": ["load", "capture"],
+      "tags": ["commander", "type.ground.light"],
+      "battleUnitCount": 1,
+      "isCommander": true,
+      "grooveId": "vine_wall"
+    },
+    "area_damage": {
+      "id": "area_damage",
+      "name": "unit_class_name_area_damage",
+      "movement": "walking",
+      "moveRange": 0,
+      "damageMultiplier": 1,
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.25,
+      "sightRange": 0,
+      "classIcon": "unit_icons_summon",
+      "buffId": "crystal",
+      "isHidden": true,
+      "hasTurn": false,
+      "isRecruitable": false,
+      "isSpawnable": false,
+      "regeneration": -100,
+      "deathVerbId": "death_area_damage",
+      "hasDeathAnimation": false,
+      "appearsInLists": false,
+      "tags": ["summon"]
+    },
+    "area_heal": {
+      "id": "area_heal",
+      "name": "unit_class_name_area_heal",
+      "movement": "walking",
+      "moveRange": 0,
+      "damageMultiplier": 1,
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.25,
+      "sightRange": 0,
+      "classIcon": "unit_icons_summon",
+      "buffId": "crystal",
+      "isHidden": true,
+      "hasTurn": false,
+      "isRecruitable": false,
+      "isSpawnable": false,
+      "regeneration": -100,
+      "deathVerbId": "death_area_heal",
+      "hasDeathAnimation": false,
+      "appearsInLists": false,
+      "tags": ["summon"]
+    },
+    "smoke_producer": {
+      "id": "smoke_producer",
+      "name": "unit_class_name_smoke_producer",
+      "movement": "walking",
+      "moveRange": 0,
+      "damageMultiplier": 1,
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.25,
+      "sightRange": 5,
+      "classIcon": "unit_icons_summon",
+      "buffId": "crystal",
+      "isHidden": true,
+      "hasTurn": false,
+      "isRecruitable": false,
+      "isSpawnable": false,
+      "regeneration": -100,
+      "deathVerbId": "death_smoke_producer",
+      "hasDeathAnimation": false,
+      "appearsInLists": false,
+      "tags": ["summon"]
+    },
+    "crystal": {
+      "id": "crystal",
+      "name": "unit_class_name_crystal",
+      "movement": "walking",
+      "moveRange": 0,
+      "damageMultiplier": 1,
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.25,
+      "sightRange": 5,
+      "classIcon": "unit_icons_summon",
+      "buffId": "crystal",
+      "isHidden": true,
+      "hasTurn": false,
+      "isRecruitable": false,
+      "regeneration": -20,
+      "tags": ["summon"]
+    },
+    "drone": {
+      "id": "drone",
+      "name": "unit_class_name_drone",
+      "movement": "hovering",
+      "moveRange": 5,
+      "damageMultiplier": 0.5,
+      "verbs": ["explode"],
+      "tags": ["type.air", "summon"],
+      "battleUnitCount": 1,
+      "passiveMultiplier": 1.25,
+      "sightRange": 5,
+      "classIcon": "unit_icons_summon",
+      "deathVerbId": "death_explode",
+      "isHidden": true,
+      "isRecruitable": false,
+      "canAttack": false,
+      "uiEffectivenessMultiplier": 2
+    }
+  }
+}

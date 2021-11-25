@@ -1,0 +1,75 @@
+---
+
+unitClasses:
+  - id: commander_vesper_boss
+    name: unit_class_name_commander
+    cost: 500
+    movement: walking
+    moveRange: 4
+    aiPriority: 8.0
+    isRecruitable: false
+    appearsInLists: false
+    isHidden: true
+    isSpawnable: false
+    regeneration: 5
+    weapons:
+      - id: vesperWhip
+    verbs:
+      - load
+      - capture
+    tags:
+      - commander
+      - type.ground.light
+    battleUnitCount: 1
+    isCommander: true
+    grooveId: shadow_sisters
+
+
+units:
+  - class: commander_vesper_boss
+    faction: outlaw
+    name: character_vesper_boss_name
+    mapAnimation: units/commanders/vesper/map_vesper
+    battleAnimation: units/commanders/vesper/battle_vesper
+    battleAnimationRiver: fx/river_overlay/battle_vesper_river
+    smallPortrait: units/commanders/vesper/portrait_vesper_small.png
+    mediumPortrait: units/commanders/vesper/portrait_vesper_medium.png
+    mapSpeed: 4.0
+    skinColour: typeVI
+    grabPos: [47, 47]
+    deathMoveMin: 0
+    deathMoveMax: 0
+    stayAfterDeath: true
+    sounds:
+      attackMap: unitAttack
+      attack: vesper/vesperAttack
+      attackEffect: vesper/vesperAttackEffect
+      counter: vesper/vesperCounterAttack
+      captureShout: vesper/vesperCapture
+      attackCommanderShout: vesper/vesperCommanderKillShout
+      death: vesper/vesperDie
+      deathMap: vesper/vesperDieGhost
+      deathMapNoBattle: vesper/vesperDieNoBattle
+      run: infantryLightMapEntry
+      runMap: infantryLightMapEntry
+      firstHit: vesper/vesperHit
+      hit: hitOrganic
+      hitMap: hitOrganic
+      groove: vesper/vesperGrooveIntro
+    attacks:
+      - id: closeRange
+        attackAnimationSequence: counter
+        attackSound: counter
+        attackCommanderSound: counter
+        hitSpark: fx/bs_stab_attack
+        effectDelay: 0.60
+        hitDelay: 0.60
+        samePanel: true
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        effect: fx/bs_vesper_attack
+        effectDelay: 2.2
+        effectPaletteSwaps: true
+        hitDelay: 2.5
+        ranged: true
+...

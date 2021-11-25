@@ -1,0 +1,206 @@
+---
+
+weapons:
+  - id: spear
+    rangeMin: 1
+    rangeMax: 1
+    canMoveAndAttack: true
+    baseDamage:
+      land: 1
+    tagDamage:
+      archer: 0.7
+      soldier: 0.75
+      villager: 0.75
+      spearman: 0.55
+      dog: 0.8
+      wagon: 0.45
+      knight: 0.7
+      trebuchet: 0.5
+      ballista: 0.55
+      giant: 0.10
+      merman: 0.75
+      mage: 0.65
+      structure: 0.5
+      commander: 0.15
+      rifleman: 0.85
+      thief: 0.75
+
+
+unitClasses:
+  - id: spearman
+    name: unit_class_name_spearman
+    cost: 250
+    movement: walking
+    moveRange: 3
+    damageMultiplier: 1
+    aiPriority: 1.0
+    weapons:
+      - id: spear
+    verbs:
+      - capture
+      - load
+    tags:
+      - spearman
+      - type.ground.light
+    battleUnitCount: 4
+    passiveMultiplier: 1.5
+
+units:
+  - class: spearman
+    faction: cherrystone
+    name: unit_name_spearman_cherrystone
+    mapAnimation: units/spearman/cherrystone/map_spearman_cherrystone
+    battleAnimation: units/spearman/cherrystone/battle_spearman_cherrystone
+    battleAnimationRiver: fx/river_overlay/battle_spearman_cherrystone_river
+    smallPortrait: units/spearman/cherrystone/portrait_spearman_cherrystone_small.png
+    mediumPortrait: units/spearman/cherrystone/portrait_spearman_cherrystone_medium.png
+    mapSpeed: 4.0
+    grabPos: [18, 12]
+    sounds:
+      attackMap: unitAttack
+      attack: soldierAttackRed
+      attackShout: soldierPreAttackRed
+      captureShout: soldierPreAttackRed
+      death: soldierDieRed
+      deathMap: unitDie
+      run: infantryHeavyEntry
+      runMap: infantryHeavyMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.4
+    shouts:
+      soldier_shout1: soldierShoutRed1
+      soldier_shout2: soldierShoutRed2
+      soldier_shout3: soldierShoutRed3
+      soldier_shout4: soldierShoutRed4
+      soldier_shout5: soldierShoutRed5
+      soldier_shout6: soldierShoutRed6
+      soldier_shout7: soldierShoutRed7
+      soldier_shout8: soldierShoutRed8
+      soldier_shout9: soldierShoutRed9
+      soldier_hit1: soldierHitRed1
+      soldier_hit2: soldierHitRed2
+      soldier_hit3: soldierHitRed3
+      soldier_hit4: soldierHitRed4
+      soldier_hit5: soldierHitRed5
+    hidden:
+      shouts:
+        - soldier_shout3
+        - soldier_shout5
+        - soldier_shout6
+        - soldier_shout9
+
+  - class: spearman
+    faction: felheim
+    name: unit_name_spearman_felheim
+    mapAnimation: units/spearman/felheim/map_spearman_felheim
+    battleAnimation: units/spearman/felheim/battle_spearman_felheim
+    battleAnimationRiver: fx/river_overlay/battle_spearman_felheim_river
+    smallPortrait: units/spearman/felheim/portrait_spearman_felheim_small.png
+    mediumPortrait: units/spearman/felheim/portrait_spearman_felheim_medium.png
+    mapSpeed: 4.0
+    grabPos: [19, 12]
+    sounds:
+      attackMap: unitAttack
+      attack: soldierAttackRed
+      attackShout: soldierPreAttackBlue
+      captureShout: soldierPreAttackBlue
+      death: soldierDieBlue
+      deathMap: unitDie
+      run: infantrySkeletonEntry
+      runMap: infantrySkeletonMapEntry
+      hit: hitBone
+      hitMap: hitBone
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.4
+    shouts:
+      soldier_blue_shout1: soldierShoutBlue1
+      soldier_blue_shout2: soldierShoutBlue2
+
+  - class: spearman
+    faction: heavensong
+    name: unit_name_spearman_heavensong
+    mapAnimation: units/spearman/heavensong/map_spearman_heavensong
+    battleAnimation: units/spearman/heavensong/battle_spearman_heavensong
+    battleAnimationRiver: fx/river_overlay/battle_spearman_heavensong_river
+    smallPortrait: units/spearman/heavensong/portrait_spearman_heavensong_small.png
+    mediumPortrait: units/spearman/heavensong/portrait_spearman_heavensong_medium.png
+    mapSpeed: 4.0
+    grabPos: [18, 11]
+    sounds:
+      attackMap: unitAttack
+      attack: soldierAttackRed
+      attackShout: soldierPreAttackYellow
+      captureShout: soldierPreAttackYellow
+      death: soldierDieYellow
+      deathMap: unitDie
+      run: infantryHeavyEntry
+      runMap: infantryHeavyMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.5
+    shouts:
+      soldier_yellow_shout1: soldierShoutYellow1
+      soldier_yellow_shout2: soldierShoutYellow2
+      soldier_yellow_shout3: soldierShoutYellow3
+      soldier_yellow_shout4: soldierShoutYellow4
+      soldier_yellow_shout5: soldierShoutYellow5
+      soldier_yellow_hit1: soldierHitYellow1
+      soldier_yellow_hit2: soldierHitYellow2
+      soldier_yellow_hit3: soldierHitYellow3
+      soldier_yellow_hit4: soldierHitYellow4
+    hidden:
+      shouts:
+        - soldier_yellow_shout2
+        - soldier_yellow_shout5
+
+  - class: spearman
+    faction: floran
+    name: unit_name_spearman_floran
+    mapAnimation: units/spearman/floran/map_spearman_floran
+    battleAnimation: units/spearman/floran/battle_spearman_floran
+    battleAnimationRiver: fx/river_overlay/battle_spearman_floran_river
+    smallPortrait: units/spearman/floran/portrait_spearman_floran_small.png
+    mediumPortrait: units/spearman/floran/portrait_spearman_floran_medium.png
+    mapSpeed: 4.0
+    grabPos: [21, 14]
+    sounds:
+      attackMap: unitAttack
+      attack: spearmanAttackGreen
+      attackShout: soldierPreAttackGreen
+      captureShout: soldierPreAttackGreen
+      death: soldierDieGreen
+      deathMap: unitDie
+      run: infantryLightEntry
+      runMap: infantryLightMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.7
+    shouts:
+      soldier_green_shout1: soldierShoutGreen1
+      soldier_green_shout2: soldierShoutGreen2
+      soldier_green_shout3: soldierShoutGreen3
+      soldier_green_shout4: soldierShoutGreen4
+      soldier_green_shout5: soldierShoutGreen5
+      soldier_green_shout6: soldierShoutGreen6
+      soldier_green_hit1: soldierHitGreen1
+      soldier_green_hit2: soldierHitGreen2
+      soldier_green_hit3: soldierHitGreen3
+    hidden:
+      shouts:
+        - soldier_green_shout2
+        - soldier_green_shout4
+        - soldier_green_shout5
+
+...

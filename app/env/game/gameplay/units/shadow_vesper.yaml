@@ -1,0 +1,59 @@
+---
+
+unitClasses:
+  - id: shadow_vesper
+    name: unit_class_name_shadow_sister
+    cost: 10
+    movement: walking
+    moveRange: 4
+    aiPriority: 8.0
+    weapons:
+      - id: vesperWhip
+    verbs:
+      - load
+    tags:
+      - type.ground.light
+      - summon
+    battleUnitCount: 1
+    grooveId: smoke_screen
+    isHidden: true
+    isRecruitable: false  
+    appearsInLists: false
+    classIcon: unit_icons_summon
+
+
+units:
+  - class: shadow_vesper
+    faction: outlaw
+    name: unit_class_name_shadow_sister
+    mapAnimation: units/commanders/vesper/map_shadow_vesper
+    battleAnimation: units/commanders/vesper/battle_shadow_vesper
+    battleAnimationRiver: fx/river_overlay/battle_mercia_river
+    smallPortrait: units/commanders/vesper/portrait_vesper_small.png
+    mediumPortrait: units/commanders/vesper/portrait_shadow_vesper_medium.png
+    mapSpeed: 4.0
+    skinColour: typeVI
+    grabPos: [47, 47]
+    deathMoveMin: 0
+    deathMoveMax: 0
+    stayAfterDeath: true
+    sounds:
+      attack: vesper/shadowVesperAttack
+      attackMap: unitAttack
+      attackShout: vesper/shadowVesperAttackShout
+      death: vesper/shadowVesperDie
+      deathMap: vesper/vesperDieGhost
+      run: vesper/shadowVesperEntry
+      runMap: vesper/shadowVesperEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+      groove: vesper/vesperGrooveIntro
+    attacks:
+      - id: closeRange
+        attackAnimationSequence: counter
+        hitSpark: fx/bs_stab_attack
+        effectDelay: 0.60
+        hitDelay: 0.60
+        samePanel: true
+        attackSound: attack
+...

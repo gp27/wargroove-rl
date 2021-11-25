@@ -1,0 +1,130 @@
+---
+
+weapons:
+  - id: twinsAttack
+    rangeMin: 1
+    rangeMax: 1
+    canMoveAndAttack: true
+    baseDamage:
+      land: 1
+    tagDamage:
+      archer: 1.3
+      soldier: 1.15
+      villager: 0.95
+      spearman: 0.75
+      dog: 1.15
+      wagon: 0.7
+      knight: 0.55
+      trebuchet: 0.55
+      ballista: 0.6
+      dragon: 0.3
+      mage: 0.8
+      giant: 0.4
+      structure: 0.7
+      balloon: 0.55
+      harpy: 0.9
+      witch: 0.7
+      dragon: 0.35
+      commander: 0.4
+      rifleman: 1.05
+      thief: 0.95
+      
+      warship: 0.55
+      harpoonship: 0.45
+      turtle: 0.55
+      travelboat: 0.6
+      merman: 0.95
+
+unitClasses:
+  - id: commander_twins
+    name: unit_class_name_commander
+    cost: 500
+    movement: walking
+    moveRange: 4
+    aiPriority: 8.0
+    regeneration: 5
+    weapons:
+      - id: twinsAttack
+    verbs:
+      - load
+      - capture
+    tags:
+      - commander
+      - type.ground.light
+    battleUnitCount: 1
+    isCommander: true
+    grooveId: dual_bombs
+    hiddenFromCutsceneEditior: true
+
+
+units:
+  - class: commander_twins
+    faction: outlaw
+    name: character_twins_name
+    mapAnimation: units/commanders/twins/map_twins
+    battleAnimation: units/commanders/twins/battle_twins
+    battleAnimationRiver: fx/river_overlay/battle_twins_river
+    smallPortrait: units/commanders/twins/portrait_twins_small.png
+    mediumPortrait: units/commanders/twins/portrait_twins_medium.png
+    mapSpeed: 4.0
+    skinColour: typeVI
+    grabPos: [47, 47]
+    attackOffset: [30, 0]
+    battlePosOffset: [-2, 0]
+    hitSparkOffset: [30, 0]
+    deathMoveMin: 0
+    deathMoveMax: 0
+    stayAfterDeath: true
+    cutsceneHasAttack: false
+    sounds:
+      attackMap: unitAttack
+      attack: twins/twinsAttack
+      attackCommander: twins/twinsCommanderKillAttack
+      attackEffect: twins/twinsAttackEffect
+      counter: twins/twinsCounterAttack
+      captureShout: twins/twinsCapture
+      death: twins/twinsDie
+      deathMap: twins/twinsDieGhost
+      deathMapNoBattle: twins/twinsDieNoBattle
+      run: infantryLightMapEntry
+      runMap: infantryLightMapEntry
+      firstHit: twins/twinsHit
+      hit: twins/twinsShieldHit
+      hitLeadup: twins/twinsShieldUp
+      hitEnd: twins/twinsShieldEnd
+      hitMap: hitOrganic
+    attacks:
+      - id: closeRange
+        attackAnimationSequence: counter
+        attackSound: counter
+        attackCommanderSound: counter
+        hitSpark: fx/bs_stab_attack
+        effectDelay: 0.8
+        hitDelay: 0.8
+        samePanel: true
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        effect: fx/bs_tnt_attack_single
+        effectDelay: 3.4
+        hitDelay: [3.7]
+        ranged: true
+    emotes:
+      idle: idle
+      surprise: emote_surprise
+      positive: emote_positive
+      negative: emote_angry
+      laugh: emote_laugh
+      crying: emote_sad
+      brave: emote_aiming
+      dance: emote_dance
+    shouts:
+      twins_da: twins/twinsShoutDa
+      twins_hit: twins/twinsShoutHit
+      twins_laugh: twins/twinsShoutLaugh
+      twins_wondertwinpowers: twins/twinsShoutWonderTwinPowers
+    #alternativeAttackSounds:
+      #no_voice: mercia/merciaAttackNoVoice
+
+      
+      
+...

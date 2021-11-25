@@ -1,0 +1,42 @@
+---
+
+worldMaps:
+- id: paper_aurania
+  name: world_map_paper_aurania_name
+  icon: ui/campaign/map_icon7.png
+  size: [689, 500]
+  images:
+  - image: world/maps/paper_aurania/world_map.png
+    layer: background
+    pos: [0, 0]
+  - image: world/maps/paper_aurania/world_map_objects.png
+    layer: ground_decorations
+    pos: [0, 0]
+  - localisedImage: paper_aurania_world_map_labels
+    layer: ground_decorations
+    pos: [0, 0]
+  - image: world/maps/paper_aurania/world_map_water.png
+    effect: water
+    layer: background_tiles_water
+    mask: world/maps/paper_aurania/world_map_water_ramp.png
+    pos: [0, 0]
+  - animation: world/maps/paper_aurania/world_map_smoke
+    layer: sky_effects
+    pos: [363, 311]
+  waterMask: masks/paper_aurania_water_mask.png
+  waterColour: "#4f3509"
+  boatAnimationSuffix: _brown
+  fishAnimations:
+  - world/world_map_paper_fish_size01
+  - world/world_map_paper_fish_size02
+  - world/world_map_paper_fish_size03
+  fishes:
+  - pos: [455, 415]
+    radius: 60
+  - pos: [615, 65]
+    radius: 30
+  - pos: [121, 121]
+    radius: 30
+  sound:
+  - event: environmental/barAmbience
+...

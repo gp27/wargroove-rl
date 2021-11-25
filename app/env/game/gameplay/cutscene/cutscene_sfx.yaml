@@ -1,0 +1,251 @@
+---
+
+cutscene_sfx:
+  - id: jump
+    path: cutscene/jump
+  - id: land
+    path: cutscene/land
+  - id: rope_twist
+    path: cutscene/ropeTwist
+  - id: thud
+    path: cutscene/thud    
+  - id: bump
+    path: cutscene/bump
+  - id: coins
+    path: cutscene/coins
+  - id: giant_step
+    path: cutscene/giantStep
+  - id: cloth_movement
+    path: cutscene/clothMovement1
+  - id: cloth_movement2
+    path: cutscene/clothMovement2
+  - id: rumble
+    path: cutscene/rumble
+
+
+  - id: stab
+    path: cutscene/stab
+  - id: punch
+    path: cutscene/punch
+  - id: heavy_blunt
+    path: cutscene/heavyBlunt
+  - id: heavy_stab
+    path: cutscene/heavyStab
+  - id: heavy_weapon_strike
+    path: cutscene/heavyWeaponStrike
+  - id: hit_stone
+    path: cutscene/hitStoneSingle
+  - id: hit_wood
+    path: cutscene/hitWoodSingle
+  - id: metal_hit
+    path: cutscene/hitMetalSingle
+  - id: shield_block
+    path: cutscene/shieldBlock
+  - id: sword_clash
+    path: swordClash
+  - id: sword_draw
+    path: cutscene/swordDraw
+  - id: sword_drop
+    path: cutscene/swordDrop
+  - id: sword_sheath
+    path: cutscene/swordSheath
+  - id: sword_strike
+    path: cutscene/swordStrike
+
+  - id: sword_swing
+    path: cutscene/swordSwing
+  - id: staff_swing
+    path: cutscene/staffSwing
+  - id: thrown_object
+    path: cutscene/throwObject
+    
+  - id: shield_holster
+    path: cutscene/shieldHolster
+  - id: switch
+    path: switch
+  - id: gunshot
+    path: cutscene/gunshot
+  - id: witch_attack
+    path: cutscene/spellBlast1
+  - id: mage_attack
+    path: cutscene/spellBlast2
+  - id: magic_power_down
+    path: cutscene/spellPowerDown
+  - id: magic_power_up
+    path: cutscene/spellPowerUp
+  - id: magic_shimmer
+    path: cutscene/spellShimmer
+  - id: spell_channel
+    path: cutscene/spellChannel
+  - id: thunder1
+    path: cutscene/thunder1
+  - id: thunder2
+    path: cutscene/thunder2
+  - id: thunder3
+    path: cutscene/thunder3
+  - id: cutscene_light_burst
+    path: cutscene/lightBurst
+  - id: flame
+    path: cutscene/flame
+
+  - id: flame_ignite
+    path: cutscene/fireIgnite
+  - id: flame_dowse
+    path: cutscene/firePuff
+  - id: smoke_bomb
+    path: cutscene/smokeBomb
+
+  - id: explosion_big
+    path: cutscene/explosionBig
+  - id: explosion_small
+    path: cutscene/explosionSmall
+  - id: glass_shatter
+    path: cutscene/glassShatter
+  - id: gate_die
+    path: cutscene/gateDie
+
+  - id: female_scream1
+    path: cutscene/villagerScreamFemale1
+  - id: female_scream2
+    path: cutscene/villagerScreamFemale2
+  - id: male_scream1
+    path: cutscene/villagerScreamMale1
+  - id: male_scream2
+    path: cutscene/villagerScreamMale2
+  - id: surprised
+    path: cutscene/surprised
+  - id: skelly_teeth
+    path: soldierShoutBlue1
+
+  - id: crowd_applause
+    path: cutscene/crowdApplause
+  - id: crowd_boo
+    path: cutscene/crowdBoo
+  - id: crowd_laugh
+    path: cutscene/crowdLaugh
+
+  - id: dragon_roar1
+    path: cutscene/dragonRoar1
+  - id: dragon_roar2
+    path: cutscene/dragonRoar2
+
+  - id: twang
+    path: cutscene/twang
+  - id: twirl
+    path: cutscene/twirl
+  - id: water_splash
+    path: cutscene/waterSplash
+  - id: wave_crash
+    path: cutscene/waveCrash
+
+  - id: honk
+    path: cutscene/honk
+  - id: punchline
+    path: cutscene/punchline
+  - id: slider
+    path: cutscene/slideWhistle
+  - id: splat
+    path: cutscene/splat
+  - id: scratch
+    path: cutscene/recordScratch
+
+  - id: dramatic_drum1
+    path: cutscene/dramaticDrum1
+  - id: dramatic_drum2
+    path: cutscene/dramaticDrum2
+
+  - id: smash_stone
+    path: strongholdDieRed
+  - id: stone_door_open
+    path: cutscene/stoneDoorOpen
+  - id: stone_door_close
+    path: cutscene/stoneDoorClose
+
+  - id: pressure_plate_triggered
+    path: cutscene/stoneScrape1
+  - id: pressure_plate_released
+    path: cutscene/stoneScrape2
+
+  - id: drawbridge_raise
+    path: cutscene/drawbridgeRaise
+  - id: drawbridge_lower
+    path: cutscene/drawbridgeDrop
+
+
+    # HIDDEN
+  - id: spell_binding
+    path: cutscene/spellBinding
+    hidden: true
+  - id: cutscene_ancient_door_open
+    path: cutscene/ancientDoorOpen
+    hidden: true
+  - id: cutscene_requiem_break
+    path: cutscene/requiemBreak
+    hidden: true
+  - id: cutscene_requiem_explode
+    path: cutscene/requiemExplode
+    hidden: true
+  - id: cutscene_requiem_sheath
+    path: cutscene/requiemSheath
+    hidden: true
+  - id: cutscene_sigrid_disappear
+    path: cutscene/sigridDisappear
+    hidden: true
+  - id: cutscene_crown_fall
+    path: cutscene/crownFall
+    hidden: true
+  - id: ship_die
+    path: cutscene/shipDie
+    hidden: true
+  - id: huge_giant_step
+    path: cutscene/hugeGiantStep
+    hidden: true
+  - id: teleport
+    path: cutscene/teleportOut
+    hidden: true
+  - id: teleport_in
+    path: cutscene/teleportIn
+    hidden: true
+  - id: bird_fly1
+    path: cutscene/birdFly1
+    hidden: true
+  - id: bird_fly2
+    path: cutscene/birdFly2
+    hidden: true
+  - id: bird_song1
+    path: cutscene/birdSong1
+    hidden: true
+  - id: bird_song2
+    path: cutscene/birdSong2
+    hidden: true
+  - id: treasure_stolen
+    path: cutscene/treasureStolen
+    hidden: true
+  - id: rustling_bushes
+    path: cutscene/bushRustle
+    hidden: true
+  - id: family_leaving_bushes
+    path: cutscene/familyLeavingBushes
+    hidden: true
+  - id: family_leaving_cactus
+    path: cutscene/familyLeavingCactii
+    hidden: true
+  - id: wulfar_carries_kids
+    path: cutscene/familyCarry
+    hidden: true
+  - id: rope_unfurl
+    path: cutscene/ropeThrow
+    hidden: true
+  - id: rope_slide
+    path: cutscene/ropeSlide
+    hidden: true
+  - id: floran_ambush
+    path: cutscene/floranAmbush
+    hidden: true
+  - id: meow
+    path: cutscene/catMeow
+    hidden: true
+  - id: purr
+    path: cutscene/catPurr
+    hidden: true
+...

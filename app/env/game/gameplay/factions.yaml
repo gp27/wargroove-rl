@@ -1,0 +1,65 @@
+---
+
+factions:
+  - id: cherrystone
+    name: faction_name_cherrystone
+    stdColour: red
+    altColour: green
+    skinColours: [ "typeII", "typeIII", "typeIV", "typeV", "typeVI" ]
+    bannerForeground: backgrounds/banners/banner_cherrystone_FG
+    bannerBackground: backgrounds/banners/banner_cherrystone_BG
+    rivalFaction: felheim
+
+  - id: felheim
+    name: faction_name_felheim
+    stdColour: blue
+    altColour: red
+    skinColours: [ "typeI" ]
+    bannerForeground: backgrounds/banners/banner_felheim_FG
+    bannerBackground: backgrounds/banners/banner_felheim_BG
+    rivalFaction: cherrystone
+
+  - id: floran
+    name: faction_name_floran
+    stdColour: green
+    altColour: blue
+    skinColours: [ "green" ]
+    bannerForeground: backgrounds/banners/banner_floran_FG
+    bannerBackground: backgrounds/banners/banner_floran_BG
+    rivalFaction: heavensong
+
+  - id: heavensong
+    name: faction_name_heavensong
+    stdColour: yellow
+    altColour: purple
+    skinColours: [ "typeII", "typeIII", "typeIV", "typeV", "typeVI" ]
+    bannerForeground: backgrounds/banners/banner_heavensong_FG
+    bannerBackground: backgrounds/banners/banner_heavensong_BG
+    rivalFaction: floran
+
+  - id: neutral
+    name: faction_name_neutral
+    stdColour: neutral
+    altColour: neutral
+    skinColours: [ "typeII", "typeIII", "typeIV", "typeV", "typeVI" ]
+    hasCodex: false
+
+  - id: outlaw
+    name: faction_name_outlaw
+    stdColour: black
+    altColour: cyan
+    skinColours: [ "typeII", "typeIII", "typeIV", "typeV", "typeVI" ]
+    bannerForeground: backgrounds/banners/banner_outlaw_FG
+    bannerBackground: backgrounds/banners/banner_outlaw_BG
+    hasCodex: false
+    # bannerForeground: backgrounds/banners/banner_outlaw_FG
+    # bannerBackground: backgrounds/banners/banner_outlaw_BG
+
+  - id: guardian
+    name: faction_name_guardian
+    stdColour: purple
+    altColour: yellow
+    skinColours: [ "typeI" ]
+    hasCodex: false
+
+...

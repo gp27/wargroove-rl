@@ -1,0 +1,42 @@
+---
+arcades:
+  - id: mercia
+    opponents: [nuru, ryota, sedge, ragna, elodie]
+  - id: emeric
+    opponents: [ragna, sedge, sigrid, nuru, elodie]
+  - id: caesar
+    opponents: [koji, nuru, ryota, greenfinger, elodie]
+  - id: sigrid
+    opponents: [ryota, greenfinger, emeric, valder, elodie]
+  - id: ragna
+    opponents: [sedge, caesar, koji, mercia, elodie]
+  - id: valder
+    opponents: [caesar, mercia, tenri, emeric, elodie]
+  - id: greenfinger
+    opponents: [emeric, tenri, caesar, koji, elodie]
+  - id: nuru
+    opponents: [koji, valder, caesar, tenri, elodie]
+  - id: sedge
+    opponents: [sigrid, ragna, mercia, ryota, elodie]
+  - id: koji
+    opponents: [valder, emeric, greenfinger, tenri, elodie]
+  - id: ryota
+    opponents: [mercia, sigrid, nuru, sedge, elodie]
+  - id: tenri
+    opponents: [greenfinger, ragna, sigrid, valder, elodie]
+  - id: darkmercia
+    opponents: [greenfinger, valder, tenri, emeric, mercia]
+  - id: elodie
+    opponents: [tenri, greenfinger, valder, mercia, elodie]
+  - id: mercival
+    opponents: [mercia, greenfinger, tenri, sigrid, darkmercia]
+  - id: wulfar
+    opponents: [sedge, ragna, sigrid, vesper, elodie]
+    tags: [dlc]
+  - id: twins
+    opponents: [mercia, ragna, sigrid, sedge, elodie]
+    tags: [dlc]
+  - id: vesper
+    opponents: [sigrid, sedge, nuru, emeric, elodie]
+    tags: [dlc]
+...

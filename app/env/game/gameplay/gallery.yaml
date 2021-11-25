@@ -1,0 +1,382 @@
+---
+
+gallery:
+
+- id: mercia03
+  description: gallery_mercia03
+  image: ui/gallery/content/gallery_mercia03.jpg
+
+- id: mercia01
+  description: gallery_mercia01
+  image: ui/gallery/content/gallery_mercia01.jpg
+
+- id: mercia02
+  description: gallery_mercia02
+  image: ui/gallery/content/gallery_mercia02.jpg
+
+- id: emeric03
+  description: gallery_emeric03
+  image: ui/gallery/content/gallery_emeric03.jpg
+
+- id: emeric04
+  description: gallery_emeric04
+  image: ui/gallery/content/gallery_emeric04.jpg
+
+- id: emeric05
+  description: gallery_emeric05
+  image: ui/gallery/content/gallery_emeric05.jpg
+
+- id: emeric01
+  description: gallery_emeric01
+  image: ui/gallery/content/gallery_emeric01.jpg
+
+- id: caesar02
+  description: gallery_caesar02
+  image: ui/gallery/content/gallery_caesar02.jpg
+
+- id: caesar01
+  description: gallery_caesar01
+  image: ui/gallery/content/gallery_caesar01.jpg
+
+- id: mercival01
+  description: gallery_mercival01
+  image: ui/gallery/content/gallery_mercival01.jpg
+
+- id: mercival02
+  description: gallery_mercival02
+  image: ui/gallery/content/gallery_mercival02.jpg
+
+- id: valder02
+  description: gallery_valder02
+  image: ui/gallery/content/gallery_valder02.jpg
+
+- id: valder03
+  description: gallery_valder03
+  image: ui/gallery/content/gallery_valder03.jpg
+
+- id: valder04
+  description: gallery_valder04
+  image: ui/gallery/content/gallery_valder04.jpg
+
+- id: valder01
+  description: gallery_valder01
+  image: ui/gallery/content/gallery_valder01.jpg
+
+- id: ragna03
+  description: gallery_ragna03
+  image: ui/gallery/content/gallery_ragna03.jpg
+
+- id: ragna01
+  description: gallery_ragna01
+  image: ui/gallery/content/gallery_ragna01.jpg
+
+- id: ragna02
+  description: gallery_ragna02
+  image: ui/gallery/content/gallery_ragna02.jpg
+
+- id: sigrid03
+  description: gallery_sigrid03
+  image: ui/gallery/content/gallery_sigrid03.jpg
+
+- id: sigrid04
+  description: gallery_sigrid04
+  image: ui/gallery/content/gallery_sigrid04.jpg
+
+- id: sigrid01
+  description: gallery_sigrid01
+  image: ui/gallery/content/gallery_sigrid01.jpg
+
+- id: sigrid02
+  description: gallery_sigrid02
+  image: ui/gallery/content/gallery_sigrid02.jpg
+
+- id: greenfinger01
+  description: gallery_greenfinger01
+  image: ui/gallery/content/gallery_greenfinger01.jpg
+
+- id: greenfinger02
+  description: gallery_greenfinger02
+  image: ui/gallery/content/gallery_greenfinger02.jpg
+
+- id: greenfinger03
+  description: gallery_greenfinger03
+  image: ui/gallery/content/gallery_greenfinger03.jpg
+
+- id: greenfinger04
+  description: gallery_greenfinger04
+  image: ui/gallery/content/gallery_greenfinger04.jpg
+
+- id: nuru01
+  description: gallery_nuru01
+  image: ui/gallery/content/gallery_nuru01.jpg
+
+- id: sedge02
+  description: gallery_sedge02
+  image: ui/gallery/content/gallery_sedge02.jpg
+
+- id: sedge01
+  description: gallery_sedge01
+  image: ui/gallery/content/gallery_sedge01.jpg
+
+- id: sedge03
+  description: gallery_sedge03
+  image: ui/gallery/content/gallery_sedge03.jpg
+
+- id: tenri02
+  description: gallery_tenri02
+  image: ui/gallery/content/gallery_tenri02.jpg
+
+- id: tenri03
+  description: gallery_tenri03
+  image: ui/gallery/content/gallery_tenri03.jpg
+
+- id: tenri01
+  description: gallery_tenri01
+  image: ui/gallery/content/gallery_tenri01.jpg
+
+- id: ryota03
+  description: gallery_ryota03
+  image: ui/gallery/content/gallery_ryota03.jpg
+
+- id: ryota04
+  description: gallery_ryota04
+  image: ui/gallery/content/gallery_ryota04.jpg
+
+- id: ryota05
+  description: gallery_ryota05
+  image: ui/gallery/content/gallery_ryota05.jpg
+
+- id: ryota01
+  description: gallery_ryota01
+  image: ui/gallery/content/gallery_ryota01.jpg
+
+- id: ryota02
+  description: gallery_ryota02
+  image: ui/gallery/content/gallery_ryota02.jpg
+
+- id: koji03
+  description: gallery_koji03
+  image: ui/gallery/content/gallery_koji03.jpg
+
+- id: koji04
+  description: gallery_koji04
+  image: ui/gallery/content/gallery_koji04.jpg
+
+- id: koji01
+  description: gallery_koji01
+  image: ui/gallery/content/gallery_koji01.jpg
+
+- id: koji02
+  description: gallery_koji02
+  image: ui/gallery/content/gallery_koji02.jpg
+
+- id: elodie05
+  description: gallery_elodie05
+  image: ui/gallery/content/gallery_elodie05.jpg
+  unlock: gallery_elodie
+
+- id: elodie02
+  description: gallery_elodie02
+  image: ui/gallery/content/gallery_elodie02.jpg
+  unlock: gallery_elodie
+
+- id: elodie03
+  description: gallery_elodie03
+  image: ui/gallery/content/gallery_elodie03.jpg
+  unlock: gallery_elodie
+
+- id: elodie04
+  description: gallery_elodie04
+  image: ui/gallery/content/gallery_elodie04.jpg
+  unlock: gallery_elodie
+
+- id: elodie01
+  description: gallery_elodie01
+  image: ui/gallery/content/gallery_elodie01.jpg
+  unlock: gallery_elodie
+
+- id: darkmercia01
+  description: gallery_darkmercia01
+  image: ui/gallery/content/gallery_darkmercia01.jpg
+  unlock: gallery_darkmercia
+
+- id: darkmercia02
+  description: gallery_darkmercia02
+  image: ui/gallery/content/gallery_darkmercia02.jpg
+  unlock: gallery_darkmercia
+
+- id: annotatedaurania
+  description: gallery_annotatedaurania
+  image: ui/gallery/content/gallery_annotated_aurania.jpg
+
+- id: buildingscherry
+  description: gallery_buildingscherry
+  image: ui/gallery/content/gallery_buildingscherry.jpg
+
+- id: buildingsfelheim
+  description: gallery_buildingsfelheim
+  image: ui/gallery/content/gallery_buildingsfelheim.jpg
+
+- id: buildingsfloran
+  description: gallery_buildingsfloran
+  image: ui/gallery/content/gallery_buildingsfloran.jpg
+
+- id: buildingsheaven
+  description: gallery_buildingsheaven
+  image: ui/gallery/content/gallery_buildingsheaven.jpg
+
+- id: buildingsportbarrack
+  description: gallery_buildingsportbarrack
+  image: ui/gallery/content/gallery_buildingsportbarrack.jpg
+
+- id: buildingsvillage
+  description: gallery_buildingsvillage
+  image: ui/gallery/content/gallery_buildingsvillage.jpg
+
+- id: unitballoon
+  description: gallery_unitballoon
+  image: ui/gallery/content/gallery_unitballoon.jpg
+
+- id: unitfelmerman
+  description: gallery_unitfelmerman
+  image: ui/gallery/content/gallery_unitfelmerman.jpg
+
+- id: unitfelwitch
+  description: gallery_unitfelwitch
+  image: ui/gallery/content/gallery_unitfelwitch.jpg
+
+- id: unitgiant
+  description: gallery_unitgiant
+  image: ui/gallery/content/gallery_unitgiant.jpg
+
+- id: unitgiant2
+  description: gallery_unitgiant2
+  image: ui/gallery/content/gallery_unitgiant2.jpg
+
+- id: unitgiant3
+  description: gallery_unitgiant3
+  image: ui/gallery/content/gallery_unitgiant3.jpg
+
+- id: unitgiant4
+  description: gallery_unitgiant4
+  image: ui/gallery/content/gallery_unitgiant4.jpg
+
+- id: unitheaven
+  description: gallery_unitheaven
+  image: ui/gallery/content/gallery_unitheaven.jpg
+
+- id: unitfloran01
+  description: gallery_unitfloran01
+  image: ui/gallery/content/gallery_unitfloran01.jpg
+
+- id: unitfloran02
+  description: gallery_unitfloran02
+  image: ui/gallery/content/gallery_unitfloran02.jpg
+
+- id: unitturtle
+  description: gallery_unitturtle
+  image: ui/gallery/content/gallery_unitturtle.jpg
+
+- id: mockups1
+  description: gallery_mockups1
+  image: ui/gallery/content/gallery_mockups1.jpg
+
+- id: mockups2
+  description: gallery_mockups2
+  image: ui/gallery/content/gallery_mockups2.jpg
+
+- id: mockups4
+  description: gallery_mockups4
+  image: ui/gallery/content/gallery_mockups4.jpg
+
+- id: mockups5
+  description: gallery_mockups5
+  image: ui/gallery/content/gallery_mockups5.jpg
+
+- id: logo01
+  description: gallery_logo01
+  image: ui/gallery/content/gallery_logo01.jpg
+
+- id: logo02
+  description: gallery_logo02
+  image: ui/gallery/content/gallery_logo02.jpg
+
+- id: logo03
+  description: gallery_logo03
+  image: ui/gallery/content/gallery_logo03.jpg
+
+- id: groupphoto
+  description: gallery_groupphoto
+  image: ui/gallery/content/groupphoto.jpg
+  unlock: gallery_darkmercia
+
+- id: dlc1arcade
+  description: gallery_dlc1arcade
+  image: ui/gallery/content/dlc1/gallery_arcade01.jpg
+
+- id: dlc1commanders
+  description: gallery_dlc1commanders
+  image: ui/gallery/content/dlc1/gallery_commanders01.jpg
+
+- id: dlc1wulfar1
+  description: gallery_dlc1wulfar1
+  image: ui/gallery/content/dlc1/gallery_wulfar01.jpg
+
+- id: dlc1wulfar2
+  description: gallery_dlc1wulfar2
+  image: ui/gallery/content/dlc1/gallery_wulfar02.jpg
+
+- id: dlc1wulfar3
+  description: gallery_dlc1wulfar3
+  image: ui/gallery/content/dlc1/gallery_wulfar03.jpg
+
+- id: dlc1twins1
+  description: gallery_dlc1twins1
+  image: ui/gallery/content/dlc1/gallery_twins04.jpg
+
+- id: dlc1twins2
+  description: gallery_dlc1twins2
+  image: ui/gallery/content/dlc1/gallery_twins01.jpg
+
+- id: dlc1twins3
+  description: gallery_dlc1twins3
+  image: ui/gallery/content/dlc1/gallery_twins02.jpg
+
+- id: dlc1twins4
+  description: gallery_dlc1twins4
+  image: ui/gallery/content/dlc1/gallery_twins03.jpg
+
+- id: dlc1twins5
+  description: gallery_dlc1twins5
+  image: ui/gallery/content/dlc1/gallery_twins05.jpg
+
+- id: dlc1vesper1
+  description: gallery_dlc1vesper1
+  image: ui/gallery/content/dlc1/gallery_vesper05.jpg
+
+- id: dlc1vesper2
+  description: gallery_dlc1vesper2
+  image: ui/gallery/content/dlc1/gallery_vesper04.jpg
+
+- id: dlc1vesper3
+  description: gallery_dlc1vesper3
+  image: ui/gallery/content/dlc1/gallery_vesper03.jpg
+
+- id: dlc1vesper4
+  description: gallery_dlc1vesper4
+  image: ui/gallery/content/dlc1/gallery_vesper02.jpg
+
+- id: dlc1vesper5
+  description: gallery_dlc1vesper5
+  image: ui/gallery/content/dlc1/gallery_vesper01.jpg
+
+- id: dlc1enid1
+  description: gallery_dlc1enid1
+  image: ui/gallery/content/dlc1/gallery_enid01.jpg
+  #unlock: gallery_dlc1enid
+
+- id: dlc1thief1
+  description: gallery_dlc1thief1
+  image: ui/gallery/content/dlc1/gallery_thief01.jpg
+
+...

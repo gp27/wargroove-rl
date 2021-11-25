@@ -1,0 +1,166 @@
+
+---
+
+weapons:
+  - id: bite
+    rangeMin: 1
+    rangeMax: 1
+    canMoveAndAttack: true
+    baseDamage:
+      land: 1
+    tagDamage:
+      archer: 0.75
+      soldier: 0.75
+      villager: 0.75
+      spearman: 0.45
+      dog: 0.65
+      wagon: 0.3
+      knight: 0.1
+      trebuchet: 0.35
+      ballista: 0.4
+      giant: 0.05
+      dragon: 100 #goodboy
+      merman: 0.75
+      mage: 0.55
+      structure: 0.2
+      commander: 0.15
+      rifleman: 1.1
+      thief: 0.85
+
+
+unitClasses:
+  - id: dog
+    name: unit_class_name_dog
+    cost: 150
+    movement: walking
+    moveRange: 5
+    damageMultiplier: 1
+    aiPriority: 1.0
+    weapons:
+      - id: bite
+    verbs:
+      - load
+    tags:
+      - dog
+      - type.ground.light
+      - animal
+    battleUnitCount: 4
+    passiveMultiplier: 1.5
+    sightRange: 4
+    scout: true
+    runsAway: true
+
+units:
+  - class: dog
+    faction: cherrystone
+    name: unit_name_dog_cherrystone
+    mapAnimation: units/dog/cherrystone/map_dog_cherrystone
+    battleAnimation: units/dog/cherrystone/battle_dog_cherrystone
+    battleAnimationRiver: fx/river_overlay/battle_dog_cherrystone_river
+    smallPortrait: units/dog/cherrystone/portrait_dog_cherrystone_small.png
+    mediumPortrait: units/dog/cherrystone/portrait_dog_cherrystone_medium.png
+    mapSpeed: 5.0
+    grabPos: [15, 23]
+    sounds:
+      attackMap: unitAttack
+      attack: dogAttack
+      attackShout: dogPreAttack
+      death: dogDie
+      deathMap: unitDie
+      run: dogEntry
+      runMap: dogMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.3
+    shouts:      
+      dog_shout1: dogShoutGrowl
+      caesar_bark1: dogShoutBark
+
+  - class: dog
+    faction: felheim
+    name: unit_name_dog_felheim
+    mapAnimation: units/dog/felheim/map_dog_felheim
+    battleAnimation: units/dog/felheim/battle_dog_felheim
+    battleAnimationRiver: fx/river_overlay/battle_dog_felheim_river
+    smallPortrait: units/dog/felheim/portrait_dog_felheim_small.png
+    mediumPortrait: units/dog/felheim/portrait_dog_felheim_medium.png
+    mapSpeed: 5.0
+    grabPos: [15, 23]
+    sounds:
+      attackMap: unitAttack
+      attack: dogAttack
+      attackShout: dogPreAttack
+      death: dogDie
+      deathMap: unitDie
+      run: dogEntry
+      runMap: dogMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.3
+    shouts:      
+      dog_shout1: dogShoutGrowl
+      caesar_bark1: dogShoutBark
+
+  - class: dog
+    faction: heavensong
+    name: unit_name_dog_heavensong
+    mapAnimation: units/dog/heavensong/map_dog_heavensong
+    battleAnimation: units/dog/heavensong/battle_dog_heavensong
+    battleAnimationRiver: fx/river_overlay/battle_dog_heavensong_river
+    smallPortrait: units/dog/heavensong/portrait_dog_heavensong_small.png
+    mediumPortrait: units/dog/heavensong/portrait_dog_heavensong_medium.png
+    mapSpeed: 5.0
+    grabPos: [15, 23]
+    sounds:
+      attackMap: unitAttack
+      attack: dogAttack
+      attackShout: dogPreAttack
+      death: dogDie
+      deathMap: unitDie
+      run: dogEntry
+      runMap: dogMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.3
+    shouts:      
+      dog_shout1: dogShoutGrowl
+      caesar_bark1: dogShoutBark
+
+  - class: dog
+    faction: floran
+    name: unit_name_dog_floran
+    mapAnimation: units/dog/floran/map_dog_floran
+    battleAnimation: units/dog/floran/battle_dog_floran
+    battleAnimationRiver: fx/river_overlay/battle_dog_floran_river
+    smallPortrait: units/dog/floran/portrait_dog_floran_small.png
+    mediumPortrait: units/dog/floran/portrait_dog_floran_medium.png
+    mapSpeed: 5.0
+    grabPos: [16, 22]
+    sounds:
+      attackMap: unitAttack
+      attack: dogAttackGreen
+      attackShout: dogPreAttack
+      death: dogDie
+      deathMap: unitDie
+      run: dogEntry
+      runMap: dogMapEntry
+      hit: hitOrganic
+      hitMap: hitOrganic
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 0.8
+    shouts:      
+      dog_shout1: dogShoutGrowl
+      caesar_bark1: dogShoutBarkGreen
+
+...

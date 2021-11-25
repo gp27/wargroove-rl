@@ -1,0 +1,53 @@
+---
+gizmos:
+  - id: lever
+    animation: gizmo/lever
+  - id: chest
+    animation: gizmo/chest1
+  - id: brazier
+    animation: gizmo/brazier
+  - id: bowl_torch
+    animation: gizmo/bowl_torch
+  - id: drawbridge_left
+    animation: gizmo/drawbridge_left
+    onState:
+      terrainOverride: bridge
+  - id: drawbridge_right
+    animation: gizmo/drawbridge_right
+    onState:
+      terrainOverride: bridge
+  - id: drawbridge_top
+    animation: gizmo/drawbridge_top
+    onState:
+      terrainOverride: bridge
+  - id: drawbridge_down
+    animation: gizmo/drawbridge_down
+    onState:
+      terrainOverride: bridge
+  - id: pressure_plate
+    animation: gizmo/pressure_plate
+  - id: broken_wall
+    animation:
+      grass: gizmo/broken_wall
+      desert: gizmo/broken_wall_desert
+      ice: gizmo/broken_wall_snow
+      volcano: gizmo/broken_wall_volcano
+    offState:
+      terrainOverride: wall
+  - id: broken_wall_vertical
+    animation:
+      grass: gizmo/broken_wall_vertical
+      desert: gizmo/broken_wall_vertical_desert
+      ice: gizmo/broken_wall_vertical_snow
+      volcano: gizmo/broken_wall_vertical_volcano
+    offState:
+      terrainOverride: wall
+  - id: portal
+    animation:
+      grass: gizmo/portal
+      desert: gizmo/portal_desert
+      ice: gizmo/portal_snow
+      volcano: gizmo/portal_volcano
+
+
+...

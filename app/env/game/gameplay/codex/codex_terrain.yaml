@@ -1,0 +1,1352 @@
+---
+codex:
+
+- id: terrain_road_grass
+  category: terrain
+  name: terrain_name_road
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_road.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_road_grass.png
+    title: terrain_name_road_grass
+    text: codex_terrain_road_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_road_grass.png
+    title: terrain_name_road_strategy
+    text: codex_terrain_road_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_road_grass.png
+    title: terrain_name_road_stats
+    text: codex_terrain_road_stats_text
+    terrainType: road
+
+- id: terrain_road_ice
+  category: terrain
+  name: terrain_name_road
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_road_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_road_ice.png
+    title: terrain_name_road_ice
+    text: codex_terrain_road_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_road_ice.png
+    title: terrain_name_road_strategy
+    text: codex_terrain_road_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_road_ice.png
+    title: terrain_name_road_stats
+    text: codex_terrain_road_stats_text
+    terrainType: road
+
+- id: terrain_road_desert
+  category: terrain
+  name: terrain_name_road
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_road_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_road_desert.png
+    title: terrain_name_road_desert
+    text: codex_terrain_road_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_road_desert.png
+    title: terrain_name_road_strategy
+    text: codex_terrain_road_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_road_desert.png
+    title: terrain_name_road_stats
+    text: codex_terrain_road_stats_text
+    terrainType: road
+
+- id: terrain_road_volcanic
+  category: terrain
+  name: terrain_name_road
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_road_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_road_volcanic.png
+    title: terrain_name_road_volcanic
+    text: codex_terrain_road_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_road_volcanic.png
+    title: terrain_name_road_strategy
+    text: codex_terrain_road_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_road_volcanic.png
+    title: terrain_name_road_stats
+    text: codex_terrain_road_stats_text
+    terrainType: road
+
+
+
+
+
+
+
+- id: terrain_plains_grass
+  category: terrain
+  name: terrain_name_plains
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_plains.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_field_grass.png
+    title: terrain_name_field_grass
+    text: codex_terrain_plains_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_field_grass.png
+    title: terrain_name_field_strategy
+    text: codex_terrain_plains_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_field_grass.png
+    title: terrain_name_field_stats
+    text: codex_terrain_plains_stats_text
+    terrainType: plains
+
+- id: terrain_plains_ice
+  category: terrain
+  name: terrain_name_plains
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_plains_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_field_ice.png
+    title: terrain_name_field_ice
+    text: codex_terrain_plains_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_field_ice.png
+    title: terrain_name_field_strategy
+    text: codex_terrain_plains_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_field_ice.png
+    title: terrain_name_field_stats
+    text: codex_terrain_plains_stats_text
+    terrainType: plains
+
+- id: terrain_plains_desert
+  category: terrain
+  name: terrain_name_plains
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_plains_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_field_desert.png
+    title: terrain_name_field_desert
+    text: codex_terrain_plains_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_field_desert.png
+    title: terrain_name_field_strategy
+    text: codex_terrain_plains_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_field_desert.png
+    title: terrain_name_field_stats
+    text: codex_terrain_plains_stats_text
+    terrainType: plains
+
+- id: terrain_plains_volcanic
+  category: terrain
+  name: terrain_name_plains
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_plains_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_field_volcanic.png
+    title: terrain_name_plains_volcanic
+    text: codex_terrain_plains_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_field_volcanic.png
+    title: terrain_name_field_strategy
+    text: codex_terrain_plains_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_field_volcanic.png
+    title: terrain_name_field_stats
+    text: codex_terrain_plains_stats_text
+    terrainType: plains
+
+
+
+
+
+
+
+
+
+- id: terrain_forest_grass
+  category: terrain
+  name: terrain_name_forest
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_forest.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_forest_grass.png
+    title: terrain_name_forest_grass
+    text: codex_terrain_forest_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_forest_grass.png
+    title: terrain_name_forest_strategy
+    text: codex_terrain_forest_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_forest_grass.png
+    title: terrain_name_forest_stats
+    text: codex_terrain_forest_stats_text
+    terrainType: forest
+
+- id: terrain_forest_ice
+  category: terrain
+  name: terrain_name_forest
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_forest_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_forest_ice.png
+    title: terrain_name_forest_ice
+    text: codex_terrain_forest_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_forest_ice.png
+    title: terrain_name_forest_strategy
+    text: codex_terrain_forest_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_forest_ice.png
+    title: terrain_name_forest_stats
+    text: codex_terrain_forest_stats_text
+    terrainType: forest
+
+- id: terrain_forest_desert
+  category: terrain
+  name: terrain_name_forest
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_forest_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_forest_desert.png
+    title: terrain_name_forest_desert
+    text: codex_terrain_forest_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_forest_desert.png
+    title: terrain_name_forest_strategy
+    text: codex_terrain_forest_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_forest_desert.png
+    title: terrain_name_forest_stats
+    text: codex_terrain_forest_stats_text
+    terrainType: forest
+
+- id: terrain_forest_volcanic
+  category: terrain
+  name: terrain_name_forest
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_forest_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_forest_volcanic.png
+    title: terrain_name_forest_volcanic
+    text: codex_terrain_forest_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_forest_volcanic.png
+    title: terrain_name_forest_strategy
+    text: codex_terrain_forest_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_forest_volcanic.png
+    title: terrain_name_forest_stats
+    text: codex_terrain_forest_stats_text
+    terrainType: forest
+
+
+
+
+
+
+
+
+
+
+- id: terrain_mountain_grass
+  category: terrain
+  name: terrain_name_mountain
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_mountain.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_mountain_grass.png
+    title: terrain_name_mountain_grass
+    text: codex_terrain_mountain_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_mountain_grass.png
+    title: terrain_name_mountain_strategy
+    text: codex_terrain_mountain_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_mountain_grass.png
+    title: terrain_name_mountain_stats
+    text: codex_terrain_mountain_stats_text
+    terrainType: mountain
+
+- id: terrain_mountain_ice
+  category: terrain
+  name: terrain_name_mountain
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_mountain_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_mountain_ice.png
+    title: terrain_name_mountain_ice
+    text: codex_terrain_mountain_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_mountain_ice.png
+    title: terrain_name_mountain_strategy
+    text: codex_terrain_mountain_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_mountain_ice.png
+    title: terrain_name_mountain_stats
+    text: codex_terrain_mountain_stats_text
+    terrainType: mountain
+
+- id: terrain_mountain_desert
+  category: terrain
+  name: terrain_name_mountain
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_mountain_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_mountain_desert.png
+    title: terrain_name_mountain_desert
+    text: codex_terrain_mountain_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_mountain_desert.png
+    title: terrain_name_mountain_strategy
+    text: codex_terrain_mountain_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_mountain_desert.png
+    title: terrain_name_mountain_stats
+    text: codex_terrain_mountain_stats_text
+    terrainType: mountain
+
+- id: terrain_mountain_volcanic
+  category: terrain
+  name: terrain_name_mountain
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_mountain_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_mountain_volcanic.png
+    title: terrain_name_mountain_volcanic
+    text: codex_terrain_mountain_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_mountain_volcanic.png
+    title: terrain_name_mountain_strategy
+    text: codex_terrain_mountain_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_mountain_volcanic.png
+    title: terrain_name_mountain_stats
+    text: codex_terrain_mountain_stats_text
+    terrainType: mountain
+
+
+
+
+
+
+
+
+
+- id: terrain_river_grass
+  category: terrain
+  name: terrain_name_river
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_river.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_river_grass.png
+    title: terrain_name_river_grass
+    text: codex_terrain_river_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_river_grass.png
+    title: terrain_name_river_strategy
+    text: codex_terrain_river_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_river_grass.png
+    title: terrain_name_river_stats
+    text: codex_terrain_river_stats_text
+    terrainType: river
+
+- id: terrain_river_ice
+  category: terrain
+  name: terrain_name_river
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_river_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_river_ice.png
+    title: terrain_name_river_ice
+    text: codex_terrain_river_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_river_ice.png
+    title: terrain_name_river_strategy
+    text: codex_terrain_river_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_river_ice.png
+    title: terrain_name_river_stats
+    text: codex_terrain_river_stats_text
+    terrainType: river
+
+- id: terrain_river_desert
+  category: terrain
+  name: terrain_name_river
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_river_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_river_desert.png
+    title: terrain_name_river_desert
+    text: codex_terrain_river_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_river_desert.png
+    title: terrain_name_river_strategy
+    text: codex_terrain_river_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_river_desert.png
+    title: terrain_name_river_stats
+    text: codex_terrain_river_stats_text
+    terrainType: river
+
+- id: terrain_river_volcanic
+  category: terrain
+  name: terrain_name_river
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_sea_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: terrain_name_river_volcanic
+    text: codex_terrain_river_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: terrain_name_shallowlava_strategy
+    text: terrain_name_shallowlava_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: codex_terrain_shallowlava_stats
+    text: codex_terrain_shallowlava_stats_text
+    terrainType: river
+
+
+
+
+
+
+
+
+
+
+- id: terrain_bridge_grass
+  category: terrain
+  name: terrain_name_bridge
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_bridge.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_bridge_grass.png
+    title: terrain_name_bridge_grass
+    text: codex_terrain_bridge_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_bridge_grass.png
+    title: terrain_name_bridge_strategy
+    text: codex_terrain_bridge_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_bridge_grass.png
+    title: terrain_name_bridge_stats
+    text: codex_terrain_bridge_stats_text
+    terrainType: bridge
+
+- id: terrain_bridge_ice
+  category: terrain
+  name: terrain_name_bridge
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_bridge_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_bridge_ice.png
+    title: terrain_name_bridge_ice
+    text: codex_terrain_bridge_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_bridge_ice.png
+    title: terrain_name_bridge_strategy
+    text: codex_terrain_bridge_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_bridge_ice.png
+    title: terrain_name_bridge_stats
+    text: codex_terrain_bridge_stats_text
+    terrainType: bridge
+
+- id: terrain_bridge_desert
+  category: terrain
+  name: terrain_name_bridge
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_bridge_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_bridge_desert.png
+    title: terrain_name_bridge_desert
+    text: codex_terrain_bridge_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_bridge_desert.png
+    title: terrain_name_bridge_strategy
+    text: codex_terrain_bridge_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_bridge_desert.png
+    title: terrain_name_bridge_stats
+    text: codex_terrain_bridge_stats_text
+    terrainType: bridge
+
+- id: terrain_bridge_volcanic
+  category: terrain
+  name: terrain_name_bridge
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_bridge_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_bridge_volcanic.png
+    title: terrain_name_bridge_volcanic
+    text: codex_terrain_bridge_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_bridge_volcanic.png
+    title: terrain_name_bridge_strategy
+    text: codex_terrain_bridge_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_bridge_volcanic.png
+    title: terrain_name_bridge_stats
+    text: codex_terrain_bridge_stats_text
+    terrainType: bridge
+
+
+
+
+
+
+
+
+
+
+- id: terrain_beach_grass
+  category: terrain
+  name: terrain_name_beach
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_beach.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_beach_grass.png
+    title: terrain_name_beach_grass
+    text: codex_terrain_beach_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_beach_grass.png
+    title: terrain_name_beach_strategy
+    text: codex_terrain_beach_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_beach_grass.png
+    title: terrain_name_beach_stats
+    text: codex_terrain_beach_stats_text
+    terrainType: beach
+
+- id: terrain_beach_ice
+  category: terrain
+  name: terrain_name_beach
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_beach_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_beach_ice.png
+    title: terrain_name_beach_ice
+    text: codex_terrain_beach_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_beach_ice.png
+    title: terrain_name_beach_strategy
+    text: codex_terrain_beach_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_beach_ice.png
+    title: terrain_name_beach_stats
+    text: codex_terrain_beach_stats_text
+    terrainType: beach
+
+- id: terrain_beach_desert
+  category: terrain
+  name: terrain_name_beach
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_beach_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_beach_desert.png
+    title: terrain_name_beach_desert
+    text: codex_terrain_beach_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_beach_desert.png
+    title: terrain_name_beach_strategy
+    text: codex_terrain_beach_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_beach_desert.png
+    title: terrain_name_beach_stats
+    text: codex_terrain_beach_stats_text
+    terrainType: beach
+
+- id: terrain_beach_volcanic
+  category: terrain
+  name: terrain_name_beach
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_beach_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_beach_volcanic.png
+    title: terrain_name_beach_volcanic
+    text: codex_terrain_beach_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_beach_volcanic.png
+    title: terrain_name_beach_strategy
+    text: codex_terrain_beach_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_beach_volcanic.png
+    title: terrain_name_beach_stats
+    text: codex_terrain_beach_stats_text
+    terrainType: beach
+
+
+
+
+
+
+
+
+
+- id: terrain_sea_grass
+  category: terrain
+  name: terrain_name_sea
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_sea.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_grass
+    text: codex_terrain_sea_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_strategy
+    text: codex_terrain_sea_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_stats
+    text: codex_terrain_sea_stats_text
+    terrainType: sea
+
+- id: terrain_sea_ice
+  category: terrain
+  name: terrain_name_sea
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_sea.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_ice
+    text: codex_terrain_sea_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_strategy
+    text: codex_terrain_sea_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_stats
+    text: codex_terrain_sea_stats_text
+    terrainType: sea
+
+- id: terrain_sea_desert
+  category: terrain
+  name: terrain_name_sea
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_sea.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_desert
+    text: codex_terrain_sea_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_strategy
+    text: codex_terrain_sea_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_ocean_stats
+    text: codex_terrain_sea_stats_text
+    terrainType: sea
+
+- id: terrain_sea_volcanic
+  category: terrain
+  name: terrain_name_sea
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_sea_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: terrain_name_sea_volcanic
+    text: codex_terrain_sea_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: terrain_name_lava_strategy
+    text: terrain_name_lava_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: codex_terrain_lava_stats
+    text: codex_terrain_lava_stats_text
+    terrainType: sea
+
+
+
+
+
+
+
+
+
+- id: terrain_deepsea_grass
+  category: terrain
+  name: terrain_name_ocean
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_deepsea.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_grass
+    text: codex_terrain_deepsea_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_strategy
+    text: codex_terrain_deepsea_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_stats
+    text: codex_terrain_deepsea_stats_text
+    terrainType: ocean
+
+- id: terrain_deepsea_ice
+  category: terrain
+  name: terrain_name_ocean
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_deepsea.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_ice
+    text: codex_terrain_deepsea_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_strategy
+    text: codex_terrain_deepsea_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_stats
+    text: codex_terrain_deepsea_stats_text
+    terrainType: sea
+
+- id: terrain_deepsea_desert
+  category: terrain
+  name: terrain_name_ocean
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_deepsea.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_desert
+    text: codex_terrain_deepsea_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_strategy
+    text: codex_terrain_deepsea_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_ocean_grass.png
+    title: terrain_name_deepsea_stats
+    text: codex_terrain_deepsea_stats_text
+    terrainType: sea
+
+- id: terrain_deepsea_volcanic
+  category: terrain
+  name: terrain_name_ocean
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_sea_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: terrain_name_deepsea_volcanic
+    text: codex_terrain_deepsea_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: terrain_name_deeplava_strategy
+    text: terrain_name_deeplava_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: codex_terrain_deeplava_stats
+    text: codex_terrain_deeplava_stats_text
+    terrainType: sea
+
+
+
+
+
+
+
+
+
+
+- id: terrain_reef_grass
+  category: terrain
+  name: terrain_name_reef
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_reef.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_grass
+    text: codex_terrain_reef_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_strategy
+    text: codex_terrain_reef_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_stats
+    text: codex_terrain_reef_stats_text
+    terrainType: reef
+
+- id: terrain_reef_ice
+  category: terrain
+  name: terrain_name_reef
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_reef.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_ice
+    text: codex_terrain_reef_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_strategy
+    text: codex_terrain_reef_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_stats
+    text: codex_terrain_reef_stats_text
+    terrainType: reef
+
+- id: terrain_reef_desert
+  category: terrain
+  name: terrain_name_reef
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_reef.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_desert
+    text: codex_terrain_reef_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_strategy
+    text: codex_terrain_reef_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_reef_grass.png
+    title: terrain_name_reef_stats
+    text: codex_terrain_reef_stats_text
+    terrainType: reef
+    terrainType: reef
+
+- id: terrain_reef_volcanic
+  category: terrain
+  name: terrain_name_reef
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_sea_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: terrain_name_reef_volcanic
+    text: codex_terrain_reef_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: terrain_name_coolinglava_strategy
+    text: terrain_name_coolinglava_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_sea_volcanic.png
+    title: codex_terrain_coolinglava_stats
+    text: codex_terrain_coolinglava_stats_text
+    terrainType: sea
+
+
+
+
+
+
+
+
+
+
+- id: terrain_wall_grass
+  category: terrain
+  name: terrain_name_wall
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_wall.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_wall_grass.png
+    title: terrain_name_wall_grass
+    text: codex_terrain_wall_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_wall_grass.png
+    title: terrain_name_wall_strategy
+    text: codex_terrain_wall_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_wall_grass.png
+    title: terrain_name_wall_stats
+    text: codex_terrain_wall_stats_text
+    terrainType: wall
+
+- id: terrain_wall_ice
+  category: terrain
+  name: terrain_name_wall
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_wall_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_wall_ice.png
+    title: terrain_name_wall_ice
+    text: codex_terrain_wall_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_wall_ice.png
+    title: terrain_name_wall_strategy
+    text: codex_terrain_wall_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_wall_ice.png
+    title: terrain_name_wall_stats
+    text: codex_terrain_wall_stats_text
+    terrainType: wall
+
+- id: terrain_wall_desert
+  category: terrain
+  name: terrain_name_wall
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_wall_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_wall_desert.png
+    title: terrain_name_wall_desert
+    text: codex_terrain_wall_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_wall_desert.png
+    title: terrain_name_wall_strategy
+    text: codex_terrain_wall_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_wall_desert.png
+    title: terrain_name_wall_stats
+    text: codex_terrain_wall_stats_text
+    terrainType: wall
+
+- id: terrain_wall_volcanic
+  category: terrain
+  name: terrain_name_wall
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_wall_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_wall_volcanic.png
+    title: terrain_name_wall_volcanic
+    text: codex_terrain_wall_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_wall_volcanic.png
+    title: terrain_name_wall_strategy
+    text: codex_terrain_wall_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_wall_volcanic.png
+    title: terrain_name_wall_stats
+    text: codex_terrain_wall_stats_text
+    terrainType: wall
+
+
+
+
+
+
+
+
+
+- id: terrain_cobblestone_grass
+  category: terrain
+  name: terrain_name_cobblestone
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_cobblestone.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_flagstone_grass.png
+    title: terrain_name_cobblestone_grass
+    text: codex_terrain_cobblestone_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_flagstone_grass.png
+    title: terrain_name_cobblestone_strategy
+    text: codex_terrain_cobblestone_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_flagstone_grass.png
+    title: terrain_name_cobblestone_stats
+    text: codex_terrain_cobblestone_stats_text
+    terrainType: cobblestone
+
+- id: terrain_cobblestone_ice
+  category: terrain
+  name: terrain_name_cobblestone
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_cobblestone_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_flagstone_ice.png
+    title: terrain_name_cobblestone_ice
+    text: codex_terrain_cobblestone_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_flagstone_ice.png
+    title: terrain_name_cobblestone_strategy
+    text: codex_terrain_cobblestone_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_flagstone_ice.png
+    title: terrain_name_cobblestone_stats
+    text: codex_terrain_cobblestone_stats_text
+    terrainType: cobblestone
+
+- id: terrain_cobblestone_desert
+  category: terrain
+  name: terrain_name_cobblestone
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_cobblestone_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_flagstone_desert.png
+    title: terrain_name_cobblestone_desert
+    text: codex_terrain_cobblestone_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_flagstone_desert.png
+    title: terrain_name_cobblestone_strategy
+    text: codex_terrain_cobblestone_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_flagstone_desert.png
+    title: terrain_name_cobblestone_stats
+    text: codex_terrain_cobblestone_stats_text
+    terrainType: cobblestone
+
+- id: terrain_cobblestone_volcanic
+  category: terrain
+  name: terrain_name_cobblestone
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_cobblestone_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_flagstone_volcanic.png
+    title: terrain_name_cobblestone_volcanic
+    text: codex_terrain_cobblestone_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_flagstone_volcanic.png
+    title: terrain_name_cobblestone_strategy
+    text: codex_terrain_cobblestone_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_flagstone_volcanic.png
+    title: terrain_name_cobblestone_stats
+    text: codex_terrain_cobblestone_stats_text
+    terrainType: cobblestone
+
+
+
+
+
+
+
+
+
+- id: terrain_carpet_grass
+  category: terrain
+  name: terrain_name_carpet
+  biome: grass
+  icon:
+    image: ui/codex/icons/icon_terrain_carpet.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_interior_grass.png
+    title: terrain_name_carpet_grass
+    text: codex_terrain_carpet_grass_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_interior_grass.png
+    title: terrain_name_carpet_strategy
+    text: codex_terrain_carpet_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_interior_grass.png
+    title: terrain_name_carpet_stats
+    text: codex_terrain_carpet_stats_text
+    terrainType: carpet
+
+- id: terrain_carpet_ice
+  category: terrain
+  name: terrain_name_carpet
+  biome: ice
+  icon:
+    image: ui/codex/icons/icon_terrain_carpet_ice.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_interior_ice.png
+    title: terrain_name_carpet_ice
+    text: codex_terrain_carpet_ice_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_interior_ice.png
+    title: terrain_name_carpet_strategy
+    text: codex_terrain_carpet_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_interior_ice.png
+    title: terrain_name_carpet_stats
+    text: codex_terrain_carpet_stats_text
+    terrainType: carpet
+
+- id: terrain_carpet_desert
+  category: terrain
+  name: terrain_name_carpet
+  biome: desert
+  icon:
+    image: ui/codex/icons/icon_terrain_carpet_desert.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/background_interior_desert.png
+    title: terrain_name_carpet_desert
+    text: codex_terrain_carpet_desert_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/background_interior_desert.png
+    title: terrain_name_carpet_strategy
+    text: codex_terrain_carpet_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/background_interior_desert.png
+    title: terrain_name_carpet_stats
+    text: codex_terrain_carpet_stats_text
+    terrainType: carpet
+
+- id: terrain_carpet_volcanic
+  category: terrain
+  name: terrain_name_carpet
+  biome: volcano
+  icon:
+    image: ui/codex/icons/icon_terrain_carpet_volcanic.png
+  pages:
+  - pageType: description
+    layoutType: image
+    image: ui/codex/content/dlc1/background_interior_volcanic.png
+    title: terrain_name_carpet_volcanic
+    text: codex_terrain_carpet_volcanic_description_text
+  - pageType: strategy
+    layoutType: image
+    image: ui/codex/content/dlc1/background_interior_volcanic.png
+    title: terrain_name_carpet_strategy
+    text: codex_terrain_carpet_strategy_text
+  - pageType: terrain_stats
+    layoutType: image
+    image: ui/codex/content/dlc1/background_interior_volcanic.png
+    title: terrain_name_carpet_stats
+    text: codex_terrain_carpet_stats_text
+    terrainType: carpet
+...
+...

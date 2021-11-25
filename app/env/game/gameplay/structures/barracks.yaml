@@ -1,0 +1,45 @@
+---
+
+unitClasses:
+  - id: barracks
+    name: structure_name_barracks
+    aiPriority: 4.0
+    verbs:
+      - recruit
+    battleUnitCount: 1
+    isStructure: true
+    canReinforce: true
+    canBeReinforced: false
+    canBeCaptured: true
+    isNeutraliseable: true
+    damageMultiplier: 1
+    movement: land_building
+    income: 0
+    cost: 500
+    recruitTags: [type.ground.light, type.ground.heavy]
+    regeneration: 10
+    tags:
+      - structure
+    sightRange: 6
+      
+units:
+  - class: barracks
+    faction: neutral
+    name: structure_name_barracks
+    mapAnimation: structures/barracks
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/barracks.png
+    grabPos: [11, 7]
+    sounds:
+      hit: hitWood
+      hitMap: hitStone
+      death: gateDie
+    structureImage:
+      spriteSheet: backgrounds/barracks/barracks_background_full
+      farBackground: barracks_background_full_background_2
+      nearBackground: barracks_background_full_background_1
+      foreground: barracks_background_full_foreground
+      keeperPosition: [74, 85]
+      leftBannerOffset: [2, 0]
+      rightBannerOffset: [3, 1]
+...

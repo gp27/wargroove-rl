@@ -1,0 +1,244 @@
+---
+
+grooves:
+  - id: heal_aura
+    name: groove_name_heal_aura
+    description: groove_description_heal_aura
+    maxCharge: 100
+    chargePerUse: 100
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_heal_aura
+
+  - id: raise_dead
+    name: groove_name_raise_dead
+    description: groove_description_raise_dead
+    maxCharge: 50
+    chargePerUse: 50
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_raise_dead
+
+  - id: splash_jump
+    name: groove_name_splash_jump
+    description: groove_description_splash_jump
+    maxCharge: 200
+    chargePerUse: 200
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_splash_jump
+
+  - id: second_wind
+    name: groove_name_second_wind
+    description: groove_description_second_wind
+    maxCharge: 150
+    chargePerUse: 150
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_second_wind  
+
+  - id: vine_wall
+    name: groove_name_vine_wall
+    description: groove_description_vine_wall
+    maxCharge: 150
+    chargePerUse: 150
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_vine_wall
+
+  - id: vampiric_touch
+    name: groove_name_vampiric_touch
+    description: groove_description_vampiric_touch
+    maxCharge: 150
+    chargePerUse: 150
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_vampiric_touch  
+
+  - id: diplomacy
+    name: groove_name_diplomacy
+    description: groove_description_diplomacy
+    maxCharge: 100
+    chargePerUse: 100
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_diplomacy
+
+  - id: sadistic_rush
+    name: groove_name_sadistic_rush
+    description: groove_description_sadistic_rush
+    maxCharge: 200
+    chargePerUse: 200
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_sadistic_rush
+
+  - id: teleport_beam
+    name: groove_name_teleport_beam
+    description: groove_description_teleport_beam
+    maxCharge: 100
+    chargePerUse: 100
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_teleport_beam
+
+  - id: drone_bombs
+    name: groove_name_drone_bombs
+    description: groove_description_drone_bombs
+    maxCharge: 200
+    chargePerUse: 200
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_drone_bombs
+
+  - id: cherrystone_defence
+    name: groove_name_cherrystone_defence
+    description: groove_description_cherrystone_defence
+    maxCharge: 100
+    chargePerUse: 100
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_cherrystone_defence
+
+  - id: dash
+    name: groove_name_dash
+    description: groove_description_dash
+    maxCharge: 100
+    chargePerUse: 100
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_dash
+
+  - id: tornado
+    name: groove_name_tornado
+    description: groove_description_tornado
+    maxCharge: 200
+    chargePerUse: 200
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_tornado
+
+  - id: convert
+    name: groove_name_convert
+    description: groove_description_convert
+    maxCharge: 200
+    chargePerUse: 200
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_convert
+    
+  - id: drain_aura
+    name: groove_name_drain_aura
+    description: groove_description_drain_aura
+    maxCharge: 200
+    chargePerUse: 200
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_drain_aura
+
+  - id: fish
+    name: groove_name_fish
+    description: groove_description_fish
+    maxCharge: 150
+    chargePerUse: 150
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_fish
+
+  - id: golf
+    name: groove_name_golf
+    description: groove_description_golf
+    maxCharge: 100
+    chargePerUse: 100
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_golf
+
+  - id: smoke_screen
+    name: groove_name_smoke_screen
+    description: groove_description_smoke_screen
+    maxCharge: 200
+    chargePerUse: 200
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_smoke_screen
+
+  - id: dual_bombs
+    name: groove_name_dual_bombs
+    description: groove_description_dual_bombs
+    maxCharge: 150
+    chargePerUse: 150
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: [groove_area_heal, groove_area_damage]
+
+  - id: shadow_sisters
+    name: groove_name_shadow_sisters
+    description: groove_description_smoke_screen
+    maxCharge: 200
+    chargePerUse: 200
+    chargeBy:
+      endOfTurn: 10
+      attack: 20
+      counter: 10
+      kill: 30
+    verb: groove_smoke_screen
+
+...

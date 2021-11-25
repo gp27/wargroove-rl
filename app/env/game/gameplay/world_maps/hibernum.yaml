@@ -1,0 +1,95 @@
+---
+
+worldMaps:
+- id: hibernum
+  name: world_map_hibernum_name
+  icon: ui/campaign/map_icon3.png
+  size: [928, 563]
+  images:
+  - image: world/maps/hibernum/world_map_hibernum.png
+    layer: background
+    pos: [0, 0]
+  - image: world/maps/hibernum/world_map_hibernum_pillars.png
+    layer: ground_decorations
+    pos: [0, 0]
+  - image: world/maps/hibernum/world_map_hibernum_water.png
+    effect: water
+    layer: background_tiles_water
+    mask: world/maps/hibernum/world_map_hibernum_water_ramp.png
+    pos: [0, 0]
+  waterMask: masks/hibernum_water_mask.png
+  fishAnimations:
+  - world/world_map_fish_size01
+  - world/world_map_fish_size02
+  - world/world_map_fish_size03
+  fishes:
+  - pos: [72, 36]
+    radius: 60
+  - pos: [815, 490]
+    radius: 60 
+  - pos: [834, 77]
+    radius: 60 
+  - pos: [144, 418] 
+    radius: 60         
+  sound:
+  - event: environmental/oceanAmbienceWorld
+  - event: environmental/forestAmbienceWorld
+    sources:
+    - pos: [620, 25]
+      refDistance: 30
+      maxDistance: 300
+  - event: environmental/tundraAmbienceWorld
+    sources:
+    - pos: [415, 400]
+      refDistance: 30
+      maxDistance: 300
+    - pos: [625, 350]
+      refDistance: 30
+      maxDistance: 300
+    - pos: [545, 130]
+      refDistance: 30
+      maxDistance: 300
+    - pos: [360, 90]
+      refDistance: 30
+      maxDistance: 300
+    - pos: [270, 260]
+      refDistance: 30
+      maxDistance: 300
+  - event: environmental/mountainAmbienceWorld
+    sources:
+    - pos: [230, 35]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [55, 175]
+      refDistance: 45
+      maxDistance: 450
+    - pos: [80, 290]
+      refDistance: 45
+      maxDistance: 450
+  - event: environmental/riverAmbienceWorld
+    sources:
+    - pos: [330, 125]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [425, 145]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [520, 120]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [635, 145]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [710, 170]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [175, 320]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [300, 430]
+      refDistance: 15
+      maxDistance: 150
+    - pos: [565, 420]
+      refDistance: 15
+      maxDistance: 150
+...

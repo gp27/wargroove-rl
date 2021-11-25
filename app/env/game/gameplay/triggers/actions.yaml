@@ -1,0 +1,362 @@
+---
+
+triggerActions:
+  - id: set_map_flag
+    parameters:
+      - type: map_flag
+      - type: boolean
+
+  - id: toggle_map_flag
+    parameters:
+      - type: map_flag
+
+  - id: set_campaign_flag
+    scope: campaign
+    parameters:
+      - type: campaign_flag
+      - type: boolean
+
+  - id: set_party_member
+    scope: campaign
+    parameters:
+      - type: character
+      - type: boolean
+
+  - id: add_campaign_cutscene
+    parameters:
+      - type: cutscene
+
+  - id: modify_counter
+    parameters:
+      - type: counter
+      - type: operation
+      - type: integer
+
+  - id: spawn_unit
+    parameters:
+      - type: unit_class
+      - type: location
+      - type: player_neutral
+      - type: boolean
+
+  - id: remove_units
+    parameters:
+      - type: unit_class_star
+      - type: location_star
+      - type: player_neutral_star
+
+  - id: modify_gold
+    parameters:
+      - type: player_star
+      - type: operation
+      - type: integer
+
+  - id: modify_health
+    parameters:
+      - type: unit_class_star
+      - type: location_star
+      - type: player_neutral_star
+      - type: operation
+      - type: integer
+
+  - id: modify_groove
+    parameters:
+      - type: unit_class_star
+      - type: location_star
+      - type: player_neutral_star
+      - type: operation
+      - type: integer
+
+  - id: set_unit_spent
+    parameters:
+      - type: unit_class_star
+      - type: location_star
+      - type: player_neutral_star
+      - type: boolean
+
+  - id: play_cutscene
+    parameters:
+      - type: cutscene
+
+  - id: set_location_highlight
+    parameters:
+      - type: location_real
+      - type: location_highlight
+      - type: player_colour_star
+
+  - id: set_conditional_location_highlight
+    hidden: true
+    parameters:
+      - type: location_real
+      - type: location_highlight
+      - type: player_colour_star
+      - type: boolean
+      - type: highlight_condition
+
+  - id: victory
+    parameters:
+      - type: player
+
+  - id: eliminate
+    parameters:
+      - type: player
+
+  - id: convert
+    parameters:
+      - type: unit_class_star
+      - type: player_neutral_star
+      - type: location_star
+      - type: player_neutral
+
+  - id: change_unit_type
+    parameters:
+      - type: unit_class_star
+      - type: player_neutral_star
+      - type: location_star
+      - type: unit_class
+
+  - id: reveal_fow
+    hidden: true # This is intended to be user-facing, but it's not implemented at this time
+    parameters:
+      - type: location_star
+      - type: player_star
+
+  - id: change_team
+    parameters:
+      - type: player
+      - type: team
+  
+  - id: message
+    hidden: true
+    parameters:
+      - type: string
+
+  - id: dialogue_box
+    hidden: true
+    parameters:
+      - type: character_expression
+      - type: character_non_playable
+      - type: string
+      - type: string
+
+  - id: dialogue_box_simple
+    parameters:
+      - type: character_expression
+      - type: character_non_playable
+      - type: string
+
+  - id: wait
+    parameters:
+      - type: integer
+
+  - id: centre_camera
+    parameters:
+      - type: location
+
+  - id: ai_set_profile
+    parameters:
+      - type: player
+      - type: ai_profile
+
+  - id: set_weather
+    parameters:
+      - type: weather
+      - type: integer
+      
+  - id: ai_set_restriction
+    parameters:
+      - type: unit_class_star
+      - type: location_star
+      - type: player_neutral_star
+      - type: ai_restriction
+      - type: boolean
+
+  - id: force_action
+    hidden: true
+    parameters:
+      - type: location_star
+      - type: action
+      - type: location_star
+      - type: location_star      
+      - type: boolean
+      - type: character_expression
+      - type: character
+      - type: string
+
+  - id: force_open_ui_tutorial
+    hidden: true
+    parameters:
+      - type: tutorial_ui_script
+      - type: location_star
+      - type: character_expression
+      - type: character
+      - type: string
+      - type: map_flag_star
+      - type: boolean
+
+  - id: add_ui_tutorial
+    hidden: true
+    parameters:
+      - type: tutorial_ui_script
+      - type: location_star
+      - type: map_flag_star
+      - type: boolean
+
+  - id: queue_force_action
+    hidden: true
+    parameters:
+      - type: location_star
+      - type: action
+      - type: location_star
+      - type: location_star      
+      - type: boolean
+      - type: character_expression
+      - type: character
+      - type: string
+
+  - id: queue_force_open_ui_tutorial
+    hidden: true
+    parameters:
+      - type: tutorial_ui_script
+      - type: location_star
+      - type: character_expression
+      - type: character
+      - type: string
+      - type: map_flag_star
+      - type: boolean
+
+  - id: play_credits
+    hidden: true
+    parameters:
+        - type: credits_type
+
+  - id: set_match_seed
+    hidden: true
+    parameters:
+      - type: integer
+
+  - id: update_fog_of_war
+
+  - id: change_objective
+    parameters:
+      - type: string
+
+  - id: show_objective
+
+  - id: move_location_to_unit
+    parameters:
+      - type: location_real
+      - type: unit_class_star
+      - type: player_neutral_star
+      - type: location_star
+
+  - id: move_location_to_location
+    parameters:
+      - type: location_real
+      - type: location
+
+  - id: set_map_music
+    parameters:
+      - type: music
+
+  - id: play_groove_cutscene
+    hidden: true
+    parameters:
+      - type: character_non_playable
+
+  - id: play_sound_effect
+    parameters:
+      - type: sound_effect
+      - type: location_star
+
+  - id: set_gizmo_state
+    parameters:
+      - type: location_star
+      - type: boolean
+
+  - id: toggle_gizmo_state
+    parameters:
+      - type: location_star
+  
+  - id: set_damage_taken
+    parameters:
+      - type: unit_class_star
+      - type: location_star
+      - type: player_neutral_star
+      - type: integer
+
+  - id: counter_arithmetics
+    parameters:
+      - type: counter
+      - type: counter
+      - type: arithmetic_operation
+      - type: counter
+  
+  - id: counter_random
+    parameters:
+      - type: counter
+      - type: integer
+      - type: integer
+
+  - id: location_copy
+    parameters:
+      - type: location_real
+      - type: location
+
+  - id: location_boolean_operation
+    parameters:
+      - type: location_real
+      - type: boolean_operation
+      - type: location
+      - type: location
+
+  - id: location_move
+    parameters:
+      - type: location_real
+      - type: integer
+      - type: integer
+
+  - id: unit_teleport
+    parameters:
+      - type: unit_class_star
+      - type: player_neutral_star
+      - type: location_star
+      - type: location
+      - type: boolean
+
+  - id: count_units
+    parameters:
+      - type: unit_class_star
+      - type: player_neutral_star
+      - type: location_star
+      - type: counter
+
+  - id: transfer_health
+    parameters:
+      - type: unit_class_star
+      - type: player_neutral_star
+      - type: location_star
+      - type: transfer_type
+      - type: counter
+
+  - id: transfer_groove
+    parameters:
+      - type: unit_class_star
+      - type: player_neutral_star
+      - type: location_star
+      - type: transfer_type
+      - type: counter
+
+  - id: transfer_gold
+    parameters:
+      - type: player_star
+      - type: transfer_type
+      - type: counter
+
+  - id: transfer_gizmo_state
+    parameters:
+      - type: location_star
+      - type: transfer_type
+      - type: map_flag
+
+...

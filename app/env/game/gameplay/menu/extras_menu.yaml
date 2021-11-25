@@ -1,0 +1,40 @@
+---
+
+menuBackgrounds:
+  - id: extras_menu
+    background: backgrounds/titlescreen/extras/treasureroom
+    animations:
+    - animation: backgrounds/titlescreen/extras/goldshine
+      position: [-250, 50]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/goldshine
+      position: [-180 , 65]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/goldshine
+      position: [-275, 125]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [-300, -40]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/goldshine
+      position: [-120, 160]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/ragnasearch
+      position: [-275, -40]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/goldshine
+      position: [275, 125]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [305, -60]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [260, -35]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [230, 145]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [236, 44]
+      layer: foreground
+...

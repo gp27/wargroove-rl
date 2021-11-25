@@ -1,0 +1,40 @@
+---
+
+unitClasses:
+  - id: ghost_mercival
+    name: character_ghost_mercival_name
+    cost: 0
+    movement: walking
+    moveRange: 4
+    damageMultiplier: 1
+    aiPriority: 0
+    isHidden: true
+    battleUnitCount: 1
+    isRecruitable: false
+    hasTurn: false
+    isSpawnable: false
+    classIcon: unit_icons_commander
+    tags:
+      - structure
+      - summon
+
+
+units:
+  - class: ghost_mercival
+    faction: cherrystone
+    name: character_mercival_name
+    mapAnimation: units/commanders/mercival/map_mercival_ghost
+    battleAnimation: units/commanders/mercival/battle_mercival
+    smallPortrait: units/commanders/mercival/portrait_mercival_ghost_small.png
+    mediumPortrait: units/commanders/mercival/portrait_mercival_ghost_medium.png
+    hasUnitInfo: false
+    hasBattleScreen: false
+    mapSpeed: 4.0
+    grabPos: [26, 16]
+    sounds:
+      death: soldierDieRed
+      run: infantryLightEntry
+      runMap: infantryLightMapEntry
+      hit: hitOrganic
+
+...

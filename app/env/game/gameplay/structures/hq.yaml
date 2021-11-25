@@ -1,0 +1,169 @@
+---
+
+unitClasses:
+  - id: hq
+    name: structure_name_hq
+    aiPriority: 5.0
+    isStructure: true
+    canReinforce: false
+    canBeReinforced: false
+    battleUnitCount: 1
+    damageMultiplier: 0.5
+    movement: land_building
+    income: 100
+    cost: 3000
+    isHQ: true
+    regeneration: 10
+    tags:
+      - structure
+    sightRange: 7
+      
+units:
+  - class: hq
+    faction: neutral
+    name: structure_name_hq
+    mapAnimation: structures/hq_cherrystone
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/red_hq.png
+    grabPos: [29, 10]
+    sounds:
+      hit: hitWood
+      hitMap: hitStone
+      death: gateDie
+      deathMap: strongholdDieRed
+    structureImage:
+      spriteSheet: backgrounds/cherrystonehq/cherrystonehq_background_full
+      farBackground: cherrystonehq_background_full_background_2
+      nearBackground: cherrystonehq_background_full_background_1
+      foreground: cherrystonehq_background_full_foreground
+      bannerForeground: backgrounds/cherrystonehq/cherrystonehq_banner_foreground
+      keeperPosition: [66, 69]
+      hasBanners: false
+
+  - class: hq
+    faction: cherrystone
+    name: structure_name_hq
+    mapAnimation: structures/hq_cherrystone
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/red_hq.png
+    grabPos: [29, 10]
+    sounds:
+      hit: hitWood
+      hitMap: hitStone
+      death: gateDie
+      deathMap: strongholdDieRed
+    structureImage:
+      spriteSheet: backgrounds/cherrystonehq/cherrystonehq_background_full
+      farBackground: cherrystonehq_background_full_background_2
+      nearBackground: cherrystonehq_background_full_background_1
+      foreground: cherrystonehq_background_full_foreground
+      bannerForeground: backgrounds/cherrystonehq/cherrystonehq_banner_foreground
+      keeperPosition: [66, 69]
+      hasBanners: false
+      
+  - class: hq
+    faction: felheim
+    name: structure_name_hq
+    mapAnimation: structures/hq_felheim
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/blue_hq.png
+    grabPos: [16, 9]
+    sounds:
+      hit: hitWood
+      hitMap: hitWood
+      death: gateDie
+      deathMap: strongholdDieBlue
+    structureImage:
+      spriteSheet: backgrounds/fellheimhq/fellheimhq_background_full
+      farBackground: fellheimhq_background_full_background_2
+      nearBackground: fellheimhq_background_full_background_1
+      foreground: fellheimhq_background_full_foreground
+      bannerBackground: backgrounds/fellheimhq/fellheimhq_banner_background
+      bannerForeground: backgrounds/fellheimhq/fellheimhq_banner_foreground
+      keeperPosition: [44, 59]
+      hasBanners: false
+
+  - class: hq
+    faction: heavensong
+    name: structure_name_hq
+    mapAnimation: structures/hq_heavensong
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/yellow_hq.png
+    grabPos: [21, 7]
+    sounds:
+      hit: hitWood
+      hitMap: hitWood
+      death: gateDie
+      deathMap: strongholdDieYellow
+    structureImage:
+      spriteSheet: backgrounds/heavensonghq/heavensonghq_background_full
+      farBackground: heavensonghq_background_full_background_2
+      nearBackground: heavensonghq_background_full_background_1
+      foreground: heavensonghq_background_full_foreground
+      bannerBackground: backgrounds/heavensonghq/heavensonghq_banner_background
+      keeperPosition: [62, 58]
+      hasBanners: false
+
+  - class: hq
+    faction: floran
+    name: structure_name_hq
+    mapAnimation: structures/hq_floran
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/green_hq.png
+    grabPos: [17, 5]
+    sounds:
+      hit: hitWood
+      hitMap: hitWood
+      death: gateDie
+      deathMap: strongholdDieGreen
+    structureImage:
+      spriteSheet: backgrounds/floranhq/floranhq_background_full
+      farBackground: floranhq_background_full_background_2
+      nearBackground: floranhq_background_full_background_1
+      foreground: floranhq_background_full_foreground
+      bannerForeground: backgrounds/floranhq/floranhq_banner_foreground
+      keeperPosition: [71, 80]
+      hasBanners: false
+
+  - class: hq
+    faction: guardian
+    name: structure_name_hq
+    mapAnimation: structures/hq_cherrystone
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/red_hq.png
+    grabPos: [29, 10]
+    sounds:
+      hit: hitWood
+      hitMap: hitStone
+      death: gateDie
+      deathMap: strongholdDieRed
+    structureImage:
+      spriteSheet: backgrounds/cherrystonehq/cherrystonehq_background_full
+      farBackground: cherrystonehq_background_full_background_2
+      nearBackground: cherrystonehq_background_full_background_1
+      foreground: cherrystonehq_background_full_foreground
+      bannerForeground: backgrounds/cherrystonehq/cherrystonehq_banner_foreground
+      keeperPosition: [66, 69]
+      hasBanners: false
+
+  - class: hq
+    faction: outlaw
+    name: structure_name_hq
+    mapAnimation: structures/hq_outlaw
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/black_hq.png
+    grabPos: [29, 10]
+    sounds:
+      hit: hitWood
+      hitMap: hitStone
+      death: gateDie
+      deathMap: strongholdDieRed
+    structureImage:
+      spriteSheet: backgrounds/outlawhq/outlawhq_background_full
+      farBackground: outlawhq_background_full_background_2
+      nearBackground: outlawhq_background_full_background_1
+      foreground: outlawhq_background_full_foreground
+      bannerForeground: backgrounds/outlawhq/outlawhq_banner_foreground
+      keeperPosition: [66, 69]
+      hasBanners: false
+...

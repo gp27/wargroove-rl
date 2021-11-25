@@ -1,0 +1,43 @@
+---
+
+unitClasses:
+  - id: water_city
+    name: structure_name_water_city
+    aiPriority: 3.0
+    battleUnitCount: 1
+    isStructure: true
+    canReinforce: true
+    canBeReinforced: false
+    canBeCaptured: true
+    isNeutraliseable: true
+    damageMultiplier: 1
+    movement: sea_building
+    income: 100
+    cost: 500
+    regeneration: 10
+    tags:
+      - structure
+    sightRange: 6
+
+units:
+  - class: water_city
+    faction: neutral
+    name: structure_name_water_city
+    mapAnimation: [structures/watercities,structures/watercities2,structures/watercities3]
+    smallPortrait: portraits/small/portrait_structure_small.png
+    mediumPortrait: portraits/medium/water_city.png
+    grabPos: [14, 13]
+    sounds:
+      hit: hitWood
+      hitMap: hitWood
+      death: gateDie
+    structureImage:
+      spriteSheet: backgrounds/watercity/watercity_background_full
+      farBackground: watercity_background_full_background_2
+      nearBackground: watercity_background_full_background_1
+      foreground: watercity_background_full_foreground
+      keeperPosition: [78, 95]
+      leftBannerOffset: [-6, 2]
+      rightBannerOffset: [0, 2]
+
+...

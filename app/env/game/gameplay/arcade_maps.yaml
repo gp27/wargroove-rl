@@ -1,0 +1,117 @@
+---
+arcadeMaps:
+- map: 2P_PVP_41.map # Ashen Brook
+  levels: [3, 4]
+
+- map: 2P_PVP_42.map # Emerald Fen
+  levels: [2, 3, 4]
+
+- map: 2P_PVP_naval1.map # The Sunder Sea
+  levels: [3, 4]
+
+- map: 2P_PVP_naval2.map # Manta Bay
+  levels: [3, 4]
+
+- map: AbiPVPtest1.map # Longshore
+  levels: [1, 2]
+
+- map: AbiPVPtest10.map # Tiktak Canyon
+  levels: [2, 3, 4]
+
+- map: AbiPVPtest2.map # Ton Ton Oasis
+  levels: [2, 3, 4]
+
+- map: AbiPVPtest3.map # Harmony Harbour
+  levels: [4, 5]
+
+- map: AbiPVPtest4.map # The Glen
+  levels: [1, 2]
+
+- map: AbiPVPtest6.map # Rimy Ruins
+  levels: [1, 2]
+
+- map: AbiPVPtest7.map # Lillipad
+  levels: [3, 4, 5]
+
+- map: AbiPVPtest8.map # Sapphire Strait
+  levels: [3, 4]
+
+- map: AbiPVPtest9.map # Lake Aloof
+  levels: [3, 4, 5]
+
+- map: Doris2P_PVP_1.map # Ponderland
+  levels: [1, 2]
+
+- map: Doris2P_PVP_2.map # Snowrift
+  levels: [4, 5]
+
+- map: Doris2P_PVP_3.map # Howling Bight
+  levels: [3, 4, 5]
+
+- map: Doris2P_PVP_4.map # Greenhaven
+  levels: [2, 3, 4]
+
+- map: Doris2P_PVP_5.map # Mottled Tarn
+  levels: [3, 4, 5]
+
+- map: Doris2P_PVP_6.map # Marsh Hollow
+  levels: [1, 2, 3]
+
+- map: Doris2P_PVP_7.map # The Hinterlands
+  levels: [1, 2, 3]
+
+- map: Doris2P_PVP_8.map # Muskox Mountains
+  levels: [4, 5]
+
+- map: DorisPVPtest1.map # Rambling Range
+  levels: [4, 5]
+
+- map: DorisPVPtest2.map # Angel Isle
+  levels: [4, 5]
+
+- map: DorisPVPtest3.map # Icy Steppe
+  levels: [2, 3, 4]
+
+- map: DorisPVPtest4.map # Choral Coast
+  levels: [3, 4, 5]
+
+- map: DorisPVPtest6.map # Frosted Keep
+  levels: [1, 2]
+
+- map: FinnPVPtest.map # Butterfly Island
+  levels: [1, 2, 3]
+
+- map: FinnPVPtest3.map # Ban Ban Beach
+  levels: [1, 2, 3]
+
+- map: HarrietPVPtest1.map # Pinpon Pools
+  levels: [2, 3, 4]
+
+- map: sk_dlc_2p_burdock_beck.map # Burdock Beck
+  levels: [1, 2, 3]
+
+- map: sk_dlc_2p_highland_hills.map # Highland Hills
+  levels: [3, 4, 5]
+
+- map: sk_dlc_2p_ivy_island.map # Ivy Island
+  levels: [3, 4, 5]
+
+- map: sk_dlc_2p_lake_lament.map # Lake Lament
+  levels: [3, 4]
+
+- map: sk_dlc_2p_merryheath.map # Merryheath
+  levels: [4, 5]
+
+- map: sk_dlc_2p_ringping.map # Ringping
+  levels: [2, 3, 4]
+
+- map: sk_dlc_2p_silver_vale.map # Silver Vale
+  levels: [1, 2, 3]
+
+- map: sk_dlc_2p_ten_tone_island.map # Ten Tone Island
+  levels: [2, 3, 4]
+
+- map: sk_dlc_2p_thistle_down.map # Thistle Down
+  levels: [1, 2, 3]
+
+... 

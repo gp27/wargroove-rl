@@ -1,0 +1,226 @@
+---
+
+weapons:
+  - id: merciaSword
+    rangeMin: 1
+    rangeMax: 1
+    canMoveAndAttack: true
+    baseDamage:
+      land: 1
+    tagDamage:
+      archer: 1.3
+      soldier: 1.15
+      villager: 0.95
+      spearman: 0.75
+      dog: 1.15
+      wagon: 0.7
+      knight: 0.55
+      trebuchet: 0.55
+      ballista: 0.6
+      dragon: 0.3
+      mage: 0.8
+      giant: 0.4
+      structure: 0.7
+      balloon: 0.55
+      harpy: 0.9
+      witch: 0.7
+      dragon: 0.35
+      commander: 0.4
+      rifleman: 1.05
+      thief: 0.95
+      
+      warship: 0.55
+      harpoonship: 0.45
+      turtle: 0.55
+      travelboat: 0.6
+      merman: 0.95
+
+unitClasses:
+  - id: commander_mercia
+    name: unit_class_name_commander
+    cost: 500
+    movement: walking
+    moveRange: 4
+    aiPriority: 8.0
+    regeneration: 5
+    weapons:
+      - id: merciaSword
+    verbs:
+      - load
+      - capture
+    tags:
+      - commander
+      - type.ground.light
+    battleUnitCount: 1
+    isCommander: true
+    grooveId: heal_aura
+
+
+units:
+  - class: commander_mercia
+    faction: cherrystone
+    name: character_mercia_name
+    mapAnimation: units/commanders/mercia/map_mercia
+    battleAnimation: units/commanders/mercia/battle_mercia
+    battleAnimationRiver: fx/river_overlay/battle_mercia_river
+    smallPortrait: units/commanders/mercia/portrait_mercia_small.png
+    mediumPortrait: units/commanders/mercia/portrait_mercia_medium.png
+    mapSpeed: 4.0
+    skinColour: typeII
+    grabPos: [47, 47]
+    deathMoveMin: 0
+    deathMoveMax: 0
+    stayAfterDeath: true
+    sounds:
+      attackMap: unitAttack
+      attack: mercia/merciaAttack
+      attackShout: mercia/merciaAttackShout
+      attackCommanderShout: mercia/merciaCommanderKillShout
+      captureShout: mercia/merciaCapture
+      death: mercia/merciaDie
+      deathMap: mercia/merciaDieGhost
+      deathMapNoBattle: mercia/merciaDieNoBattle
+      run: infantryHeavyMapEntry
+      runMap: infantryHeavyMapEntry
+      firstHit: mercia/merciaHit
+      hit: hitOrganic
+      hitMap: hitOrganic
+      groove: mercia/merciaGrooveIntro
+    attacks:
+      - id: primary
+        hitSpark: fx/bs_stab_attack
+        hitDelay: 1.2
+    emotes:
+      idle: idle
+      surprise: emote_surprise
+      positive: emote_positive
+      negative: emote_negative
+      laugh: emote_laugh
+      brave: emote_brave
+      brave2: emote_brave2
+      idle_crown: idle_crown
+      crown_surprise: emote_crown_surprise
+      positive_crown: emote_positive_crown
+      idle_nosword: idle_nosword
+      hypno: emote_hypno
+      hurt: emote_hurt
+      surprise_nosword: emote_surprise_nosword
+      talk_nosword: emote_talk_nosword
+      talk: emote_talk
+      sad: emote_sad
+      sad_sword: emote_sad_sword
+      sword_1: emote_sword_1
+      stab_loop: emote_stab_loop
+      stab: emote_stab
+      stare: emote_stare
+      crouching: emote_crouching
+      hesitate: emote_hesitate
+      reachingdown: emote_reachingdown
+      crouching_loop: emote_crouching_loop
+      pickup_sword: emote_pickup
+      pet: emote_pet     
+      talk_crown: emote_talk_crown
+      dance: emote_dance
+    shouts:
+      mercia_laugh1: mercia/merciaShoutLaugh1
+      mercia_laugh2: mercia/merciaShoutLaugh2
+      mercia_dad: mercia/merciaShoutDad
+      mercia_emeric: mercia/merciaShoutEmeric
+      mercia_father: mercia/merciaShoutFather
+      mercia_goodboy: mercia/merciaShoutGoodBoy
+      mercia_hmm1: mercia/merciaShoutHmm1
+      mercia_hmm2: mercia/merciaShoutHmm2
+      mercia_uh: mercia/merciaShoutUh
+      mercia_huh: mercia/merciaShoutHuh
+      mercia_surprise: mercia/merciaShoutSurprise
+      mercia_yeah: mercia/merciaShoutYeah
+      mercia_no1: mercia/merciaShoutNo1
+      mercia_no2: mercia/merciaShoutNo2
+      mercia_no3: mercia/merciaShoutNo3
+      mercia_ohno: mercia/merciaShoutOhNo
+      mercia_but: mercia/merciaShoutBut
+      mercia_oops: mercia/merciaShoutOops
+      mercia_sigh: mercia/merciaShoutSigh
+      mercia_what: mercia/merciaShoutWhat
+      mercia_ragna: mercia/merciaShoutRagna
+      mercia_valder1: mercia/merciaShoutValder1
+      mercia_valder2: mercia/merciaShoutValder2
+      mercia_thankyou: mercia/merciaShoutThankYou
+      mercia_whoareyou: mercia/merciaShoutWhoAreYou
+      mercia_thiscantbe: mercia/merciaShoutThisCantBe
+      mercia_introduction: mercia/merciaShoutIntroduction
+      mercia_introductionqueen: mercia/merciaShoutIntroductionQueen
+      mercia_thisendsnow: mercia/merciaShoutThisEndsNow
+      mercia_war: mercia/merciaShoutWar
+      mercia_healingaura: mercia/merciaShoutHealingAura
+      mercia_wedidit: mercia/merciaShoutWeDidIt
+      mercia_wedidit2: mercia/merciaShoutWeDidItExcited
+      mercia_braceyourself: mercia/merciaShoutBraceYourself
+      mercia_saveyouall: mercia/merciaShoutIllSaveYouAll
+      mercia_endingthis: mercia/merciaShoutImEndingThis
+      mercia_imgoingin: mercia/merciaShoutImGoingIn
+      mercia_heretohelp: mercia/merciaShoutImHereToHelp
+      mercia_imsorry: mercia/merciaShoutImSorry
+      mercia_itsover: mercia/merciaShoutItsOver
+      mercia_ivefailed: mercia/merciaShoutIveFailed
+      mercia_justyouandme: mercia/merciaShoutJustYouAndMe
+      mercia_protein: mercia/merciaShoutHighProteinDiet
+      mercia_letsgo: mercia/merciaShoutLetsGo
+      mercia_nicetomeetyou: mercia/merciaShoutNiceToMeetYou
+      mercia_noneshallfall: mercia/merciaShoutNoneShallFall
+      mercia_thatwastough: mercia/merciaShoutThatWasTough
+      mercia_thefightisntover: mercia/merciaShoutTheFightIsntOverYet
+      mercia_theresnotime: mercia/merciaShoutTheresNoTime
+      mercia_thispower: mercia/merciaShoutThisPower
+      mercia_victorywillbeours: mercia/merciaShoutVictoryWillBeOurs
+      mercia_wecouldusethis: mercia/merciaShoutWeCouldUseThis
+      mercia_wontfail: mercia/merciaShoutWontFail
+      mercia_wontgodowneasily: mercia/merciaShoutWontGoDownEasily
+      mercia_wontholdback: mercia/merciaShoutWontHoldBack
+      mercia_wontletyoudown: mercia/merciaShoutWontLetYouDown    
+      mercia_attack1: mercia/merciaShoutAttack1
+      mercia_attack2: mercia/merciaShoutAttack2
+      mercia_attack3: mercia/merciaShoutAttack3
+      mercia_attack4: mercia/merciaShoutAttack4
+      mercia_attack5: mercia/merciaShoutAttack5
+      mercia_hit1: mercia/merciaShoutHit1
+      mercia_hit2: mercia/merciaShoutHit2
+      mercia_hit3: mercia/merciaShoutHit3
+      mercia_hit4: mercia/merciaShoutHit4
+      
+    alternativeRuns:
+      - id: run_crown
+      - id: run_nosword
+
+    alternativeAttackSounds:
+      no_voice: mercia/merciaAttackNoVoice
+
+    hidden:
+      emotes:
+        - stab_loop
+        - stab
+        - stare
+        - pickup_sword
+        - sword_1
+        - crouching
+        - hesitate
+        - reachingdown
+        - crouching_loop
+      shouts:
+        - mercia_thispower
+        - mercia_attack5
+        - mercia_hit3
+      alternativeRuns:
+        - angry_run
+
+    # hidden:
+    #   emotes:
+    #     - idle_nosword
+    #   shouts:
+    #     - mercia_father
+    #   alternativeRuns:
+    #     - run_nosword
+
+      
+      
+...

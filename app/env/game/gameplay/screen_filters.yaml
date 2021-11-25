@@ -1,0 +1,20 @@
+---
+
+screenFilters:
+  - id: standard
+    name: screen_filter_standard
+    mapShader: Wargroove/ScreenFilterStandard
+
+  - id: night
+    name: screen_filter_night
+    mapShader: Wargroove/ScreenFilterNight
+
+  - id: dream
+    name: screen_filter_dream
+    mapShader: Wargroove/ScreenFilterDream
+
+  - id: past
+    name: screen_filter_past
+    mapShader: Wargroove/ScreenFilterPast
+
+...

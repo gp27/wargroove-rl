@@ -1,0 +1,44 @@
+---
+
+menuBackgrounds:
+- id: singleplayer_menu
+  background: backgrounds/titlescreen/singleplayer/background.png
+  foreground: backgrounds/titlescreen/singleplayer/foreground.png
+  clouds: backgrounds/titlescreen/singleplayer/cloudstrip.png
+  animations:
+    - animation: backgrounds/titlescreen/singleplayer/characters
+      position: [-250, -20]
+      layer: foreground
+    - animation: backgrounds/titlescreen/singleplayer/ship_large
+      position: [220, -55]
+      movement: [-23, 0]
+      layer: background
+    - animation: backgrounds/titlescreen/singleplayer/ship_small
+      position: [-100, -60]
+      movement: [-18, 0]
+      layer: background
+    - animation: backgrounds/titlescreen/singleplayer/waterwaggle
+      position: [-224, 98]
+      layer: background
+    - animation: backgrounds/titlescreen/singleplayer/waterwaggle
+      position: [59, 98]
+      layer: background
+    - animation: backgrounds/titlescreen/singleplayer/sun
+      position: [125, -120]
+      layer: farBackground
+    - animation: units/merman/cherrystone/battle_merman_cherrystone
+      position: [500, 40]
+      layer: foreground
+      playerColour: red
+      unitSkin: merman
+      factionSkin: cherrystone
+      facing: left
+      randomWander:
+        idle: idle
+        run: run
+        speed: 50
+        randomSpots: [[500, 40], [275, 40],]
+        preActionIdleTime: [2, 6]
+        postActionIdleTime: [2, 3]
+
+...

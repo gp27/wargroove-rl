@@ -1,0 +1,210 @@
+---
+codex:
+
+- id: lore_aurania
+  category: lore
+  name: codex_lore_aurania
+  unlock: codex_lore_aurenia
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/lore_aurania.png
+    title: codex_lore_aurania_title
+    text: codex_lore_aurania_text
+
+- id: lore_cherrystone
+  category: lore
+  name: codex_lore_cherrystone
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/lore_cherrystone.png
+    title: codex_lore_cherrystone_title
+    text: codex_lore_cherrystone_text
+
+- id: lore_felheim
+  category: lore
+  name: codex_lore_felheim
+  unlock: codex_lore_felheim
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/lore_felheim.png
+    title: codex_lore_felheim_title
+    text: codex_lore_felheim_text
+
+- id: lore_heavensong
+  category: lore
+  name: codex_lore_heavensong
+  unlock: codex_lore_heavensong
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/lore_heaven.png
+    title: codex_lore_heavensong_title
+    text: codex_lore_heavensong_text
+
+- id: lore_floran
+  category: lore
+  name: codex_lore_floran
+  unlock: codex_lore_floran
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/lore_floran.png
+    title: codex_lore_floran_title
+    text: codex_lore_floran_text
+
+- id: lore_lostleagues
+  category: lore
+  name: codex_lore_lostleagues
+  unlock: codex_lore_lostleagues
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/lore_lostleagues.png
+    title: codex_lore_lostleagues_title
+    text: codex_lore_lostleagues_text
+
+- id: lore_cacophony
+  category: lore
+  name: codex_lore_cacophony
+  unlock: codex_lore_cacophony
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/background_road_grass.png
+    title: codex_lore_cacophony_title
+    text: codex_lore_cacophony_text
+
+- id: lore_magictech
+  category: lore
+  name: codex_lore_magictech
+  unlock: codex_lore_magictech
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/commander_emeric_portrait.png
+    title: codex_lore_magictech_title
+    text: codex_lore_magictech_text
+
+- id: lore_cherryblade
+  category: lore
+  name: codex_lore_cherryblade
+  unlock: codex_lore_cherryblade
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/commander_mercia_portrait.png
+    title: codex_lore_cherryblade_title
+    text: codex_lore_cherryblade_text
+
+- id: lore_fellgauntlet
+  category: lore
+  name: codex_lore_fellgauntlet
+  unlock: codex_lore_fellgauntlet
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/commander_valder_portrait.png
+    title: codex_lore_fellgauntlet_title
+    text: codex_lore_fellgauntlet_text
+
+- id: lore_requiem
+  category: lore
+  name: codex_lore_requiem
+  unlock: codex_lore_requiem
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/commander_elodie_portrait.png
+    title: codex_lore_requiem_title
+    text: codex_lore_requiem_text
+
+- id: lore_vampires
+  category: lore
+  name: codex_lore_vampires
+  unlock: codex_lore_vampires
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/commander_sigrid_portrait.png
+    title: codex_lore_vampires_title
+    text: codex_lore_vampires_text
+
+- id: lore_outlaws
+  category: lore
+  name: codex_lore_outlaws
+  unlock: codex_lore_outlaws
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/lore_outlaw.png
+    title: codex_lore_outlaws_title
+    text: codex_lore_outlaws_text
+
+- id: lore_chiefbyballot
+  category: lore
+  name: codex_lore_chiefbyballot
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_wulfar_portrait.png
+    title: codex_lore_chiefbyballot_title
+    text: codex_lore_chiefbyballot_text
+
+- id: lore_enid
+  category: lore
+  name: codex_lore_enid
+  unlock: codex_lore_enid
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/dlc1/lore_enid.png
+    title: codex_lore_enid_title
+    text: codex_lore_enid_text
+
+- id: lore_fumomancy
+  category: lore
+  name: codex_lore_fumomancy
+  icon:
+    image: ui/codex/icons/icon_lore_book.png
+  pages:
+  - pageType: page
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_vesper_portrait.png
+    title: codex_lore_fumomancy_title
+    text: codex_lore_fumomancy_text
+
+
+...

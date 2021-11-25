@@ -1,0 +1,42 @@
+---
+
+unitClasses:
+  - id: vine
+    name: unit_class_name_vine
+    cost: 25
+    damageMultiplier: 1
+    aiPriority: 1.0
+    moveRange: 0
+    tags:
+      - structure
+      - summon
+    verbs:
+      - reposition_vine
+    battleUnitCount: 4
+    regeneration: -20
+    isHidden: true
+    isRecruitable: false
+    canBeReinforced: false
+    classIcon: unit_icons_summon    
+
+
+units:
+  - class: vine
+    faction: floran
+    name: unit_class_name_vine
+    mapAnimation: units/commanders/greenfinger/vine
+    battleAnimation: units/commanders/greenfinger/battle_vine
+    battleAnimationRiver: fx/river_overlay/battle_vine_river
+    smallPortrait: units/commanders/greenfinger/portrait_vine_small.png
+    mediumPortrait: units/commanders/greenfinger/portrait_vine_medium.png
+    mapSpeed: 4.
+    deathMoveMin: 0
+    deathMoveMax: 0
+    grabPos: [13, 14]
+    stayAfterDeath: true
+    runsIn: false
+    sounds:
+      deathMap: unitDie
+      hitMap: hitOrganic
+      hit: hitOrganic
+...

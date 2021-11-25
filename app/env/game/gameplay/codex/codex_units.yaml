@@ -1,0 +1,2951 @@
+---
+codex:
+
+- id: unit_soldier_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_soldier_cherrystone
+  icon:
+    image: units/soldier/cherrystone/portrait_soldier_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: soldier
+    faction: cherrystone
+    title: unit_name_soldier_cherrystone
+    text: codex_unit_soldier_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: soldier
+    faction: cherrystone
+    title: unit_name_soldier_cherrystone
+    text: codex_unit_soldier_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_soldiercrit
+    title: unit_name_soldier_cherrystone
+    text: unit_description_soldier
+    unitClass: soldier
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: soldier
+
+- id: unit_soldier_felheim
+  category: units
+  faction: felheim
+  name: unit_name_soldier_felheim
+  icon:
+    image: units/soldier/felheim/portrait_soldier_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: soldier
+    faction: felheim
+    title: unit_name_soldier_felheim
+    text: codex_unit_soldier_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: soldier
+    faction: felheim
+    title: unit_name_soldier_felheim
+    text: codex_unit_soldier_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_soldiercrit
+    title: unit_name_soldier_felheim
+    text: unit_description_soldier
+    unitClass: soldier
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: soldier
+
+- id: unit_soldier_floran
+  category: units
+  faction: floran
+  name: unit_name_soldier_floran
+  icon:
+    image: units/soldier/floran/portrait_soldier_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: soldier
+    faction: floran
+    title: unit_name_soldier_floran
+    text: codex_unit_soldier_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: soldier
+    faction: floran
+    title: unit_name_soldier_floran
+    text: codex_unit_soldier_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_soldiercrit
+    title: unit_name_soldier_floran
+    text: unit_description_soldier
+    unitClass: soldier
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: soldier
+
+- id: unit_soldier_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_soldier_heavensong
+  icon:
+    image: units/soldier/heavensong/portrait_soldier_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: soldier
+    faction: heavensong
+    title: unit_name_soldier_heavensong
+    text: codex_unit_soldier_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: soldier
+    faction: heavensong
+    title: unit_name_soldier_heavensong
+    text: codex_unit_soldier_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_soldiercrit
+    title: unit_name_soldier_heavensong
+    text: unit_description_soldier
+    unitClass: soldier
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: soldier
+
+- id: unit_spearman_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_spearman_cherrystone
+  icon:
+    image: units/spearman/cherrystone/portrait_spearman_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: spearman
+    faction: cherrystone
+    title: unit_name_spearman_cherrystone
+    text: codex_unit_spearman_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: spearman
+    faction: cherrystone
+    title: unit_name_spearman_cherrystone
+    text: codex_unit_spearman_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_spearmancrit
+    title: unit_name_spearman_cherrystone
+    text: unit_description_spearman
+    unitClass: spearman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: spearman
+
+- id: unit_spearman_felheim
+  category: units
+  faction: felheim
+  name: unit_name_spearman_felheim
+  icon:
+    image: units/spearman/felheim/portrait_spearman_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: spearman
+    faction: felheim
+    title: unit_name_spearman_felheim
+    text: codex_unit_spearman_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: spearman
+    faction: felheim
+    title: unit_name_spearman_felheim
+    text: codex_unit_spearman_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_spearmancrit
+    title: unit_name_spearman_felheim
+    text: unit_description_spearman
+    unitClass: spearman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: spearman
+
+- id: unit_spearman_floran
+  category: units
+  faction: floran
+  name: unit_name_spearman_floran
+  icon:
+    image: units/spearman/floran/portrait_spearman_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: spearman
+    faction: floran
+    title: unit_name_spearman_floran
+    text: codex_unit_spearman_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: spearman
+    faction: floran
+    title: unit_name_spearman_floran
+    text: codex_unit_spearman_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_spearmancrit
+    title: unit_name_spearman_floran
+    text: unit_description_spearman
+    unitClass: spearman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: spearman
+
+- id: unit_spearman_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_spearman_heavensong
+  icon:
+    image: units/spearman/heavensong/portrait_spearman_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: spearman
+    faction: heavensong
+    title: unit_name_spearman_heavensong
+    text: codex_unit_spearman_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: spearman
+    faction: heavensong
+    title: unit_name_spearman_heavensong
+    text: codex_unit_spearman_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_spearmancrit
+    title: unit_name_spearman_heavensong
+    text: unit_description_spearman
+    unitClass: spearman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: spearman
+
+
+- id: unit_dog_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_dog_cherrystone
+  icon:
+    image: units/dog/cherrystone/portrait_dog_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: dog
+    faction: cherrystone
+    title: unit_name_dog_cherrystone
+    text: codex_unit_dog_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: dog
+    faction: cherrystone
+    title: unit_name_dog_cherrystone
+    text: codex_unit_dog_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_dogcrit
+    title: unit_name_dog_cherrystone
+    text: unit_description_dog
+    unitClass: dog
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: dog
+
+- id: unit_dog_felheim
+  category: units
+  faction: felheim
+  name: unit_name_dog_felheim
+  icon:
+    image: units/dog/felheim/portrait_dog_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: dog
+    faction: felheim
+    title: unit_name_dog_felheim
+    text: codex_unit_dog_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: dog
+    faction: felheim
+    title: unit_name_dog_felheim
+    text: codex_unit_dog_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_dogcrit
+    title: unit_name_dog_felheim
+    text: unit_description_dog
+    unitClass: dog
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: dog
+
+- id: unit_dog_floran
+  category: units
+  faction: floran
+  name: unit_name_dog_floran
+  icon:
+    image: units/dog/floran/portrait_dog_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: dog
+    faction: floran
+    title: unit_name_dog_floran
+    text: codex_unit_dog_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: dog
+    faction: floran
+    title: unit_name_dog_floran
+    text: codex_unit_dog_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_dogcrit
+    title: unit_name_dog_floran
+    text: unit_description_dog
+    unitClass: dog
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: dog
+
+- id: unit_dog_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_dog_heavensong
+  icon:
+    image: units/dog/heavensong/portrait_dog_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: dog
+    faction: heavensong
+    title: unit_name_dog_heavensong
+    text: codex_unit_dog_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: dog
+    faction: heavensong
+    title: unit_name_dog_heavensong
+    text: codex_unit_dog_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_dogcrit
+    title: unit_name_dog_heavensong
+    text: unit_description_dog
+    unitClass: dog
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: dog
+
+
+- id: unit_wagon_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_wagon_cherrystone
+  icon:
+    image: units/wagon/cherrystone/portrait_wagon_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: cherrystone
+    title: unit_name_wagon_cherrystone
+    text: codex_unit_wagon_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: cherrystone
+    title: unit_name_wagon_cherrystone
+    text: codex_unit_wagon_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: cherrystone
+    title: unit_name_wagon_cherrystone
+    text: unit_description_wagon
+    unitClass: wagon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: wagon
+
+- id: unit_wagon_felheim
+  category: units
+  faction: felheim
+  name: unit_name_wagon_felheim
+  icon:
+    image: units/wagon/felheim/portrait_wagon_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: felheim
+    title: unit_name_wagon_felheim
+    text: codex_unit_wagon_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: felheim
+    title: unit_name_wagon_felheim
+    text: codex_unit_wagon_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: felheim
+    title: unit_name_wagon_felheim
+    text: unit_description_wagon
+    unitClass: wagon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: wagon
+
+- id: unit_wagon_floran
+  category: units
+  faction: floran
+  name: unit_name_wagon_floran
+  icon:
+    image: units/wagon/floran/portrait_wagon_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: floran
+    title: unit_name_wagon_floran
+    text: codex_unit_wagon_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: floran
+    title: unit_name_wagon_floran
+    text: codex_unit_wagon_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: floran
+    title: unit_name_wagon_floran
+    text: unit_description_wagon
+    unitClass: wagon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: wagon
+
+- id: unit_wagon_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_wagon_heavensong
+  icon:
+    image: units/wagon/heavensong/portrait_wagon_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: heavensong
+    title: unit_name_wagon_heavensong
+    text: codex_unit_wagon_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: heavensong
+    title: unit_name_wagon_heavensong
+    text: codex_unit_wagon_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: wagon
+    faction: heavensong
+    title: unit_name_wagon_heavensong
+    text: unit_description_wagon
+    unitClass: wagon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: wagon
+    
+
+- id: unit_archer_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_archer_cherrystone
+  icon:
+    image: units/archer/cherrystone/portrait_archer_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: archer
+    faction: cherrystone
+    title: unit_name_archer_cherrystone
+    text: codex_unit_archer_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: archer
+    faction: cherrystone
+    title: unit_name_archer_cherrystone
+    text: codex_unit_archer_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_archercrit
+    title: unit_name_archer_cherrystone
+    text: unit_description_archer
+    unitClass: archer
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: archer
+
+- id: unit_archer_felheim
+  category: units
+  faction: felheim
+  name: unit_name_archer_felheim
+  icon:
+    image: units/archer/felheim/portrait_archer_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: archer
+    faction: felheim
+    title: unit_name_archer_felheim
+    text: codex_unit_archer_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: archer
+    faction: felheim
+    title: unit_name_archer_felheim
+    text: codex_unit_archer_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_archercrit
+    title: unit_name_archer_felheim
+    text: unit_description_archer
+    unitClass: archer
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: archer
+
+- id: unit_archer_floran
+  category: units
+  faction: floran
+  name: unit_name_archer_floran
+  icon:
+    image: units/archer/floran/portrait_archer_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: archer
+    faction: floran
+    title: unit_name_archer_floran
+    text: codex_unit_archer_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: archer
+    faction: floran
+    title: unit_name_archer_floran
+    text: codex_unit_archer_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_archercrit
+    title: unit_name_archer_floran
+    text: unit_description_archer
+    unitClass: archer
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: archer
+
+- id: unit_archer_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_archer_heavensong
+  icon:
+    image: units/archer/heavensong/portrait_archer_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: archer
+    faction: heavensong
+    title: unit_name_archer_heavensong
+    text: codex_unit_archer_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: archer
+    faction: heavensong
+    title: unit_name_archer_heavensong
+    text: codex_unit_archer_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_archercrit
+    title: unit_name_archer_heavensong
+    text: unit_description_archer
+    unitClass: archer
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: archer
+
+
+- id: unit_mage_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_mage_cherrystone
+  icon:
+    image: units/mage/cherrystone/portrait_mage_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: mage
+    faction: cherrystone
+    title: unit_name_mage_cherrystone
+    text: codex_unit_mage_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: mage
+    faction: cherrystone
+    title: unit_name_mage_cherrystone
+    text: codex_unit_mage_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_magecrit
+    title: unit_name_mage_cherrystone
+    text: unit_description_mage
+    unitClass: mage
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: mage
+
+- id: unit_mage_felheim
+  category: units
+  faction: felheim
+  name: unit_name_mage_felheim
+  icon:
+    image: units/mage/felheim/portrait_mage_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: mage
+    faction: felheim
+    title: unit_name_mage_felheim
+    text: codex_unit_mage_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: mage
+    faction: felheim
+    title: unit_name_mage_felheim
+    text: codex_unit_mage_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_magecrit
+    title: unit_name_mage_felheim
+    text: unit_description_mage
+    unitClass: mage
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: mage
+
+- id: unit_mage_floran
+  category: units
+  faction: floran
+  name: unit_name_mage_floran
+  icon:
+    image: units/mage/floran/portrait_mage_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: mage
+    faction: floran
+    title: unit_name_mage_floran
+    text: codex_unit_mage_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: mage
+    faction: floran
+    title: unit_name_mage_floran
+    text: codex_unit_mage_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_magecrit
+    title: unit_name_mage_floran
+    text: unit_description_mage
+    unitClass: mage
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: mage
+
+- id: unit_mage_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_mage_heavensong
+  icon:
+    image: units/mage/heavensong/portrait_mage_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: mage
+    faction: heavensong
+    title: unit_name_mage_heavensong
+    text: codex_unit_mage_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: mage
+    faction: heavensong
+    title: unit_name_mage_heavensong
+    text: codex_unit_mage_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_magecrit
+    title: unit_name_mage_heavensong
+    text: unit_description_mage
+    unitClass: mage
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: mage
+
+
+- id: unit_warship_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_warship_cherrystone
+  icon:
+    image: units/warship/cherrystone/portrait_warship_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: warship
+    faction: cherrystone
+    title: unit_name_warship_cherrystone
+    text: codex_unit_warship_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: warship
+    faction: cherrystone
+    title: unit_name_warship_cherrystone
+    text: codex_unit_warship_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_warshipcrit
+    title: unit_name_warship_cherrystone
+    text: unit_description_warship
+    unitClass: warship
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: warship
+
+- id: unit_warship_felheim
+  category: units
+  faction: felheim
+  name: unit_name_warship_felheim
+  icon:
+    image: units/warship/felheim/portrait_warship_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: warship
+    faction: felheim
+    title: unit_name_warship_felheim
+    text: codex_unit_warship_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: warship
+    faction: felheim
+    title: unit_name_warship_felheim
+    text: codex_unit_warship_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_warshipcrit
+    title: unit_name_warship_felheim
+    text: unit_description_warship
+    unitClass: warship
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: warship
+
+- id: unit_warship_floran
+  category: units
+  faction: floran
+  name: unit_name_warship_floran
+  icon:
+    image: units/warship/floran/portrait_warship_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: warship
+    faction: floran
+    title: unit_name_warship_floran
+    text: codex_unit_warship_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: warship
+    faction: floran
+    title: unit_name_warship_floran
+    text: codex_unit_warship_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_warshipcrit
+    title: unit_name_warship_floran
+    text: unit_description_warship
+    unitClass: warship
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: warship
+
+- id: unit_warship_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_warship_heavensong
+  icon:
+    image: units/warship/heavensong/portrait_warship_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: warship
+    faction: heavensong
+    title: unit_name_warship_heavensong
+    text: codex_unit_warship_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: warship
+    faction: heavensong
+    title: unit_name_warship_heavensong
+    text: codex_unit_warship_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_warshipcrit
+    title: unit_name_warship_heavensong
+    text: unit_description_warship
+    unitClass: warship
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: warship
+
+
+- id: unit_harpoonship_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_harpoonship_cherrystone
+  icon:
+    image: units/harpoonship/cherrystone/portrait_harpoonship_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: harpoonship
+    faction: cherrystone
+    title: unit_name_harpoonship_cherrystone
+    text: codex_unit_harpoonship_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: harpoonship
+    faction: cherrystone
+    title: unit_name_harpoonship_cherrystone
+    text: codex_unit_harpoonship_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_harpoonshipcrit
+    title: unit_name_harpoonship_cherrystone
+    text: unit_description_harpoonship
+    unitClass: harpoonship
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: harpoonship
+
+- id: unit_harpoonship_felheim
+  category: units
+  faction: felheim
+  name: unit_name_harpoonship_felheim
+  icon:
+    image: units/harpoonship/felheim/portrait_harpoonship_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: harpoonship
+    faction: felheim
+    title: unit_name_harpoonship_felheim
+    text: codex_unit_harpoonship_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: harpoonship
+    faction: felheim
+    title: unit_name_harpoonship_felheim
+    text: codex_unit_harpoonship_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_harpoonshipcrit
+    title: unit_name_harpoonship_felheim
+    text: unit_description_harpoonship
+    unitClass: harpoonship
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: harpoonship
+
+- id: unit_harpoonship_floran
+  category: units
+  faction: floran
+  name: unit_name_harpoonship_floran
+  icon:
+    image: units/harpoonship/floran/portrait_harpoonship_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: harpoonship
+    faction: floran
+    title: unit_name_harpoonship_floran
+    text: codex_unit_harpoonship_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: harpoonship
+    faction: floran
+    title: unit_name_harpoonship_floran
+    text: codex_unit_harpoonship_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_harpoonshipcrit
+    title: unit_name_harpoonship_floran
+    text: unit_description_harpoonship
+    unitClass: harpoonship
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: harpoonship
+
+- id: unit_harpoonship_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_harpoonship_heavensong
+  icon:
+    image: units/harpoonship/heavensong/portrait_harpoonship_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: harpoonship
+    faction: heavensong
+    title: unit_name_harpoonship_heavensong
+    text: codex_unit_harpoonship_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: harpoonship
+    faction: heavensong
+    title: unit_name_harpoonship_heavensong
+    text: codex_unit_harpoonship_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_harpoonshipcrit
+    title: unit_name_harpoonship_heavensong
+    text: unit_description_harpoonship
+    unitClass: harpoonship
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: harpoonship
+
+
+- id: unit_dragon_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_dragon_cherrystone
+  icon:
+    image: units/dragon/cherrystone/portrait_dragon_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: dragon
+    faction: cherrystone
+    title: unit_name_dragon_cherrystone
+    text: codex_unit_dragon_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: dragon
+    faction: cherrystone
+    title: unit_name_dragon_cherrystone
+    text: codex_unit_dragon_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_dragoncrit
+    title: unit_name_dragon_cherrystone
+    text: unit_description_dragon
+    unitClass: dragon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: dragon
+
+- id: unit_dragon_felheim
+  category: units
+  faction: felheim
+  name: unit_name_dragon_felheim
+  icon:
+    image: units/dragon/felheim/portrait_dragon_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: dragon
+    faction: felheim
+    title: unit_name_dragon_felheim
+    text: codex_unit_dragon_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: dragon
+    faction: felheim
+    title: unit_name_dragon_felheim
+    text: codex_unit_dragon_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_dragoncrit
+    title: unit_name_dragon_felheim
+    text: unit_description_dragon
+    unitClass: dragon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: dragon
+
+- id: unit_dragon_floran
+  category: units
+  faction: floran
+  name: unit_name_dragon_floran
+  icon:
+    image: units/dragon/floran/portrait_dragon_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: dragon
+    faction: floran
+    title: unit_name_dragon_floran
+    text: codex_unit_dragon_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: dragon
+    faction: floran
+    title: unit_name_dragon_floran
+    text: codex_unit_dragon_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_dragoncrit
+    title: unit_name_dragon_floran
+    text: unit_description_dragon
+    unitClass: dragon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: dragon
+
+- id: unit_dragon_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_dragon_heavensong
+  icon:
+    image: units/dragon/heavensong/portrait_dragon_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: dragon
+    faction: heavensong
+    title: unit_name_dragon_heavensong
+    text: codex_unit_dragon_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: dragon
+    faction: heavensong
+    title: unit_name_dragon_heavensong
+    text: codex_unit_dragon_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_dragoncrit
+    title: unit_name_dragon_heavensong
+    text: unit_description_dragon
+    unitClass: dragon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: dragon
+
+
+- id: unit_knight_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_knight_cherrystone
+  icon:
+    image: units/knight/cherrystone/portrait_knight_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: knight
+    faction: cherrystone
+    title: unit_name_knight_cherrystone
+    text: codex_unit_knight_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: knight
+    faction: cherrystone
+    title: unit_name_knight_cherrystone
+    text: codex_unit_knight_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_knightcrit
+    title: unit_name_knight_cherrystone
+    text: unit_description_knight
+    unitClass: knight
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: knight
+
+- id: unit_knight_felheim
+  category: units
+  faction: felheim
+  name: unit_name_knight_felheim
+  icon:
+    image: units/knight/felheim/portrait_knight_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: knight
+    faction: felheim
+    title: unit_name_knight_felheim
+    text: codex_unit_knight_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: knight
+    faction: felheim
+    title: unit_name_knight_felheim
+    text: codex_unit_knight_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_knightcrit
+    title: unit_name_knight_felheim
+    text: unit_description_knight
+    unitClass: knight
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: knight
+
+- id: unit_knight_floran
+  category: units
+  faction: floran
+  name: unit_name_knight_floran
+  icon:
+    image: units/knight/floran/portrait_knight_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: knight
+    faction: floran
+    title: unit_name_knight_floran
+    text: codex_unit_knight_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: knight
+    faction: floran
+    title: unit_name_knight_floran
+    text: codex_unit_knight_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_knightcrit
+    title: unit_name_knight_floran
+    text: unit_description_knight
+    unitClass: knight
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: knight
+
+- id: unit_knight_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_knight_heavensong
+  icon:
+    image: units/knight/heavensong/portrait_knight_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: knight
+    faction: heavensong
+    title: unit_name_knight_heavensong
+    text: codex_unit_knight_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: knight
+    faction: heavensong
+    title: unit_name_knight_heavensong
+    text: codex_unit_knight_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_knightcrit
+    title: unit_name_knight_heavensong
+    text: unit_description_knight
+    unitClass: knight
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: knight
+
+
+- id: unit_trebuchet_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_trebuchet_cherrystone
+  icon:
+    image: units/trebuchet/cherrystone/portrait_trebuchet_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: trebuchet
+    faction: cherrystone
+    title: unit_name_trebuchet_cherrystone
+    text: codex_unit_trebuchet_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: trebuchet
+    faction: cherrystone
+    title: unit_name_trebuchet_cherrystone
+    text: codex_unit_trebuchet_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_trebuchetcrit
+    title: unit_name_trebuchet_cherrystone
+    text: unit_description_trebuchet
+    unitClass: trebuchet
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: trebuchet
+
+- id: unit_trebuchet_felheim
+  category: units
+  faction: felheim
+  name: unit_name_trebuchet_felheim
+  icon:
+    image: units/trebuchet/felheim/portrait_trebuchet_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: trebuchet
+    faction: felheim
+    title: unit_name_trebuchet_felheim
+    text: codex_unit_trebuchet_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: trebuchet
+    faction: felheim
+    title: unit_name_trebuchet_felheim
+    text: codex_unit_trebuchet_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_trebuchetcrit
+    title: unit_name_trebuchet_felheim
+    text: unit_description_trebuchet
+    unitClass: trebuchet
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: trebuchet
+
+- id: unit_trebuchet_floran
+  category: units
+  faction: floran
+  name: unit_name_trebuchet_floran
+  icon:
+    image: units/trebuchet/floran/portrait_trebuchet_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: trebuchet
+    faction: floran
+    title: unit_name_trebuchet_floran
+    text: codex_unit_trebuchet_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: trebuchet
+    faction: floran
+    title: unit_name_trebuchet_floran
+    text: codex_unit_trebuchet_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_trebuchetcrit
+    title: unit_name_trebuchet_floran
+    text: unit_description_trebuchet
+    unitClass: trebuchet
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: trebuchet
+
+- id: unit_trebuchet_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_trebuchet_heavensong
+  icon:
+    image: units/trebuchet/heavensong/portrait_trebuchet_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: trebuchet
+    faction: heavensong
+    title: unit_name_trebuchet_heavensong
+    text: codex_unit_trebuchet_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: trebuchet
+    faction: heavensong
+    title: unit_name_trebuchet_heavensong
+    text: codex_unit_trebuchet_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_trebuchetcrit
+    title: unit_name_trebuchet_heavensong
+    text: unit_description_trebuchet
+    unitClass: trebuchet
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: trebuchet
+
+
+- id: unit_merman_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_merman_cherrystone
+  icon:
+    image: units/merman/cherrystone/portrait_merman_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: merman
+    faction: cherrystone
+    title: unit_name_merman_cherrystone
+    text: codex_unit_merman_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: merman
+    faction: cherrystone
+    title: unit_name_merman_cherrystone
+    text: codex_unit_merman_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_mermancrit
+    title: unit_name_merman_cherrystone
+    text: unit_description_merman
+    unitClass: merman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: merman
+
+- id: unit_merman_felheim
+  category: units
+  faction: felheim
+  name: unit_name_merman_felheim
+  icon:
+    image: units/merman/felheim/portrait_merman_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: merman
+    faction: felheim
+    title: unit_name_merman_felheim
+    text: codex_unit_merman_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: merman
+    faction: felheim
+    title: unit_name_merman_felheim
+    text: codex_unit_merman_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_mermancrit
+    title: unit_name_merman_felheim
+    text: unit_description_merman
+    unitClass: merman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: merman
+
+- id: unit_merman_floran
+  category: units
+  faction: floran
+  name: unit_name_merman_floran
+  icon:
+    image: units/merman/floran/portrait_merman_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: merman
+    faction: floran
+    title: unit_name_merman_floran
+    text: codex_unit_merman_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: merman
+    faction: floran
+    title: unit_name_merman_floran
+    text: codex_unit_merman_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_mermancrit
+    title: unit_name_merman_floran
+    text: unit_description_merman
+    unitClass: merman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: merman
+
+- id: unit_merman_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_merman_heavensong
+  icon:
+    image: units/merman/heavensong/portrait_merman_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: merman
+    faction: heavensong
+    title: unit_name_merman_heavensong
+    text: codex_unit_merman_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: merman
+    faction: heavensong
+    title: unit_name_merman_heavensong
+    text: codex_unit_merman_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_mermancrit
+    title: unit_name_merman_heavensong
+    text: unit_description_merman
+    unitClass: merman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: merman
+
+
+- id: unit_turtle_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_turtle_cherrystone
+  icon:
+    image: units/turtle/cherrystone/portrait_turtle_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: turtle
+    faction: cherrystone
+    title: unit_name_turtle_cherrystone
+    text: codex_unit_turtle_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: turtle
+    faction: cherrystone
+    title: unit_name_turtle_cherrystone
+    text: codex_unit_turtle_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_turtlecrit
+    title: unit_name_turtle_cherrystone
+    text: unit_description_turtle
+    unitClass: turtle
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: turtle
+
+- id: unit_turtle_felheim
+  category: units
+  faction: felheim
+  name: unit_name_turtle_felheim
+  icon:
+    image: units/turtle/felheim/portrait_turtle_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: turtle
+    faction: felheim
+    title: unit_name_turtle_felheim
+    text: codex_unit_turtle_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: turtle
+    faction: felheim
+    title: unit_name_turtle_felheim
+    text: codex_unit_turtle_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_turtlecrit
+    title: unit_name_turtle_felheim
+    text: unit_description_turtle
+    unitClass: turtle
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: turtle
+
+- id: unit_turtle_floran
+  category: units
+  faction: floran
+  name: unit_name_turtle_floran
+  icon:
+    image: units/turtle/floran/portrait_turtle_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: turtle
+    faction: floran
+    title: unit_name_turtle_floran
+    text: codex_unit_turtle_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: turtle
+    faction: floran
+    title: unit_name_turtle_floran
+    text: codex_unit_turtle_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_turtlecrit
+    title: unit_name_turtle_floran
+    text: unit_description_turtle
+    unitClass: turtle
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: turtle
+
+- id: unit_turtle_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_turtle_heavensong
+  icon:
+    image: units/turtle/heavensong/portrait_turtle_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: turtle
+    faction: heavensong
+    title: unit_name_turtle_heavensong
+    text: codex_unit_turtle_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: turtle
+    faction: heavensong
+    title: unit_name_turtle_heavensong
+    text: codex_unit_turtle_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_turtlecrit
+    title: unit_name_turtle_heavensong
+    text: unit_description_turtle
+    unitClass: turtle
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: turtle
+
+
+- id: unit_witch_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_witch_cherrystone
+  icon:
+    image: units/witch/cherrystone/portrait_witch_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: witch
+    faction: cherrystone
+    title: unit_name_witch_cherrystone
+    text: codex_unit_witch_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: witch
+    faction: cherrystone
+    title: unit_name_witch_cherrystone
+    text: codex_unit_witch_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_witchcrit
+    title: unit_name_witch_cherrystone
+    text: unit_description_witch
+    unitClass: witch
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: witch
+
+- id: unit_witch_felheim
+  category: units
+  faction: felheim
+  name: unit_name_witch_felheim
+  icon:
+    image: units/witch/felheim/portrait_witch_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: witch
+    faction: felheim
+    title: unit_name_witch_felheim
+    text: codex_unit_witch_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: witch
+    faction: felheim
+    title: unit_name_witch_felheim
+    text: codex_unit_witch_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_witchcrit
+    title: unit_name_witch_felheim
+    text: unit_description_witch
+    unitClass: witch
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: witch
+
+- id: unit_witch_floran
+  category: units
+  faction: floran
+  name: unit_name_witch_floran
+  icon:
+    image: units/witch/floran/portrait_witch_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: witch
+    faction: floran
+    title: unit_name_witch_floran
+    text: codex_unit_witch_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: witch
+    faction: floran
+    title: unit_name_witch_floran
+    text: codex_unit_witch_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_witchcrit
+    title: unit_name_witch_floran
+    text: unit_description_witch
+    unitClass: witch
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: witch
+
+- id: unit_witch_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_witch_heavensong
+  icon:
+    image: units/witch/heavensong/portrait_witch_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: witch
+    faction: heavensong
+    title: unit_name_witch_heavensong
+    text: codex_unit_witch_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: witch
+    faction: heavensong
+    title: unit_name_witch_heavensong
+    text: codex_unit_witch_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_witchcrit
+    title: unit_name_witch_heavensong
+    text: unit_description_witch
+    unitClass: witch
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: witch
+
+
+- id: unit_harpy_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_harpy_cherrystone
+  icon:
+    image: units/harpy/cherrystone/portrait_harpy_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: harpy
+    faction: cherrystone
+    title: unit_name_harpy_cherrystone
+    text: codex_unit_harpy_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: harpy
+    faction: cherrystone
+    title: unit_name_harpy_cherrystone
+    text: codex_unit_harpy_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_harpycrit
+    title: unit_name_harpy_cherrystone
+    text: unit_description_harpy
+    unitClass: harpy
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: harpy
+
+- id: unit_harpy_felheim
+  category: units
+  faction: felheim
+  name: unit_name_harpy_felheim
+  icon:
+    image: units/harpy/felheim/portrait_harpy_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: harpy
+    faction: felheim
+    title: unit_name_harpy_felheim
+    text: codex_unit_harpy_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: harpy
+    faction: felheim
+    title: unit_name_harpy_felheim
+    text: codex_unit_harpy_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_harpycrit
+    title: unit_name_harpy_felheim
+    text: unit_description_harpy
+    unitClass: harpy
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: harpy
+
+- id: unit_harpy_floran
+  category: units
+  faction: floran
+  name: unit_name_harpy_floran
+  icon:
+    image: units/harpy/floran/portrait_harpy_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: harpy
+    faction: floran
+    title: unit_name_harpy_floran
+    text: codex_unit_harpy_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: harpy
+    faction: floran
+    title: unit_name_harpy_floran
+    text: codex_unit_harpy_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_harpycrit
+    title: unit_name_harpy_floran
+    text: unit_description_harpy
+    unitClass: harpy
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: harpy
+
+- id: unit_harpy_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_harpy_heavensong
+  icon:
+    image: units/harpy/heavensong/portrait_harpy_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: harpy
+    faction: heavensong
+    title: unit_name_harpy_heavensong
+    text: codex_unit_harpy_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: harpy
+    faction: heavensong
+    title: unit_name_harpy_heavensong
+    text: codex_unit_harpy_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_harpycrit
+    title: unit_name_harpy_heavensong
+    text: unit_description_harpy
+    unitClass: harpy
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: harpy
+
+
+- id: unit_balloon_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_balloon_cherrystone
+  icon:
+    image: units/balloon/cherrystone/portrait_balloon_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: cherrystone
+    title: unit_name_balloon_cherrystone
+    text: codex_unit_balloon_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: cherrystone
+    title: unit_name_balloon_cherrystone
+    text: codex_unit_balloon_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: cherrystone
+    title: unit_name_balloon_cherrystone
+    text: unit_description_balloon
+    unitClass: balloon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: balloon
+
+- id: unit_balloon_felheim
+  category: units
+  faction: felheim
+  name: unit_name_balloon_felheim
+  icon:
+    image: units/balloon/felheim/portrait_balloon_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: felheim
+    title: unit_name_balloon_felheim
+    text: codex_unit_balloon_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: felheim
+    title: unit_name_balloon_felheim
+    text: codex_unit_balloon_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: felheim
+    title: unit_name_balloon_felheim
+    text: unit_description_balloon
+    unitClass: balloon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: balloon
+
+- id: unit_balloon_floran
+  category: units
+  faction: floran
+  name: unit_name_balloon_floran
+  icon:
+    image: units/balloon/floran/portrait_balloon_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: floran
+    title: unit_name_balloon_floran
+    text: codex_unit_balloon_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: floran
+    title: unit_name_balloon_floran
+    text: codex_unit_balloon_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: floran
+    title: unit_name_balloon_floran
+    text: unit_description_balloon
+    unitClass: balloon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: balloon
+
+- id: unit_balloon_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_balloon_heavensong
+  icon:
+    image: units/balloon/heavensong/portrait_balloon_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: heavensong
+    title: unit_name_balloon_heavensong
+    text: codex_unit_balloon_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: heavensong
+    title: unit_name_balloon_heavensong
+    text: codex_unit_balloon_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: balloon
+    faction: heavensong
+    title: unit_name_balloon_heavensong
+    text: unit_description_balloon
+    unitClass: balloon
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: balloon
+
+
+- id: unit_giant_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_giant_cherrystone
+  icon:
+    image: units/giant/cherrystone/portrait_giant_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: giant
+    faction: cherrystone
+    title: unit_name_giant_cherrystone
+    text: codex_unit_giant_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: giant
+    faction: cherrystone
+    title: unit_name_giant_cherrystone
+    text: codex_unit_giant_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_giantcrit
+    title: unit_name_giant_cherrystone
+    text: unit_description_giant
+    unitClass: giant
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: giant
+
+- id: unit_giant_felheim
+  category: units
+  faction: felheim
+  name: unit_name_giant_felheim
+  icon:
+    image: units/giant/felheim/portrait_giant_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: giant
+    faction: felheim
+    title: unit_name_giant_felheim
+    text: codex_unit_giant_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: giant
+    faction: felheim
+    title: unit_name_giant_felheim
+    text: codex_unit_giant_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_giantcrit
+    title: unit_name_giant_felheim
+    text: unit_description_giant
+    unitClass: giant
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: giant
+
+- id: unit_giant_floran
+  category: units
+  faction: floran
+  name: unit_name_giant_floran
+  icon:
+    image: units/giant/floran/portrait_giant_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: giant
+    faction: floran
+    title: unit_name_giant_floran
+    text: codex_unit_giant_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: giant
+    faction: floran
+    title: unit_name_giant_floran
+    text: codex_unit_giant_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_giantcrit
+    title: unit_name_giant_floran
+    text: unit_description_giant
+    unitClass: giant
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: giant
+
+- id: unit_giant_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_giant_heavensong
+  icon:
+    image: units/giant/heavensong/portrait_giant_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: giant
+    faction: heavensong
+    title: unit_name_giant_heavensong
+    text: codex_unit_giant_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: giant
+    faction: heavensong
+    title: unit_name_giant_heavensong
+    text: codex_unit_giant_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_giantcrit
+    title: unit_name_giant_heavensong
+    text: unit_description_giant
+    unitClass: giant
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: giant
+
+
+- id: unit_ballista_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_ballista_cherrystone
+  icon:
+    image: units/ballista/cherrystone/portrait_ballista_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: ballista
+    faction: cherrystone
+    title: unit_name_ballista_cherrystone
+    text: codex_unit_ballista_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: ballista
+    faction: cherrystone
+    title: unit_name_ballista_cherrystone
+    text: codex_unit_ballista_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_ballistacrit
+    title: unit_name_ballista_cherrystone
+    text: unit_description_ballista
+    unitClass: ballista
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: ballista
+
+- id: unit_ballista_felheim
+  category: units
+  faction: felheim
+  name: unit_name_ballista_felheim
+  icon:
+    image: units/ballista/felheim/portrait_ballista_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: ballista
+    faction: felheim
+    title: unit_name_ballista_felheim
+    text: codex_unit_ballista_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: ballista
+    faction: felheim
+    title: unit_name_ballista_felheim
+    text: codex_unit_ballista_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_ballistacrit
+    title: unit_name_ballista_felheim
+    text: unit_description_ballista
+    unitClass: ballista
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: ballista
+
+- id: unit_ballista_floran
+  category: units
+  faction: floran
+  name: unit_name_ballista_floran
+  icon:
+    image: units/ballista/floran/portrait_ballista_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: ballista
+    faction: floran
+    title: unit_name_ballista_floran
+    text: codex_unit_ballista_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: ballista
+    faction: floran
+    title: unit_name_ballista_floran
+    text: codex_unit_ballista_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_ballistacrit
+    title: unit_name_ballista_floran
+    text: unit_description_ballista
+    unitClass: ballista
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: ballista
+
+- id: unit_ballista_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_ballista_heavensong
+  icon:
+    image: units/ballista/heavensong/portrait_ballista_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: ballista
+    faction: heavensong
+    title: unit_name_ballista_heavensong
+    text: codex_unit_ballista_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: ballista
+    faction: heavensong
+    title: unit_name_ballista_heavensong
+    text: codex_unit_ballista_critical_text
+  - pageType: stats
+    layoutType: animation
+    animation: ui/codex/content/unit_ballistacrit
+    title: unit_name_ballista_heavensong
+    text: unit_description_ballista
+    unitClass: ballista
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: ballista
+
+
+- id: unit_travelboat_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_travelboat_cherrystone
+  icon:
+    image: units/travelboat/cherrystone/portrait_travelboat_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: cherrystone
+    title: unit_name_travelboat_cherrystone
+    text: codex_unit_travelboat_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: cherrystone
+    title: unit_name_travelboat_cherrystone
+    text: codex_unit_travelboat_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: cherrystone
+    title: unit_name_travelboat_cherrystone
+    text: unit_description_travelboat
+    unitClass: travelboat
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: travelboat
+
+- id: unit_travelboat_felheim
+  category: units
+  faction: felheim
+  name: unit_name_travelboat_felheim
+  icon:
+    image: units/travelboat/felheim/portrait_travelboat_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: felheim
+    title: unit_name_travelboat_felheim
+    text: codex_unit_travelboat_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: felheim
+    title: unit_name_travelboat_felheim
+    text: codex_unit_travelboat_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: felheim
+    title: unit_name_travelboat_felheim
+    text: unit_description_travelboat
+    unitClass: travelboat
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: travelboat
+
+- id: unit_travelboat_floran
+  category: units
+  faction: floran
+  name: unit_name_travelboat_floran
+  icon:
+    image: units/travelboat/floran/portrait_travelboat_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: floran
+    title: unit_name_travelboat_floran
+    text: codex_unit_travelboat_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: floran
+    title: unit_name_travelboat_floran
+    text: codex_unit_travelboat_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: floran
+    title: unit_name_travelboat_floran
+    text: unit_description_travelboat
+    unitClass: travelboat
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: travelboat
+
+- id: unit_travelboat_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_travelboat_heavensong
+  icon:
+    image: units/travelboat/heavensong/portrait_travelboat_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: heavensong
+    title: unit_name_travelboat_heavensong
+    text: codex_unit_travelboat_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: heavensong
+    title: unit_name_travelboat_heavensong
+    text: codex_unit_travelboat_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: travelboat
+    faction: heavensong
+    title: unit_name_travelboat_heavensong
+    text: unit_description_travelboat
+    unitClass: travelboat
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: travelboat
+
+
+- id: unit_villager_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_villager_cherrystone
+  icon:
+    image: units/villager/cherrystone/portrait_villager_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIV
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: cherrystone
+    title: unit_name_villager_cherrystone
+    text: codex_unit_villager_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: cherrystone
+    title: unit_name_villager_cherrystone
+    text: codex_unit_villager_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: cherrystone
+    title: unit_name_villager_cherrystone
+    text: unit_description_villager
+    unitClass: villager
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: villager
+
+- id: unit_villager_felheim
+  category: units
+  faction: felheim
+  name: unit_name_villager_felheim
+  icon:
+    image: units/villager/felheim/portrait_villager_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: felheim
+    title: unit_name_villager_felheim
+    text: codex_unit_villager_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: felheim
+    title: unit_name_villager_felheim
+    text: codex_unit_villager_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: felheim
+    title: unit_name_villager_felheim
+    text: unit_description_villager
+    unitClass: villager
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: villager
+
+- id: unit_villager_floran
+  category: units
+  faction: floran
+  name: unit_name_villager_floran
+  icon:
+    image: units/villager/floran/portrait_villager_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: floran
+    title: unit_name_villager_floran
+    text: codex_unit_villager_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: floran
+    title: unit_name_villager_floran
+    text: codex_unit_villager_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: floran
+    title: unit_name_villager_floran
+    text: unit_description_villager
+    unitClass: villager
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: villager
+
+- id: unit_villager_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_villager_heavensong
+  icon:
+    image: units/villager/heavensong/portrait_villager_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: heavensong
+    title: unit_name_villager_heavensong
+    text: codex_unit_villager_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: heavensong
+    title: unit_name_villager_heavensong
+    text: codex_unit_villager_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: villager
+    faction: heavensong
+    title: unit_name_villager_heavensong
+    text: unit_description_villager
+    unitClass: villager
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: villager
+
+
+- id: unit_thief_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_thief_cherrystone
+  icon:
+    image: units/thief/cherrystone/portrait_thief_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: cherrystone
+    title: unit_name_thief_cherrystone
+    text: codex_unit_thief_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: cherrystone
+    title: unit_name_thief_cherrystone
+    text: codex_unit_thief_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: cherrystone
+    title: unit_name_thief_cherrystone
+    text: unit_description_thief
+    unitClass: thief
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: thief
+
+- id: unit_thief_floran
+  category: units
+  faction: floran
+  name: unit_name_thief_floran
+  icon:
+    image: units/thief/floran/portrait_thief_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: floran
+    title: unit_name_thief_floran
+    text: codex_unit_thief_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: floran
+    title: unit_name_thief_floran
+    text: codex_unit_thief_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: floran
+    title: unit_name_thief_floran
+    text: unit_description_thief
+    unitClass: thief
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: thief
+
+- id: unit_thief_felheim
+  category: units
+  faction: felheim
+  name: unit_name_thief_felheim
+  icon:
+    image: units/thief/felheim/portrait_thief_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: felheim
+    title: unit_name_thief_felheim
+    text: codex_unit_thief_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: felheim
+    title: unit_name_thief_felheim
+    text: codex_unit_thief_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: felheim
+    title: unit_name_thief_felheim
+    text: unit_description_thief
+    unitClass: thief
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: thief
+
+- id: unit_thief_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_thief_heavensong
+  icon:
+    image: units/thief/heavensong/portrait_thief_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: heavensong
+    title: unit_name_thief_heavensong
+    text: codex_unit_thief_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: heavensong
+    title: unit_name_thief_heavensong
+    text: codex_unit_thief_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: thief
+    faction: heavensong
+    title: unit_name_thief_heavensong
+    text: unit_description_thief
+    unitClass: thief
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: thief
+
+
+- id: unit_rifleman_cherrystone
+  category: units
+  faction: cherrystone
+  name: unit_name_rifleman_cherrystone
+  icon:
+    image: units/rifleman/cherrystone/portrait_rifleman_cherrystone_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: cherrystone
+    title: unit_name_rifleman_cherrystone
+    text: codex_unit_rifleman_cherrystone_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: cherrystone
+    title: unit_name_rifleman_cherrystone
+    text: codex_unit_rifleman_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: cherrystone
+    title: unit_name_rifleman_cherrystone
+    text: unit_description_rifleman
+    unitClass: rifleman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: rifleman
+
+- id: unit_rifleman_floran
+  category: units
+  faction: floran
+  name: unit_name_rifleman_floran
+  icon:
+    image: units/rifleman/floran/portrait_rifleman_floran_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: floran
+    title: unit_name_rifleman_floran
+    text: codex_unit_rifleman_floran_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: floran
+    title: unit_name_rifleman_floran
+    text: codex_unit_rifleman_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: floran
+    title: unit_name_rifleman_floran
+    text: unit_description_rifleman
+    unitClass: rifleman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: rifleman
+
+- id: unit_rifleman_felheim
+  category: units
+  faction: felheim
+  name: unit_name_rifleman_felheim
+  icon:
+    image: units/rifleman/felheim/portrait_rifleman_felheim_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: felheim
+    title: unit_name_rifleman_felheim
+    text: codex_unit_rifleman_felheim_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: felheim
+    title: unit_name_rifleman_felheim
+    text: codex_unit_rifleman_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: felheim
+    title: unit_name_rifleman_felheim
+    text: unit_description_rifleman
+    unitClass: rifleman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: rifleman
+
+- id: unit_rifleman_heavensong
+  category: units
+  faction: heavensong
+  name: unit_name_rifleman_heavensong
+  icon:
+    image: units/rifleman/heavensong/portrait_rifleman_heavensong_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: description
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: heavensong
+    title: unit_name_rifleman_heavensong
+    text: codex_unit_rifleman_heavensong_lore_text
+  - pageType: strategy
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: heavensong
+    title: unit_name_rifleman_heavensong
+    text: codex_unit_rifleman_critical_text
+  - pageType: stats
+    layoutType: unit_sprite
+    unitClass: rifleman
+    faction: heavensong
+    title: unit_name_rifleman_heavensong
+    text: unit_description_rifleman
+    unitClass: rifleman
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: rifleman
+...

@@ -1,0 +1,234 @@
+
+
+#implemented UI options: tileInfo, recruitMenu
+
+tutorialScripts:
+  - id: tileInfo
+    ui: tileInfo
+    action: _openUI
+    steps:
+      - uiElement: ui_tile_info
+        highlight: false
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_01
+      - uiElement: ui_tile_info
+        highlight: false
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_02
+      - uiElement: unit_description_window
+        highlight: true
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_03
+      - uiElement: unit_description_window
+        highlight: true
+        characterExpression: neutral
+        character: mercia
+        message: $act1_main1_tutorial_Mercia_01
+      - uiElement: unit_description_window
+        highlight: true
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_04
+      - uiElement: unit_description_window
+        highlight: true
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_05
+      - uiElement: unit_description_window
+        highlight: true
+        characterExpression: neutral
+        character: mercia
+        message: $act1_main1_tutorial_Mercia_02
+      - uiElement: unit_description_window
+        highlight: false
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_06
+      - uiElement: close
+        forceClick: false
+  - id: tileInfo_spearman
+    ui: tileInfo
+    action: _openUI
+    requiresUnit: true
+    steps:
+      - uiElement: false
+        highlight: true
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main3_tutorial_Emeric_03
+      - uiElement: ui_unit_effectiveness_window
+        highlight: true
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main3_tutorial_Emeric_10
+      - uiElement: effective_list_unit_name_knight_cherrystone
+        highlight: true
+        characterExpression: sad
+        character: mercia
+        message: $act1_main3_tutorial_Mercia_06
+      - uiElement: effective_list_unit_name_knight_cherrystone
+        highlight: true
+        characterExpression: sad
+        character: emeric
+        message: $act1_main3_tutorial_Emeric_12
+      - uiElement: effective_list_unit_name_knight_cherrystone
+        highlight: false
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main3_tutorial_Emeric_13
+      - uiElement: close
+        forceClick: false
+  - id: recruitInfo
+    ui: recruitMenu
+    action: _openUI
+    requiresUnit: true
+    steps:
+      - uiElement: units
+        highlight: false
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main2_recruitUI_Emeric_01
+      - uiElement: units
+        highlight: true
+        characterExpression: neutral
+        character: mercia
+        message: $act1_main2_recruitUI_Mercia_01
+      - uiElement: recruit_menu_funds
+        highlight: true
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main2_recruitUI_Emeric_02
+      - uiElement: units
+        highlight: false
+        characterExpression: sad
+        character: mercia
+        message: $act1_main2_recruitUI_Mercia_02
+      - characterExpression: happy
+        character: emeric
+        message: $act1_main2_recruitUI_Emeric_03
+      - uiElement: ok
+        highlight: false
+        forceClick: true        
+        failureCharacterExpression: neutral
+        failureCharacter: emeric
+        failureMessage: $act1_main2_recruitUI_Emeric_fail_03
+  - id: recruitInfo2
+    ui: recruitMenu
+    action: _openUI
+    requiresUnit: true
+    steps:
+      - uiElement: false
+        highlight: false
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main2_recruitUI_Emeric_04
+      - uiElement: false
+        highlight: true
+        characterExpression: neutral
+        character: emeric
+        message: $act1_main2_recruitUI_Emeric_05
+      - uiElement: false
+        highlight: false
+        characterExpression: neutral
+        character: mercia
+        message: $act1_main2_recruitUI_Mercia_03
+        failureCharacterExpression: neutral
+        failureCharacter: mercia
+        failureMessage: $act1_main2_recruitUI_Mercia_fail_04
+  - id: checkRange
+    action: _checkRange
+    requiresUnit: true
+    steps:
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main3_tutorial_Emeric_17
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main3_tutorial_Emeric_18
+      - characterExpression: neutral
+        character: mercia
+        message: $act1_main3_tutorial_Mercia_12
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main3_tutorial_Emeric_19
+  - id: selectAttackTarget
+    action: _selectAttackTarget
+    steps:
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_07
+      - characterExpression: neutral
+        character: mercia
+        message: $act1_main1_tutorial_Mercia_03
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_08
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_tutorial_Emeric_09
+  - id: selectAttackTarget2
+    action: _selectAttackTarget
+    steps:
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_messages_Emeric_09
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_messages_Emeric_10
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_messages_Emeric_11
+      - characterExpression: neutral
+        character: mercia
+        message: $act1_main1_messages_Mercia_05
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_messages_Emeric_12
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_messages_Emeric_13
+      - characterExpression: neutral
+        character: mercia
+        message: $act1_main1_messages_Mercia_06
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main1_messages_Emeric_14
+  - id: selectUnit
+    action: _selectUnit
+    steps:
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main2_messages_Emeric_33
+      - characterExpression: neutral
+        character: emeric
+        message: $act1_main2_messages_Emeric_34
+  - id: objectivesScreen  
+    ui: objectivesScreen
+    action: _openUI
+    steps:
+      - characterExpression: neutral
+        character: sigrid
+        message: $prologue_overviewtutorial_Sigrid_04
+      - characterExpression: neutral
+        character: sigrid
+        message: $prologue_overviewtutorial_Sigrid_05
+      - characterExpression: neutral
+        character: sigrid
+        message: $prologue_overviewtutorial_Sigrid_06
+      - characterExpression: happy
+        character: sigrid
+        message: $prologue_overviewtutorial_Sigrid_07
+  - id: gameMenu  
+    ui: gameMenu
+    action: _openUI
+    steps:
+      - uiElement: overview
+        forceClick: true
+        failureCharacterExpression: neutral
+        failureCharacter: sigrid
+        failureMessage: $prologue_overviewtutorial_Sigrid_fail_01
+
+...

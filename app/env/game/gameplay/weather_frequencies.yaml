@@ -1,0 +1,24 @@
+---
+
+weather_frequencies:
+  - id: default
+    name: frequency_name_default
+    weather:
+      - type: severe
+        frequency: 0.2
+      - type: windy
+        frequency: 0.2
+  - id: always_sunny
+    name: weather_frequency_name_always_sunny
+  - id: always_windy
+    name: weather_frequency_name_always_windy
+    weather:
+      - type: windy
+        frequency: 1.0
+  - id: always_severe
+    name: weather_frequency_name_always_severe
+    weather:
+      - type: severe
+        frequency: 1.0
+
+...

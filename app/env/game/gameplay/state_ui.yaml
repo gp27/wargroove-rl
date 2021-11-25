@@ -1,0 +1,13 @@
+---
+stateUIs:
+  - id: ammo
+    type: count
+    maxCount: 3
+    icon: ui/main_game_ui/bullet_full.png
+    iconEmpty: ui/main_game_ui/bullet_empty.png
+
+  - id: gold
+    type: text
+    icon: ui/icons/coin.png
+    
+...

@@ -1,0 +1,37 @@
+---
+
+menuBackgrounds:
+- id: options_menu
+  background: backgrounds/titlescreen/options/background.png
+  front: backgrounds/titlescreen/options/foreground.png
+  animations:
+    - animation: backgrounds/titlescreen/options/rays
+      position: [-280, -175]
+      layer: foreground
+    - animation: backgrounds/titlescreen/options/nurusleep
+      position: [-272, 5]
+      layer: background
+    - animation: backgrounds/titlescreen/options/deer
+      position: [200, 80]
+      layer: background
+      randomWander:
+        idle: idle
+        run: run
+        action: graze
+        speed: 40
+        randomSpots: [[175, 110], [-195, 105], [-155, 125], [65, 65], [175, 110] ]
+        preActionIdleTime: [2, 3]
+        postActionIdleTime: [4, 7]
+    - animation: backgrounds/titlescreen/options/bunny
+      position: [-200, 120]
+      layer: background
+      randomWander:
+        idle: idle
+        run: run
+        action: graze
+        speed: 50
+        randomSpots: [[-215, 60], [-190, 90], [30, 30], [145, 10], [150, 75], [85, 120], [-75, 115], [220, 70]]
+        preActionIdleTime: [0.5, 1]
+        postActionIdleTime: [1, 2]
+
+...

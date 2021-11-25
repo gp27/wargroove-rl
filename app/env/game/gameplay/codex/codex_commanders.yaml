@@ -1,0 +1,730 @@
+---
+codex:
+
+- id: commander_mercia
+  category: commanders
+  name: character_mercia_name
+  icon:
+    image: units/commanders/mercia/portrait_mercia_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeII
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_mercia_portrait.png
+    title: character_mercia_name
+    text: codex_commander_mercia_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_mercia_portrait.png
+    title: character_mercia_name
+    text: codex_commander_mercia_lore1_text
+    unlock: codex_mercia_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_mercia_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_mercia_lore3_text
+    unlock: codex_mercia_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_merciagroove
+    title: groove_name_heal_aura
+    text: codex_groove_description_mercia
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_merciagroove
+    title: codex_title_strategy_mercia
+    text: codex_groove_strategy_mercia
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_mercia
+
+- id: commander_emeric
+  category: commanders
+  name: character_emeric_name
+  icon:
+    image: units/commanders/emeric/portrait_emeric_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeVI
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_emeric_portrait.png
+    title: character_emeric_name
+    text: codex_commander_emeric_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_emeric_portrait.png
+    title: character_emeric_name
+    text: codex_commander_emeric_lore1_text
+    unlock: codex_emeric_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_emeric_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_emeric_lore3_text
+    unlock: codex_emeric_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_emericgroove
+    title: groove_name_cherrystone_defence
+    text: codex_groove_description_emeric
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_emericgroove
+    title: codex_title_strategy_emeric
+    text: codex_groove_strategy_emeric
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_emeric
+
+- id: commander_caesar
+  category: commanders
+  name: character_caesar_name
+  icon:
+    image: units/commanders/caesar/portrait_caesar_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeII
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_caesar_portrait.png
+    title: character_caesar_name
+    text: codex_commander_caesar_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_caesar_portrait.png
+    title: character_caesar_name
+    text: codex_commander_caesar_lore1_text
+    unlock: codex_caesar_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_caesar_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_caesar_lore3_text
+    unlock: codex_caesar_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_caesargroove
+    title: groove_name_second_wind
+    text: codex_groove_description_caesar
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_caesargroove
+    title: codex_title_strategy_caesar
+    text: codex_groove_strategy_caesar
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_caesar
+
+- id: commander_valder
+  category: commanders
+  name: character_valder_name
+  icon:
+    image: units/commanders/valder/portrait_valder_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeIV
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_valder_portrait.png
+    title: character_valder_name
+    text: codex_commander_valder_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_valder_portrait.png
+    title: character_valder_name
+    text: codex_commander_valder_lore1_text
+    unlock: codex_valder_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_valder_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_valder_lore3_text
+    unlock: codex_valder_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_valdergroove
+    title: groove_name_raise_dead
+    text: codex_groove_description_valder
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_valdergroove
+    title: codex_title_strategy_valder
+    text: codex_groove_strategy_valder
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_valder
+
+- id: commander_ragna
+  category: commanders
+  name: character_ragna_name
+  icon:
+    image: units/commanders/ragna/portrait_ragna_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_ragna_portrait.png
+    title: character_ragna_name
+    text: codex_commander_ragna_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_ragna_portrait.png
+    title: character_ragna_name
+    text: codex_commander_ragna_lore1_text
+    unlock: codex_ragna_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_ragna_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_ragna_lore3_text
+    unlock: codex_ragna_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_ragnagroove
+    title: groove_name_splash_jump
+    text: codex_groove_description_ragna
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_ragnagroove
+    title: codex_title_strategy_ragna
+    text: codex_groove_strategy_ragna
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_ragna
+
+- id: commander_sigrid
+  category: commanders
+  name: character_sigrid_name
+  icon:
+    image: units/commanders/sigrid/portrait_sigrid_small.png
+    paletteSwap: true
+    colour: blue
+    skinColour: typeI
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_sigrid_portrait.png
+    title: character_sigrid_name
+    text: codex_commander_sigrid_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_sigrid_portrait.png
+    title: character_sigrid_name
+    text: codex_commander_sigrid_lore1_text
+    unlock: codex_sigrid_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_sigrid_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_sigrid_lore3_text
+    unlock: codex_sigrid_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_sigridgroove
+    title: groove_name_vampiric_touch
+    text: codex_groove_description_sigrid
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_sigridgroove
+    title: codex_title_strategy_sigrid
+    text: codex_groove_strategy_sigrid
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_sigrid
+
+- id: commander_greenfinger
+  category: commanders
+  name: character_greenfinger_name
+  icon:
+    image: units/commanders/greenfinger/portrait_greenfinger_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_greenfinger_portrait.png
+    title: character_greenfinger_name
+    text: codex_commander_greenfinger_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_greenfinger_portrait.png
+    title: character_greenfinger_name
+    text: codex_commander_greenfinger_lore1_text
+    unlock: codex_greenfinger_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_greenfinger_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_greenfinger_lore3_text
+    unlock: codex_greenfinger_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_greenfingergroove
+    title: groove_name_vine_wall
+    text: codex_groove_description_greenfinger
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_greenfingergroove
+    title: codex_title_strategy_greenfinger
+    text: codex_groove_strategy_greenfinger
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_greenfinger
+
+- id: commander_nuru
+  category: commanders
+  name: character_nuru_name
+  icon:
+    image: units/commanders/nuru/portrait_nuru_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_nuru_portrait.png
+    title: character_nuru_name
+    text: codex_commander_nuru_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_nuru_portrait.png
+    title: character_nuru_name
+    text: codex_commander_nuru_lore1_text
+    unlock: codex_nuru_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_nuru_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_nuru_lore3_text
+    unlock: codex_nuru_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_nurugroove
+    title: groove_name_teleport_beam
+    text: codex_groove_description_nuru
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_nurugroove
+    title: codex_title_strategy_nuru
+    text: codex_groove_strategy_nuru
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_nuru
+
+- id: commander_sedge
+  category: commanders
+  name: character_sedge_name
+  icon:
+    image: units/commanders/sedge/portrait_sedge_small.png
+    paletteSwap: true
+    colour: green
+    skinColour: green
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_sedge_portrait.png
+    title: character_sedge_name
+    text: codex_commander_sedge_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_sedge_portrait.png
+    title: character_sedge_name
+    text: codex_commander_sedge_lore1_text
+    unlock: codex_sedge_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_sedge_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_sedge_lore3_text
+    unlock: codex_sedge_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_sedgegroove
+    title: groove_name_sadistic_rush
+    text: codex_groove_description_sedge
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_sedgegroove
+    title: codex_title_strategy_sedge
+    text: codex_groove_strategy_sedge
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_sedge
+
+- id: commander_tenri
+  category: commanders
+  name: character_tenri_name
+  icon:
+    image: units/commanders/tenri/portrait_tenri_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_tenri_portrait.png
+    title: character_tenri_name
+    text: codex_commander_tenri_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_tenri_portrait.png
+    title: character_tenri_name
+    text: codex_commander_tenri_lore1_text
+    unlock: codex_tenri_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_tenri_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_tenri_lore3_text
+    unlock: codex_tenri_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_tenrigroove
+    title: groove_name_tornado
+    text: codex_groove_description_tenri
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_tenrigroove
+    title: codex_title_strategy_tenri
+    text: codex_groove_strategy_tenri
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_tenri
+
+- id: commander_ryota
+  category: commanders
+  name: character_ryota_name
+  icon:
+    image: units/commanders/ryota/portrait_ryota_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_ryota_portrait.png
+    title: character_ryota_name
+    text: codex_commander_ryota_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_ryota_portrait.png
+    title: character_ryota_name
+    text: codex_commander_ryota_lore1_text
+    unlock: codex_ryota_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_ryota_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_ryota_lore3_text
+    unlock: codex_ryota_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_ryotagroove
+    title: groove_name_dash
+    text: codex_groove_description_ryota
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_ryotagroove
+    title: codex_title_strategy_ryota
+    text: codex_groove_strategy_ryota
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_ryota
+
+- id: commander_koji
+  category: commanders
+  name: character_koji_name
+  icon:
+    image: units/commanders/koji/portrait_koji_small.png
+    paletteSwap: true
+    colour: yellow
+    skinColour: typeIII
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_koji_portrait.png
+    title: character_koji_name
+    text: codex_commander_koji_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_koji_portrait.png
+    title: character_koji_name
+    text: codex_commander_koji_lore1_text
+    unlock: codex_koji_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_koji_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_koji_lore3_text
+    unlock: codex_koji_extra_lore2
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_kojigroove
+    title: groove_name_drone_bombs
+    text: codex_groove_description_koji
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_kojigroove
+    title: codex_title_strategy_koji
+    text: codex_groove_strategy_koji
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_koji
+
+- id: commander_mercival
+  category: commanders
+  name: character_mercival_name
+  unlock: codex_entry_mercival
+  icon:
+    image: units/commanders/mercival/portrait_mercival_small.png
+    paletteSwap: true
+    colour: red
+    skinColour: typeII
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_mercival_portrait.png
+    title: character_mercival_name
+    text: codex_commander_mercival_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_mercival_portrait.png
+    title: character_mercival_name
+    text: codex_commander_mercival_lore1_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_mercival_portrait.png
+    title: codex_commander_ethoshistory
+    text: codex_commander_mercival_lore3_text
+    unlock: codex_mercival_extra_lore
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_mercivalgroove
+    title: groove_name_fish
+    text: codex_groove_description_mercival
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_mercivalgroove
+    title: codex_title_strategy_mercival
+    text: codex_groove_strategy_mercival
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_mercival
+
+- id: commander_elodie
+  category: commanders
+  name: character_elodie_name
+  unlock: codex_entry_elodie
+  icon:
+    image: units/commanders/elodie/portrait_elodie_small.png
+    paletteSwap: true
+    colour: purple
+    skinColour: typeIV
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_elodie_portrait.png
+    title: character_elodie_name
+    text: codex_commander_elodie_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_elodie_portrait.png
+    title: character_elodie_name
+    text: codex_commander_elodie_lore1_text
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_elodiegroove
+    title: groove_name_convert
+    text: codex_groove_description_elodie
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_elodiegroove
+    title: codex_title_strategy_elodie
+    text: codex_groove_strategy_elodie
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_elodie
+
+- id: commander_darkmercia
+  category: commanders
+  name: character_darkmercia_name
+  unlock: codex_entry_darkmercia
+  icon:
+    image: units/commanders/darkmercia/portrait_darkmercia_small.png
+    paletteSwap: true
+    colour: purple
+    skinColour: typeII
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_darkmercia_portrait.png
+    title: character_darkmercia_name
+    text: codex_commander_darkmercia_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/commander_darkmercia_portrait.png
+    title: character_darkmercia_name
+    text: codex_commander_darkmercia_lore1_text
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/commander_darkmerciagroove
+    title: groove_name_drain_aura
+    text: codex_groove_description_darkmercia
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/commander_darkmerciagroove
+    title: codex_title_strategy_darkmercia
+    text: codex_groove_strategy_darkmercia
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_darkmercia
+
+- id: commander_wulfar
+  category: commanders
+  name: character_wulfar_name
+  icon:
+    image: units/commanders/wulfar/portrait_wulfar_small.png
+    paletteSwap: true
+    colour: black
+    skinColour: typeII
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_wulfar_portrait.png
+    title: character_wulfar_name
+    text: codex_commander_wulfar_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_wulfar_portrait.png
+    title: character_wulfar_name
+    text: codex_commander_wulfar_lore1_text    
+    unlock: codex_wulfar_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_wulfar_portrait.png
+    title: character_wulfar_name
+    text: codex_commander_wulfar_lore3_text    
+    unlock: codex_wulfar_extra_lore
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/dlc1/commander_wulfargroove
+    title: groove_name_golf
+    text: codex_groove_description_wulfar
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/dlc1/commander_wulfargroove
+    title: codex_title_strategy_wulfar
+    text: codex_groove_strategy_wulfar
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_mercia
+
+- id: commander_twins
+  category: commanders
+  name: character_twins_name
+  icon:
+    image: units/commanders/twins/portrait_twins_small.png
+    paletteSwap: true
+    colour: black
+    skinColour: typeVI
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_twins_portrait.png
+    title: character_twins_name
+    text: codex_commander_twins_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_twins_portrait.png
+    title: character_twins_name
+    text: codex_commander_twins_lore1_text    
+    unlock: codex_twins_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_twins_portrait.png
+    title: character_twins_name
+    text: codex_commander_twins_lore3_text    
+    unlock: codex_twins_extra_lore
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/dlc1/commander_twinsgroove
+    title: groove_name_twins
+    text: codex_groove_description_twins
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/dlc1/commander_twinsgroove
+    title: codex_title_strategy_twins
+    text: codex_groove_strategy_twins
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_mercia
+
+- id: commander_vesper
+  category: commanders
+  name: character_vesper_name
+  hiddenInDemo: true
+  icon:
+    image: units/commanders/vesper/portrait_vesper_small.png
+    paletteSwap: true
+    colour: black
+    skinColour: typeVI
+  pages:
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_vesper_portrait.png
+    title: character_vesper_name
+    text: codex_commander_vesper_lore2_text
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_vesper_portrait.png
+    title: character_vesper_name
+    text: codex_commander_vesper_lore1_text    
+    unlock: codex_vesper_extra_lore
+  - pageType: bio
+    layoutType: image
+    image: ui/codex/content/dlc1/commander_vesper_portrait.png
+    title: character_vesper_name
+    text: codex_commander_vesper_lore3_text    
+    unlock: codex_vesper_extra_lore
+  - pageType: groove
+    layoutType: animation
+    animation: ui/codex/content/dlc1/commander_vespergroove
+    title: groove_name_smoke_screen
+    text: codex_groove_description_vesper
+  - pageType: strategy
+    layoutType: animation
+    animation: ui/codex/content/dlc1/commander_vespergroove
+    title: codex_title_strategy_vesper
+    text: codex_groove_strategy_vesper
+  - pageType: matrix
+    layoutType: no_image
+    title: ui_codex_damage_matrix
+    unitClass: commander_mercia
+...

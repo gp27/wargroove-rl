@@ -1,0 +1,95 @@
+---
+
+fish:
+  - id: boot
+    name: fish_name_boot
+    icon: "1"
+    rarity: common
+  - id: piano_tuna
+    name: fish_name_piano_tuna
+    icon: "2"
+    rarity: common
+  - id: ginger_guppy
+    name: fish_name_ginger_guppy
+    icon: "3"
+    rarity: common
+  - id: jerkfish
+    name: fish_name_jerkfish
+    icon: "4"
+    rarity: common
+  - id: salty_bass
+    name: fish_name_salty_bass
+    icon: "5"
+    terrains: [sea]
+    rarity: common
+  - id: pinchmaster
+    name: fish_name_pinchmaster
+    icon: "6"
+    terrains: [beach]
+    rarity: common
+  - id: fruitfrog
+    name: fish_name_fruitfrog
+    icon: "7"
+    terrains: [river]
+    rarity: common
+  - id: lemon_loach
+    name: fish_name_lemon_loach
+    icon: "8"
+    biomes: [grass]
+    rarity: uncommon
+  - id: storm_jelly
+    name: fish_name_storm_jelly
+    icon: "9"
+    biomes: [grass]
+    weather: [rain]
+    rarity: uncommon
+  - id: eclectic_eel
+    name: fish_name_eclectic_eel
+    icon: "10"
+    biomes: [ice]
+    rarity: uncommon
+  - id: dreadfish
+    name: fish_name_dreadfish
+    icon: "11"
+    biomes: [ice]
+    weather: [snow]
+    rarity: uncommon
+  - id: toy_koi
+    name: fish_name_toy_koi
+    icon: "12"
+    biomes: [desert]
+    rarity: uncommon
+  - id: clockwork_fish
+    name: fish_name_clockwork_fish
+    icon: "13"
+    biomes: [desert]
+    weather: [sandstorm]
+    rarity: uncommon
+  - id: lime_sole
+    name: fish_name_lime_sole
+    icon: "14"
+    biomes: [grass]
+    rarity: rare
+  - id: snuffish
+    name: fish_name_snuffish
+    icon: "16"
+    biomes: [ice]
+    rarity: rare    
+  - id: red_flapper
+    name: fish_name_red_flapper
+    icon: "15"
+    biomes: [desert]
+    rarity: rare
+  - id: chucklefish
+    name: fish_name_chucklefish
+    icon: "17"
+    weather: [rain, snow, sandstorm]
+    rarity: rare
+  - id: starfish
+    name: fish_name_starfish
+    icon: "18"
+    numFishRequired: 17
+    numStarsRequired: 199
+    rarity: common
+
+...

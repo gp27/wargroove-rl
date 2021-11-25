@@ -1,0 +1,60 @@
+---
+
+menuBackgrounds:
+- id: multiplayer_menu
+  background: backgrounds/titlescreen/multiplayer/background.png
+  foreground: backgrounds/titlescreen/multiplayer/foreground.png
+  clouds: backgrounds/titlescreen/multiplayer/cloudstrip.png
+  cloudsInBack: true
+  animations:
+    - animation: backgrounds/titlescreen/multiplayer/chimneypuff
+      position: [200, -180]
+      layer: back
+    - animation: backgrounds/titlescreen/extras/goldshine
+      position: [300, -135]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/goldshine
+      position: [100, -155]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/goldshine
+      position: [-100, -170]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [0, -140]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [50, -180]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [-35, -110]
+      layer: foreground
+    - animation: backgrounds/titlescreen/extras/smallshine
+      position: [-200, -180]
+      layer: foreground
+    - animation: backgrounds/titlescreen/multiplayer/applesign
+      position: [-126, -43]
+      layer: background
+    - animation: backgrounds/titlescreen/multiplayer/windowlight
+      position: [179, -40]
+      layer: background
+    - animation: backgrounds/titlescreen/multiplayer/groundlight
+      position: [222, 27]
+      layer: background
+    - animation: backgrounds/titlescreen/multiplayer/chimneypuff
+      position: [205, -180]
+      layer: background
+    - animation: backgrounds/titlescreen/multiplayer/hooded
+      position: [-200, 0]
+      layer: foreground
+    - animation: backgrounds/titlescreen/multiplayer/fox
+      position: [-400, 65]
+      layer: foreground
+      randomWander:
+        idle: idle
+        run: run
+        action: action
+        speed: 35
+        randomSpots: [[-200, 60], [-150, 60], [-135, 50], [200, 70], [175, 50], [350, 50], [-400, 65]]
+        preActionIdleTime: [0.5, 1]
+        postActionIdleTime: [1, 2]
+...

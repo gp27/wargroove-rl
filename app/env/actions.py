@@ -2,7 +2,7 @@ import gym
 import copy
 import numpy as np
 
-def getIndex(options, ele):
+def get_index(options, ele):
     try:
         return options.index(ele)
     except ValueError:
@@ -11,10 +11,10 @@ def getIndex(options, ele):
 class Actions():
 
     def __init__(self, props):
-        self._setupProps(props)
+        self._setup_props(props)
         self.space = gym.spaces.Discrete(self.size)
     
-    def _setupProps(self, props):
+    def _setup_props(self, props):
         props = copy.deepcopy(props)
 
         size = 0
@@ -30,7 +30,7 @@ class Actions():
         self.size = size
         self.props = props
     
-    def getLegalActions(self):
+    def get_legal_actions(self):
         legal_actions = np.zeros(self.size)
 
         skip = 0
@@ -43,14 +43,14 @@ class Actions():
                 options = prop.get('options', [])
                 getter = prop.get('getter')
                 for ele in getter():
-                    i = getIndex(options, ele)
+                    i = get_index(options, ele)
                     if i != None: legal_actions[skip + i] = 1
 
             skip += group_size
         
         return legal_actions
     
-    def convertActionIndex(self, action_index):
+    def convert_action_index(self, action_index):
         skip = 0
 
         default_conv = lambda a: a

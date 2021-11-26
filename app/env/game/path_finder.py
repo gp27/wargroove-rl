@@ -8,14 +8,14 @@ class WargroovePathFinder():
 
     def __init__(self, game):
         self.game = game
-        self.unitId = None
-        self.moveCosts = {}
-        self.unitsPos = None
+        self.unit_id = None
+        self.move_costs = {}
+        self.units_pos = None
         self.cost = None
         self.dist = None
     
-    def _getMovementCost(self, movement):
-        c = self.moveCosts.get(movement, None)
+    def _get_movement_cost(self, movement):
+        c = self.move_costs.get(movement, None)
 
         if not isinstance(c, np.ndarray):
             m = self.game.map
@@ -25,11 +25,11 @@ class WargroovePathFinder():
             for index, terrain in np.ndenumerate(m['tiles']):
                 c[index] = terrains[terrain]['movementCost'].get(movement, 0)
             
-            self.moveCosts[movement] = c
+            self.move_costs[movement] = c
         
         return np.copy(c)
     
-    def _getUnitsPos(self, unitId):
+    def _get_units_pos(self, unitId):
         p = np.zeros((self.game.map['h'], self.game.map['w']), dtype=np.int8)
 
         u = self.game.units[unitId]
@@ -53,18 +53,18 @@ class WargroovePathFinder():
         return p
         
     
-    def _setUnitsPosCost(self, cost, unitsPos):
+    def _set_units_pos_cost(self, cost, unitsPos):
         for index, t in np.ndenumerate(unitsPos):
             if t == -1: cost[index] = 0
   
-    def setUnitId(self, unitId):
-        self.unitId = unitId
+    def set_unit_id(self, unitId):
+        self.unit_id = unitId
         self.calculate()
         return self
     
     def calculate(self):
         defs = self.game.defs
-        u = self.game.units[self.unitId]
+        u = self.game.units[self.unit_id]
         unitClass = defs['unitClasses'][u['unitClassId']]
         movement = unitClass['movement']
 
@@ -75,26 +75,26 @@ class WargroovePathFinder():
 
         if y >= 0 and x >= 0: dist[y,x] = 0
 
-        cost = self._getMovementCost(movement)
-        unitsPos = self._getUnitsPos(self.unitId)
-        self._setUnitsPosCost(cost, unitsPos)
+        cost = self._get_movement_cost(movement)
+        unitsPos = self._get_units_pos(self.unit_id)
+        self._set_units_pos_cost(cost, unitsPos)
 
         tcod.path.dijkstra2d(dist, cost, 1, 0, out=dist)
 
         self.cost = cost
-        self.unitsPos = unitsPos
+        self.units_pos = unitsPos
         self.dist = dist
         self.moveRange = unitClass.get('moveRange', 0)
 
-    def getPath(self, y, x):
+    def get_path(self, y, x):
         path = tcod.path.hillclimb2d(self.dist, (y, x), True, False)
         path = path[::-1].tolist()
         return list(map(toPos, path))
     
-    def getArea(self):
+    def get_area(self):
         area = []
         for index, dist in np.ndenumerate(self.dist):
-            if dist <= self.moveRange and self.unitsPos[index] == 0:
+            if dist <= self.moveRange and self.units_pos[index] == 0:
                 area += [index]
 
         return list(map(toPos, area))

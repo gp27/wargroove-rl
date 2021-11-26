@@ -1,5 +1,4 @@
 import os, json
-from enum import Enum
 import numpy as np
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -43,12 +42,12 @@ TERRAIN_LIST = [
     'sea'
 ]
 
-def getMapNames(n_players = 2):
+def get_map_names(n_players = 2):
     p_dir = f'maps/{n_players}p/'
     path = f'{dir_path}/{p_dir}'
     return [(file) for file in os.listdir(path) if file.endswith('.json')]
 
-def loadMap(name, n_players = 2):
+def load_map(name, n_players = 2):
     p_dir = f'maps/{n_players}p/'
     path = f'{dir_path}/{p_dir}/{name}'
     with open(path) as map_file:
@@ -91,24 +90,24 @@ WG_SYMBOLS = {
 
 VERBS_BY_CLASS = {}
 
-for classDef in DEFS['unitClasses'].values():
+for class_def in DEFS['unitClasses'].values():
     verbs = list()
 
-    if classDef.get('moveRange', 0) > 0:
+    if class_def.get('moveRange', 0) > 0:
         verbs.append('wait')
         
-    if 'defaultAttack' in classDef:
-        verbs.append(classDef['defaultAttack'])
-    elif  classDef.get('canAttack', True) and len(classDef.get('weapons', [])) > 0:
+    if 'defaultAttack' in class_def:
+        verbs.append(class_def['defaultAttack'])
+    elif  class_def.get('canAttack', True) and len(class_def.get('weapons', [])) > 0:
         verbs.append('attack')
         
-    if 'grooveId' in classDef:
-        groove = DEFS['grooves'][classDef['grooveId']]
+    if 'grooveId' in class_def:
+        groove = DEFS['grooves'][class_def['grooveId']]
         verbs.append(groove['verb'])
         
-    verbs = verbs + classDef.get('verbs', []) # + ['cancel']
+    verbs = verbs + class_def.get('verbs', []) # + ['cancel']
 
-    VERBS_BY_CLASS[classDef['id']] = verbs
+    VERBS_BY_CLASS[class_def['id']] = verbs
 
 
 PLAYABLE_COMMANDERS = [c['id'] for c in DEFS['commanders'].values() if c.get('playable', True)]

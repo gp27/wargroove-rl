@@ -8,14 +8,14 @@
   "units": [
     {
       "class": "barracks",
-      "playerId": 0,
+      "player": 0,
       "x": 0,
       "y": 0,
       "recruits": ["soldier", "dog", "spearman", "mage", "wagon", "giant", "knight", "ballista"]
     },
     {
       "class": "barracks",
-      "playerId": 1,
+      "player": 1,
       "x": 4,
       "y": 4,
       "banned_recruits": ["trebuchet"]
@@ -42,7 +42,7 @@
     },
     {
       "class": "commander",
-      "playerId": 0,
+      "player": 0,
       "health": 30,
       "groove": 100,
       "x": 1,
@@ -50,7 +50,7 @@
     },
     {
       "class": "commander",
-      "playerId": 1,
+      "player": 1,
       "health": 30,
       "groove": 100,
       "x": 3,
@@ -58,13 +58,13 @@
     },
     {
       "class": "hq",
-      "playerId": 0,
+      "player": 0,
       "x": 1,
       "y": 1
     },
     {
       "class": "hq",
-      "playerId": 1,
+      "player": 1,
       "x": 3,
       "y": 3
     }

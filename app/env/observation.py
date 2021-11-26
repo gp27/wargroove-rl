@@ -2,7 +2,7 @@ import gym
 import copy
 import numpy as np
 
-def listToCodes(l):
+def list_to_codes(l):
     d = {}
     n = len(l)
 
@@ -18,10 +18,10 @@ def listToCodes(l):
 class Observation():
 
     def __init__(self, props):
-        self._setupProps(props)
+        self._setup_props(props)
         self.space = gym.spaces.Box(low=-1, high=1, shape=(self.size,), dtype=np.int64)
 
-    def _setupProps(self, props):
+    def _setup_props(self, props):
         props = copy.deepcopy(props)
         
         size = 0
@@ -36,7 +36,7 @@ class Observation():
                 if 'options' in ob:
                     opts = ob.get('options', [])
                     ob_n = len(opts)
-                    ob['codes'] = listToCodes(opts)
+                    ob['codes'] = list_to_codes(opts)
                 
                 group_size += ob_n
                 ob['n'] = ob_n
@@ -47,7 +47,7 @@ class Observation():
         self.size = size
         self.props = props
 
-    def getObservation(self):
+    def get_observation(self):
         obs = np.zeros(self.size)
 
         skip = 0

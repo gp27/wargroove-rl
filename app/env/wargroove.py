@@ -3,7 +3,7 @@ import gym
 import numpy as np
 
 from .game.wargroove_game import *
-from .observation import Observation, listToCodes
+from .observation import Observation, list_to_codes
 from .actions import Actions
 from tabulate import tabulate
 
@@ -35,7 +35,7 @@ class WargrooveEnv(gym.Env):
         self.game.reset(random_commanders=False)
         #self.game.start()
 
-        self.current_player_num = self.game.playerId
+        self.current_player_num = self.game.player_id
         self.n_players = self.game.n_players
 
         logger.debug(f'\n\n---- NEW GAME ----')
@@ -43,18 +43,18 @@ class WargrooveEnv(gym.Env):
 
     @property
     def observation(self):
-        return self.wg_obs.getObservation()
+        return self.wg_obs.get_observation()
 
     @property
     def legal_actions(self):
-        return self.wg_acts.getLegalActions()
+        return self.wg_acts.get_legal_actions()
 
     @property
     def current_player(self):
         return self.game.players[self.current_player_num]
 
     def convert_action(self, action_index):
-        action = self.wg_acts.convertActionIndex(action_index)
+        action = self.wg_acts.convert_action_index(action_index)
         if action == 'cancel': return action
         return self.game.selectables.index(action)
 
@@ -73,14 +73,14 @@ class WargrooveEnv(gym.Env):
 
         else:
             selection = self.convert_action(action)
-            self.game.continueGame(selection)
+            self.game.continue_game(selection)
 
-            self.current_player_num = self.game.playerId
+            self.current_player_num = self.game.player_id
 
             p = self.current_player
 
-            done = p.isVictorious or p.hasLosed
-            reward[self.current_player_num] = 1 if p.isVictorious else -1 if p.hasLosed else 0
+            done = p.is_victorious or p.has_losed
+            reward[self.current_player_num] = 1 if p.is_victorious else -1 if p.has_losed else 0
         self.done = done
 
         return self.observation, reward, done, {}
@@ -90,9 +90,9 @@ class WargrooveEnv(gym.Env):
             return
         
         if mode == 'human':
-            print(tabulate(self.game.getBoardTable(), tablefmt="fancy_grid"))
+            print(tabulate(self.game.get_board_table(), tablefmt="fancy_grid"))
 
-            for t in self.game.getUnitTables():
+            for t in self.game.get_unit_tables():
                 print(tabulate(t, headers="keys", tablefmt="fancy_grid"))
 
         if self.verbose:
@@ -101,7 +101,7 @@ class WargrooveEnv(gym.Env):
 
         if not self.done:
             logger.debug(
-                f'\nLegal actions: {[(i, self.wg_acts.convertActionIndex(i)) for i,o in enumerate(self.legal_actions) if o != 0]}')
+                f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.legal_actions) if o != 0]}')
 
         if self.done:
             logger.debug(f'\n\nGAME OVER')
@@ -132,7 +132,7 @@ class WargrooveEnv(gym.Env):
         
         losers = []
         for p in self.game.players.values():
-            if p.hasLosed:
+            if p.has_losed:
                 losers.append(p.id)
             #else: # subtract time
 
@@ -142,6 +142,6 @@ class WargrooveEnv(gym.Env):
 
             uc = self.game.dfn['unitClasses'][u['unitClassId']]
             value = u['health'] * uc.get('cost', 0) + uc.get('income', 0)
-            scores[playerId] = value
+            scores[pid] = value
         
         return scores

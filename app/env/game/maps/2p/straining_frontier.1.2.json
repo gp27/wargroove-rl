@@ -8,28 +8,28 @@
   "units": [
     {
       "class": "barracks",
-      "playerId": 0,
+      "player": 0,
       "x": 13,
       "y": 19,
       "banned_recruits": ["trebuchet"]
     },
     {
       "class": "barracks",
-      "playerId": 0,
+      "player": 0,
       "x": 18,
       "y": 12,
       "banned_recruits": ["trebuchet"]
     },
     {
       "class": "barracks",
-      "playerId": 1,
+      "player": 1,
       "x": 1,
       "y": 7,
       "banned_recruits": ["trebuchet"]
     },
     {
       "class": "barracks",
-      "playerId": 1,
+      "player": 1,
       "x": 6,
       "y": 0,
       "banned_recruits": ["trebuchet"]
@@ -136,28 +136,28 @@
     },
     {
       "class": "city",
-      "playerId": 0,
+      "player": 0,
       "health": 20,
       "x": 1,
       "y": 0
     },
     {
       "class": "city",
-      "playerId": 1,
+      "player": 1,
       "health": 10,
       "x": 19,
       "y": 19
     },
     {
       "class": "commander",
-      "playerId": 0,
+      "player": 0,
       "health": 15,
       "x": 9,
       "y": 16
     },
     {
       "class": "commander",
-      "playerId": 1,
+      "player": 1,
       "health": 20,
       "x": 10,
       "y": 3
@@ -174,19 +174,19 @@
     },
     {
       "class": "hq",
-      "playerId": 0,
+      "player": 0,
       "x": 10,
       "y": 16
     },
     {
       "class": "hq",
-      "playerId": 1,
+      "player": 1,
       "x": 9,
       "y": 3
     },
     {
       "class": "soldier",
-      "playerId": 1,
+      "player": 1,
       "x": 2,
       "y": 7
     },

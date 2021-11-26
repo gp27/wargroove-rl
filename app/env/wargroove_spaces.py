@@ -1,6 +1,6 @@
 from .game.wargroove_game import *
 
-from .observation import Observation, listToCodes
+from .observation import Observation, list_to_codes
 from .actions import Actions
 
 class PosList():
@@ -42,9 +42,9 @@ class WargrooveObservation(Observation):
     def __init__(self, game):
         self.game = game
         self.terrains = None
-        super().__init__(self.getProps())
+        super().__init__(self.get_props())
     
-    def getProps(self):
+    def get_props(self):
         return [
     {
         'name': 'global',
@@ -54,26 +54,26 @@ class WargrooveObservation(Observation):
                 'getter': lambda _: self.game.phase
             }, {
                 'options': EntryStep,
-                'getter': lambda _: self.game.entryStep
+                'getter': lambda _: self.game.entry_step
             }, {
                 'options': AVAILABLE_VERBS,
-                'getter': lambda _: self.game.selectedVerb
+                'getter': lambda _: self.game.selected_verb
             }, {
                 'options': PreExecuteSel,
-                'getter': lambda _: self.game.preExecuteSelection
+                'getter': lambda _: self.game.pre_execute_selection
             }, {
                 'n': 2,
-                'getter': lambda _: self.posToList(self.game.endPos)
+                'getter': lambda _: self.pos_to_list(self.game.end_pos)
             }, {
                 'n': 2,
-                'getter': lambda _: self.posToList(self.game.targetPos)
+                'getter': lambda _: self.pos_to_list(self.game.target_pos)
             }, {
-                'getter': lambda _: self.game.preExecuteSteps
+                'getter': lambda _: self.game.pre_execute_steps
             }, {
-                'getter': lambda _: self.game.turnNumber
+                'getter': lambda _: self.game.turn_number
             }, {
                 'n': MAX_MAP_SIZE * MAX_MAP_SIZE * len(TERRAIN_LIST),
-                'getter': lambda _: self.getTerrains()
+                'getter': lambda _: self.get_terrains()
 
             }
         ]
@@ -90,13 +90,13 @@ class WargrooveObservation(Observation):
                 'getter': lambda u: u['playerId']
             }, {
                 'n': 2,
-                'getter': lambda u: self.posToList(u['pos'])
+                'getter': lambda u: self.pos_to_list(u['pos'])
             }, {
                 'n': 11,
-                'getter': lambda u: self.getUnitFlags(u)
+                'getter': lambda u: self.get_unit_flags(u)
             }, {
                 'n': 13,
-                'getter': lambda u: self.getUnitValues(u)
+                'getter': lambda u: self.get_unit_values(u)
             }, {
                 'options': MOVE_TYPES,
                 'getter': lambda u: self.game.defs['unitClasses'][u['unitClassId']].get('movement','')
@@ -113,10 +113,10 @@ class WargrooveObservation(Observation):
             },
             {
                 'n': 3,
-                'getter': lambda p: self.getPlayerFlags(p)
+                'getter': lambda p: self.get_player_flags(p)
             }, {
                 'n': 2,
-                'getter': lambda p: self.getPlayerValues(p)
+                'getter': lambda p: self.get_player_values(p)
             }
         ]
     }
@@ -132,44 +132,44 @@ class WargrooveObservation(Observation):
     #}
 ]
 
-    def posToList(self, pos):
+    def pos_to_list(self, pos):
         if pos == None:
             pos = { 'x': -100, 'y': -100 }
         return [pos['y'], pos['x']]
 
-    def getUnitFlags(self, unit):
+    def get_unit_flags(self, unit):
         pid = unit['playerId']
-        currentPid = self.game.playerId
-        unitClass = self.game.defs['unitClasses'][unit['unitClassId']]
+        current_pid = self.game.player_id
+        unit_class = self.game.defs['unitClasses'][unit['unitClassId']]
 
         player = self.game.players.get(pid)
-        currentPlayer = self.game.players[currentPid]
+        current_player = self.game.players[current_pid]
 
-        tags = unitClass.get('tags', [])
+        tags = unit_class.get('tags', [])
 
         return [
-            int(unit['id'] == self.game.selectedUnitId),  # isSelected
-            int(pid == currentPid),  # isAgent
-            int(player != None and player.team == currentPlayer.team),  # isAlly
+            int(unit['id'] == self.game.selected_unit_id),  # isSelected
+            int(pid == current_pid),  # isAgent
+            int(player != None and player.team == current_player.team),  # isAlly
             int(pid == -1),  # isNeutral
-            int(unitClass.get('isCommander', False)),
-            int(unitClass.get('isStructure', False)),
-            int(unitClass.get('canBeCaptured', False)),
+            int(unit_class.get('isCommander', False)),
+            int(unit_class.get('isStructure', False)),
+            int(unit_class.get('canBeCaptured', False)),
             int('type.air' in tags),
             int(unit.get('inTransport', False)),
             int(unit.get('hadTurn', False)),
             int(unit.get('canBeAttacked', True))
         ]
     
-    def getUnitValues(self, unit):
+    def get_unit_values(self, unit):
         pid = unit['playerId']
-        unitClass = self.game.defs['unitClasses'][unit['unitClassId']]
+        unit_class = self.game.defs['unitClasses'][unit['unitClassId']]
         groove = self.game.defs['grooves'].get(unit['grooveId'], { 'chargeBy': {} })
 
         return [
             unit['health'],
             100, # max Health
-            unitClass.get('regeneration', 0),
+            unit_class.get('regeneration', 0),
             unit['grooveCharge'],
             groove.get('maxCharge', 0),
             groove.get('chargePerUse', 0),
@@ -177,35 +177,35 @@ class WargrooveObservation(Observation):
             groove['chargeBy'].get('attack', 0),
             groove['chargeBy'].get('counter', 0),
             groove['chargeBy'].get('kill', 0),
-            unitClass.get('loadCapacity', 0),
-            unitClass.get('moveRange', 0),
-            unitClass.get('cost', 0)
+            unit_class.get('loadCapacity', 0),
+            unit_class.get('moveRange', 0),
+            unit_class.get('cost', 0)
         ]
     
-    def getPlayerFlags(self, player):
+    def get_player_flags(self, player):
         pid = player.id
-        currentPid = self.game.playerId
-        currentPlayer = self.game.players[currentPid]
+        current_pid = self.game.player_id
+        current_player = self.game.players[current_pid]
 
         return [
-            pid == currentPid, # isAgent
-            player.team == currentPlayer.team, # isAlly
-            player.hasLosed,
+            pid == current_pid, # isAgent
+            player.team == current_player.team, # isAlly
+            player.has_losed,
         ]
     
-    def getPlayerValues(self, player):
+    def get_player_values(self, player):
         return [
             player.gold,
             player.income
         ]
     
-    def makeTerrains(self):
+    def make_terrains(self):
         m = self.game.map
         w = m['w']
         h = m['h']
         tiles = m['tiles']
 
-        codes = listToCodes(TERRAIN_LIST)
+        codes = list_to_codes(TERRAIN_LIST)
 
         obs = np.zeros(shape=(MAX_MAP_SIZE, MAX_MAP_SIZE, len(TERRAIN_LIST)))
 
@@ -215,76 +215,76 @@ class WargrooveObservation(Observation):
 
         return obs
     
-    def getTerrains(self):
+    def get_terrains(self):
         if not isinstance(self.terrains, np.ndarray):
-            self.terrains = self.makeTerrains()
+            self.terrains = self.make_terrains()
         
         return self.terrains
 
 
 class WargrooveActions(Actions):
 
-    def __init__(self, game):
+    def __init__(self, game: WargrooveGame):
         self.game = game
-        self.getSelectables = lambda: self._getSelectables()
-        super().__init__(self.getProps())
+        self.get_selectables = lambda: self._get_selectables()
+        super().__init__(self.get_props())
     
-    def _getSelectables(self):
+    def _get_selectables(self):
         s = self.game.selectables
         if s == None: s = []
         return s
     
-    def getProps(self):
+    def get_props(self):
         
         return [{
     'condition': lambda: self.game.phase == Phase.commander_selection,
     'options': PLAYABLE_COMMANDERS,
-    'getter': self.getSelectables
+    'getter': self.get_selectables
 }, {
     'condition': lambda: self.game.phase == Phase.action_selection,
     'options': ACTIONS,
-    'getter': self.getSelectables
+    'getter': self.get_selectables
 }, {
-    'condition': lambda: self.game.phase == Phase.entry_selection and len(self.getSelectables()) == 0,
+    'condition': lambda: self.game.phase == Phase.entry_selection and len(self.get_selectables()) == 0,
     'options': ['cancel'],
     'getter': lambda: ['cancel']
 }, {
-    'condition': lambda: self.game.entryStep == EntryStep.verb_selection,
+    'condition': lambda: self.game.entry_step == EntryStep.verb_selection,
     'options': AVAILABLE_VERBS,
-    'getter': self.getSelectables
+    'getter': self.get_selectables
 }, {
-    'condition': lambda: self.game.preExecuteSelection == PreExecuteSel.recruit_selection or self.game.entryStep == EntryStep.recruit_selection,
+    'condition': lambda: self.game.pre_execute_selection == PreExecuteSel.recruit_selection or self.game.entry_step == EntryStep.recruit_selection,
     'options': RECRUITABLE_UNIT_CLASSES,
-    'getter': self.getSelectables
+    'getter': self.get_selectables
 }, {
-    'condition': lambda: self.isPositionSelection(),
+    'condition': lambda: self.is_position_selection(),
     'options': POS_LIST,
-    'getter': lambda: self.getPositions(),
-    'convert': lambda pos: self.convertPosition(pos)
+    'getter': lambda: self.get_positions(),
+    'convert': lambda pos: self.convert_position(pos)
 }]
    
-    def isPositionSelection(self):
+    def is_position_selection(self):
         return (
-            self.game.entryStep in [EntryStep.unit_selection, EntryStep.end_position_selection, EntryStep.target_selection] or
-            self.game.preExecuteSelection == PreExecuteSel.target_selection
+            self.game.entry_step in [EntryStep.unit_selection, EntryStep.end_position_selection, EntryStep.target_selection] or
+            self.game.pre_execute_selection == PreExecuteSel.target_selection
         )
     
-    def getPositions(self):
-        if self.game.entryStep == EntryStep.unit_selection:
-            return self.getUnitsPos()
+    def get_positions(self):
+        if self.game.entry_step == EntryStep.unit_selection:
+            return self.get_units_pos()
         
-        return self.getSelectables()
+        return self.get_selectables()
     
-    def convertPosition(self, pos):
-        if self.game.entryStep == EntryStep.unit_selection:
-            return self.getUnitIdFromPos(pos)
+    def convert_position(self, pos):
+        if self.game.entry_step == EntryStep.unit_selection:
+            return self.get_unit_id_from_pos(pos)
         
         return pos
     
-    def getUnitsPos(self):
-        unitIds = self.getSelectables()
+    def get_units_pos(self):
+        unitIds = self.get_selectables()
         return [u['pos'] for u in self.game.units.values() if u['id'] in unitIds]
     
-    def getUnitIdFromPos(self, pos):
+    def get_unit_id_from_pos(self, pos):
         return next((u['id'] for u in self.game.units.values() if u['pos']['x'] == pos['x'] and u['pos']['y'] == pos['y']), None)
 

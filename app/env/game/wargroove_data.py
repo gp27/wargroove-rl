@@ -1,5 +1,6 @@
 import os, json
 from enum import Enum
+import numpy as np
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 DEFS_FILENAME = dir_path + '/wg_2.0.json'
@@ -10,41 +11,6 @@ with open(DEFS_FILENAME) as def_file:
 TRIGGERS_FILENAME = dir_path + '/wg_triggers.json'
 with open(TRIGGERS_FILENAME) as triggers_files:
     TRIGGERS = json.loads(triggers_files.read())
-
-MAP_PLAYGROUND = (
-    5, 5,
-    'grass',
-    'pppppMprppFpppFpprpMppppp',
-    'p_0-2000g,p_1-2000g',
-    'barracks.0.0.0.100.0,barracks.1.4.4.100.0,city.-1.3.0.100.0,city.-1.4.1.100.0,city.-1.0.3.100.0,city.-1.1.4.100.0,commander.0.1.0.30.100,commander.1.3.4.30.100,hq.0.1.1.100.0,hq.1.3.3.100.0',
-    {}
-)
-
-MAP_OFFGROOVE = (
-  15, 20,
-  'grass',
-  'rIFpppppppppppppMMMMrIppppFpprrppprrrrMMrbrrFpppprppMpfppprrIIFppppprrppppfFpppFppFMprrrpppFppFMpppFpppFpppfFpppppMMppppFMpppFppppfffrrMFFppFMFpprrpMppMprrppFMFppFFMrrfffppppFpppMFppppMMpppppFfpppFpppFpppMFppFppprrrpMFppFpppFfpppprrpppppFIIrrpppfpMpprppppFrrbrMMrrrrppprrppFppppIrMMMMpppppppppppppFIr',
-  'p_0-200g,p_1-100g',
-  'barracks.0.17.4.100.0,barracks.0.19.14.100.0,barracks.1.0.0.100.0,barracks.1.2.10.100.0,city.-1.0.4.100.0,city.-1.10.13.100.0,city.-1.10.4.100.0,city.-1.13.12.100.0,city.-1.13.2.100.0,city.-1.13.5.100.0,city.-1.13.8.100.0,city.-1.16.14.100.0,city.-1.16.7.100.0,city.-1.17.1.100.0,city.-1.19.10.100.0,city.-1.2.13.100.0,city.-1.3.0.100.0,city.-1.3.7.100.0,city.-1.6.12.100.0,city.-1.6.2.100.0,city.-1.6.6.100.0,city.-1.6.9.100.0,city.-1.9.1.100.0,city.-1.9.10.100.0,commander.0.16.5.15.0,commander.1.3.9.10.0,hq.0.15.10.100.0,hq.1.4.4.100.0,soldier.1.3.10.100.0,tower.-1.0.9.100.0,tower.-1.19.5.100.0',
-  {}
-)
-
-MAP_STRAINING_FRONTIER_1_2  = (
-  20, 20,
-  'grass',
-  'MppFFMpFIpppFpMFpppMMMFpFpFpIIpFpprrppfMMppfffpppbpppprppppFFFpfprrMpprpFFppFppppppfffppFrpppMpppppppFrppppprrFpppFppFprFppFppFrrppFprpprrrrFpFppFrrfpppfppppppFIIFprprpFprpppFppppppMFpFrrppebpFMrpFpFppFpFprMFpbepprrFpFMppppppFppprpFprprpFIIFppppppfpppfrrFppFpFrrrrpprpFpprrFppFppFrpFppFpppFrrppppprFpppppppMppprFppfffppppppFppFFprppMrrpfpFFFpppprppppbpppfffppMMfpprrppFpIIpFpFpFMMMpppFMpFpppIFpMFFppM',
-  'p_0-300g,p_1-100g',
-  'barracks.0.13.19.100.0,barracks.0.18.12.100.0,barracks.1.1.7.100.0,barracks.1.6.0.100.0,city.-1.0.15.100.0,city.-1.1.19.100.0,city.-1.10.7.100.0,city.-1.11.0.100.0,city.-1.12.14.100.0,city.-1.13.10.100.0,city.-1.13.5.100.0,city.-1.15.16.100.0,city.-1.15.2.100.0,city.-1.16.7.100.0,city.-1.18.0.100.0,city.-1.19.4.100.0,city.-1.3.12.100.0,city.-1.4.17.100.0,city.-1.4.3.100.0,city.-1.6.14.100.0,city.-1.6.9.100.0,city.-1.7.5.100.0,city.-1.8.19.100.0,city.-1.9.12.100.0,city.0.1.0.20.0,city.1.18.19.10.0,commander.0.9.16.15.0,commander.1.10.3.20.0,hideout.-1.1.2.100.0,hideout.-1.18.17.100.0,hq.0.10.16.100.0,hq.1.9.3.100.0,soldier.1.2.7.100.0,tower.-1.0.4.100.0,tower.-1.19.15.100.0',
-  {}
-)
-
-MAPS = [
-    MAP_PLAYGROUND,
-    #MAP_OFFGROOVE,
-    #MAP_STRAINING_FRONTIER_1_2
-]
-
-MAX_MAP_SIZE = 30 # 96
 
 TERRAIN_ABBR = {
     'F': 'forest',
@@ -76,6 +42,24 @@ TERRAIN_LIST = [
     'road',
     'sea'
 ]
+
+def getMapNames(n_players = 2):
+    p_dir = f'maps/{n_players}p/'
+    path = f'{dir_path}/{p_dir}'
+    return [(file) for file in os.listdir(path) if file.endswith('.json')]
+
+def loadMap(name, n_players = 2):
+    p_dir = f'maps/{n_players}p/'
+    path = f'{dir_path}/{p_dir}/{name}'
+    with open(path) as map_file:
+        map_data = json.loads(map_file.read())
+    
+    tiles = map_data['tiles']
+    tiles = [TERRAIN_ABBR.get(t, 'plains') for t in tiles]
+    tiles = np.array(tiles).reshape(map_data['h'], map_data['w'])
+    map_data['tiles'] = tiles
+    
+    return map_data
 
 WG_SYMBOLS = {
     'forest': '🌲',
@@ -123,8 +107,6 @@ for classDef in DEFS['unitClasses'].values():
         verbs.append(groove['verb'])
         
     verbs = verbs + classDef.get('verbs', []) # + ['cancel']
-    #if unit['pos']['x'] != self.endPos['x'] or unit['pos']['y'] != self.endPos['y']:
-    #    verbs.append('wait')
 
     VERBS_BY_CLASS[classDef['id']] = verbs
 
@@ -147,9 +129,6 @@ RECRUITABLE_UNIT_CLASSES.sort()
 AVAILABLE_VERBS = [c['id'] for c in DEFS['verbs'].values()]
 AVAILABLE_VERBS.sort()
 
-MAX_PLAYERS = 4
-MAX_UNITS = 200
-
 MOVE_TYPES = {}
 for uc in DEFS['unitClasses'].values():
     MOVE_TYPES[uc.get('movement', '')] = True
@@ -159,3 +138,7 @@ MOVE_TYPES.sort()
 PLAYERID_LIST = [-1, -2, 0, 1, 2, 3]
 
 ACTIONS = ['entry', 'end_turn', 'resign']
+
+MAX_PLAYERS = 4
+MAX_UNITS = 200
+MAX_MAP_SIZE = 30 # 96

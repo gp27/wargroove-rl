@@ -1,6 +1,4 @@
-
 # <img align="center" src="imgs/oblo.png"> Wargroove RL
-
 
 ## Getting Started
 
@@ -37,7 +35,7 @@ docker-compose exec app python3 train.py
 1. finish to implement the basic game in wagroove_game.py
 2. restruture the wargroove_data.py
 
-   - change the map definitions structure and move to their own folder as json files
+   - ~~change the map definitions structure and move to their own folder as json files~~
    - organize configurable parameters that are used to generate observations like MAX_MAP_SIZE, MAP_PLAYERS, MAX_UNITS, all categoricals...
 
 3. Replace the placeholder model

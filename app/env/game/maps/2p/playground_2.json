@@ -1,0 +1,86 @@
+{
+  "h": 8,
+  "w": 8,
+  "biome": "grass",
+  "tiles": "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+  "gold": [100, 0],
+  "teams": [0, 1],
+  "units": [
+    {
+      "class": "barracks",
+      "playerId": 0,
+      "x": 0,
+      "y": 1,
+      "recruits": ["soldier", "dog", "spearman", "mage", "wagon", "knight"]
+    },
+    {
+      "class": "barracks",
+      "playerId": 1,
+      "x": 7,
+      "y": 6,
+      "recruits": ["soldier", "dog", "spearman", "mage", "wagon", "knight"]
+    },
+    {
+      "class": "city",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "class": "city",
+      "x": 4,
+      "y": 7
+    },
+    {
+      "class": "city",
+      "x": 6,
+      "y": 1
+    },
+    {
+      "class": "city",
+      "x": 1,
+      "y": 6
+    },
+    {
+      "class": "city",
+      "x": 1,
+      "y": 3
+    },
+    {
+      "class": "city",
+      "x": 6,
+      "y": 4
+    },
+    {
+      "class": "commander",
+      "playerId": 0,
+      "health": 30,
+      "x": 1,
+      "y": 0
+    },
+    {
+      "class": "commander",
+      "playerId": 1,
+      "health": 30,
+      "x": 6,
+      "y": 7
+    },
+    {
+      "class": "hq",
+      "playerId": 0,
+      "x": 2,
+      "y": 2
+    },
+    {
+      "class": "hq",
+      "playerId": 1,
+      "x": 5,
+      "y": 5
+    },
+    {
+      "class": "soldier",
+      "playerId": 1,
+      "x": 6,
+      "y": 6
+    }
+  ]
+}

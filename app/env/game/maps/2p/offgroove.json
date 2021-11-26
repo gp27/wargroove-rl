@@ -1,0 +1,180 @@
+{
+  "h": 25,
+  "w": 20,
+  "biome": "grass",
+  "tiles": "rIFpppppppppppppMMMMrIppppFpprrppprrrrMMrbrrFpppprppMpfppprrIIFppppprrppppfFpppFppFMprrrpppFppFMpppFpppFpppfFpppppMMppppFMpppFppppfffrrMFFppFMFpprrpMppMprrppFMFppFFMrrfffppppFpppMFppppMMpppppFfpppFpppFpppMFppFppprrrpMFppFpppFfpppprrpppppFIIrrpppfpMpprppppFrrbrMMrrrrppprrppFppppIrMMMMpppppppppppppFIr",
+  "gold": [200, 100],
+  "teams": [0, 1],
+  "units": [
+    {
+      "class": "barracks",
+      "playerId": 0,
+      "x": 17,
+      "y": 4,
+      "banned_recruits": ["trebuchet"]
+    },
+    {
+      "class": "barracks",
+      "playerId": 0,
+      "x": 19,
+      "y": 14,
+      "banned_recruits": ["trebuchet"]
+    },
+    {
+      "class": "barracks",
+      "playerId": 1,
+      "x": 0,
+      "y": 0,
+      "banned_recruits": ["trebuchet"]
+    },
+    {
+      "class": "barracks",
+      "playerId": 1,
+      "x": 2,
+      "y": 10,
+      "banned_recruits": ["trebuchet"]
+    },
+    {
+      "class": "city",
+      "x": 0,
+      "y": 4
+    },
+    {
+      "class": "city",
+      "x": 10,
+      "y": 13
+    },
+    {
+      "class": "city",
+      "x": 10,
+      "y": 4
+    },
+    {
+      "class": "city",
+      "x": 13,
+      "y": 12
+    },
+    {
+      "class": "city",
+      "x": 13,
+      "y": 2
+    },
+    {
+      "class": "city",
+      "x": 13,
+      "y": 5
+    },
+    {
+      "class": "city",
+      "x": 13,
+      "y": 8
+    },
+    {
+      "class": "city",
+      "x": 16,
+      "y": 14
+    },
+    {
+      "class": "city",
+      "x": 16,
+      "y": 7
+    },
+    {
+      "class": "city",
+      "x": 17,
+      "y": 1
+    },
+    {
+      "class": "city",
+      "x": 19,
+      "y": 10
+    },
+    {
+      "class": "city",
+      "x": 2,
+      "y": 13
+    },
+    {
+      "class": "city",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "class": "city",
+      "x": 3,
+      "y": 7
+    },
+    {
+      "class": "city",
+      "x": 6,
+      "y": 12
+    },
+    {
+      "class": "city",
+      "x": 6,
+      "y": 2
+    },
+    {
+      "class": "city",
+      "x": 6,
+      "y": 6
+    },
+    {
+      "class": "city",
+      "x": 6,
+      "y": 9
+    },
+    {
+      "class": "city",
+      "x": 9,
+      "y": 1
+    },
+    {
+      "class": "city",
+      "x": 9,
+      "y": 10
+    },
+    {
+      "class": "commander",
+      "playerId": 0,
+      "health": 15,
+      "x": 16,
+      "y": 5
+    },
+    {
+      "class": "commander",
+      "playerId": 1,
+      "health": 10,
+      "x": 3,
+      "y": 9
+    },
+    {
+      "class": "hq",
+      "playerId": 0,
+      "x": 15,
+      "y": 10
+    },
+    {
+      "class": "hq",
+      "playerId": 1,
+      "x": 4,
+      "y": 4
+    },
+    {
+      "class": "soldier",
+      "playerId": 1,
+      "x": 3,
+      "y": 10
+    },
+    {
+      "class": "tower",
+      "x": 0,
+      "y": 9
+    },
+    {
+      "class": "tower",
+      "x": 19,
+      "y": 5
+    }
+  ]
+}

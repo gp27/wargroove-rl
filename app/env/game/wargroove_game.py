@@ -8,6 +8,10 @@ from .wargroove_data import *
 
 max_uint32 = np.iinfo(np.uint32).max
 
+def safe_list_get (l, idx, default=None):
+  try: return l[idx]
+  except IndexError: return default
+
 class Phase(Enum):
     commander_selection = 0
     action_selection = 1,
@@ -42,10 +46,29 @@ class WargrooveGame():
     def __init__(self):
         self.defs = DEFS
     
-    def reset(self, mapData=random.choice(MAPS)):
-        self.options = { 'seed': np.random.randint(max_uint32, dtype=np.uint32), 'auto_end_turn': False }
-        self.mapData = mapData
-        self.loadMap(mapData)
+    def reset(
+        self,
+        n_players = 2,
+        map_name=None,
+        random_commanders=True,
+        seed = np.random.randint(max_uint32, dtype=np.uint32)
+    ):
+        if not map_name:
+            map_name = random.choice(getMapNames(n_players))
+
+        self.n_players = n_players
+
+        self.options = {
+            'seed': seed,
+            'auto_end_turn': False,
+            'random_commanders': random_commanders
+        }
+
+        self.map = loadMap(map_name, n_players)
+        self.commanders = {}
+        self.units = {}
+
+        self.players = { i: Player(i, i, None, 0) for i in range(n_players) }
 
         self.phase = Phase.commander_selection
         self.selectables = None
@@ -54,11 +77,13 @@ class WargrooveGame():
         self.resetEntry()
         self.continueGame()
 
-    def start(self, commanders={}):
+    def start(self):
         self.api = WargrooveApi(game=self)
         self.loadLua()
-        self.loadState(self.mapData, commanders)
+        self.loadState()
         self.loadTriggers()
+
+        self.playerId = 0
         self.phase = Phase.action_selection
         self.selectedAction = None
 
@@ -66,7 +91,7 @@ class WargrooveGame():
         self.pathFinder = WargroovePathFinder(self)
         self.nextTurn(increment=False)
         self.selectables = None
-        self.continueGame()
+        #self.continueGame()
     
     def resetEntry(self):
         self.entryStep = None
@@ -89,45 +114,43 @@ class WargrooveGame():
         self.strParam = ""
 
         self.shouldExecute = True
-    
-    def loadMap(self, mapData):
-        (h, w, biome, tiles, gold, state, teams) = mapData
-        tiles = [TERRAIN_ABBR.get(t, 'plains') for t in tiles]
-        tiles = np.array(tiles).reshape(h, w)
 
-        self.map = {
-            'h': h,
-            'w': w,
-            'biome': biome,
-            'tiles': tiles
-        }
+    def loadState(self):
+        gold = self.map.get('gold', [])
+        teams = self.map.get('teams', [])
 
-    def loadState(self, mapData, commanders = {}):
-        (h, w, biome, tiles, gold, state, teams) = mapData
-
-        goldre = re.compile('p_([\d])-([\d]+)g')
         self.players = {}
-        for g in gold.split(','):
-            m = goldre.match(g)
-            playerId = int(m.group(1))
-            gold = int(m.group(2))
-            team = teams.get(playerId, playerId)
-            commander = commanders.get(playerId, None)
-            player = Player(playerId, team, gold, commander=commander)
+        for playerId in range(self.n_players):
+            commander = self.commanders.get(playerId, random.choice(PLAYABLE_COMMANDERS))
+            g = safe_list_get(gold, playerId, 0)
+            team = safe_list_get(teams, playerId)
+            player = Player(playerId, team, commander, g)
             self.players[playerId] = player
 
 
         self.units = {}
-        for u in state.split(','):
-            (unitClassId, playerId, x, y, health, grooveCharge) = tuple(u.split('.'))
-            playerId = int(playerId)
+        for u in self.map.get('units', []):
+            unitClassId = u.get('class', None)
+            playerId = u.get('playerId', -1)
+            health = u.get('health', 100)
+            grooveCharge = u.get('groove', 0)
+            x = u.get('x', -1)
+            y = u.get('y', -1)
+
+            if x < 0 or y < 0 or not unitClassId: continue
+
             if playerId >= 0:
                 player = self.players[playerId]
-                if unitClassId == 'commander': unitClassId = DEFS['commanders'][player.commander].get('unitClassId', 'commander_mercia')
+                if unitClassId == 'commander':
+                    unitClassId = DEFS['commanders'][player.commander].get('unitClassId', 'commander_mercia')
             
-            unit = self.makeUnit(playerId, { 'x': int(x), 'y': int(y) }, unitClassId, False)
-            unit['health'] = int(health)
-            unit['grooveCharge'] = int(grooveCharge)
+            if not unitClassId in DEFS['unitClasses']: continue
+
+            recruits = self.getClassRecruitables(unitClassId, recruits=u.get('recruits'), banned_recruits=u.get('banned_recruits', []))
+            
+            unit = self.makeUnit(playerId, { 'x': x, 'y': y }, unitClassId, False, recruits=recruits)
+            unit['health'] = health
+            unit['grooveCharge'] = grooveCharge
             self.units[unit['id']] = unit
     
     def loadTriggers(self):
@@ -164,19 +187,27 @@ class WargrooveGame():
         
         return val
     
+    def getClassRecruitables(self, unitClassId, recruits=None, banned_recruits=[]):
+        unitClass = DEFS['unitClasses'][unitClassId]
+        recruitTags = unitClass.get('recruitTags', None)
+        if not recruitTags: return []
+
+        return [
+            uc['id'] for uc in DEFS['unitClasses'].values()
+            if (
+                uc.get('isRecruitable', True) and
+                not uc.get('isCommander', False) and
+                any(tag in uc['tags'] for tag in recruitTags) and
+                not uc['id'] in banned_recruits and
+                (not recruits or uc['id'] in recruits)
+            )
+        ]
+    
     
     def makeUnit(self, playerId, pos, unitType, turnSpent=True, startingState = [], recruits=None):
         unitClass = DEFS['unitClasses'][unitType]
 
-        recruitTags = unitClass.get('recruitTags', None)
-        if recruitTags:
-            if recruits == None:
-                recruits = []
-                for uc in DEFS['unitClasses'].values():
-                    if uc.get('isRecruitable', True) and not uc.get('isCommander', False) and any(tag in uc['tags'] for tag in recruitTags):
-                        recruits.append(uc['id'])
-        else:
-            recruits = []
+        if not recruits: recruits = self.getClassRecruitables(unitType)
 
         return {
             'id': self.getNextUnitId(),
@@ -390,7 +421,7 @@ class WargrooveGame():
     
     def getSelectables(self):
         ph = {
-            Phase.commander_selection: lambda: list(PLAYABLE_COMMANDERS),
+            Phase.commander_selection: lambda: list(PLAYABLE_COMMANDERS) if not self.options.get('random_commanders') else [random.choice(PLAYABLE_COMMANDERS)],
             Phase.action_selection: lambda: ['entry', 'end_turn']
         }
 
@@ -398,7 +429,6 @@ class WargrooveGame():
             return ph[self.phase]()
 
         es = {
-            #Phase.commander_selection: lambda: list(PLAYABLE_COMMANDERS),
             EntryStep.unit_selection: lambda: [u['id'] for u in self.getSelectableUnits()],
             EntryStep.end_position_selection: self.getMoveArea,
             EntryStep.verb_selection: self.getExecutableVerbs,
@@ -427,7 +457,7 @@ class WargrooveGame():
         print('selected: {}'.format(selected))
 
         ph = {
-            Phase.commander_selection: lambda: setattr(self.players[self.playerId], 'commander', selected),
+            Phase.commander_selection: lambda: self.commanders.update({ self.playerId: selected }),
             Phase.action_selection: lambda: setattr(self, 'selectedAction', selected)
         }
 
@@ -520,6 +550,7 @@ class WargrooveGame():
         if n != 1: return None
 
         if not (
+            self.phase == Phase.commander_selection or
             self.entryStep == EntryStep.end_position_selection or
             (self.entryStep == EntryStep.verb_selection and self.selectables[0] == 'recruit')
         ): return None
@@ -578,7 +609,10 @@ class WargrooveGame():
     
     def continueGameAfterSelect(self):
         if self.phase == Phase.commander_selection:
-            self.phase = Phase.action_selection
+            self.playerId += 1
+            if self.playerId < self.n_players: return
+
+            self.start()
             return
         
         if self.phase == Phase.action_selection:
@@ -658,16 +692,15 @@ class WargrooveGame():
             
 
 class Player():
-    def __init__(self, id, team, gold=100, basicIncome=0, commander=None):
+    def __init__(self, id, team, commander, gold=100, basicIncome=0):
         self.id = id
         self.team = team
         self.gold = gold
-        self.commander = None
         self.income = basicIncome
         self.isVictorious = False
         self.isLocal = True
         self.isHuman = False
-        self.commander = commander if commander != None else random.choice(PLAYABLE_COMMANDERS)
+        self.commander = commander
         self.hasLosed = False
 
 class WargrooveApi():

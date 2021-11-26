@@ -32,11 +32,11 @@ class WargrooveEnv(gym.Env):
 
     def reset(self):
         self.done = False
-        self.game.reset()
-        self.game.start()
+        self.game.reset(random_commanders=False)
+        #self.game.start()
 
-        self.current_player_num = 0
-        self.n_players = len(self.game.players)
+        self.current_player_num = self.game.playerId
+        self.n_players = self.game.n_players
 
         logger.debug(f'\n\n---- NEW GAME ----')
         return self.observation

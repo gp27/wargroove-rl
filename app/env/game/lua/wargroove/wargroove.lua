@@ -358,14 +358,14 @@ local function dupunit(unit)
 end
 
 function Wargroove.updateUnit(unit)
-    api.updateUnit(dupunit(unit))
+    api.updateUnit(unit)
     Wargroove.clearUnitPositionCache()
 end
 
 
 function Wargroove.updateUnits(units)
     for i, unit in ipairs(units) do
-        api.updateUnit(dupunit(unit))
+        api.updateUnit(unit)
     end
     Wargroove.clearUnitPositionCache()
 end

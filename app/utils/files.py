@@ -62,7 +62,8 @@ def load_model(env, name):
                 
                 rank = MPI.COMM_WORLD.Get_rank()
                 if rank == 0:
-                    ppo_model = PPO1(CustomPolicy, env=env)
+                    #ppo_model = PPO1(CustomPolicy, env=env)
+                    ppo_model = PPO1(MlpPolicy, env=env)
                     logger.info(f'Saving base.zip PPO model...')
                     ppo_model.save(os.path.join(config.MODELDIR, env.name, 'base.zip'))
                 else:

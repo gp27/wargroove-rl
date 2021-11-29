@@ -106,7 +106,9 @@ for class_def in DEFS['unitClasses'].values():
         
     if 'grooveId' in class_def:
         groove = DEFS['grooves'][class_def['grooveId']]
-        verbs.append(groove['verb'])
+        groove_verb = groove['verb']
+        if not isinstance(groove_verb, list): groove_verb = [groove_verb]
+        verbs = verbs + groove_verb
         
     verbs = verbs + class_def.get('verbs', []) # + ['cancel']
 

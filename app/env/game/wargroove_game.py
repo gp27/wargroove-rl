@@ -430,7 +430,7 @@ class WargrooveGame():
             area = self.lua.table_from(self.get_move_area(unit_id))
             targets = lua_verb.getTargetsInRangeEntry(lua_verb, unit_id, start_pos, area, str_param)
         
-        targets = [dict(t) for t in targets.values()]
+        targets = [dict(t) for t in targets.values() if t['x'] >= 0 and t['y'] >= 0]
         return targets
     
     def get_selectables(self):
@@ -459,8 +459,8 @@ class WargrooveGame():
             PreExecuteSel.unload_selection: self.get_unloadables
         }
         
-        if self.pre_execute_selection in pes:
-            return pes[self.pre_execute_selection]()
+        #if self.pre_execute_selection in pes:
+        #    return pes[self.pre_execute_selection]()
     
     def select(self, index):
         if self.selectables == None: return False
@@ -695,8 +695,11 @@ class WargrooveGame():
                 return
 
             if selection == 'cancel':
-                self.reset_entry()
-                self.phase = Phase.action_selection
+                if self.pre_execute_selection:
+                    self.pre_execute_selection = None
+                else:
+                    self.reset_entry()
+                    self.phase = Phase.action_selection
 
             elif selection != None:
                 self.select(selection)
@@ -1094,7 +1097,9 @@ class WargrooveApi():
     def waitingForSelectedTarget(self): return self.game.pre_execute_selection == PreExecuteSel.target_selection
 
     def getSelectedTarget(self):
-        return self.game.lua.table_from(self.game.target_pos)
+        target = self.game.target_pos
+        if not target: return None
+        return self.game.lua.table_from(target)
 
     def setSelectedTarget(self, targetPos):
         self.game.target_pos = dict(targetPos)
@@ -1106,7 +1111,7 @@ class WargrooveApi():
 
     def clearDisplayTargets(self): return
 
-    def displayBuffVisualEffect(self, parentId, playerId, animation, startSequence, alpha, effectPositions, layer, startSequenceIsLooping): return
+    def displayBuffVisualEffect(self, parentId, playerId, animation, startSequence, alpha, effectPositions, layer, offset, startSequenceIsLooping): return
 
     def displayBuffVisualEffectAtPosition(self, parentId, position, playerId, animation, startSequence, alpha, effectPositions, layer, offset, startSequenceIsLooping): return
 
@@ -1222,7 +1227,7 @@ class WargrooveApi():
     def getOrderId(self):
         return 0 #self.game.order['id']
 
-    def setThreatMap(unitId, threats): return # TODO: implement
+    def setThreatMap(self, unitId, threats): return # TODO: implement
 
     def getBiome(self):
         return self.game.map['biome']

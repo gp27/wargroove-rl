@@ -94,6 +94,8 @@ class WargrooveEnv(gym.Env):
 
             for t in self.game.get_unit_tables():
                 print(tabulate(t, headers="keys", tablefmt="fancy_grid"))
+            
+            print(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
 
         if self.verbose:
             logger.debug(

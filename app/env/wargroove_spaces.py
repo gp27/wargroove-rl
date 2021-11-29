@@ -245,7 +245,7 @@ class WargrooveActions(Actions):
     'options': ACTIONS,
     'getter': self.get_selectables
 }, {
-    'condition': lambda: self.game.phase == Phase.entry_selection and len(self.get_selectables()) == 0,
+    'condition': lambda: self.allow_cancel(),
     'options': ['cancel'],
     'getter': lambda: ['cancel']
 }, {
@@ -268,6 +268,11 @@ class WargrooveActions(Actions):
             self.game.entry_step in [EntryStep.unit_selection, EntryStep.end_position_selection, EntryStep.target_selection] or
             self.game.pre_execute_selection == PreExecuteSel.target_selection
         )
+    
+    def allow_cancel(self):
+        s = self.get_selectables()
+        return self.game.phase == Phase.entry_selection and len(s) == 0
+
     
     def get_positions(self):
         if self.game.entry_step == EntryStep.unit_selection:

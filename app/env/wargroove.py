@@ -7,7 +7,7 @@ from .observation import Observation, list_to_codes
 from .actions import Actions
 from tabulate import tabulate
 
-from stable_baselines import logger
+from stable_baselines3.common import logger
 
 from .wargroove_spaces import WargrooveObservation, WargrooveActions
 
@@ -38,7 +38,7 @@ class WargrooveEnv(gym.Env):
         self.current_player_num = self.game.player_id
         self.n_players = self.game.n_players
 
-        logger.debug(f'\n\n---- NEW GAME ----')
+        print(f'\n\n---- NEW GAME ----')
         return self.observation
 
     @property
@@ -98,15 +98,15 @@ class WargrooveEnv(gym.Env):
             print(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
 
         if self.verbose:
-            logger.debug(
+            print(
                 f'\nObservation: \n{[i if o == 1 else (i,o) for i,o in enumerate(self.observation) if o != 0]}')
 
         if not self.done:
-            logger.debug(
+            print(
                 f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.legal_actions) if o != 0]}')
 
         if self.done:
-            logger.debug(f'\n\nGAME OVER')
+            print(f'\n\nGAME OVER')
 
     def rules_move(self):
         raise Exception(

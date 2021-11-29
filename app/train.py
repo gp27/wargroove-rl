@@ -1,24 +1,18 @@
 # docker-compose exec app python3 train.py -r -e butterfly
 
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
-
-import tensorflow as tf
-tf.get_logger().setLevel('INFO')
-tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
-
 
 import argparse
 import time
 from shutil import copyfile
 from mpi4py import MPI
 
-from stable_baselines.ppo1 import PPO1
-from stable_baselines.common.callbacks import EvalCallback
+from stable_baselines3 import PPO
+from stable_baselines3.common.callbacks import EvalCallback
 
-from stable_baselines.common.vec_env import DummyVecEnv
-from stable_baselines.common import set_global_seeds
-from stable_baselines import logger
+from stable_baselines3.common.vec_env import DummyVecEnv
+from stable_baselines3.common.utils import set_random_seed
+from stable_baselines3.common import logger
 
 from utils.callbacks import SelfPlayCallback
 from utils.files import reset_logs, reset_models
@@ -55,7 +49,7 @@ def main(args):
     logger.set_level(config.INFO)
 
   workerseed = args.seed + 10000 * MPI.COMM_WORLD.Get_rank()
-  set_global_seeds(workerseed)
+  set_random_seed(workerseed)
 
   logger.info('\nSetting up the selfplay training environment opponents...')
   env = selfplay_wrapper(WargrooveEnv)(opponent_type = args.opponent_type, verbose = args.verbose)
@@ -80,10 +74,10 @@ def main(args):
 
   if args.reset or not os.path.exists(os.path.join(model_dir, 'best_model.zip')):
     logger.info('\nLoading the base PPO agent to train...')
-    model = PPO1.load(os.path.join(model_dir, 'base.zip'), env, **params)
+    model = PPO.load(os.path.join(model_dir, 'base.zip'), env, **params)
   else:
     logger.info('\nLoading the best_model.zip PPO agent to continue training...')
-    model = PPO1.load(os.path.join(model_dir, 'best_model.zip'), env, **params)
+    model = PPO.load(os.path.join(model_dir, 'best_model.zip'), env, **params)
 
   #Callbacks
   logger.info('\nSetting up the selfplay evaluation environment opponents...')

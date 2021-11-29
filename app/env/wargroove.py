@@ -32,7 +32,7 @@ class WargrooveEnv(gym.Env):
 
     def reset(self):
         self.done = False
-        self.game.reset(random_commanders=False)
+        self.game.reset(random_commanders=False, map_name="playground_1.json")
         #self.game.start()
 
         self.current_player_num = self.game.player_id
@@ -133,15 +133,18 @@ class WargrooveEnv(gym.Env):
         losers = []
         for p in self.game.players.values():
             if p.has_losed:
+                scores[p.id] = -1
                 losers.append(p.id)
             #else: # subtract time
+            if p.is_victorious:
+                scores[p.id] = 1
 
-        for u in self.game.units.values():
-            pid = u['playerId']
-            if pid < 0 or p in losers: continue
+        #for u in self.game.units.values():
+        #    pid = u['playerId']
+        #    if pid < 0 or p in losers: continue
 
-            uc = self.game.dfn['unitClasses'][u['unitClassId']]
-            value = u['health'] * uc.get('cost', 0) + uc.get('income', 0)
-            scores[pid] = value
+        #    uc = self.game.dfn['unitClasses'][u['unitClassId']]
+        #    value = u['health'] * uc.get('cost', 0) + uc.get('income', 0)
+        #    scores[pid] = value
         
         return scores

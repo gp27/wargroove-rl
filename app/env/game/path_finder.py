@@ -66,7 +66,7 @@ class WargroovePathFinder():
         defs = self.game.defs
         u = self.game.units[self.unit_id]
         unitClass = defs['unitClasses'][u['unitClassId']]
-        movement = unitClass['movement']
+        movement = unitClass.get('movement', '')
 
         x = u['pos']['x']
         y = u['pos']['y']

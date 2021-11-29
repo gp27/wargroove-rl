@@ -4,6 +4,8 @@ import numpy as np
 from xxhash import xxh32_intdigest
 from enum import Enum
 
+import gc
+
 from .path_finder import WargroovePathFinder
 from .wargroove_data import *
 
@@ -52,8 +54,9 @@ class WargrooveGame():
         n_players = 2,
         map_name=None,
         random_commanders=True,
-        seed = np.random.randint(max_uint32, dtype=np.uint32)
+        seed = None
     ):
+        if seed == None: seed = np.random.randint(max_uint32, dtype=np.uint32)
         if not map_name:
             map_name = random.choice(get_map_names(n_players))
 
@@ -247,7 +250,7 @@ class WargrooveGame():
         for key in ['loadedUnits', 'recruits']:
             u[key] = list(u[key].values())
         
-        u['state'] = [dict(s) for s in u['state'].values()]
+        u['state'] = [dict(s) for s in u['state']]
 
         return u
     
@@ -333,6 +336,7 @@ class WargrooveGame():
                 if 'regeneration' in unit_class:
                     unit['health'] += unit_class['regeneration']
                     if unit['health'] > 100: unit['health'] = 100
+            
         # TODO: check deaths
         # apply buffs
 
@@ -345,7 +349,7 @@ class WargrooveGame():
 
         unit_id = self.selected_unit_id
         end_pos = self.end_pos
-        end_pos['facing'] = 0
+        end_pos['facing'] = end_pos.get('facing', 0)
         str_param = self.str_param
 
         targets = []
@@ -403,8 +407,10 @@ class WargrooveGame():
         recruits = [id for id in recruits if DEFS['unitClasses'][id].get('cost', 0) * cost_multiplier <= gold]
         return recruits
     
-    def get_unloadables(self):
-        return []
+    def get_unloadables(self, used_units=[]):
+        loaded_units = self.units[self.selected_unit_id]['loadedUnits']
+        unloadables = [id for id in loaded_units if not id in used_units]
+        return unloadables + (['wait'] if len(used_units) else [])
 
     def get_targets(self, lua_verb = None):
         if not lua_verb:
@@ -413,6 +419,7 @@ class WargrooveGame():
         unit_id = self.selected_unit_id
         unit = self.units[unit_id]
         start_pos = unit['pos']
+        #start_pos['facing'] = start_pos.get('facing', 0)
         end_pos = self.end_pos
         str_param = self.str_param
         
@@ -529,11 +536,13 @@ class WargrooveGame():
         lua_verb = self.get_lua_verb(verb_id)
 
         path = self.path_finder.get_path(self.end_pos['y'], self.end_pos['x'])
+        
+        target_pos = self.target_pos or self.end_pos
+        target_pos['facing'] = target_pos.get('facing', 0)
     
         print('executing', self.selected_unit_id, self.target_pos, f"'{self.str_param}'", path)
         path = self.lua.table_from(path)
-        self.resumable_suspended = lua_verb.executeEntry(lua_verb, self.selected_unit_id, self.target_pos or self.end_pos, self.str_param, path)
-        print('execute yield or end')
+        self.resumable_suspended = lua_verb.executeEntry(lua_verb, self.selected_unit_id, target_pos, self.str_param, path)
         while self.resumable_suspended:
             self.run_resumable()
         
@@ -556,7 +565,7 @@ class WargrooveGame():
         if not death_verb_id: return
 
         lua_verb = self.get_lua_verb(death_verb_id)
-        self.resumable_suspended = lua_verb.executeEntry(lua_verb, unitId, unit['pos'], str(killed_by_id), self.game.lua.table_from([]))
+        self.resumable_suspended = lua_verb.executeEntry(lua_verb, unitId, unit['pos'], str(killed_by_id), self.lua.table_from([]))
         while self.resumable_suspended:
             self.run_resumable()
     
@@ -567,21 +576,22 @@ class WargrooveGame():
         defender = self.units[defender_id]
 
         solve_type = 'random' if self.api.isRNGEnabled() else ''
-        results = self.lua_combat.solveCombat(self.lua_combat, attacker_id, defender_id, path, solve_type)
+        results = self.lua_combat.solveCombat(self.lua_combat, attacker_id, defender_id, self.lua_wrapper(path), solve_type)
 
         print('combat results', dict(results))
 
         self.lua_wargroove.doPostCombat(self.lua_wargroove, attacker_id, True)
         self.lua_wargroove.doPostCombat(self.lua_wargroove, defender_id, False)
 
-        attacker['health'] = results['attackerHealth']
-        defender['health'] = results['defenderHealth']
+
+        self.set_health(attacker_id, results['attackerHealth'], defender_id)
+        self.set_health(defender_id,  results['defenderHealth'], attacker_id)
 
         self.set_post_combat_groove(attacker, True, results.attackerAttacked, defender['health'] < 1)
         self.set_post_combat_groove(defender, False, results.defenderAttacked, attacker['health'] < 1)
 
-        self.death_check(attacker_id, defender_id)
-        self.death_check(defender_id, attacker_id) 
+        #self.death_check(attacker_id, defender_id)
+        #self.death_check(defender_id, attacker_id)
     
     def execute_capture(self):
         (attacker_id, defender_id, attackerPos) = self.capture_params
@@ -590,12 +600,24 @@ class WargrooveGame():
         defender = self.units[defender_id]
         pid = attacker['playerId']
         defender['playerId'] = pid
-        defender['health'] = max(1, int(attacker['health'] / 2))
+        health = max(1, int(attacker['health'] / 2))
+        self.set_health(defender_id, health, -1)
         defender['hadTurn'] = True
 
         self.players[pid].income += DEFS['unitClasses'][defender['unitClassId']].get('income', 0)
     
-    def death_check(self, unit_id, attacker_id):
+    def set_health(self, unit_id, health, attacker_id):
+        unit = self.units[unit_id]
+        unit['health'] = health
+        unit['attackerId'] = attacker_id
+
+        if attacker_id >= 0:
+            attacker = self.units[attacker_id]
+            unit['attackerUnitClass'] = attacker['unitClassId']
+            unit['attackerPlayerId'] = attacker['playerId']
+    
+    def death_check(self, unit_id):
+        if not unit_id in self.units: return
         unit = self.units[unit_id]
         if unit['health'] >= 1: return
 
@@ -604,11 +626,15 @@ class WargrooveGame():
             unit['health'] = 100
             unit['playerId'] = -1
 
+        attacker_id = unit['attackerId']
         if unit['health'] < 1: self.execute_death_verb(unit_id, attacker_id)
 
-        attacker = self.units.get(attacker_id, {})
+        self.lua_wargroove.reportUnitDeath(unit_id, attacker_id, unit['attackerPlayerId'], unit['attackerUnitClass'])
 
-        self.lua_wargroove.reportUnitDeath(unit_id, attacker_id, attacker.get('playerId', -1), attacker.get('unitClassId', ''))
+        for loaded_unit_id in unit['loadedUnits']:
+            self.set_health(loaded_unit_id, 0, attacker_id)
+            self.death_check(loaded_unit_id)
+
         if unit['health'] < 1: self.units.pop(unit_id)
     
     def set_post_combat_groove(self, unit, isAttacker, hasAttacked, hasKilled):
@@ -637,6 +663,10 @@ class WargrooveGame():
         self.lua_events.startSession(match_state)
 
     def check_triggers(self, state):
+        ids = [id for id in self.units.keys()]
+        for unit_id in ids:
+            self.death_check(unit_id)
+
         self.resumable_suspended = self.lua_wargroove.checkTriggers(state)
         while self.resumable_suspended:
             self.run_resumable()
@@ -657,8 +687,8 @@ class WargrooveGame():
     
     def continue_game(self, selection=None):
         while True:
-            #if selection == None:
-            #    selection = self.auto_select()
+            if selection == None:
+                selection = self.auto_select()
 
             if self.selectables != None and selection == None:
                 #print(self.selectables)
@@ -847,6 +877,7 @@ class WargrooveApi():
         self.game.players[playerId].team = teamId
 
     def startCombat(self, attackerId, defenderId, path):
+        path = [{ 'x': p['x'], 'y': p['y'] } for p in path.values()]
         self.game.combat_params = (attackerId, defenderId, path)
 
     def startCapture(self, attackerId, defenderId, attackerPos):
@@ -858,16 +889,14 @@ class WargrooveApi():
 
     def updateUnit(self, unit):
         u = self.game.unit_from_lua(unit)
-        #print('so you got the unit from lua')
         self.game.units[u['id']] = u
-        #print('and you assigned it')
 
     def removeUnit(self, unitId):
         self.game.units.pop(unitId, None) # TODO: finish
 
     def doLuaDeathCheck(self, unitId):
         if not unitId in self.game.units: return
-        self.game.death_check(unitId, -1)
+        self.game.death_check(unitId)
 
     def getMoney(self, playerId):
         return self.game.players[playerId].gold
@@ -902,7 +931,6 @@ class WargrooveApi():
 
         return base_damage * tag_damage * unit_class.get('damageMultiplier', 1)
 
-
     def getWeaponDamageForceGround(self, weaponId, targetClassId, targetPosX, targetPosY):
         weapon = DEFS['weapons'][weaponId]
         tag_damage = weapon.get('tagDamage', {}).get(targetClassId, 0)
@@ -915,10 +943,11 @@ class WargrooveApi():
     def getTerrainByName(self, name):
         terrain = DEFS['terrains'][name]
         terrain['defence'] = terrain['defenceBonus']
-        return self.game.lua.table_from(terrain)
+        return self.game.lua_wrapper(terrain)
 
     def getTerrainNameAt(self, pos):
-        return self.game.map['tiles'][pos['y']][pos['x']]
+        try: return self.game.map['tiles'][pos['y']][pos['x']]
+        except IndexError: return 'wall'
 
     def getTerrainDefenceAt(self, pos):
         return self.getTerrainByName(self.getTerrainNameAt(pos))['defence']
@@ -927,7 +956,7 @@ class WargrooveApi():
         return len(self.getTerrainMovementCostAt(pos)) == 0
 
     def getTerrainMovementCostAt(self, pos):
-        terrain = self.getTerrainByName(self.getTerrainNameAt(pos))
+        terrain = DEFS['terrains'][self.getTerrainNameAt(pos)]
         return self.game.lua.table_from(terrain['movementCost'])
 
     def getAllUnitsForPlayer(self, playerId, includeChildren):
@@ -938,7 +967,7 @@ class WargrooveApi():
         return None #self.game.weather # None
 
     def getGroove(self, grooveId):
-        return DEFS['grooves'][grooveId]
+        return self.game.lua_wrapper(DEFS['grooves'][grooveId])
 
     def getMapTriggers(self):
         return self.game.lua_wrapper(self.game.triggers)
@@ -952,10 +981,11 @@ class WargrooveApi():
     def giveVictory(self, playerId):
         team = self.game.players[playerId].team
         for player in self.game.players.values():
-            player.is_victorious = True
+            if player.team == team:
+                player.is_victorious = True
 
     def eliminate(self, playerId):
-        self.game.players[playerId].isEliminated = True
+        self.game.players[playerId].has_losed = True
         # TODO: kill everything decap structures
 
     def getNumberOfOpponents(self, playerId):
@@ -1039,6 +1069,7 @@ class WargrooveApi():
     def openUnloadMenu(self, usedUnits):
         self.game.selected_unload = None
         self.game.pre_execute_selection == PreExecuteSel.unload_selection
+        self.game.selectables = self.game.get_unloadables(usedUnits)
 
     def unloadMenuIsOpen(self): return self.game.pre_execute_selection == PreExecuteSel.unload_selection
 
@@ -1136,7 +1167,8 @@ class WargrooveApi():
     def isCutscenePlaying(self): return False
 
     def setFacingOverride(self, unitId, newFacing):
-        self.game.units[unitId]['pos']['facing'] = newFacing
+        #self.game.units[unitId]['pos']['facing'] = newFacing
+        return
 
     def highlightLocation(self, location, highlightId, colour, hideOnSelection, hideOnAction, showOnUnitSelection, showOnEndPosSelection, showOnActionSelected): return
 

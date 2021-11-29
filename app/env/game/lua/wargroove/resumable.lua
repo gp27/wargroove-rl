@@ -2,6 +2,7 @@ local Resumable = {}
 
 local runningCoroutines = {}
 
+collectgarbage("stop")
 
 function Resumable.run(f)
     local co = coroutine.create(f)

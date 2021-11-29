@@ -95,6 +95,9 @@ for class_def in DEFS['unitClasses'].values():
 
     if class_def.get('moveRange', 0) > 0:
         verbs.append('wait')
+    
+    if class_def.get('canBeReinforced', True):
+        verbs.append('reinforce')
         
     if 'defaultAttack' in class_def:
         verbs.append(class_def['defaultAttack'])

@@ -8,7 +8,8 @@ import time
 import numpy as np
 
 from shutil import rmtree
-from stable_baselines3.ppo import PPO, MlpPolicy
+#from stable_baselines3.ppo import PPO, MlpPolicy
+from sb3_contrib.ppo_mask import MaskablePPO as PPO, MlpPolicy
 
 #from models import CustomPolicy
 

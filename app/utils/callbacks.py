@@ -3,8 +3,8 @@ import numpy as np
 from shutil import copyfile
 from mpi4py import MPI
 
-from stable_baselines.common.callbacks import EvalCallback
-from stable_baselines import logger
+from stable_baselines3.common.callbacks import EvalCallback
+from stable_baselines3.common import logger
 
 from utils.files import get_best_model_name, get_model_stats
 

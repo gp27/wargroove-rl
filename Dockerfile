@@ -1,12 +1,8 @@
-FROM ubuntu:bionic-20210930 as base
+FROM stablebaselines/stable-baselines3 as base
 
-RUN apt update
-RUN apt -y install ssh htop
-RUN apt -y install python3-pip python3-dev cmake libopenmpi-dev
-RUN apt -y install libpq-dev zlib1g-dev libgl1-mesa-dev libsdl2-dev libffi-dev
-
-RUN pip3 install --upgrade pip
-RUN pip3 install --upgrade setuptools
+RUN apt update && apt install -y --no-install-recommends \
+  libsdl2-dev
+#RUN apt -y install libpq-dev zlib1g-dev libgl1-mesa-dev libffi-dev
 
 RUN useradd -ms /bin/bash selfplay
 USER selfplay

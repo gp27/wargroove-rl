@@ -1,12 +1,9 @@
-import numpy as np
-import tensorflow as tf
-tf.get_logger().setLevel('INFO')
-tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
+import numpy as n
 
 from tensorflow.keras.layers import BatchNormalization, Activation, Flatten, Add, Dense, Multiply, Concatenate, Lambda, Conv2D, Conv3D
 import tensorflow.keras.backend as K
-from stable_baselines.common.policies import ActorCriticPolicy
-from stable_baselines.common.distributions import CategoricalProbabilityDistribution
+from stable_baselines3.common.policies import ActorCriticPolicy
+from stable_baselines3.common.distributions import CategoricalProbabilityDistribution
 
 FEATURE_SIZE = 64
 

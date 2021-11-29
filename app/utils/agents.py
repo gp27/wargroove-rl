@@ -6,7 +6,8 @@ import string
 
 import config
 
-from stable_baselines import logger
+from stable_baselines3.common.policies import obs_as_tensor
+from stable_baselines3.common import logger
 
 def sample_action(action_probs):
     action = np.random.choice(len(action_probs), p = action_probs)
@@ -17,9 +18,13 @@ def mask_actions(legal_actions, action_probs):
     masked_action_probs = np.multiply(legal_actions, action_probs)
     masked_action_probs = masked_action_probs / np.sum(masked_action_probs)
     return masked_action_probs
-
-
-
+  
+def action_probability(model, state):
+    obs = obs_as_tensor(state, model.policy.device)
+    dis = model.policy.get_distribution(obs)
+    probs = dis.distribution.probs
+    probs_np = probs.detach().numpy()
+    return probs_np
 
 
 class Agent():
@@ -39,7 +44,8 @@ class Agent():
         action_probs = np.array(env.rules_move())
         value = None
       else:
-        action_probs = self.model.action_probability(env.observation)
+        # action_probs = self.model.action_probability(env.observation)
+        action_probs = action_probability(self.model, env.observation)
         value = self.model.policy_pi.value(np.array([env.observation]))[0]
         logger.debug(f'Value {value:.2f}')
 

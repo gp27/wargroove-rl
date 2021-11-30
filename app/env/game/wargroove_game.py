@@ -48,10 +48,10 @@ ENTRY_STEP_SELECTIONS = [
 class WargrooveGame():
     def __init__(self):
         self.defs = DEFS
+        self.lua = None
 
     def __del__(self):
-        if self.lua:
-            self.lua.eval('collectgarbage("collect")')
+        if self.lua: self.lua.eval('collectgarbage("collect")')
     
     def reset(
         self,
@@ -525,8 +525,7 @@ class WargrooveGame():
             self.next_turn()
 
         elif action == 'resign':
-            #self.api.eliminate(self.playerId)
-            self.players[self.player_id].has_losed = True
+            self.api.eliminate(self.player_id)
             self.next_turn()
 
     def pre_execute(self):

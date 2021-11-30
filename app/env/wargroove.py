@@ -45,9 +45,8 @@ class WargrooveEnv(gym.Env):
     def observation(self):
         return self.wg_obs.get_observation()
 
-    @property
-    def legal_actions(self):
-        return self.wg_acts.get_legal_actions()
+    def action_masks(self):
+        return self.wg_acts.get_action_masks()
 
     @property
     def current_player(self):
@@ -63,10 +62,10 @@ class WargrooveEnv(gym.Env):
         reward = [0] * self.n_players
         done = False
 
-        legal_actions = self.legal_actions
+        action_masks = self.action_masks()
 
         # check move legality
-        if legal_actions[action] == 0:
+        if action_masks[action] == 0:
             reward = [1.0/(self.n_players-1)] * self.n_players
             reward[self.current_player_num] = -1
             done = True
@@ -104,7 +103,7 @@ class WargrooveEnv(gym.Env):
 
         if not self.done:
             print(
-                f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.legal_actions) if o != 0]}')
+                f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.action_masks()) if o != 0]}')
 
         if self.done:
             print(f'\n\nGAME OVER')

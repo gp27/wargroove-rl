@@ -30,8 +30,8 @@ class Actions():
         self.size = size
         self.props = props
     
-    def get_legal_actions(self):
-        legal_actions = np.zeros(self.size)
+    def get_action_masks(self):
+        action_masks = np.zeros(self.size)
 
         skip = 0
         false_cond = lambda: False
@@ -44,11 +44,11 @@ class Actions():
                 getter = prop.get('getter')
                 for ele in getter():
                     i = get_index(options, ele)
-                    if i != None: legal_actions[skip + i] = 1
+                    if i != None: action_masks[skip + i] = 1
 
             skip += group_size
         
-        return legal_actions
+        return action_masks
     
     def convert_action_index(self, action_index):
         skip = 0

@@ -48,6 +48,10 @@ ENTRY_STEP_SELECTIONS = [
 class WargrooveGame():
     def __init__(self):
         self.defs = DEFS
+
+    def __del__(self):
+        if self.lua:
+            self.lua.eval('collectgarbage("collect")')
     
     def reset(
         self,
@@ -172,6 +176,14 @@ class WargrooveGame():
     def load_lua(self):
         os.chdir(dir_path + '/lua')
         self.lua = lupa.LuaRuntime(unpack_returned_tuples=False)
+
+        self.lua.eval('collectgarbage("stop")')
+        # The LuaRuntime of lupa 1.10 suffers from segfaults caused by double
+        # deallocations when using corutines. A fix has been provided in a PR and
+        # is currently waiting to be merged: https://github.com/scoder/lupa/pull/192
+        # until this issue is fixed there is no other solution than to disabled
+        # the lua garabage collector
+        
         self.lua.globals()['wargrooveAPI'] = self.api
         self.lua_wargroove = self.lua.require('wargroove/wargroove')[0]
         self.lua_combat = self.lua.require('wargroove/combat')[0]
@@ -179,7 +191,6 @@ class WargrooveGame():
 
     def get_lua_verb(self, verb):
         script_name = DEFS['verbs'][verb]['scriptName']
-        print(script_name)
         res = self.lua.require(script_name)
         return res[0] if isinstance(res, tuple) else res
     
@@ -192,6 +203,10 @@ class WargrooveGame():
             return self.lua.table_from(val)
         
         return val
+    
+    def safe_facing_position(self, pos):
+        pos['facing'] = pos.get('facing', 0)
+        return pos
     
     def get_class_recruitables(self, unit_class_id, recruits=None, banned_recruits=[]):
         unit_class = DEFS['unitClasses'][unit_class_id]
@@ -256,8 +271,8 @@ class WargrooveGame():
     
     def make_unit_class(self, unit_class_id):
         dfn = DEFS['unitClasses'][unit_class_id]
-        groove_id = dfn['grooveId'] if 'grooveId' in dfn else None
-        groove_dfn = DEFS['grooves'][groove_id] if groove_id else { 'maxCharge': 0 }
+        groove_id = dfn.get('grooveId')
+        groove_dfn = DEFS['grooves'].get(groove_id, { 'maxCharge': 0 })
 
         table_from = self.lua.table_from
 
@@ -348,8 +363,7 @@ class WargrooveGame():
         lua_verb = self.get_lua_verb(verb_id)
 
         unit_id = self.selected_unit_id
-        end_pos = self.end_pos
-        end_pos['facing'] = end_pos.get('facing', 0)
+        end_pos = self.safe_facing_position(self.end_pos)
         str_param = self.str_param
 
         targets = []
@@ -418,9 +432,8 @@ class WargrooveGame():
 
         unit_id = self.selected_unit_id
         unit = self.units[unit_id]
-        start_pos = unit['pos']
-        #start_pos['facing'] = start_pos.get('facing', 0)
-        end_pos = self.end_pos
+        start_pos = self.safe_facing_position(unit['pos'])
+        end_pos = self.safe_facing_position(self.end_pos)
         str_param = self.str_param
         
         
@@ -537,8 +550,7 @@ class WargrooveGame():
 
         path = self.path_finder.get_path(self.end_pos['y'], self.end_pos['x'])
         
-        target_pos = self.target_pos or self.end_pos
-        target_pos['facing'] = target_pos.get('facing', 0)
+        target_pos = self.safe_facing_position(self.target_pos or self.end_pos)
     
         print('executing', self.selected_unit_id, self.target_pos, f"'{self.str_param}'", path)
         path = self.lua.table_from(path)
@@ -555,7 +567,7 @@ class WargrooveGame():
         self.check_triggers('endOfUnitTurn')
     
     def run_resumable(self):
-        print('resumable')
+        #print('resumable')
         self.resumable_suspended = self.lua_wargroove.resumeExecution(0.1)
         return self.resumable_suspended
     
@@ -574,6 +586,9 @@ class WargrooveGame():
 
         attacker = self.units[attacker_id]
         defender = self.units[defender_id]
+
+        self.safe_facing_position(attacker['pos'])
+        self.safe_facing_position(defender['pos'])
 
         solve_type = 'random' if self.api.isRNGEnabled() else ''
         results = self.lua_combat.solveCombat(self.lua_combat, attacker_id, defender_id, self.lua_wrapper(path), solve_type)
@@ -970,6 +985,7 @@ class WargrooveApi():
         return None #self.game.weather # None
 
     def getGroove(self, grooveId):
+        if not grooveId in DEFS['grooves']: return None
         return self.game.lua_wrapper(DEFS['grooves'][grooveId])
 
     def getMapTriggers(self):

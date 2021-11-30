@@ -90,12 +90,13 @@ class WargrooveEnv(gym.Env):
             return
         
         if mode == 'human':
-            print(tabulate(self.game.get_board_table(), tablefmt="fancy_grid"))
+            if self.game.phase == Phase.action_selection:
+                print(tabulate(self.game.get_board_table(), tablefmt="fancy_grid"))
 
-            for t in self.game.get_unit_tables():
-                print(tabulate(t, headers="keys", tablefmt="fancy_grid"))
+                for t in self.game.get_unit_tables():
+                    print(tabulate(t, headers="keys", tablefmt="fancy_grid"))
             
-            print(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
+                print(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
 
         if self.verbose:
             print(

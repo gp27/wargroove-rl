@@ -2,15 +2,12 @@ local Resumable = {}
 
 local runningCoroutines = {}
 
-collectgarbage("stop")
-
 function Resumable.run(f)
     local co = coroutine.create(f)
     
     local ok
     local result
     ok, result = coroutine.resume(co)
-    print('started corutine')
     if not ok then
         error(result)
     end

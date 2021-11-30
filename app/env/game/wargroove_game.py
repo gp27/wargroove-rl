@@ -587,8 +587,8 @@ class WargrooveGame():
         attacker = self.units[attacker_id]
         defender = self.units[defender_id]
 
-        self.safe_facing_position(attacker['pos'])
-        self.safe_facing_position(defender['pos'])
+        #self.safe_facing_position(attacker['pos'])
+        #self.safe_facing_position(defender['pos'])
 
         solve_type = 'random' if self.api.isRNGEnabled() else ''
         results = self.lua_combat.solveCombat(self.lua_combat, attacker_id, defender_id, self.lua_wrapper(path), solve_type)
@@ -604,9 +604,6 @@ class WargrooveGame():
 
         self.set_post_combat_groove(attacker, True, results.attackerAttacked, defender['health'] < 1)
         self.set_post_combat_groove(defender, False, results.defenderAttacked, attacker['health'] < 1)
-
-        #self.death_check(attacker_id, defender_id)
-        #self.death_check(defender_id, attacker_id)
     
     def execute_capture(self):
         (attacker_id, defender_id, attackerPos) = self.capture_params
@@ -631,10 +628,27 @@ class WargrooveGame():
             unit['attackerUnitClass'] = attacker['unitClassId']
             unit['attackerPlayerId'] = attacker['playerId']
     
+    def death_check_loop(self):
+        units_to_remove = {}
+
+        ids = [id for id in self.units.keys()]
+
+        new_removal = True
+        while new_removal:
+            new_removal = False
+            for unit_id in ids:
+                if unit_id in units_to_remove: continue
+                if self.death_check(unit_id):
+                    units_to_remove[unit_id] = True
+                    new_removal = True
+        
+        for id in units_to_remove.keys():
+            self.units.pop(id)
+
     def death_check(self, unit_id):
-        if not unit_id in self.units: return
+        if not unit_id in self.units: return False
         unit = self.units[unit_id]
-        if unit['health'] >= 1: return
+        if unit['health'] >= 1: return False
 
         unit_class = DEFS['unitClasses'][unit['unitClassId']]
         if unit_class.get('isNeutraliseable', False):
@@ -648,9 +662,9 @@ class WargrooveGame():
 
         for loaded_unit_id in unit['loadedUnits']:
             self.set_health(loaded_unit_id, 0, attacker_id)
-            self.death_check(loaded_unit_id)
+            #self.death_check(loaded_unit_id)
 
-        if unit['health'] < 1: self.units.pop(unit_id)
+        return unit['health'] < 1
     
     def set_post_combat_groove(self, unit, isAttacker, hasAttacked, hasKilled):
         if unit['health'] < 1 or not hasAttacked: return
@@ -678,9 +692,7 @@ class WargrooveGame():
         self.lua_events.startSession(match_state)
 
     def check_triggers(self, state):
-        ids = [id for id in self.units.keys()]
-        for unit_id in ids:
-            self.death_check(unit_id)
+        self.death_check_loop()
 
         self.resumable_suspended = self.lua_wargroove.checkTriggers(state)
         while self.resumable_suspended:
@@ -867,7 +879,11 @@ class WargrooveApi():
     
     def getUnitById(self, id):
         if not id in self.game.units: return None
-        return self.game.lua_wrapper(self.game.units[id])
+        unit = self.game.units[id]
+        if unit:
+            self.game.safe_facing_position(unit['pos'])
+            self.game.safe_facing_position(unit['startPos'])
+        return self.game.lua_wrapper(unit)
     
     def getUnitIdAt(self, x, y):
         return next((u['id'] for u in self.game.units.values() if u['pos']['x'] == x and u['pos']['y'] == y), -1)
@@ -903,7 +919,9 @@ class WargrooveApi():
 
     def spawnUnit(self, playerId, pos, unitType, turnSpent, startAnimation, startingState, factionOverride):
         unit = self.game.make_unit(playerId, pos, unitType, turnSpent, startingState)
-        self.game.units[unit['id']] = unit
+        id = unit['id']
+        self.game.units[id] = unit
+        return id
 
     def updateUnit(self, unit):
         u = self.game.unit_from_lua(unit)
@@ -914,7 +932,8 @@ class WargrooveApi():
 
     def doLuaDeathCheck(self, unitId):
         if not unitId in self.game.units: return
-        self.game.death_check(unitId)
+        if self.game.death_check(unitId):
+            self.game.units.pop(unitId)
 
     def getMoney(self, playerId):
         return self.game.players[playerId].gold

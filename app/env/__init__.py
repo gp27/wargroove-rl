@@ -3,6 +3,6 @@ from .wargroove import WargrooveEnv
 
 from gym.envs.registration import register
 register(
-    id='Wargroove-v0',
+    id='wargroove-v0.1',
     entry_point='env:WargrooveEnv'
 )

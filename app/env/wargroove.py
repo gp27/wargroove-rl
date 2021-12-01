@@ -1,15 +1,13 @@
 
 import gym
 import numpy as np
-
-from .game.wargroove_game import *
-from .observation import Observation, list_to_codes
-from .actions import Actions
 from tabulate import tabulate
 
 from stable_baselines3.common import logger
 
+from .game.wargroove_game import *
 from .wargroove_spaces import WargrooveObservation, WargrooveActions
+from config import MAP_POOL
 
 class WargrooveEnv(gym.Env):
     metadata = {'render.modes': ['human']}
@@ -32,7 +30,7 @@ class WargrooveEnv(gym.Env):
 
     def reset(self):
         self.done = False
-        self.game.reset(random_commanders=False, map_name="playground_1.json")
+        self.game.reset(random_commanders=False, map_names=MAP_POOL)
         #self.game.start()
 
         self.current_player_num = self.game.player_id

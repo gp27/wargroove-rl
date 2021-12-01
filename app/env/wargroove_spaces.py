@@ -1,7 +1,11 @@
-from .game.wargroove_game import *
-
+import numpy as np
 from .observation import Observation, list_to_codes
 from .actions import Actions
+
+from .game.wargroove_game import WargrooveGame, Phase, EntryStep, PreExecuteSel
+from .game.wargroove_data import AVAILABLE_VERBS, TERRAIN_LIST, AVAILABLE_UNIT_CLASSES, PLAYERID_LIST, MOVE_TYPES, AVAILABLE_COMMANDERS, RECRUITABLE_UNIT_CLASSES, ACTIONS
+
+from config import MAX_PLAYERS, MAX_UNITS, MAX_MAP_SIZE
 
 class PosList():
     def __init__(self, h, w):
@@ -35,7 +39,6 @@ class PosList():
         return self._w * val.get('y') + val.get('x')
 
 POS_LIST = PosList(MAX_MAP_SIZE, MAX_MAP_SIZE)
-
 
 class WargrooveObservation(Observation):
 
@@ -238,7 +241,7 @@ class WargrooveActions(Actions):
         
         return [{
     'condition': lambda: self.game.phase == Phase.commander_selection,
-    'options': PLAYABLE_COMMANDERS,
+    'options': AVAILABLE_COMMANDERS,
     'getter': self.get_selectables
 }, {
     'condition': lambda: self.game.phase == Phase.action_selection,

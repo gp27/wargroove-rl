@@ -15,6 +15,16 @@ def safe_list_get (l, idx, default=None):
   try: return l[idx]
   except IndexError: return default
 
+
+def list_apply_bans(legal, available=None, banned=[]):
+    return [
+        v for v in legal
+        if (
+            not v in banned and
+            (not available or v in available)
+        )
+    ]
+
 class Phase(Enum):
     commander_selection = 0
     action_selection = 1,
@@ -56,13 +66,11 @@ class WargrooveGame():
     def reset(
         self,
         n_players = 2,
-        map_name=None,
+        map_names=None,
         random_commanders=True,
         seed = None
     ):
         if seed == None: seed = np.random.randint(max_uint32, dtype=np.uint32)
-        if not map_name:
-            map_name = random.choice(get_map_names(n_players))
 
         self.n_players = n_players
 
@@ -72,7 +80,18 @@ class WargrooveGame():
             'random_commanders': random_commanders
         }
 
+        maps = list_apply_bans(get_map_names(n_players), available=map_names)
+        map_name = random.choice(maps)
+
         self.map = load_map(map_name, n_players)
+        self.commander_choices = list_apply_bans(
+            AVAILABLE_COMMANDERS,
+            available=self.map.get('commanders', None),
+            banned=self.map.get('banned_commanders', [])
+        )
+
+        print(self.commander_choices)
+
         self.commanders = {}
         self.units = {}
 
@@ -132,7 +151,7 @@ class WargrooveGame():
 
         self.players = {}
         for player_id in range(self.n_players):
-            commander = self.commanders.get(player_id, random.choice(PLAYABLE_COMMANDERS))
+            commander = self.commanders.get(player_id, random.choice(self.commander_choices))
             g = safe_list_get(gold, player_id, 0)
             team = safe_list_get(teams, player_id)
             player = Player(player_id, team, commander, g)
@@ -157,7 +176,7 @@ class WargrooveGame():
             
             if not unit_class_id in DEFS['unitClasses']: continue
 
-            recruits = self.get_class_recruitables(unit_class_id, recruits=u.get('recruits'), banned_recruits=u.get('banned_recruits', []))
+            recruits = list_apply_bans(RECRUITS_BY_CLASS.get(unit_class_id, []), available=u.get('recruits'), banned=u.get('banned_recruits', []))
             
             unit = self.make_unit(player_id, { 'x': x, 'y': y }, unit_class_id, False, recruits=recruits)
             unit['health'] = health
@@ -174,7 +193,7 @@ class WargrooveGame():
         self.triggers = triggers
 
     def load_lua(self):
-        os.chdir(dir_path + '/lua')
+        os.chdir(WG_LUA_FOLDER)
         self.lua = lupa.LuaRuntime(unpack_returned_tuples=False)
 
         self.lua.eval('collectgarbage("stop")')
@@ -208,26 +227,10 @@ class WargrooveGame():
         pos['facing'] = pos.get('facing', 0)
         return pos
     
-    def get_class_recruitables(self, unit_class_id, recruits=None, banned_recruits=[]):
-        unit_class = DEFS['unitClasses'][unit_class_id]
-        recruit_tags = unit_class.get('recruitTags', None)
-        if not recruit_tags: return []
-
-        return [
-            uc['id'] for uc in DEFS['unitClasses'].values()
-            if (
-                uc.get('isRecruitable', True) and
-                not uc.get('isCommander', False) and
-                any(tag in uc['tags'] for tag in recruit_tags) and
-                not uc['id'] in banned_recruits and
-                (not recruits or uc['id'] in recruits)
-            )
-        ]
-    
     def make_unit(self, player_id, pos, unit_type, turn_spent=True, starting_state = [], recruits=None):
         unit_class = DEFS['unitClasses'][unit_type]
 
-        if not recruits: recruits = self.get_class_recruitables(unit_type)
+        if not recruits: recruits = RECRUITS_BY_CLASS.get(unit_type, [])
 
         return {
             'id': self.get_next_unit_id(),
@@ -448,7 +451,7 @@ class WargrooveGame():
     
     def get_selectables(self):
         ph = {
-            Phase.commander_selection: lambda: list(PLAYABLE_COMMANDERS) if not self.options.get('random_commanders') else [random.choice(PLAYABLE_COMMANDERS)],
+            Phase.commander_selection: lambda: list(self.commander_choices) if not self.options.get('random_commanders') else [random.choice(self.commander_choices)],
             Phase.action_selection: lambda: ['entry', 'end_turn']
         }
 
@@ -704,7 +707,7 @@ class WargrooveGame():
         if n != 1: return None
 
         if not (
-            self.phase == Phase.commander_selection or
+            #self.phase == Phase.commander_selection or
             self.entry_step == EntryStep.end_position_selection or
             (self.entry_step == EntryStep.verb_selection and self.selectables[0] == 'recruit')
         ): return None

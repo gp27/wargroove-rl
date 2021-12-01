@@ -13,6 +13,9 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.utils import set_random_seed
 from stable_baselines3.common import logger
 
+
+from wandb.integration.sb3 import WandbCallback
+
 #from utils.callbacks import SelfPlayCallback
 from utils.files import reset_logs, reset_models
 from utils.selfplay import selfplay_wrapper
@@ -104,7 +107,7 @@ def main(args):
   print('\nSetup complete - commencing learning...\n')
 
   #model.learn(total_timesteps=int(1e9), callback=[eval_callback], reset_num_timesteps = False, tb_log_name="tb")
-  model.learn(total_timesteps=int(1e9), reset_num_timesteps = False, tb_log_name="tb")
+  model.learn(total_timesteps=int(1e9), callback=WandbCallback() reset_num_timesteps = False, tb_log_name="tb")
 
   env.close()
   del env

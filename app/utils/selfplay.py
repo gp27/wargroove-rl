@@ -89,7 +89,6 @@ def selfplay_wrapper(env):
 
             return observation, reward, done, None
 
-
         def step(self, action):
             self.render()
             observation, reward, done, _ = super(SelfPlayEnv, self).step(action)

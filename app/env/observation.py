@@ -76,6 +76,10 @@ class Observation():
                     
                     if not isinstance(val, list):
                         val = [val]
+
+                    norm = ob.get('norm', None)
+                    if norm:
+                        val = np.interp(val, norm, [-1, 1]).tolist()
                     
                     o += val
                 

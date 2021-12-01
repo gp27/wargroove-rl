@@ -18,12 +18,14 @@ MODELDIR = _dir_path + "/zoo"
 # Wargroove configurations
 MAX_PLAYERS = 2
 MAX_UNITS = 100
+MAX_GOLD = int(1e8) # used for normalization
 MAX_MAP_SIZE = 8 # real max size: 96, average competitive size: 20
 MAP_POOL=['playground_2.json']
 
 default_config = {
   "wg_obs_max_players": MAX_PLAYERS,
   "wg_obs_max_units": MAX_UNITS,
+  "wg_obs_max_gold": MAX_GOLD,
   "wg_obs_max_map_size": f'{MAX_MAP_SIZE}x{MAX_MAP_SIZE}',
   "wg_map_pool": ','.join(MAP_POOL)
 }

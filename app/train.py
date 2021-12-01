@@ -108,12 +108,12 @@ def main(args):
   # Evaluate the agent against previous versions
   #eval_callback = SelfPlayCallback(args.opponent_type, args.threshold, args.env_name, **callback_args)"""
 
-  wandb_callback = WandbCallback(model_save_path=model_dir,verbose=1)
+  wandb_callback = WandbCallback(model_save_path=model_dir,model_save_freq=5000,verbose=1)
 
   print('\nSetup complete - commencing learning...\n')
 
   #model.learn(total_timesteps=int(1e9), callback=[eval_callback], reset_num_timesteps = False, tb_log_name="tb")
-  model.learn(total_timesteps=int(1e9), callback=wandb_callback, reset_num_timesteps = False, tb_log_name="tb")
+  model.learn(total_timesteps=int(10000), callback=wandb_callback, reset_num_timesteps = False)
 
   env.close()
   del env

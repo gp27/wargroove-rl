@@ -5,7 +5,7 @@ from .actions import Actions
 from .game.wargroove_game import WargrooveGame, Phase, EntryStep, PreExecuteSel
 from .game.wargroove_data import AVAILABLE_VERBS, TERRAIN_LIST, AVAILABLE_UNIT_CLASSES, PLAYERID_LIST, MOVE_TYPES, AVAILABLE_COMMANDERS, RECRUITABLE_UNIT_CLASSES, ACTIONS
 
-from config import MAX_PLAYERS, MAX_UNITS, MAX_MAP_SIZE
+from config import MAX_PLAYERS, MAX_UNITS, MAX_MAP_SIZE, MAX_GOLD
 
 class PosList():
     def __init__(self, h, w):
@@ -66,14 +66,18 @@ class WargrooveObservation(Observation):
                 'getter': lambda _: self.game.pre_execute_selection
             }, {
                 'n': 2,
-                'getter': lambda _: self.pos_to_list(self.game.end_pos)
+                'getter': lambda _: self.pos_to_list(self.game.end_pos),
+                'norm': [-100, 100]
             }, {
                 'n': 2,
-                'getter': lambda _: self.pos_to_list(self.game.target_pos)
+                'getter': lambda _: self.pos_to_list(self.game.target_pos),
+                'norm': [-100, 100]
             }, {
-                'getter': lambda _: self.game.pre_execute_steps
+                'getter': lambda _: self.game.pre_execute_steps,
+                'norm': [-5000, 5000]
             }, {
-                'getter': lambda _: self.game.turn_number
+                'getter': lambda _: self.game.turn_number,
+                'norm': [-5000, 5000]
             }, {
                 'n': MAX_MAP_SIZE * MAX_MAP_SIZE * len(TERRAIN_LIST),
                 'getter': lambda _: self.get_terrains()
@@ -93,7 +97,8 @@ class WargrooveObservation(Observation):
                 'getter': lambda u: u['playerId']
             }, {
                 'n': 2,
-                'getter': lambda u: self.pos_to_list(u['pos'])
+                'getter': lambda u: self.get_unit_pos(u),
+                'norm': [-100, 100]
             }, {
                 'n': 11,
                 'getter': lambda u: self.get_unit_flags(u)
@@ -119,7 +124,8 @@ class WargrooveObservation(Observation):
                 'getter': lambda p: self.get_player_flags(p)
             }, {
                 'n': 2,
-                'getter': lambda p: self.get_player_values(p)
+                'getter': lambda p: self.get_player_values(p),
+                'norm': [-MAX_GOLD,MAX_GOLD]
             }
         ]
     }
@@ -139,6 +145,12 @@ class WargrooveObservation(Observation):
         if pos == None:
             pos = { 'x': -100, 'y': -100 }
         return [pos['y'], pos['x']]
+    
+    def get_unit_pos(self, unit):
+        pos = unit['pos']
+        if unit.get('inTransport', False):
+            pos = self.game.units[unit['transportedBy']]['pos']
+        return self.pos_to_list(pos)
 
     def get_unit_flags(self, unit):
         pid = unit['playerId']
@@ -165,14 +177,16 @@ class WargrooveObservation(Observation):
         ]
     
     def get_unit_values(self, unit):
-        pid = unit['playerId']
         unit_class = self.game.defs['unitClasses'][unit['unitClassId']]
         groove = self.game.defs['grooves'].get(unit['grooveId'], { 'chargeBy': {} })
 
-        return [
+        health_vals = np.interp([
             unit['health'],
             100, # max Health
             unit_class.get('regeneration', 0),
+        ], [-1e3, 1e3], [-1, 1]).tolist()
+
+        groove_vals = np.interp([
             unit['grooveCharge'],
             groove.get('maxCharge', 0),
             groove.get('chargePerUse', 0),
@@ -180,10 +194,15 @@ class WargrooveObservation(Observation):
             groove['chargeBy'].get('attack', 0),
             groove['chargeBy'].get('counter', 0),
             groove['chargeBy'].get('kill', 0),
-            unit_class.get('loadCapacity', 0),
-            unit_class.get('moveRange', 0),
-            unit_class.get('cost', 0)
+        ], [-1e3, 1e3], [-1, 1]).tolist()
+
+        other_vals = [
+            np.interp(unit_class.get('loadCapacity', 0), [-2,2], [-1,1]),
+            np.interp(unit_class.get('moveRange', 0), [-100,100], [-1,1]),
+            np.interp(unit_class.get('cost', 0), [-MAX_GOLD,MAX_GOLD], [-1,1])
         ]
+
+        return  health_vals + groove_vals + other_vals
     
     def get_player_flags(self, player):
         pid = player.id
@@ -191,9 +210,9 @@ class WargrooveObservation(Observation):
         current_player = self.game.players[current_pid]
 
         return [
-            pid == current_pid, # isAgent
-            player.team == current_player.team, # isAlly
-            player.has_losed,
+            int(pid == current_pid), # isAgent
+            int(player.team == current_player.team), # isAlly
+            int(player.has_losed),
         ]
     
     def get_player_values(self, player):

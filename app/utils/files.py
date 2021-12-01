@@ -11,7 +11,6 @@ from shutil import rmtree
 #from stable_baselines3.ppo import PPO, MlpPolicy
 from sb3_contrib.ppo_mask import MaskablePPO as PPO, MlpPolicy
 
-#from models import CustomPolicy
 
 import config
 
@@ -58,7 +57,6 @@ def load_model(env, name):
         while cont:
             try:
                 
-                #ppo_model = PPO1(CustomPolicy, env=env)
                 ppo_model = PPO(MlpPolicy, env=env)
                 print(f'Saving base.zip PPO model...')
                 ppo_model.save(os.path.join(config.MODELDIR, env.name, 'base.zip'))

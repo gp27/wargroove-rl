@@ -1,9 +1,7 @@
 # docker-compose exec app python3 train.py -r -e butterfly
 
-import os
+import os, time, random, argparse
 
-import argparse
-import time
 from shutil import copyfile
 
 from sb3_contrib.ppo_mask import MaskablePPO as PPO, MlpPolicy
@@ -13,7 +11,7 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.utils import set_random_seed
 from stable_baselines3.common import logger
 
-
+import wandb
 from wandb.integration.sb3 import WandbCallback
 
 #from utils.callbacks import SelfPlayCallback
@@ -21,7 +19,6 @@ from utils.files import reset_logs, reset_models
 from utils.selfplay import selfplay_wrapper
 
 from env import WargrooveEnv
-#from models import CustomPolicy
 
 import config
 
@@ -44,7 +41,13 @@ def main(args):
   #  time.sleep(5)
   #  logger.set_level(config.INFO)
 
-  seed = args.seed
+  run = config.init_wandb()
+
+  seed = args.seed or random.randint(0, 1000000)
+
+  wandb.config.update({ 'seed': seed })
+
+  
   set_random_seed(seed)
 
   print('\nSetting up the selfplay training environment opponents...')
@@ -75,6 +78,7 @@ def main(args):
     print('\nLoading the best_model.zip PPO agent to continue training...')
     model = PPO.load(os.path.join(model_dir, 'best_model.zip'), env, **params)
 
+    """
   #Callbacks
   print('\nSetting up the selfplay evaluation environment opponents...')
   callback_args = {
@@ -102,12 +106,14 @@ def main(args):
     callback_args['callback_on_new_best'] = eval_actual_callback
     
   # Evaluate the agent against previous versions
-  #eval_callback = SelfPlayCallback(args.opponent_type, args.threshold, args.env_name, **callback_args)
+  #eval_callback = SelfPlayCallback(args.opponent_type, args.threshold, args.env_name, **callback_args)"""
+
+  wandb_callback = WandbCallback(model_save_path=model_dir,verbose=1)
 
   print('\nSetup complete - commencing learning...\n')
 
   #model.learn(total_timesteps=int(1e9), callback=[eval_callback], reset_num_timesteps = False, tb_log_name="tb")
-  model.learn(total_timesteps=int(1e9), callback=WandbCallback() reset_num_timesteps = False, tb_log_name="tb")
+  model.learn(total_timesteps=int(1e9), callback=wandb_callback, reset_num_timesteps = False, tb_log_name="tb")
 
   env.close()
   del env
@@ -135,7 +141,7 @@ def cli() -> None:
               , help="Evaluate on a ruled-based agent")
   parser.add_argument("--best", "-b", action = 'store_true', default = False
               , help="Uses best moves when evaluating agent against rules-based agent")
-  parser.add_argument("--seed", "-s",  type = int, default = 17
+  parser.add_argument("--seed", "-s",  type = int, default = 0
             , help="Random seed")
 
   parser.add_argument("--eval_freq", "-ef",  type = int, default = 10240

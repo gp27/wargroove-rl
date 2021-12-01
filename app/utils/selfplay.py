@@ -6,6 +6,7 @@ from utils.files import load_model, load_all_models, get_best_model_name
 from utils.agents import Agent
 
 import config
+import wandb
 
 from stable_baselines3.common import logger
 
@@ -32,20 +33,20 @@ def selfplay_wrapper(env):
                     start = 0
                     end = len(self.opponent_models) - 1
                     i = random.randint(start, end)
-                    self.opponent_agent = Agent('ppo_opponent', self.opponent_models[i]) 
+                    self.opponent_agent = Agent('ppo_opponent', self.opponent_models[i])
 
                 elif self.opponent_type == 'best':
-                    self.opponent_agent = Agent('ppo_opponent', self.opponent_models[-1])  
+                    self.opponent_agent = Agent('ppo_opponent', self.opponent_models[-1])
 
                 elif self.opponent_type == 'mostly_best':
                     j = random.uniform(0,1)
                     if j < 0.8:
-                        self.opponent_agent = Agent('ppo_opponent', self.opponent_models[-1])  
+                        self.opponent_agent = Agent('ppo_opponent', self.opponent_models[-1])
                     else:
                         start = 0
                         end = len(self.opponent_models) - 1
                         i = random.randint(start, end)
-                        self.opponent_agent = Agent('ppo_opponent', self.opponent_models[i])  
+                        self.opponent_agent = Agent('ppo_opponent', self.opponent_models[i])
 
                 elif self.opponent_type == 'base':
                     self.opponent_agent = Agent('base', self.opponent_models[0])  
@@ -80,8 +81,9 @@ def selfplay_wrapper(env):
 
             while self.current_player_num != self.agent_player_num:
                 self.render()
-                action = self.current_agent.choose_action(self, choose_best_action = False, mask_invalid_actions = False)
+                action = self.current_agent.choose_action(self, choose_best_action = False, mask_invalid_actions = True)
                 observation, reward, done, _ = super(SelfPlayEnv, self).step(action)
+                print('Action played by opponent:', action)
                 print(f'Rewards: {reward}')
                 print(f'Done: {done}')
                 if done:

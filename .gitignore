@@ -8,3 +8,8 @@ __pycache__/
 
 .env
 .vscode/
+
+*.swp
+wandb
+wandb-debug.log
+.ipynb_checkpoints

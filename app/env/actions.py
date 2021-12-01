@@ -31,7 +31,7 @@ class Actions():
         self.props = props
     
     def get_action_masks(self):
-        action_masks = np.zeros(self.size)
+        action_masks = np.full(self.size, False, dtype=bool)
 
         skip = 0
         false_cond = lambda: False
@@ -44,7 +44,7 @@ class Actions():
                 getter = prop.get('getter')
                 for ele in getter():
                     i = get_index(options, ele)
-                    if i != None: action_masks[skip + i] = 1
+                    if i != None: action_masks[skip + i] = True
 
             skip += group_size
         

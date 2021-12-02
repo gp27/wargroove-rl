@@ -7,6 +7,7 @@ from stable_baselines3.common import logger
 
 from .game.wargroove_game import *
 from .wargroove_spaces import WargrooveObservation, WargrooveActions
+from .wargroove_reward import WargrooveReward
 from config import MAP_POOL
 
 class WargrooveEnv(gym.Env):
@@ -22,6 +23,7 @@ class WargrooveEnv(gym.Env):
 
         self.wg_obs = WargrooveObservation(self.game)
         self.wg_acts = WargrooveActions(self.game)
+        self.wg_reward = WargrooveReward(self.game)
 
         self.observation_space = self.wg_obs.space
         self.action_space = self.wg_acts.space
@@ -57,7 +59,7 @@ class WargrooveEnv(gym.Env):
 
     def step(self, action):
 
-        reward = [0] * self.n_players
+        r#eward = [0] * self.n_players
         done = False
 
         action_masks = self.action_masks()
@@ -77,7 +79,8 @@ class WargrooveEnv(gym.Env):
             p = self.current_player
 
             done = p.is_victorious or p.has_losed
-            reward[self.current_player_num] = 1 if p.is_victorious else -1 if p.has_losed else 0
+            reward = self.wg_reward.get_rewards()
+            #reward[self.current_player_num] = 1 if p.is_victorious else -1 if p.has_losed else 0
         self.done = done
 
         return self.observation, reward, done, {}

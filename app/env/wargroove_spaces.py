@@ -76,12 +76,14 @@ class WargrooveObservation(Observation):
                 'getter': lambda _: self.game.pre_execute_steps,
                 'norm': [-5000, 5000]
             }, {
-                'getter': lambda _: self.game.turn_number,
+                'getter': lambda _: self.game.canceled_actions_count,
+                'norm': [-10, 10]
+            }, {
+                'getter': lambda _: self.game.turn_number * self.game.n_players + self.game.player_id,
                 'norm': [-5000, 5000]
             }, {
                 'n': MAX_MAP_SIZE * MAX_MAP_SIZE * len(TERRAIN_LIST),
                 'getter': lambda _: self.get_terrains()
-
             }
         ]
     }, {

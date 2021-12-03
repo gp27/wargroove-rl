@@ -122,10 +122,11 @@ class WargrooveGame():
         self.selectables = None
         #self.continue_game()
     
-    def reset_entry(self):
+    def reset_entry(self, cancel=False):
         self.entry_step = None
         self.pre_execute_selection = None
         self.pre_execute_steps = 0
+        self.canceled_actions_count = 0 if not cancel else (self.canceled_actions_count or 0) + 1
         self.resumable_suspended = False
         
         self.selected_verb = None
@@ -727,7 +728,7 @@ class WargrooveGame():
                 if self.pre_execute_selection:
                     self.pre_execute_selection = None
                 else:
-                    self.reset_entry()
+                    self.reset_entry(cancel=True)
                     self.phase = Phase.action_selection
 
             elif selection != None:

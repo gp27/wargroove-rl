@@ -199,7 +199,8 @@ class WargrooveObservation(Observation):
         other_vals = [
             np.interp(unit_class.get('loadCapacity', 0), [-2,2], [-1,1]),
             np.interp(unit_class.get('moveRange', 0), [-100,100], [-1,1]),
-            np.interp(unit_class.get('cost', 0), [-MAX_GOLD,MAX_GOLD], [-1,1])
+            np.interp(unit_class.get('cost', 0), [-MAX_GOLD,MAX_GOLD], [-1,1]),
+            np.interp(unit_class.get('income', 0), [-MAX_GOLD,MAX_GOLD], [-1,1])
         ]
 
         return  health_vals + groove_vals + other_vals

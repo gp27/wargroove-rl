@@ -90,8 +90,6 @@ class WargrooveGame():
             banned=self.map.get('banned_commanders', [])
         )
 
-        print(self.commander_choices)
-
         self.commanders = {}
         self.units = {}
 
@@ -485,7 +483,7 @@ class WargrooveGame():
         selected = self.selectables[index]
         self.selectables = None
 
-        print('selected: {}'.format(selected))
+        #print('selected: {}'.format(selected))
 
         ph = {
             Phase.commander_selection: lambda: self.commanders.update({ self.player_id: selected }),
@@ -555,7 +553,7 @@ class WargrooveGame():
         
         target_pos = self.safe_facing_position(self.target_pos or self.end_pos)
     
-        print('executing', self.selected_unit_id, self.target_pos, f"'{self.str_param}'", path)
+        #print('executing', self.selected_unit_id, self.target_pos, f"'{self.str_param}'", path)
         path = self.lua.table_from(path)
         self.resumable_suspended = lua_verb.executeEntry(lua_verb, self.selected_unit_id, target_pos, self.str_param, path)
         while self.resumable_suspended:
@@ -596,7 +594,7 @@ class WargrooveGame():
         solve_type = 'random' if self.api.isRNGEnabled() else ''
         results = self.lua_combat.solveCombat(self.lua_combat, attacker_id, defender_id, self.lua_wrapper(path), solve_type)
 
-        print('combat results', dict(results))
+        #print('combat results', dict(results))
 
         self.lua_wargroove.doPostCombat(self.lua_wargroove, attacker_id, True)
         self.lua_wargroove.doPostCombat(self.lua_wargroove, defender_id, False)
@@ -737,7 +735,7 @@ class WargrooveGame():
             
             selection = None
         
-            self.print_state()
+            #self.print_state()
         
             if self.phase in [Phase.commander_selection, Phase.action_selection]:
                 self.selectables = self.get_selectables()
@@ -807,9 +805,18 @@ class WargrooveGame():
             self.pre_execute_selection = None
             #self.entryStep = EntryStep.pre_execute_continue
             return
-
-    def print_state(self):
-        print('## {}, {}, {} ##'.format(self.phase, self.entry_step, self.pre_execute_selection))
+    
+    def get_step_table(self):
+        return [{
+            'phase': self.phase,
+            'entry_step': self.entry_step,
+            'pre_execute_selection': self.pre_execute_selection,
+            'selected_unit_id': self.selected_unit_id,
+            'end_pos': self.end_pos,
+            'selected_verb': self.selected_verb,
+            'target_pos': self.target_pos,
+            'str_param': self.str_param
+        }]
 
     def get_unit_tables(self):
         tables = [[] for i in range(len(self.players))]

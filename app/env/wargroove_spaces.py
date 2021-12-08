@@ -105,7 +105,7 @@ class WargrooveObservation(Observation):
                 'n': 11,
                 'getter': lambda u: self.get_unit_flags(u)
             }, {
-                'n': 13,
+                'n': 14,
                 'getter': lambda u: self.get_unit_values(u)
             }, {
                 'options': MOVE_TYPES,

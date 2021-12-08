@@ -51,7 +51,7 @@ def main(args):
   set_random_seed(seed)
 
   print('\nSetting up the selfplay training environment opponents...')
-  env = selfplay_wrapper(WargrooveEnv)(opponent_type = args.opponent_type, verbose = args.verbose)
+  env = selfplay_wrapper(WargrooveEnv)(opponent_type = args.opponent_type, verbose = args.verbose, gamma=args.gamma)
   env.seed(seed)
 
 

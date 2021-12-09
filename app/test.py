@@ -5,7 +5,8 @@ import os
 import random
 import argparse
 
-from stable_baselines3.common.logger import configure as logger_configure
+from gym import logger
+#from stable_baselines3.common.logger import configure as logger_configure
 from stable_baselines3.common.utils import set_random_seed
 
 from utils.files import load_model, write_results
@@ -18,7 +19,7 @@ import config
 
 def main(args):
 
-  logger = logger_configure(config.LOGDIR)
+  #logger = logger_configure(config.LOGDIR)
 
   if args.debug:
     logger.set_level(config.DEBUG)

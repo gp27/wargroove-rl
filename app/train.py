@@ -51,7 +51,7 @@ def main(args):
   set_random_seed(seed)
 
   print('\nSetting up the selfplay training environment opponents...')
-  env = selfplay_wrapper(WargrooveEnv)(opponent_type = args.opponent_type, verbose = args.verbose)
+  env = selfplay_wrapper(WargrooveEnv)(opponent_type = args.opponent_type, verbose = args.verbose, gamma=args.gamma)
   env.seed(seed)
 
 
@@ -113,7 +113,7 @@ def main(args):
   print('\nSetup complete - commencing learning...\n')
 
   #model.learn(total_timesteps=int(1e9), callback=[eval_callback], reset_num_timesteps = False, tb_log_name="tb")
-  model.learn(total_timesteps=int(10000), callback=wandb_callback, reset_num_timesteps = False)
+  model.learn(total_timesteps=int(1e5), callback=wandb_callback, reset_num_timesteps = False)
 
   env.close()
   del env

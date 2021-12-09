@@ -7,12 +7,13 @@ from stable_baselines3.common import logger
 
 from .game.wargroove_game import *
 from .wargroove_spaces import WargrooveObservation, WargrooveActions
-from config import MAP_POOL
+from .wargroove_reward import WargrooveReward
+from config import LOGDIR, MAP_POOL
 
 class WargrooveEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, verbose=False, manual = False):
+    def __init__(self, verbose=False, manual = False, gamma=0.99):
         super(WargrooveEnv, self).__init__()
         self.name = 'wargroove'
         self.manual = manual
@@ -22,6 +23,7 @@ class WargrooveEnv(gym.Env):
 
         self.wg_obs = WargrooveObservation(self.game)
         self.wg_acts = WargrooveActions(self.game)
+        self.wg_reward = WargrooveReward(self.game, gamma=gamma)
 
         self.observation_space = self.wg_obs.space
         self.action_space = self.wg_acts.space
@@ -30,13 +32,14 @@ class WargrooveEnv(gym.Env):
 
     def reset(self):
         self.done = False
-        self.game.reset(random_commanders=False, map_names=MAP_POOL)
+        self.game.reset(random_commanders=False, map_names=MAP_POOL,log=True)
+        self.wg_reward.reset()
         #self.game.start()
 
         self.current_player_num = self.game.player_id
         self.n_players = self.game.n_players
 
-        print(f'\n\n---- NEW GAME ----')
+        gym.logger.debug(f'\n\n---- NEW GAME ----')
         return self.observation
 
     @property
@@ -57,7 +60,7 @@ class WargrooveEnv(gym.Env):
 
     def step(self, action):
 
-        reward = [0] * self.n_players
+        #reward = [0] * self.n_players
         done = False
 
         action_masks = self.action_masks()
@@ -77,7 +80,8 @@ class WargrooveEnv(gym.Env):
             p = self.current_player
 
             done = p.is_victorious or p.has_losed
-            reward[self.current_player_num] = 1 if p.is_victorious else -1 if p.has_losed else 0
+            reward = self.wg_reward.get_rewards()
+            #reward[self.current_player_num] = 1 if p.is_victorious else -1 if p.has_losed else 0
         self.done = done
 
         return self.observation, reward, done, {}
@@ -87,24 +91,27 @@ class WargrooveEnv(gym.Env):
             return
         
         if mode == 'human':
+            gym.logger.debug(tabulate(self.game.get_step_table(), headers="keys", tablefmt="fancy_grid"))
+
             if self.game.phase == Phase.action_selection:
-                print(tabulate(self.game.get_board_table(), tablefmt="fancy_grid"))
+                gym.logger.debug(tabulate(self.game.get_board_table(), tablefmt="fancy_grid"))
 
                 for t in self.game.get_unit_tables():
-                    print(tabulate(t, headers="keys", tablefmt="fancy_grid"))
+                    gym.logger.debug(tabulate(t, headers="keys", tablefmt="fancy_grid"))
+                
+                self.game.game_logger.save(LOGDIR+'/match.json')
             
-                print(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
+                gym.logger.debug(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
 
         if self.verbose:
-            print(
-                f'\nObservation: \n{[i if o == 1 else (i,o) for i,o in enumerate(self.observation) if o != 0]}')
+            gym.logger.debug(f'\nObservation: \n{[i if o == 1 else (i,o) for i,o in enumerate(self.observation) if o != 0]}')
 
         if not self.done:
-            print(
-                f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.action_masks()) if o != 0]}')
+            gym.logger.debug(f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.action_masks()) if o != 0]}')
 
         if self.done:
-            print(f'\n\nGAME OVER')
+            self.game.game_logger.save(LOGDIR+'/match.json')
+            gym.logger.debug(f'\n\nGAME OVER')
 
     def rules_move(self):
         raise Exception(

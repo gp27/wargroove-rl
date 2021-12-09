@@ -13,8 +13,8 @@ from stable_baselines3.common import logger
 def selfplay_wrapper(env):
     class SelfPlayEnv(env):
         # wrapper over the normal single player env, but loads the best self play model
-        def __init__(self, opponent_type, verbose):
-            super(SelfPlayEnv, self).__init__(verbose)
+        def __init__(self, opponent_type, verbose, gamma=0.99):
+            super(SelfPlayEnv, self).__init__(verbose, gamma=gamma)
             self.opponent_type = opponent_type
             self.opponent_models = load_all_models(self)
             self.best_model_name = get_best_model_name(self.name)
@@ -76,7 +76,7 @@ def selfplay_wrapper(env):
 
         def continue_game(self):
             observation = None
-            reward = None
+            reward_tot = [0] * self.n_players
             done = None
 
             while self.current_player_num != self.agent_player_num:
@@ -86,10 +86,11 @@ def selfplay_wrapper(env):
                 print('Action played by opponent:', action)
                 print(f'Rewards: {reward}')
                 print(f'Done: {done}')
+                reward_tot = np.add(reward_tot, reward)
                 if done:
                     break
 
-            return observation, reward, done, None
+            return observation, reward_tot, done, None
 
         def step(self, action):
             self.render()
@@ -98,13 +99,16 @@ def selfplay_wrapper(env):
             print(f'Rewards: {reward}')
             print(f'Done: {done}')
 
+            reward_tot = reward
+
             if not done:
                 package = self.continue_game()
                 if package[0] is not None:
                     observation, reward, done, _ = package
+                    reward_tot = np.add(reward_tot, reward)
 
 
-            agent_reward = reward[self.agent_player_num]
+            agent_reward = reward_tot[self.agent_player_num]
             print(f'\nReward To Agent: {agent_reward}')
 
             if done:

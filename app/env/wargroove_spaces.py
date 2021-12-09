@@ -76,12 +76,14 @@ class WargrooveObservation(Observation):
                 'getter': lambda _: self.game.pre_execute_steps,
                 'norm': [-5000, 5000]
             }, {
-                'getter': lambda _: self.game.turn_number,
+                'getter': lambda _: self.game.canceled_actions_count,
+                'norm': [-10, 10]
+            }, {
+                'getter': lambda _: self.game.turn_number * self.game.n_players + self.game.player_id,
                 'norm': [-5000, 5000]
             }, {
                 'n': MAX_MAP_SIZE * MAX_MAP_SIZE * len(TERRAIN_LIST),
                 'getter': lambda _: self.get_terrains()
-
             }
         ]
     }, {
@@ -103,7 +105,7 @@ class WargrooveObservation(Observation):
                 'n': 11,
                 'getter': lambda u: self.get_unit_flags(u)
             }, {
-                'n': 13,
+                'n': 14,
                 'getter': lambda u: self.get_unit_values(u)
             }, {
                 'options': MOVE_TYPES,
@@ -199,7 +201,8 @@ class WargrooveObservation(Observation):
         other_vals = [
             np.interp(unit_class.get('loadCapacity', 0), [-2,2], [-1,1]),
             np.interp(unit_class.get('moveRange', 0), [-100,100], [-1,1]),
-            np.interp(unit_class.get('cost', 0), [-MAX_GOLD,MAX_GOLD], [-1,1])
+            np.interp(unit_class.get('cost', 0), [-MAX_GOLD,MAX_GOLD], [-1,1]),
+            np.interp(unit_class.get('income', 0), [-MAX_GOLD,MAX_GOLD], [-1,1])
         ]
 
         return  health_vals + groove_vals + other_vals
@@ -225,13 +228,13 @@ class WargrooveObservation(Observation):
         m = self.game.map
         w = m['w']
         h = m['h']
-        tiles = m['tiles']
+        terrains = m['terrains']
 
         codes = list_to_codes(TERRAIN_LIST)
 
         obs = np.zeros(shape=(MAX_MAP_SIZE, MAX_MAP_SIZE, len(TERRAIN_LIST)))
 
-        for index, terrain in np.ndenumerate(tiles):
+        for index, terrain in np.ndenumerate(terrains):
             obs[index] = codes[terrain]
 
 

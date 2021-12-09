@@ -1,6 +1,6 @@
 from math import floor
 from copy import deepcopy
-import json
+import json, os
 
 from utils.diff import diff
 
@@ -107,7 +107,6 @@ class WargrooveGameLogger():
         else:
             delta, new_state, old_state = self.generate_delta()
 
-        print('delta', delta)
 
         if delta != None:
             self.push_delta(delta)
@@ -120,8 +119,13 @@ class WargrooveGameLogger():
         
         return False
     
-    def save(self, file_path):
+    def save(self, dir_path, name=None):
         data = self.get_match_data()
-        print(data)
+
+        if name == None:
+            name = f'{self.match_id}.json'
+
+        file_path = os.path.join(dir_path, name)
+
         with open(file_path, 'w') as f:
             json.dump(data, f)

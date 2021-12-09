@@ -55,18 +55,21 @@ def main(args):
   env.seed(seed)
 
 
-  params = {'gamma':args.gamma
-    , 'timesteps_per_actorbatch':args.timesteps_per_actorbatch
-    , 'clip_param':args.clip_param
-      , 'entcoeff':args.entcoeff
-      , 'optim_epochs':args.optim_epochs
-      , 'optim_stepsize':args.optim_stepsize
-      , 'optim_batchsize':args.optim_batchsize
-      , 'lam':args.lam
-      , 'adam_epsilon':args.adam_epsilon
-      , 'schedule':'linear'
-      , 'verbose':1
-      , 'tensorboard_log':config.LOGDIR
+  #params = {
+  #    , 'adam_epsilon':args.adam_epsilon
+  #    , 'schedule':'linear'
+  #}
+
+  params = {
+    'gamma':args.gamma,
+    'gae_lambda': args.gae_lambda,
+    'clip_range':args.clip_range,
+    'n_steps': args.n_steps,
+    'batch_size': args.batch_size,
+    'n_epochs': args.n_epochs,
+    'ent_coef': args.ent_coef,
+    'verbose': 1,
+    'tensorboard_log':config.LOGDIR
   }
 
   time.sleep(5) # allow time for the base model to be saved out when the environment is created
@@ -152,21 +155,21 @@ def cli() -> None:
             , help="What score must the agent achieve during evaluation to 'beat' the previous version?")
   parser.add_argument("--gamma", "-g",  type = float, default = 0.99
             , help="The value of gamma in PPO")
-  parser.add_argument("--timesteps_per_actorbatch", "-tpa",  type = int, default = 1024
+  parser.add_argument("--n_steps", "-tpa",  type = int, default = 1024
             , help="How many timesteps should each actor contribute to the batch?")
-  parser.add_argument("--clip_param", "-c",  type = float, default = 0.2
+  parser.add_argument("--clip_range", "-c",  type = float, default = 0.2
             , help="The clip paramater in PPO")
-  parser.add_argument("--entcoeff", "-ent",  type = float, default = 0.1
+  parser.add_argument("--ent_coef", "-ent",  type = float, default = 0.1
             , help="The entropy coefficient in PPO")
 
-  parser.add_argument("--optim_epochs", "-oe",  type = int, default = 4
+  parser.add_argument("--n_epochs", "-oe",  type = int, default = 4
             , help="The number of epoch to train the PPO agent per batch")
   parser.add_argument("--optim_stepsize", "-os",  type = float, default = 0.0003
             , help="The step size for the PPO optimiser")
-  parser.add_argument("--optim_batchsize", "-ob",  type = int, default = 1024
+  parser.add_argument("--batch_size", "-ob",  type = int, default = 1024
             , help="The minibatch size in the PPO optimiser")
             
-  parser.add_argument("--lam", "-l",  type = float, default = 0.95
+  parser.add_argument("--gae_lambda", "-l",  type = float, default = 0.95
             , help="The value of lambda in PPO")
   parser.add_argument("--adam_epsilon", "-a",  type = float, default = 1e-05
             , help="The value of epsilon in the Adam optimiser")

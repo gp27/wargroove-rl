@@ -31,6 +31,7 @@ class WargrooveEnv(gym.Env):
         self.verbose = verbose
 
     def reset(self):
+        self.move_i = 0
         self.done = False
         self.game.reset(random_commanders=False, map_names=MAP_POOL,log=True)
         self.wg_reward.reset()
@@ -75,6 +76,9 @@ class WargrooveEnv(gym.Env):
             selection = self.convert_action(action)
             self.game.continue_game(selection)
 
+            if self.game.phase == Phase.action_selection:
+                self.move_i += 1
+
             self.current_player_num = self.game.player_id
 
             p = self.current_player
@@ -98,10 +102,12 @@ class WargrooveEnv(gym.Env):
 
                 for t in self.game.get_unit_tables():
                     gym.logger.debug(tabulate(t, headers="keys", tablefmt="fancy_grid"))
-                
-                self.game.game_logger.save(LOGDIR+'/match.json')
             
                 gym.logger.debug(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
+
+                if self.move_i % 100 == 0:
+                    self.game.game_logger.save(LOGDIR)
+                    
 
         if self.verbose:
             gym.logger.debug(f'\nObservation: \n{[i if o == 1 else (i,o) for i,o in enumerate(self.observation) if o != 0]}')
@@ -110,7 +116,7 @@ class WargrooveEnv(gym.Env):
             gym.logger.debug(f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.action_masks()) if o != 0]}')
 
         if self.done:
-            self.game.game_logger.save(LOGDIR+'/match.json')
+            self.game.game_logger.save(LOGDIR)
             gym.logger.debug(f'\n\nGAME OVER')
 
     def rules_move(self):

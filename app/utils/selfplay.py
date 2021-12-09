@@ -8,7 +8,7 @@ from utils.agents import Agent
 import config
 import wandb
 
-from stable_baselines3.common import logger
+from gym import logger
 
 def selfplay_wrapper(env):
     class SelfPlayEnv(env):
@@ -56,7 +56,7 @@ def selfplay_wrapper(env):
             self.agents[self.agent_player_num] = None
             try:
                 #if self.players is defined on the base environment
-                print(f'Agent plays as Player {self.players[self.agent_player_num].id}')
+                logger.debug(f'Agent plays as Player {self.players[self.agent_player_num].id}')
             except:
                 pass
 
@@ -83,9 +83,9 @@ def selfplay_wrapper(env):
                 self.render()
                 action = self.current_agent.choose_action(self, choose_best_action = False, mask_invalid_actions = True)
                 observation, reward, done, _ = super(SelfPlayEnv, self).step(action)
-                print('Action played by opponent:', action)
-                print(f'Rewards: {reward}')
-                print(f'Done: {done}')
+                logger.debug('Action played by opponent:', action)
+                logger.debug(f'Rewards: {reward}')
+                logger.debug(f'Done: {done}')
                 reward_tot = np.add(reward_tot, reward)
                 if done:
                     break
@@ -95,9 +95,9 @@ def selfplay_wrapper(env):
         def step(self, action):
             self.render()
             observation, reward, done, _ = super(SelfPlayEnv, self).step(action)
-            print(f'Action played by agent: {action}')
-            print(f'Rewards: {reward}')
-            print(f'Done: {done}')
+            logger.debug(f'Action played by agent: {action}')
+            logger.debug(f'Rewards: {reward}')
+            logger.debug(f'Done: {done}')
 
             reward_tot = reward
 
@@ -109,7 +109,7 @@ def selfplay_wrapper(env):
 
 
             agent_reward = reward_tot[self.agent_player_num]
-            print(f'\nReward To Agent: {agent_reward}')
+            logger.debug(f'\nReward To Agent: {agent_reward}')
 
             if done:
                 self.render()

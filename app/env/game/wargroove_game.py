@@ -716,8 +716,8 @@ class WargrooveGame():
         #match_state = self.lua_events.getMatchState()
     
     def give_victory(self, player_id):
-        team = self.game.players[player_id].team
-        for player in self.game.players.values():
+        team = self.players[player_id].team
+        for player in self.players.values():
             if player.team == team:
                 player.is_victorious = True
 

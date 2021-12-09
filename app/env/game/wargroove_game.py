@@ -101,7 +101,7 @@ class WargrooveGame():
 
         self.phase = Phase.commander_selection
         self.selectables = None
-        self.turn_number = 0
+        self.turn_number = 1
         self.player_id = 0
         self.reset_entry()
         self.continue_game()
@@ -111,10 +111,12 @@ class WargrooveGame():
         self.load_lua()
         self.load_state()
         self.load_triggers()
+        
         if self.options['log']:
             self.game_logger.start()
 
         self.player_id = 0
+        self.turn_number = 1
         self.phase = Phase.action_selection
         self.selected_action = None
 

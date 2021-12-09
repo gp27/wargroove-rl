@@ -10,8 +10,9 @@ class WargrooveGameLogger():
         self.game = game
     
     def start(self):
+        self.started = False
         self.match_id = self.get_id()
-        self.current_state = self.generate_state()
+        self.current_state = None
         self.deltas = []
         self.cached_data = None
         self.is_fog = None
@@ -34,10 +35,7 @@ class WargrooveGameLogger():
         for u in self.game.units.values():
             unit_classes[u['unitClassId']] = self.game.get_unit_class(u['unitClassId'])
             id = u['id']
-            try:
-                units[f'u_{id}'] = deepcopy(u)
-            except:
-                print(u)
+            units[f'u_{id}'] = deepcopy(u)
 
         return {
             'gold': gold,
@@ -48,7 +46,6 @@ class WargrooveGameLogger():
         }
     
     def generate_delta(self):
-        if self.current_state == None: return None,
         new_state = self.generate_state()
         return diff(self.current_state, new_state), new_state, self.current_state
     
@@ -103,7 +100,14 @@ class WargrooveGameLogger():
     
 
     def update(self, force_update = False):
-        delta, new_state, old_state = self.generate_delta()
+        if not self.current_state:
+            s = self.generate_state()
+            self.current_state = s
+            delta, new_state, old_state = None, s, s
+        else:
+            delta, new_state, old_state = self.generate_delta()
+
+        print('delta', delta)
 
         if delta != None:
             self.push_delta(delta)

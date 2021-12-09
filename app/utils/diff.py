@@ -22,7 +22,8 @@ def _table_diff(A, B):
         b = B.get(k)
 
         if b != None and _is_table(a) and _is_table(b):
-            diff[k] = _table_diff(a, b)
+            d = _table_diff(a, b)
+            if d!= None: diff[k] = d
         elif b == None:
             diff[k] = [a, 0, 0]
         elif b != a:
@@ -31,10 +32,11 @@ def _table_diff(A, B):
     for k, b in B.items():
         a = A.get(k)
 
-        if diff.get('k') != None:
+        if diff.get(k) != None:
             pass
         elif a != None and _is_table(a) and _is_table(b):
-            diff[k] = _table_diff(b, a)
+            d = _table_diff(b, a)
+            if d!= None: diff[k] = d
         elif b != a:
             diff[k] = [b]
     

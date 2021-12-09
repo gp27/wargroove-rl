@@ -98,6 +98,8 @@ class WargrooveEnv(gym.Env):
 
                 for t in self.game.get_unit_tables():
                     gym.logger.debug(tabulate(t, headers="keys", tablefmt="fancy_grid"))
+                
+                self.game.game_logger.save(LOGDIR+'/match.json')
             
                 gym.logger.debug(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
 

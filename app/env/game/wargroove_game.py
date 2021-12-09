@@ -4,10 +4,9 @@ import numpy as np
 from xxhash import xxh32_intdigest
 from enum import Enum
 
-import gc
-
 from .path_finder import WargroovePathFinder
 from .wargroove_data import *
+from .wargroove_game_logger import WargrooveGameLogger
 
 max_uint32 = np.iinfo(np.uint32).max
 
@@ -68,7 +67,8 @@ class WargrooveGame():
         n_players = 2,
         map_names=None,
         random_commanders=True,
-        seed = None
+        seed = None,
+        log = False
     ):
         if seed == None: seed = np.random.randint(max_uint32, dtype=np.uint32)
 
@@ -77,8 +77,11 @@ class WargrooveGame():
         self.options = {
             'seed': seed,
             'auto_end_turn': False,
-            'random_commanders': random_commanders
+            'random_commanders': random_commanders,
+            'log': log
         }
+
+        self.game_logger = WargrooveGameLogger(self)
 
         maps = list_apply_bans(get_map_names(n_players), available=map_names)
         map_name = random.choice(maps)
@@ -92,6 +95,7 @@ class WargrooveGame():
 
         self.commanders = {}
         self.units = {}
+        self.unit_classes = {}
 
         self.players = { i: Player(i, i, None, 0) for i in range(n_players) }
 
@@ -107,6 +111,8 @@ class WargrooveGame():
         self.load_lua()
         self.load_state()
         self.load_triggers()
+        if self.options['log']:
+            self.game_logger.start()
 
         self.player_id = 0
         self.phase = Phase.action_selection
@@ -271,17 +277,21 @@ class WargrooveGame():
 
         return u
     
+    def get_unit_class(self, unit_class_id):
+        if not unit_class_id in self.unit_classes:
+            self.unit_classes[unit_class_id] = self.make_unit_class(unit_class_id)
+        
+        return self.unit_classes[unit_class_id]
+
     def make_unit_class(self, unit_class_id):
         dfn = DEFS['unitClasses'][unit_class_id]
         groove_id = dfn.get('grooveId')
         groove_dfn = DEFS['grooves'].get(groove_id, { 'maxCharge': 0 })
 
-        table_from = self.lua.table_from
-
         uc = {
             'id': dfn['id'],
             'cost': dfn.get('cost', 0),
-            'tags': table_from(dfn['tags']),
+            'tags': dfn['tags'],
             'canBeCaptured': dfn.get('canBeCaptured', False),
             'canReinforce': dfn.get('canReinforce', False),
             'inAir': 'type.air' in dfn['tags'],
@@ -292,11 +302,11 @@ class WargrooveGame():
             'maxHealth': 100,
             'moveRange': dfn.get('moveRange', 0),
             'passiveMultiplier': dfn.get('passiveMultiplier', 1),
-            'transportTags':  table_from(dfn.get('transportTags', [])),
-            'weaponIds': table_from([w['id'] for w in dfn.get('weapons', [])])
+            'transportTags':  dfn.get('transportTags', []),
+            'weaponIds': [w['id'] for w in dfn.get('weapons', [])]
         }
 
-        return table_from(uc)
+        return uc
     
     def make_weapon(self, weapon_id):
         dfn = DEFS['weapons'][weapon_id]
@@ -698,7 +708,19 @@ class WargrooveGame():
         self.resumable_suspended = self.lua_wargroove.checkTriggers(state)
         while self.resumable_suspended:
             self.run_resumable()
+        
+        if self.options['log']:
+            self.game_logger.check_triggers(state)
         #match_state = self.lua_events.getMatchState()
+    
+    def give_victory(self, player_id):
+        team = self.game.players[player_id].team
+        for player in self.game.players.values():
+            if player.team == team:
+                player.is_victorious = True
+
+        if self.options['log']:
+            self.game_logger.victory()
 
     def auto_select(self):
         if self.selectables == None: return None
@@ -839,7 +861,7 @@ class WargrooveGame():
     
     def get_board_table(self):
         m = self.map
-        board = [ [ WG_SYMBOLS.get(cell, ' ') for cell in row ] for row in m['tiles']]
+        board = [ [ WG_SYMBOLS.get(cell, ' ') for cell in row ] for row in m['terrains']]
 
         COLORS = { 0: WG_SYMBOLS['red'], 1: WG_SYMBOLS['blue'], 2: WG_SYMBOLS['green'], 3: WG_SYMBOLS['yellow'], -1: WG_SYMBOLS['neutral'], -2: WG_SYMBOLS['neutral'] }
 
@@ -882,7 +904,7 @@ class WargrooveApi():
         return self.game.make_weapon(id)
     
     def getUnitClass(self, id):
-        return self.game.make_unit_class(id)
+        return self.game.lua_wrapper(self.game.get_unit_class(id))
     
     def getAllUnits(self):
         return self.game.lua.table_from(self.game.units.keys())
@@ -928,7 +950,8 @@ class WargrooveApi():
         self.game.capture_params = (attackerId, defenderId, attackerPos)
 
     def spawnUnit(self, playerId, pos, unitType, turnSpent, startAnimation, startingState, factionOverride):
-        unit = self.game.make_unit(playerId, pos, unitType, turnSpent, startingState)
+        starting_state = [dict(s) for s in startingState.values()]
+        unit = self.game.make_unit(playerId, pos, unitType, turnSpent, starting_state)
         id = unit['id']
         self.game.units[id] = unit
         return id
@@ -993,7 +1016,7 @@ class WargrooveApi():
         return self.game.lua_wrapper(terrain)
 
     def getTerrainNameAt(self, pos):
-        try: return self.game.map['tiles'][pos['y']][pos['x']]
+        try: return self.game.map['terrains'][pos['y']][pos['x']]
         except IndexError: return 'wall'
 
     def getTerrainDefenceAt(self, pos):
@@ -1027,10 +1050,7 @@ class WargrooveApi():
     def startCutscene(self, id): return
 
     def giveVictory(self, playerId):
-        team = self.game.players[playerId].team
-        for player in self.game.players.values():
-            if player.team == team:
-                player.is_victorious = True
+        self.game.give_victory(playerId)
 
     def eliminate(self, playerId):
         self.game.players[playerId].has_losed = True

@@ -22,7 +22,7 @@ class WargroovePathFinder():
             c = np.empty((m['h'], m['w']), dtype=np.int8)
             terrains = self.game.defs['terrains']
 
-            for index, terrain in np.ndenumerate(m['tiles']):
+            for index, terrain in np.ndenumerate(m['terrains']):
                 c[index] = terrains[terrain]['movementCost'].get(movement, 0)
             
             self.move_costs[movement] = c

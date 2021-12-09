@@ -228,13 +228,13 @@ class WargrooveObservation(Observation):
         m = self.game.map
         w = m['w']
         h = m['h']
-        tiles = m['tiles']
+        terrains = m['terrains']
 
         codes = list_to_codes(TERRAIN_LIST)
 
         obs = np.zeros(shape=(MAX_MAP_SIZE, MAX_MAP_SIZE, len(TERRAIN_LIST)))
 
-        for index, terrain in np.ndenumerate(tiles):
+        for index, terrain in np.ndenumerate(terrains):
             obs[index] = codes[terrain]
 
 

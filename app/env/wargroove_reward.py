@@ -6,7 +6,7 @@ MAX_SCORE = 1e5
 
 def get_interpolated_health(health):
     h = health / 100
-    return (h + 1 - pow(1 - h, 4)) * 50
+    return (h + 1 - pow(1 - h, 4)) / 2
 
 class WargrooveReward():
     def __init__(self, game: WargrooveGame, gamma = 0.99):
@@ -19,7 +19,11 @@ class WargrooveReward():
     
     def get_rewards(self):
         scores = self.get_scores()
+
+        #print('scores', scores)
+
         scores = self.make_zero_sum(scores)
+        #print('zero_sum_scores', scores)
         return np.interp(scores, [-MAX_SCORE*2,MAX_SCORE*2], [-1, 1]).tolist()
     
     def make_zero_sum(self, scores):
@@ -58,7 +62,7 @@ class WargrooveReward():
         for p in self.game.players.values():
             scores[p.id] = MAX_SCORE if p.is_victorious else -MAX_SCORE if p.has_losed else 0
 
-            diff =  self.gamma * new_potentials[p.id] - self.potentials[p.id]
+            diff =  -self.potentials[p.id] + new_potentials[p.id] #* self.gamma 
             scores[p.id] += diff
 
         self.potentials = new_potentials
@@ -74,7 +78,7 @@ class WargrooveReward():
             uc = self.game.defs['unitClasses'][u['unitClassId']]
             val = uc.get('income', 0)
             if not val:
-                health_val = get_interpolated_health(uc.get('health', 0))
+                health_val = get_interpolated_health(u.get('health', 0))
                 val = uc.get('cost', 0) * health_val
             
             p[pid] += val

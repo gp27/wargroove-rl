@@ -56,9 +56,9 @@ def load_map(name, n_players = 2):
         map_data = json.loads(map_file.read())
     
     tiles = map_data['tiles']
-    tiles = [TERRAIN_ABBR.get(t, 'plains') for t in tiles]
-    tiles = np.array(tiles).reshape(map_data['h'], map_data['w'])
-    map_data['tiles'] = tiles
+    terrains = [TERRAIN_ABBR.get(t, 'plains') for t in tiles]
+    terrains = np.array(terrains).reshape(map_data['h'], map_data['w'])
+    map_data['terrains'] = terrains
     
     return map_data
 

@@ -8,7 +8,7 @@ from stable_baselines3.common import logger
 from .game.wargroove_game import *
 from .wargroove_spaces import WargrooveObservation, WargrooveActions
 from .wargroove_reward import WargrooveReward
-from config import MAP_POOL
+from config import LOGDIR, MAP_POOL
 
 class WargrooveEnv(gym.Env):
     metadata = {'render.modes': ['human']}
@@ -32,7 +32,7 @@ class WargrooveEnv(gym.Env):
 
     def reset(self):
         self.done = False
-        self.game.reset(random_commanders=False, map_names=MAP_POOL)
+        self.game.reset(random_commanders=False, map_names=MAP_POOL,log=True)
         self.wg_reward.reset()
         #self.game.start()
 
@@ -108,6 +108,7 @@ class WargrooveEnv(gym.Env):
             gym.logger.debug(f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.action_masks()) if o != 0]}')
 
         if self.done:
+            self.game.game_logger.save(LOGDIR+'/match.json')
             gym.logger.debug(f'\n\nGAME OVER')
 
     def rules_move(self):

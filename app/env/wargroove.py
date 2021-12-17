@@ -20,6 +20,7 @@ class WargrooveEnv(gym.Env):
 
         self.n_players = 2
         self.game = WargrooveGame()
+        self.agents = []
 
         self.wg_obs = WargrooveObservation(self.game)
         self.wg_acts = WargrooveActions(self.game)
@@ -29,11 +30,17 @@ class WargrooveEnv(gym.Env):
         self.action_space = self.wg_acts.space
 
         self.verbose = verbose
+    
+    def set_agents(self, agents):
+        self.agents = agents or []
+    
+    def get_usernames(self):
+        return { i: agent.name for i, agent in enumerate(self.agents) }
 
     def reset(self):
         self.move_i = 0
         self.done = False
-        self.game.reset(random_commanders=False, map_names=MAP_POOL,log=True)
+        self.game.reset(random_commanders=False, map_names=MAP_POOL, log=True, usernames=self.get_usernames())
         self.wg_reward.reset()
         #self.game.start()
 

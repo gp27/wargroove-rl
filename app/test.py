@@ -68,6 +68,7 @@ def main(args):
     if args.randomise_players:
       random.shuffle(players)
 
+    env.set_agents(players)
     obs = env.reset()
     done = False
     

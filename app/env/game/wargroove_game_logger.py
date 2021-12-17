@@ -6,8 +6,9 @@ from utils.diff import diff
 
 class WargrooveGameLogger():
 
-    def __init__(self, game: 'WargrooveGame') -> None:
+    def __init__(self, game: 'WargrooveGame', usernames={}) -> None:
         self.game = game
+        self.usernames = usernames
     
     def start(self):
         self.started = False
@@ -89,7 +90,8 @@ class WargrooveGameLogger():
                 'id': p.id,
                 'team': p.team,
                 'is_victorious': p.is_victorious,
-                'is_human': p.is_human
+                'is_human': p.is_human,
+                'username': self.usernames.get(p.id, None)
             } for p in ps
         ]
     

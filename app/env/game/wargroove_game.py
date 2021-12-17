@@ -68,7 +68,8 @@ class WargrooveGame():
         map_names=None,
         random_commanders=True,
         seed = None,
-        log = False
+        log = False,
+        usernames={}
     ):
         if seed == None: seed = np.random.randint(max_uint32, dtype=np.uint32)
 
@@ -81,7 +82,7 @@ class WargrooveGame():
             'log': log
         }
 
-        self.game_logger = WargrooveGameLogger(self)
+        self.game_logger = WargrooveGameLogger(self, usernames=usernames)
 
         maps = list_apply_bans(get_map_names(n_players), available=map_names)
         map_name = random.choice(maps)

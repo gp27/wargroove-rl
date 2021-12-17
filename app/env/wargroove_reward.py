@@ -76,10 +76,15 @@ class WargrooveReward():
             pid = u['playerId']
             if pid < 0: continue
             uc = self.game.defs['unitClasses'][u['unitClassId']]
+            #isStructure = uc.get('isStructure', False)
+            isCommander = uc.get('isCommander', False)
+            isHQ = uc.get('isHQ', False)
+
             val = uc.get('income', 0)
-            if not val:
+
+            if not val or isHQ:
                 health_val = get_interpolated_health(u.get('health', 0))
-                val = uc.get('cost', 0) * health_val
+                val = (uc.get('cost', 0) + 100) * health_val * (1.5 if isCommander else 1)
             
             p[pid] += val
 

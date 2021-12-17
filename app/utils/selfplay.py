@@ -53,7 +53,7 @@ def selfplay_wrapper(env):
 
             self.agent_player_num = np.random.choice(self.n_players)
             self.agents = [self.opponent_agent] * self.n_players
-            self.agents[self.agent_player_num] = None
+            self.agents[self.agent_player_num] = Agent('learner')
             try:
                 #if self.players is defined on the base environment
                 logger.debug(f'Agent plays as Player {self.players[self.agent_player_num].id}')
@@ -64,6 +64,7 @@ def selfplay_wrapper(env):
         def reset(self):
             super(SelfPlayEnv, self).reset()
             self.setup_opponents()
+            super(SelfPlayEnv, self).set_agents(self.agents)
 
             if self.current_player_num != self.agent_player_num:   
                 self.continue_game()

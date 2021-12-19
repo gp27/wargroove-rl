@@ -102,25 +102,26 @@ class WargrooveEnv(gym.Env):
             return
         
         if mode == 'human':
-            gym.logger.debug(tabulate(self.game.get_step_table(), headers="keys", tablefmt="fancy_grid"))
+            #gym.logger.debug(tabulate(self.game.get_step_table(), headers="keys", tablefmt="fancy_grid"))
 
             if self.game.phase == Phase.action_selection:
-                gym.logger.debug(tabulate(self.game.get_board_table(), tablefmt="fancy_grid"))
+                #gym.logger.debug(tabulate(self.game.get_board_table(), tablefmt="fancy_grid"))
 
-                for t in self.game.get_unit_tables():
-                    gym.logger.debug(tabulate(t, headers="keys", tablefmt="fancy_grid"))
+                #for t in self.game.get_unit_tables():
+                    #gym.logger.debug(tabulate(t, headers="keys", tablefmt="fancy_grid"))
             
-                gym.logger.debug(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
+                #gym.logger.debug(f'Turn {self.game.turn_number} Player {self.game.player_id + 1}')
 
                 if self.move_i % 100 == 0:
                     self.game.game_logger.save(LOGDIR)
                     
 
-        if self.verbose:
-            gym.logger.debug(f'\nObservation: \n{[i if o == 1 else (i,o) for i,o in enumerate(self.observation) if o != 0]}')
+        #if self.verbose:
+        #    gym.logger.debug(f'\nObservation: \n{[i if o == 1 else (i,o) for i,o in enumerate(self.observation) if o != 0]}')
 
         if not self.done:
-            gym.logger.debug(f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.action_masks()) if o != 0]}')
+            pass
+            #gym.logger.debug(f'\nLegal actions: {[(i, self.wg_acts.convert_action_index(i)) for i,o in enumerate(self.action_masks()) if o != 0]}')
 
         if self.done:
             self.game.game_logger.save(LOGDIR)

@@ -13,7 +13,9 @@ _dir_path = os.path.dirname(os.path.realpath(__file__))
 LOGDIR = _dir_path + "/logs"
 RESULTSPATH = _dir_path + "/results.csv"
 TMPMODELDIR = _dir_path + "/tmp"
-MODELDIR = _dir_path + "/zoo"
+MODELDIR = _dir_path + '/models'
+
+MODEL_NAME = "wg_8x8_alpha"
 
 # Wargroove configurations
 MAX_PLAYERS = 2
@@ -30,10 +32,18 @@ default_config = {
   "wg_map_pool": ','.join(MAP_POOL)
 }
 
+model_artifact = wandb.Artifact(MODEL_NAME, type="model")
+model_artifact.add_dir(MODELDIR)
+
 def init_wandb():
-  return wandb.init(
+  run =  wandb.init(
     project="wargroove-rl",
     config=default_config,
     sync_tensorboard=True,
     #monitor_gym=True
   )
+
+  #artifact = run.use_artifact(MODEL_NAME + ':latest')
+  #artifact_dir = artifact.download()
+
+  return run

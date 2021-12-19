@@ -9,12 +9,13 @@ class WargrooveGameLogger():
     def __init__(self, game: 'WargrooveGame') -> None:
         self.game = game
         self.usernames = {}
+        self.started = False
     
     def set_usernames(self, usernames={}):
         self.usernames = usernames
     
     def start(self):
-        self.started = False
+        self.started = True
         self.match_id = self.get_id()
         self.current_state = None
         self.deltas = []
@@ -125,7 +126,9 @@ class WargrooveGameLogger():
         return False
     
     def save(self, dir_path, name=None):
+        if not self.started: return False
         data = self.get_match_data()
+        if not data: return False
 
         if name == None:
             name = f'{self.match_id}.json'

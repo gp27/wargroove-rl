@@ -14,7 +14,7 @@ from stable_baselines3.common import logger
 import wandb
 from wandb.integration.sb3 import WandbCallback
 
-#from utils.callbacks import SelfPlayCallback
+from utils.callbacks import SelfPlayCallback
 from utils.files import reset_logs, reset_models
 from utils.selfplay import selfplay_wrapper
 
@@ -24,7 +24,7 @@ import config
 
 def main(args):
 
-  model_dir = os.path.join(config.MODELDIR, 'wargroove')
+  model_dir = os.path.join(config.MODELDIR)
 
   try:
     os.makedirs(model_dir)
@@ -81,9 +81,8 @@ def main(args):
     print('\nLoading the best_model.zip PPO agent to continue training...')
     model = PPO.load(os.path.join(model_dir, 'best_model.zip'), env, **params)
 
-    """
+
   #Callbacks
-  print('\nSetting up the selfplay evaluation environment opponents...')
   callback_args = {
     'eval_env': selfplay_wrapper(WargrooveEnv)(opponent_type = args.opponent_type, verbose = args.verbose),
     'best_model_save_path' : config.TMPMODELDIR,
@@ -109,14 +108,14 @@ def main(args):
     callback_args['callback_on_new_best'] = eval_actual_callback
     
   # Evaluate the agent against previous versions
-  #eval_callback = SelfPlayCallback(args.opponent_type, args.threshold, args.env_name, **callback_args)"""
+  eval_callback = SelfPlayCallback(args.opponent_type, args.threshold, **callback_args)
 
-  wandb_callback = WandbCallback(model_save_path=model_dir,model_save_freq=5000,verbose=1)
+  #wandb_callback = WandbCallback(model_save_path=model_dir,model_save_freq=5000,verbose=1)
 
   print('\nSetup complete - commencing learning...\n')
 
   #model.learn(total_timesteps=int(1e9), callback=[eval_callback], reset_num_timesteps = False, tb_log_name="tb")
-  model.learn(total_timesteps=int(1e5), callback=wandb_callback, reset_num_timesteps = False)
+  model.learn(total_timesteps=int(5e5), callback=[eval_callback], reset_num_timesteps = False)
 
   env.close()
   del env

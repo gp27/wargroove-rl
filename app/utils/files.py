@@ -40,7 +40,7 @@ def write_results(players, game, games, episode_length):
 
 def load_model(env, name):
 
-    filename = os.path.join(config.MODELDIR, env.name, name)
+    filename = os.path.join(config.MODELDIR, name)
     if os.path.exists(filename):
         print(f'Loading {name}')
         cont = True
@@ -59,11 +59,11 @@ def load_model(env, name):
                 
                 ppo_model = PPO(MlpPolicy, env=env)
                 print(f'Saving base.zip PPO model...')
-                ppo_model.save(os.path.join(config.MODELDIR, env.name, 'base.zip'))
+                ppo_model.save(os.path.join(config.MODELDIR, 'base.zip'))
 
                 cont = False
             except IOError as e:
-                sys.exit(f'Check zoo/{env.name}/ exists and read/write permission granted to user')
+                sys.exit(f'Check{config.MODELDIR}/ exists and read/write permission granted to user')
             except Exception as e:
                 print(e)
                 time.sleep(2)
@@ -75,7 +75,7 @@ def load_model(env, name):
 
 
 def load_all_models(env):
-    modellist = [f for f in os.listdir(os.path.join(config.MODELDIR, env.name)) if f.startswith("_model")]
+    modellist = [f for f in os.listdir(os.path.join(config.MODELDIR)) if f.startswith("_model")]
     modellist.sort()
     models = [load_model(env, 'base.zip')]
     for model_name in modellist:
@@ -83,8 +83,8 @@ def load_all_models(env):
     return models
 
 
-def get_best_model_name(env_name):
-    modellist = [f for f in os.listdir(os.path.join(config.MODELDIR, env_name)) if f.startswith("_model")]
+def get_best_model_name():
+    modellist = [f for f in os.listdir(os.path.join(config.MODELDIR)) if f.startswith("_model")]
     
     if len(modellist)==0:
         filename = None

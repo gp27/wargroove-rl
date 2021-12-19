@@ -10,6 +10,7 @@ __pycache__/
 .vscode/
 
 *.swp
-wandb
+wandb/
 wandb-debug.log
 .ipynb_checkpoints
+tmp/

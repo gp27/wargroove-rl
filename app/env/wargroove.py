@@ -33,6 +33,8 @@ class WargrooveEnv(gym.Env):
     
     def set_agents(self, agents):
         self.agents = agents or []
+        if self.game:
+            self.game.game_logger.set_usernames(self.get_usernames())
     
     def get_usernames(self):
         return { i: agent.name for i, agent in enumerate(self.agents) }
@@ -40,7 +42,7 @@ class WargrooveEnv(gym.Env):
     def reset(self):
         self.move_i = 0
         self.done = False
-        self.game.reset(random_commanders=False, map_names=MAP_POOL, log=True, usernames=self.get_usernames())
+        self.game.reset(random_commanders=False, map_names=MAP_POOL, log=True)
         self.wg_reward.reset()
         #self.game.start()
 

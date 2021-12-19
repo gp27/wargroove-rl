@@ -6,8 +6,11 @@ from utils.diff import diff
 
 class WargrooveGameLogger():
 
-    def __init__(self, game: 'WargrooveGame', usernames={}) -> None:
+    def __init__(self, game: 'WargrooveGame') -> None:
         self.game = game
+        self.usernames = {}
+    
+    def set_usernames(self, usernames={}):
         self.usernames = usernames
     
     def start(self):

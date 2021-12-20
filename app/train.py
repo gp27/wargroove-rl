@@ -74,12 +74,17 @@ def main(args):
 
   time.sleep(5) # allow time for the base model to be saved out when the environment is created
 
-  if args.reset or not os.path.exists(os.path.join(model_dir, 'best_model.zip')):
+  best_model_path = os.path.join(config.TMPMODELDIR, 'best_model.zip')
+  if not os.path.exists(best_model_path):
+    best_model_path = os.path.join(model_dir, 'best_model.zip')
+  
+
+  if args.reset or not os.path.exists(best_model_path):
     print('\nLoading the base PPO agent to train...')
     model = PPO.load(os.path.join(model_dir, 'base.zip'), env, **params)
   else:
     print('\nLoading the best_model.zip PPO agent to continue training...')
-    model = PPO.load(os.path.join(model_dir, 'best_model.zip'), env, **params)
+    model = PPO.load(best_model_path, env, **params)
 
 
   #Callbacks

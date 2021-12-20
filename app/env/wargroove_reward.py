@@ -1,12 +1,32 @@
 
 import numpy as np
-from .game.wargroove_game import WargrooveGame
+from .game.wargroove_game import WargrooveGame, Phase
 
 MAX_SCORE = 1e5
 
 def get_interpolated_health(health):
     h = health / 100
     return (h + 1 - pow(1 - h, 4)) / 2
+
+
+class Potential():
+    def __init__(self, monotonic=0, val = 0):
+        self.val = val
+        self._cursor = val
+        self._monotonic = 1 if monotonic > 0 else -1 if monotonic < 0 else 0
+    
+    def set_val(self, val):
+        c = self._cursor
+        self._cursor = val
+
+        if self._monotonic * (val - c) >= 0:
+            self.val = val
+    
+    def set_delta(self, delta):
+        self.set_val(self._cursor + delta)
+    
+    
+
 
 class WargrooveReward():
     def __init__(self, game: WargrooveGame, gamma = 0.99):
@@ -15,6 +35,11 @@ class WargrooveReward():
 
     def reset(self):
         self.n = self.game.n_players
+        self.pp = [ {
+            'actions': Potential(monotonic=1),
+            'cancel': Potential(monotonic=-1)
+        } for pid in range(self.n) ]
+        
         self.potentials = self.get_potentials()
     
     def get_rewards(self):
@@ -71,6 +96,9 @@ class WargrooveReward():
     
     def get_potentials(self):
         p = [0] * self.n
+        acts = [0] * self.n
+
+        is_action_phase = self.game.phase == Phase.action_selection
         
         for u in self.game.units.values():
             pid = u['playerId']
@@ -86,7 +114,21 @@ class WargrooveReward():
                 health_val = get_interpolated_health(u.get('health', 0))
                 val = (uc.get('cost', 0) + 100) * health_val * (1.5 if isCommander else 1)
             
+            if u.get('hadTurn', False):
+                acts[pid] += 20
+            
             p[pid] += val
+        
+        for pid in self.game.players.keys():
+            pp = self.pp[pid]
+            pp['actions'].set_val(acts[pid])
+
+            if pid == self.game.player_id:
+                if is_action_phase:
+                   pp['cancel'].set_delta(self.game.canceled_actions_count * -20)
+            
+            p[pid] += pp['cancel'].val + pp['actions'].val
+                    
 
         return p
 

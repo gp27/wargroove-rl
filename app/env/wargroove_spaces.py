@@ -77,7 +77,7 @@ class WargrooveObservation(Observation):
                 'norm': [-5000, 5000]
             }, {
                 'getter': lambda _: self.game.canceled_actions_count,
-                'norm': [-10, 10]
+                'norm': [-100, 100]
             }, {
                 'getter': lambda _: self.game.turn_number * self.game.n_players + self.game.player_id,
                 'norm': [-5000, 5000]

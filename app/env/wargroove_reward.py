@@ -2,7 +2,7 @@
 import numpy as np
 from .game.wargroove_game import WargrooveGame, Phase
 
-MAX_SCORE = 1e5
+MAX_SCORE = 5e3
 
 def get_interpolated_health(health):
     h = health / 100
@@ -15,12 +15,13 @@ class Potential():
         self._cursor = val
         self._monotonic = 1 if monotonic > 0 else -1 if monotonic < 0 else 0
     
-    def set_val(self, val):
+    def set_val(self, v):
         c = self._cursor
-        self._cursor = val
+        self._cursor = v
+        d = v - c
 
-        if self._monotonic * (val - c) >= 0:
-            self.val = val
+        if self._monotonic * d >= 0:
+            self.val += d
     
     def set_delta(self, delta):
         self.set_val(self._cursor + delta)
@@ -36,13 +37,17 @@ class WargrooveReward():
     def reset(self):
         self.n = self.game.n_players
         self.pp = [ {
-            'actions': Potential(monotonic=1),
+            #'actions': Potential(monotonic=1),
             'cancel': Potential(monotonic=-1)
         } for pid in range(self.n) ]
         
         self.potentials = self.get_potentials()
     
     def get_rewards(self):
+        is_action_phase = self.game.phase == Phase.action_selection
+
+        if not is_action_phase: return [0] * self.n
+
         scores = self.get_scores()
 
         #print('scores', scores)
@@ -96,10 +101,8 @@ class WargrooveReward():
     
     def get_potentials(self):
         p = [0] * self.n
-        acts = [0] * self.n
+        #acts = [0] * self.n
 
-        is_action_phase = self.game.phase == Phase.action_selection
-        
         for u in self.game.units.values():
             pid = u['playerId']
             if pid < 0: continue
@@ -114,20 +117,21 @@ class WargrooveReward():
                 health_val = get_interpolated_health(u.get('health', 0))
                 val = (uc.get('cost', 0) + 100) * health_val * (1.5 if isCommander else 1)
             
-            if u.get('hadTurn', False):
-                acts[pid] += 20
+            #if u.get('hadTurn', False):
+            #    acts[pid] += 20
             
             p[pid] += val
         
         for pid in self.game.players.keys():
             pp = self.pp[pid]
-            pp['actions'].set_val(acts[pid])
+            #pp['actions'].set_val(acts[pid])
 
             if pid == self.game.player_id:
-                if is_action_phase:
-                   pp['cancel'].set_delta(self.game.canceled_actions_count * -20)
+                cancels = self.game.canceled_actions_count - 1
+                if cancels > 0:
+                    pp['cancel'].set_delta(-10)
             
-            p[pid] += pp['cancel'].val + pp['actions'].val
+            p[pid] += pp['cancel'].val #+ pp['actions'].val
                     
 
         return p

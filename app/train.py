@@ -120,7 +120,7 @@ def main(args):
   print('\nSetup complete - commencing learning...\n')
 
   #model.learn(total_timesteps=int(1e9), callback=[eval_callback], reset_num_timesteps = False, tb_log_name="tb")
-  model.learn(total_timesteps=int(5e5), callback=[eval_callback], reset_num_timesteps = False)
+  model.learn(total_timesteps=int(2.5e5), callback=[eval_callback], reset_num_timesteps = False)
 
   env.close()
   del env

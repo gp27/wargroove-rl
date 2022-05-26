@@ -43,6 +43,8 @@ def init_wandb():
     #monitor_gym=True
   )
 
+  run.use_artifact(model_artifact)
+
   #artifact = run.use_artifact(MODEL_NAME + ':latest')
   #artifact_dir = artifact.download()
 
